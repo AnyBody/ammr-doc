@@ -1,0 +1,20 @@
+
+
+.. _sphx_glr_auto_examples_Other_plot_JumpingJack.py:
+
+
+Jumping Jack
+===============================
+
+A simple jumping jack model, illustrating some kinematic modeling concepts for a very simple model. 
+
+
+
+
+
+.. image:: /auto_examples/Other/images/sphx_glr_plot_JumpingJack_001.png
+    :class: sphx-glr-single-img
+
+
+
+

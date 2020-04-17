@@ -1,0 +1,227 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Inertial MoCap example &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AnyMoCap Features" href="plot_AnyMocapFeatures.html" />
+    <link rel="prev" title="Free posture Models" href="../ADLs_and_ergonomics/plot_FreePosture.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_AnyMocapFeatures.html" title="AnyMoCap Features"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ADLs_and_ergonomics/plot_FreePosture.html" title="Free posture Models"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="inertial-mocap-example">
+<span id="sphx-glr-auto-examples-mocap-plot-bvh-py"></span><h1>Inertial MoCap example<a class="headerlink" href="#inertial-mocap-example" title="Permalink to this headline">¶</a></h1>
+<p>Example of a MoCap mdoel using data from an inertial motional caputure suit.
+The model uses a BVH file with data from an Xsens suit. The ground reaction
+forces are predicted using the GRF prediction algorithm.</p>
+<p><strong>Example Main File</strong>: <span class="menuselection">Application ‣ MocapExamples ‣ BVH_Xsens ‣ Subjects ‣ S1 ‣ S01_Trial01 ‣ Main.any</span></p>
+<p>The model works using virtual markers placed on the BVH rig (i.e. the stick-figure
+model specified by the BVH file). The virtual markers are used to make the
+Musculoskeletal model moved similar to marker based mocap models.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.3: </span>The example was updated use the new features in v.7.2.3 of the AnyBody Modeling system.
+It fixes the problems which can occur in some BVH files due to gimbal locks and multiple
+solutions (N*2*pi) to the euler angle equations. See the section below on how to update
+old examples.</p>
+</div>
+<p>AnyBody automatically calculates the virtual markers positions, and the model is scaled directly from
+the size of the BVH stick figure. Hence the model contains no <em>Parameter indentifcation</em> step to find
+The remaining parts of the model are equvilent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
+<div class="section" id="updating-old-ammr-2-2-3-bvh-based-models">
+<h2>Updating old (ammr &lt; 2.2.3) BVH based models<a class="headerlink" href="#updating-old-ammr-2-2-3-bvh-based-models" title="Permalink to this headline">¶</a></h2>
+<p>The safest approch is to reimplement your model based on the newest BVH example and AMMR v.2.2.3.</p>
+<p>However, it is also posible to change a few files in existing models to utilize the
+new BVH improvments in AnyBody v.7.2.3.</p>
+<ol class="arabic">
+<li><p><strong>Important</strong>: Make sure your use the new AMMR (&gt;=2.2.3) and new AnyBody Modeling System (&gt;=7.2.3).
+You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p></li>
+<li><p>Add following to the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to enable new features:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">MOCAP_FUTURE_BVH_READER_73</span>
+</pre></div>
+</div>
+<p>From future version 7.3 this will not be necessary</p>
+</li>
+</ol>
+<ol class="arabic" start="2">
+<li><p>Add the following  the follwing to <code class="docutils literal notranslate"><span class="pre">MarkerProtocol.any</span></code> file:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span><span class="p">.</span><span class="n">ModelSetup</span><span class="p">.</span><span class="n">BVHFileData</span><span class="p">.</span><span class="n">CompatibilityMode_72</span> <span class="o">=</span> <span class="kp">Off</span><span class="p">;</span>
+<span class="n">Main</span><span class="p">.</span><span class="n">ModelSetup</span><span class="p">.</span><span class="n">BVHFileData</span><span class="p">.</span><span class="n">MarkerNames</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s">&quot;HEAD&quot;</span><span class="p">,</span> <span class="s">&quot;HEAD_R&quot;</span><span class="p">,</span> <span class="s">&quot;HEAD_L&quot;</span><span class="p">,</span> <span class="s">&quot;SACR&quot;</span><span class="p">,</span> <span class="s">&quot;RHJC&quot;</span><span class="p">,</span> <span class="s">&quot;LHJC&quot;</span><span class="p">,</span> <span class="s">&quot;T1C7Jnt&quot;</span><span class="p">,</span> <span class="s">&quot;SPINE&quot;</span><span class="p">,</span>
+   <span class="s">&quot;L3&quot;</span><span class="p">,</span> <span class="s">&quot;CHEST&quot;</span><span class="p">,</span> <span class="s">&quot;RSJC&quot;</span><span class="p">,</span> <span class="s">&quot;REJC&quot;</span><span class="p">,</span> <span class="s">&quot;RALE&quot;</span><span class="p">,</span> <span class="s">&quot;RWRB&quot;</span><span class="p">,</span> <span class="s">&quot;RWJC&quot;</span><span class="p">,</span> <span class="s">&quot;RHT1&quot;</span><span class="p">,</span> <span class="s">&quot;RHT2&quot;</span><span class="p">,</span>
+   <span class="s">&quot;LSJC&quot;</span><span class="p">,</span> <span class="s">&quot;LEJC&quot;</span><span class="p">,</span> <span class="s">&quot;LALE&quot;</span><span class="p">,</span> <span class="s">&quot;LWRB&quot;</span><span class="p">,</span> <span class="s">&quot;LWJC&quot;</span><span class="p">,</span> <span class="s">&quot;LHT1&quot;</span><span class="p">,</span> <span class="s">&quot;LHT2&quot;</span><span class="p">,</span> <span class="s">&quot;RKJC&quot;</span><span class="p">,</span> <span class="s">&quot;RKNE&quot;</span><span class="p">,</span>
+   <span class="s">&quot;RAJC&quot;</span><span class="p">,</span> <span class="s">&quot;RTOE&quot;</span><span class="p">,</span> <span class="s">&quot;RTOE2&quot;</span><span class="p">,</span> <span class="s">&quot;LKJC&quot;</span><span class="p">,</span> <span class="s">&quot;LKNE&quot;</span><span class="p">,</span> <span class="s">&quot;LAJC&quot;</span><span class="p">,</span> <span class="s">&quot;LTOE&quot;</span><span class="p">,</span> <span class="s">&quot;LTOE2&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have adapted your protocol to anything else that the Xsens standard you need to use
+your own marker names. Also, the model may complain about deprecated members, which can just be deleted.</p>
+</div>
+</div></blockquote>
+<img alt="../../_images/sphx_glr_plot_BVH_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_BVH_001.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Application Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#daily-activities-and-ergonomics">Daily activities and ergonomics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#orthopedics-and-rehab">Orthopedics and rehab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-examples">Other examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#sports">Sports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_AnyMocapFeatures.html" title="AnyMoCap Features"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ADLs_and_ergonomics/plot_FreePosture.html" title="Free posture Models"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

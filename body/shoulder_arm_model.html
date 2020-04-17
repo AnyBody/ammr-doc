@@ -1,0 +1,384 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Shoulder Arm Model &#8212; AMMR v2.2.3 Documentation</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Detailed hand model" href="detailed_hand_model.html" />
+    <link rel="prev" title="The Cervical Spine Model" href="cervical_spine_model.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="detailed_hand_model.html" title="Detailed hand model"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="cervical_spine_model.html" title="The Cervical Spine Model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.2.3 Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-shoulder-arm-model">
+<h1>The Shoulder Arm Model<a class="headerlink" href="#the-shoulder-arm-model" title="Permalink to this headline">¶</a></h1>
+<p>The ShoulderArm model contains data from two different persons. Most of this data
+comes from the Dutch Shoulder Group and their
+<a class="reference external" href="http://homepage.tudelft.nl/g6u61/repository/shoulder/overview.htm">shoulder model available online</a></p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2: </span>A new wrapping implementation of the deltoid muscles was recently added by Marta Strzelczak from
+École de technologie supérieure, Montreal, CA. See <a class="reference internal" href="#deltoidwrapping"><span class="std std-ref">Deltoid wrapping</span></a> below.</p>
+</div>
+<p>The model is built using data from subject 2 from the VU study and subject 2
+from the MAYO study. The files, which contains the name “forearm”, are
+built on data from the MAYO study</p>
+<p>The shoulder is the site of complex, mutually coupled motions of the scapula,
+clavicle and the humerus. To balance realism with model simplicity, the model
+defines motions of the scapula and clavicle as mathematical functions of the
+glenohumeral joint angles, also known as a “Shoulder rhythms”.</p>
+<p>The AnyBody shoulder model’s rhythm can be switched on
+and off, the full details of which can be seen in this report
+<a class="reference external" href="https://www.anybodytech.com/download.html?did=publications.files&amp;fname=ShoulderRhythmReport.pdf">Shoulder Rhythm
+Report</a>.</p>
+<video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="../_static/ShoulderArm_rotating_model.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<!--<img src="../_static/ShoulderCloseupBack.jpg" alt="Smiley face" width="45%">--><div class="section" id="example-configuration">
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Short example of how to configure the Shoulder Arm model:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">ON</span>
+<span class="cp">#define</span> <span class="x x-Statements">BM_ARM_LEFT</span> <span class="x x-Options">ON</span>
+<span class="cp">#define</span> <span class="x x-Statements">BM_ARM_SHOULDER_RHYTHM</span> <span class="x x-Options">ON</span>
+
+<span class="cp">#define</span> <span class="n">BM_ARM_MUSCLE</span> <span class="x x-Options">_MUSCLES_3E_HILL_</span>
+</pre></div>
+</div>
+<div class="float-right admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../bm_config/arm.html"><span class="doc">Arm configuration parameters</span></a> for a
+full list of configuration parmaeters or <a class="reference internal" href="../bm_config/index.html"><span class="doc">configuration section</span></a>
+for more information on BM parameters.</p>
+</div>
+<p>The model consists of the following joints:</p>
+</div>
+<div class="centered section" id="deltoid-wrapping">
+<span id="deltoidwrapping"></span><h2>Deltoid wrapping<a class="headerlink" href="#deltoid-wrapping" title="Permalink to this headline">¶</a></h2>
+<p>A new implementation of the deltoid muscles have been added. The implementation
+uses multiple wrapping cylinders for each element of the deltoid muscle. The new
+approach ensures a more realistic path of the muscle fibers compared to the
+previous implementaiton which used a dedicated rake segment to hold the detoid
+fibers in place.</p>
+<video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="../_static/new_deltoid_wrapping.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><p>New deltoid wrapping can be disabled/enabled with the switch
+<a class="reference internal" href="../bm_config/bm_statements.html#bm-arm-deltoid-wrapping" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_DELTOID_WRAPPING</span></code></a>.</p>
+<p>The new deltoid wrapping was developed by Marta Strzelczak from Département de
+génie de la production automatisée, École de technologie supérieure, Montreal,
+CA. Please cite the following work if you need it:</p>
+<blockquote>
+<div><p>Strzelczak, M., Lund, M. E., Sins, L., Mickael, B. &amp; Hagemeister, N. A new
+wrapping approach for the deltoid muscle modelling. in The Proceedings of the
+20th Biennial Meeting of theCanadian Society for Biomechanics (2018).</p>
+</div></blockquote>
+</div>
+<div class="section" id="degrees-of-freedom">
+<h2>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this headline">¶</a></h2>
+<p>The arm has the following basic dof, which can be controlled by combinations
+joint drivers directly or indirectly through connections to the environment</p>
+<ul class="simple">
+<li><p>SternoClavicularProtraction</p></li>
+<li><p>SternoClavicularElevation</p></li>
+<li><p>SternoClavicularAxialRotation</p></li>
+<li><p>GlenohumeralFlexion</p></li>
+<li><p>GlenohumeralAbduction</p></li>
+<li><p>GlenohumeralExternalRotation</p></li>
+<li><p>ElbowFlexion</p></li>
+<li><p>ElbowPronation</p></li>
+<li><p>WristFlexion</p></li>
+<li><p>WristAbduction</p></li>
+</ul>
+</div>
+<div class="section" id="joint-terminology">
+<h2>Joint terminology<a class="headerlink" href="#joint-terminology" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given styled-table centered docutils align-center" id="id2">
+<caption><span class="caption-text">Joints and kinematic contraints of the arm model</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 29%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align nowrap no-left-divider no-right-divider head"><p>Name</p></th>
+<th class="left-align no-left-divider no-right-divider head"><p>Description</p></th>
+<th class="left-align no-left-divider no-right-divider head"><p>Joint/Constraint Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>SC</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>SternoClavicular</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Spherical joint</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>AC</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>AcromioClavicular</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Spherical joint</p></td>
+</tr>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>GH</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Glenohumeral joint</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Spherical joint (The default joint reactions are
+disabled, since they do not automatically ensure that
+the net force vector passes through the glenoid cavity.
+The special force elements providing these biofidelic
+reaction forces are contained in the file “GHReactions.any”)</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>AI</p></td>
+<td class="left-align no-left-divider no-right-divider"></td>
+<td class="left-align no-left-divider no-right-divider"><p>One DOF constraint requiring the bony landmark
+AI on the scapula, to stay in contact with the thorax</p></td>
+</tr>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>AA</p></td>
+<td class="left-align no-left-divider no-right-divider"></td>
+<td class="left-align no-left-divider no-right-divider"><p>One DOF constraint requiring the bony landmark
+AA on the scapula, to stay in contact with the thorax</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>ConoideumLigament</p></td>
+<td class="left-align no-left-divider no-right-divider"></td>
+<td class="left-align no-left-divider no-right-divider"><p>The length of this ligament is driven
+to always remain constant</p></td>
+</tr>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>FE</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Flexion-extension
+of the elbow</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Revolute joint</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>PS</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Pronation-supination
+joint or the forearm</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Combination of joints at the distal and
+proximal end of the radius bone that
+leaves one DOF free which is
+pronation/supination of the forearm</p></td>
+</tr>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>Wrist joint</p></td>
+<td class="left-align no-left-divider no-right-divider"></td>
+<td class="left-align no-left-divider no-right-divider"><p>Two successive revolute joints where
+the axes of rotations are not coincident</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>More details on the ShoulderArm model can be found online:</p>
+<ul class="simple">
+<li><p>Webcast: <a class="reference external" href="https://www.anybodytech.com/downloads/documentation/#2007426">Validation of the AnyBody version of the Dutch Shoulder Model by the in-vivo measurement of GH contact forces by Bergmann et al.</a></p></li>
+</ul>
+</div>
+<div class="section" id="anatomy-references">
+<h2>Anatomy References<a class="headerlink" href="#anatomy-references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>F.C.T. van der Helm and R. Veenbaas, Modeling the mechanical efect of
+muscles with large attachment sites: aplication to the shoulder
+mechanism. Journal of Biomechanics, vol. 24, no. 12, pp. 1151-1163,
+1991</p></li>
+<li><p>H.E.J. Veeger, F.C.T. van der Helm, L.H.V. van der Woude, G.M. Pronk
+and R.H. Rozendal, Inertia and muscle contraction parameters for
+musculoskeletal modelling of the shoulder mechanism. Journal of
+Biomechanics, vol. 24, no. 7, pp. 615-629, 1991</p></li>
+<li><p>F.C.T. van der Helm, A finite element musculoskeletal model of the
+shoulder mechanism. Journal of Biomechanics, vol. 27, no. 5, pp.
+551-569, 1994</p></li>
+<li><p>R. Happee and F.C.T. Van der Helm, The control of shoulder muscles
+during goal directed movements, an inverse dynamic analysisJ.
+Biomechanics, vol. 28, no. 10, pp. 1179-1191, 1995</p></li>
+<li><p>Van der Helm FC, Veeger HE, Pronk GM, Van der Woude LH, Rozendal RH.
+Geometry parameters for musculoskeletal modeling of the shoulder
+system Journal of biomechanics Vol. 25 no. 2, pp. 129-144, 1992 Note:
+this reference is used for the geometry used for the definition of
+many of the geometries which are used for muscle wrapping</p></li>
+<li><p>DirkJan (H.E.J.) Veeger, Bing Yu, Kai Nan An, Orientation of axes in
+the elbow and forearm for biomechanical modeling Proceedings of the
+first conference of the ISG,1997</p></li>
+<li><p>The segment coordinatesystem are according to the ISB proposal,
+please see
+<a class="reference external" href="http://internationalshouldergroup.org/files/standards97.pdf">http://internationalshouldergroup.org/files/standards97.pdf</a></p></li>
+<li><p>H.E.J. Veeger, Bing Yu, Kai-Nan An and R.H. Rozendal, Parameters for
+modeling the upper extremity, Journal of Biomechanics, Vol. 30, No.
+6, pp. 647-652, 1997</p></li>
+<li><p>H.E.J. Veeger, F.C.T. van der Helm, L.H.V. van der Woude, G.M. Pronk
+and R.H. Rozendal,Inertia and muscle contraction parameters for
+musculoskeletal modelling of the shoulder mechanism. Journal of
+Biomechanics, vol. 24, no. 7, pp. 615-629, 1991</p></li>
+</ul>
+</div>
+<div class="section" id="muscle-references">
+<h2>Muscle References<a class="headerlink" href="#muscle-references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Jacobson, M. D., R. Raab, B. M. Fazeli, R. A. Abrams, M. J. Botte,
+and R. L. Lieber. Architectural design of the human intrinsic hand
+muscles. J. Hand Surg. [Am.] 17:804809, 1992.</p></li>
+<li><p>Lieber, R. L., M. D. Jacobson, B. M. Fazeli, R. A. Abrams, and M. J.
+Botte. Architecture of selected muscles of the arm and forearm:
+Anatomy and implications for tendon transfer. J. Hand Surg. [Am.]
+17:787-798, 1992.</p></li>
+<li><p>Lieber, R. L., B. M. Fazeli, and M. J. Botte. Architecture of
+selected wrist flexor and extensor muscles. J. Hand Surg. [Am.]
+15:244-250, 1990.</p></li>
+<li><p>Muray, W.M.,T.S. Buchanan, and S.L. Delp. Scaling of peak moment arms
+with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
+1995</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="models.html">The Body Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem_model.html">Twente Lower Extremity Model v.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">Twente Lower Extremity Model v.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aalborg_mandible.html">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="detailed_hand_model.html" title="Detailed hand model"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="cervical_spine_model.html" title="The Cervical Spine Model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.2.3 Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

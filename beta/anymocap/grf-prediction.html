@@ -1,0 +1,392 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Ground Reaction force prediction &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="About the AMMR" href="../about.html" />
+    <link rel="prev" title="The AnyMoCap Framework" href="index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../about.html" title="About the AMMR"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="The AnyMoCap Framework"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The AnyMoCap Framework</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ground-reaction-force-prediction">
+<h1>Ground Reaction force prediction<a class="headerlink" href="#ground-reaction-force-prediction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Motion capture data is often recorded without force plates. In traditional
+inverse dynamics, this would make it impossible to perform a dynamic analysis.
+However, AnyBody has the possibility to predict ground reaction forces (GRF), so
+you can make inverse dynamics models based on recorded motion without GRF force
+measurement (Fluit et al., 2014; Jung et al., 2014).</p>
+<p>GRF prediction relies on conditional contacts added to the feet of the model.
+The conditional contacts work as force actuators to generate the normal and
+frictional forces necessary to balance model. Mathematically, the actuators are
+modeled similarly to muscles, and the muscle recruitment optimization determines
+the contact forces. The effect is that the model will utilize the ground
+reactions if that can minimize the muscle activity.</p>
+<p>Adding conditional contacts to a model can be rather complex, but we have
+created an AnyScript class template that makes the process much easier. The
+class template will generate all the necessary AnyScript code. Thus, adding GRF
+prediction is similar to adding force plates to a model.</p>
+<p>This new functionality is now part of the AnyBody Managed Model Repository
+(AMMR).</p>
+</div>
+<div class="section" id="adding-ground-force-prediction-to-a-model">
+<h2>Adding ground force prediction to a model<a class="headerlink" href="#adding-ground-force-prediction-to-a-model" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-grfprediction-py"><span class="std std-ref">GRF example model</span></a>
+is already preconfigured to use the GRF prediction. But
+if you need to add GRF prediction to new model the following outlines the
+procedure.</p>
+<div class="section" id="including-the-class-templates">
+<h3>Including the class templates<a class="headerlink" href="#including-the-class-templates" title="Permalink to this headline">¶</a></h3>
+<p>The class template is already included in the AnyMoCap framework, so this step
+can be skipped. However, when using GRF prediction in other models it is
+necessary to include the following line at the beginning of the model:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/GRFPrediction/FootPlateConditionalContact.any&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-the-grf-prediction-classes">
+<h3>Adding the GRF prediction classes<a class="headerlink" href="#adding-the-grf-prediction-classes" title="Permalink to this headline">¶</a></h3>
+<p>In the AnyMoCap models GRF prediction is enabled by setting the following
+setting:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">MOCAP_USE_GRF_PREDICTION</span> <span class="x x-Options">ON</span>
+</pre></div>
+</div>
+<p>The next step is to add the class template to generate the AnyScript code for
+GRF prediction. These classes replaces the Force plate classes in the AnyMoCap
+model.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// EXCLUDE THE EXISTING C3D FORCE PLATES</span>
+<span class="c1">// ForcePlateAutoDetection Plate1(</span>
+<span class="c1">//    PLATE_NO=1,</span>
+<span class="c1">//     HeightTolerance = 0.07,</span>
+<span class="c1">//    VelThreshold = 2.2,</span>
+<span class="c1">//    FORCEPLATE_TYPE = 4,</span>
+<span class="c1">//   ALLOW_MULTI_LIMB_CONTACT = OFF</span>
+<span class="c1">// ) = { };</span>
+
+
+<span class="n">FootPlateConditionalContact</span> <span class="n">GRF_Prediction_Right</span><span class="p">(</span>
+    <span class="n">NORMAL_DIRECTION</span> <span class="o">=</span> <span class="s">&quot;Y&quot;</span><span class="p">,</span>
+    <span class="n">NUMBER_OF_NODES</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="n">NODES_FOLDER</span> <span class="o">=</span> <span class="n">FootNodes</span><span class="p">,</span>
+    <span class="n">PLATE_BASE_FRAME</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">EnvironmentModel</span><span class="p">.</span><span class="n">GlobalRef</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">CreateFootContactNodes25</span> <span class="n">FootNodes</span><span class="p">(</span>
+        <span class="n">foot_ref</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">.</span><span class="n">Right</span><span class="p">.</span><span class="n">Leg</span><span class="p">.</span><span class="n">Seg</span><span class="p">.</span><span class="n">Foot</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>See below for more information on the GRF prediction classes.</p>
+</div>
+<div class="section" id="setting-up-new-residuals-hand-of-god">
+<h3>Setting up new residuals (Hand of God)<a class="headerlink" href="#setting-up-new-residuals-hand-of-god" title="Permalink to this headline">¶</a></h3>
+<p>Adding conditional contacts to the feet is not enough. The AnyMoCap model comes
+reactions forces applied to the pelvis. These are the reactions that carry any
+inconsistencies between the model and force plate data, and they must be removed
+for ground reaction force prediction.</p>
+<p>Instead, we apply another type of residuals to the model, so the solver does not
+fail if the model fails to balance. These residuals are implemented as
+recruitment actuators from pelvis to the global reference frame. These actuators
+are implemented similarly to how muscles work. However, they are very weak, so
+the recruitment solver will only activate them if nothing else can balance the
+model.</p>
+<p>In the AnyMoCap models the new residuals are activated by default when
+<code class="docutils literal notranslate"><span class="pre">MOCAP_USE_GRF_PREDICTION</span></code> is set to <code class="docutils literal notranslate"><span class="pre">ON</span></code>. So no need to do anything.</p>
+<p>In other models the Weak residuals must be added manually, or by including the
+following file in your model:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span><span class="p">.</span><span class="n">ModelEnvironmentConnection</span>  <span class="o">=</span> <span class="p">{</span>
+    <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/GRFPrediction/WeakResiduals.any&quot;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The file <code class="docutils literal notranslate"><span class="pre">WeakResiduals.any</span></code> does the job of removing the ‘Hand of God’ and adding
+the new, weak residuals. Again this is handled automatically in the AnyMoCap
+based models.</p>
+</div>
+</div>
+<div class="section" id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<p>The model is run in the same way as other models. The only difference is that it
+now uses GRF prediction instead of force plates data.</p>
+<div class="figure align-center">
+<img alt="../_images/grf_output.png" src="../_images/grf_output.png" />
+</div>
+<p>It may be necessary to adjust the parameters of the GRF prediction class to
+obtain a good prediction of the ground reactions. This is especially important
+around heel strike and toe-off, where the model can have problems.</p>
+</div>
+<div class="section" id="grf-prediction-trouble-shooting">
+<h2>GRF prediction trouble shooting<a class="headerlink" href="#grf-prediction-trouble-shooting" title="Permalink to this headline">¶</a></h2>
+<p>Here are some things to check if a GRF prediction model fails running inverse
+dynamic:</p>
+<ul class="simple">
+<li><p>Direction of gravity is it specified correctly?  this needs to be correct in
+two places the Gravity property of the study in the LabSpecific.any data and in
+the definition of the force plates setting the variable <code class="docutils literal notranslate"><span class="pre">NORMAL_DIRECTION</span></code>.</p></li>
+<li><p>In the file Forceplate_GRFprediction.any try to increase the property <code class="docutils literal notranslate"><span class="pre">LimitDistHigh</span></code>,
+this controls when contact can occur so if the number is higher the foot do
+not need to be as close to the ground before contact can occur, see also
+LimitVelHigh it controls speed limit.</p></li>
+<li><p>Unrealistic accelerations of the model could be the reason if your data are
+not filtered correctly</p></li>
+<li><p>The model is using a weak residual to the ground that helps holding the balance
+in the model if the feet contact are not enough, this is defined in  the file
+“Tools/GRFPrediction/Weakresidual.any” here  you can increase the strength
+of the artificial muscles, but this will lead to higher residuals so be
+careful.</p></li>
+</ul>
+</div>
+<div class="section" id="a-closer-look-at-the-grf-template">
+<h2>A closer look at the GRF template<a class="headerlink" href="#a-closer-look-at-the-grf-template" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we can take a closer look at the <code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span></code> template.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">FootPlateConditionalContact</span> <span class="n">GRF_Prediction_Right</span><span class="p">(</span>
+    <span class="n">NORMAL_DIRECTION</span> <span class="o">=</span> <span class="s">&quot;Y&quot;</span><span class="p">,</span>
+    <span class="n">NUMBER_OF_NODES</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="n">NODES_FOLDER</span> <span class="o">=</span> <span class="n">FootNodes</span><span class="p">,</span>
+    <span class="n">PLATE_BASE_FRAME</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">EnvironmentModel</span><span class="p">.</span><span class="n">GlobalRef</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">CreateFootContactNodes25</span> <span class="n">FootNodes</span><span class="p">(</span>
+        <span class="n">foot_ref</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">.</span><span class="n">Right</span><span class="p">.</span><span class="n">Leg</span><span class="p">.</span><span class="n">Seg</span><span class="p">.</span><span class="n">Foot</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>It consists of two parts; a top level class template
+(<code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span></code>) that generate the conditional-contact code.
+This code needs a few important arguments. The ground plane
+(<code class="docutils literal notranslate"><span class="pre">PLATE_BASE_FRAME</span></code>) is a reference system where the ground plane is located.</p>
+<p>Together with arguments <code class="docutils literal notranslate"><span class="pre">NORMAL_DIRECTION</span></code> this specifies the surface the
+model is walking on. Another important argument is the <code class="docutils literal notranslate"><span class="pre">NODES_FOLDER</span></code>, which
+is a folder that contains all the contacts points.</p>
+<p>The contact points can be created manually, but to avoid this we use another
+class-template (<code class="docutils literal notranslate"><span class="pre">CreateFootContactNodes25</span></code>) to create the nodes automatically.
+As the name says it creates 25 nodes in the foot coordinate system. This part is
+specific to the model implementation. One could also imagine class-templates
+that produce a higher number of nodes or nodes in positions that corresponds to
+particular shoes or on other body parts.</p>
+<p>Of course, there are also many options that can be tweaked and adjusted.</p>
+<div class="section" id="class-templates-footplateconditionalcontact">
+<h3>Class templates: FootPlateConditionalContact<a class="headerlink" href="#class-templates-footplateconditionalcontact" title="Permalink to this headline">¶</a></h3>
+<p>Obligatory members are marked with <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> and optional values are marked with
+<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>. Default values are <strong>bold</strong>:</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">FootPlateConditionalContact</span> <span class="o">&lt;</span><span class="n">Object_name</span><span class="o">&gt;</span><span class="p">(</span>
+     <span class="n">NORMAL_DIRECTION</span>     <span class="o">=</span> <span class="s">&quot;&lt;X|Y|*Z&gt;&quot;</span><span class="p">,</span>
+     <span class="n">NUMBER_OF_NODES</span>      <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="mf">1..200</span><span class="p">],</span>
+     <span class="n">NODES_BASE_FOLDER</span>    <span class="o">=</span> <span class="o">&lt;</span><span class="kt">AnyFolder</span><span class="o">&gt;</span> <span class="p">,</span>
+     <span class="n">PLATE_BASE_FRAME</span>     <span class="o">=</span> <span class="o">&lt;</span><span class="kt">AnyRefFrame</span><span class="o">&gt;</span><span class="p">,</span>
+     <span class="n">SHOW_TRIGGER_VOLUME</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="mi">0</span><span class="o">|</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="n">Settings</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="p">[</span> <span class="n">LimitDistLow</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">;</span>               <span class="p">]</span>
+    <span class="p">[</span> <span class="n">LimitDistHigh</span> <span class="o">=</span> <span class="mf">0.04</span><span class="p">;</span>               <span class="p">]</span>
+    <span class="p">[</span> <span class="n">LimitVelHigh</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">;</span>                 <span class="p">]</span>
+    <span class="p">[</span> <span class="n">GroundVelocity</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">};</span>   <span class="p">]</span>
+    <span class="p">[</span> <span class="n">Strength</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>                     <span class="p">]</span>
+    <span class="p">[</span> <span class="n">FrictionCoefficient</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>          <span class="p">]</span>
+    <span class="p">[</span> <span class="n">ScaleFactor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                    <span class="p">]</span>
+    <span class="p">[</span> <span class="n">ForceVectorDrawScaleFactor</span> <span class="o">=</span> <span class="mf">0.0005</span><span class="p">;]</span>
+  <span class="p">};</span>
+</pre></div>
+</div>
+<p><strong>Class arguments:</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">PLATE_BASE_FRAME</span></code>:</dt><dd><p>Is a AnyRefFrame object where the ground planes is attached.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">NORMAL_DIRECTION</span></code>:</dt><dd><p>Defines the normal direction of the ground plane
+the in PLATE_BASE_FRAME coordinate system.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">NODES_BASE_FOLDER</span></code> :</dt><dd><p>The folder where all contact nodes are located below.
+contact nodes must be AnyRefNodes named must be named <code class="docutils literal notranslate"><span class="pre">Node#</span></code>
+where <code class="docutils literal notranslate"><span class="pre">#</span></code> is a number. Eg. <code class="docutils literal notranslate"><span class="pre">Node1`</span> <span class="pre">...``Node24</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">NUMBER_OF_NODES</span></code>:</dt><dd><p>The number of contact nodes to expect within <code class="docutils literal notranslate"><span class="pre">NODE_BASE_FRAME</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SHOW_TRIGGER_VOLUME</span></code>:</dt><dd><p>Visualize the volume where contacts may be triggered.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">GLOBAL_REF</span></code>:</dt><dd><p>The global reference. This must be set if the global reference is not
+<code class="docutils literal notranslate"><span class="pre">Main.EnvironmentModel.GlobalRef</span></code></p>
+</dd>
+</dl>
+<p><strong>Optional initialization:</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.LimitDistLow</span></code>:</dt><dd><p>Lower bound of the contact detection volume.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.LimitDistHigh</span></code>:</dt><dd><p>Upper bound of the contact detection volume.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.LimitVelHigh</span></code>:</dt><dd><p>Velocity threshold for contact detection.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.Strength</span></code>:</dt><dd><p>Strength of the contact elements.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.FrictionCoefficient</span></code>:</dt><dd><p>Friction coeficient of the contact elements. This adds limits to the amount of
+friction force which can be recruited.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Settings.ForceVectorDrawScaleFactor</span></code>:</dt><dd><p>Scale factor for the drawing of the GRF force vector</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The AnyMoCap Framework</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#over-determinate-kinematic-analysis">Over determinate kinematic analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#anymocap-examples">AnyMoCap examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started">Get started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#options-and-settings">Options and settings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#more-resources">More resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../about.html" title="About the AMMR"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="The AnyMoCap Framework"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >The AnyMoCap Framework</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

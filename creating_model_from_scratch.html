@@ -1,0 +1,369 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Creating a Human model from scratch &#8212; AMMR v2.2.3 Documentation</title>
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Scaling" href="Scaling/intro.html" />
+    <link rel="prev" title="Wilke Spine Disc Pressure Model" href="auto_examples/Validation/plot_WilkeSpinePressure.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="Scaling/intro.html" title="Introduction to Scaling"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="auto_examples/Validation/plot_WilkeSpinePressure.html" title="Wilke Spine Disc Pressure Model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">AMMR v2.2.3 Documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-a-human-model-from-scratch">
+<h1>Creating a Human model from scratch<a class="headerlink" href="#creating-a-human-model-from-scratch" title="Permalink to this headline">¶</a></h1>
+<p>The following tutorial teaches you how to construct an AnyBody model, when starting with a blank AnyScript file. When you work with more complex models,
+you will realize the given code structure is actually quite universal.</p>
+<p class="centered"><strong>STEP 1</strong></p>
+<p>Open a new AnyScript file (Cntrl + I) and type in the <code class="docutils literal notranslate"><span class="pre">Main</span></code> declaration shown below. This file now becomes
+the main model file, and all its contents (e.g, model objects, simulation objects) should be typed between the two curly braces.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 2</strong></p>
+<p>Link a <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to specify the AMMR directories that you wish to import the human model from.
+If instructions for installing the Demo AMMR in the <a class="reference internal" href="ammr_installation.html"><span class="doc">previous chapter</span></a> were exactly followed, the file path typed below should work.
+Otherwise, make the necessary changes.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+</span><span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 3</strong></p>
+<p>Create an empty <code class="docutils literal notranslate"><span class="pre">Model</span></code> folder to hold your model components, and an <code class="docutils literal notranslate"><span class="pre">AnyBodyStudy</span></code> object (named <code class="docutils literal notranslate"><span class="pre">Study</span></code>) which can run
+Kinematics and Inverse Dynamics simulations on your model.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+<span class="hll">
+</span><span class="hll">    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">
+</span><span class="hll">    <span class="p">};</span>
+</span>
+
+<span class="hll">    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+</span><span class="hll">    <span class="p">{</span>
+</span><span class="hll">        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+</span><span class="hll">        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+</span><span class="hll">        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+</span><span class="hll">    <span class="p">};</span>
+</span><span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 4</strong></p>
+<p>The next statement will create a reference to the <code class="docutils literal notranslate"><span class="pre">Model</span></code> folder within <code class="docutils literal notranslate"><span class="pre">Study</span></code>, thus instructing the simulation to only
+consider model objects (i.e. segments, forces, motion drivers etc.) contained within <code class="docutils literal notranslate"><span class="pre">Model</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can create any number of such references. It allows mixing and matching of model components in simulations.
+For example, if three separate <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code> objects contained models of a human, chair and bicycle, we could create
+two <code class="docutils literal notranslate"><span class="pre">AnyBodyStudy</span></code> objects - one with references to (human &amp; chair) and the other simulating (human &amp; bicycle).</p>
+</div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+
+    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+    <span class="p">{</span>
+
+    <span class="p">};</span>
+
+
+    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">ModelForSim</span> <span class="o">=</span> <span class="p">.</span><span class="n">Model</span><span class="p">;</span> <span class="c1">// &#39;&amp;&#39; creates a local reference to existing folder</span>
+</span>        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 5</strong></p>
+<p>The AMMR contains multiple musculoskeletal models (e.g., human cow, rat etc.). Type the following statement to import
+the human body model alone. The file path <code class="docutils literal notranslate"><span class="pre">&lt;ANYBODY_PATH_BODY&gt;</span></code> is defined in <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> - Have a look in there.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+<span class="hll">    <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+</span>
+    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+    <span class="p">{</span>
+
+    <span class="p">};</span>
+
+
+    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">ModelForSim</span> <span class="o">=</span> <span class="p">.</span><span class="n">Model</span><span class="p">;</span> <span class="c1">// &#39;&amp;&#39; creates a local reference to existing folder</span>
+        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 6</strong></p>
+<p>Create a reference to the human body model inside <code class="docutils literal notranslate"><span class="pre">Model</span></code> so that it is considered a part of the simulations in <code class="docutils literal notranslate"><span class="pre">Study</span></code>.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+
+    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+    <span class="p">{</span>
+<span class="hll">        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">Human</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">;</span>
+</span>    <span class="p">};</span>
+
+
+    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">ModelForSim</span> <span class="o">=</span> <span class="p">.</span><span class="n">Model</span><span class="p">;</span> <span class="c1">// &#39;&amp;&#39; creates a local reference to existing folder</span>
+        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered" id="mannequindriver"><strong>STEP 7</strong></p>
+<p>First add the lines of code highlighted in yellow below. An explanation follows.</p>
+<p>While the previous step included the human body model in <code class="docutils literal notranslate"><span class="pre">Model</span></code>, a key piece of machinery was still missing - Motion constraints. In fact, you will see a warning message
+if the model is loaded now. While motion prescription in elaborated on in <a class="reference external" href="https://anyscript.org/tutorials/Making_things_move/index.html" title="(in AnyBody Tutorials v7.2)"><span class="xref std std-doc">the making things move tutorial</span></a>, a basic AnyBody requirement is that the number of motion constraints
+(called motion drivers in AnyBody) must at least equal the number of DOFs of the model.</p>
+<p>The total number of DOFs &amp; motion constraints can be found by double clicking the <code class="docutils literal notranslate"><span class="pre">Study</span></code> object in the Model tree. This opens the Object Description which
+will show 378 DOFs but only 336 constraints. Therefore 42 more motion constraints are needed to make the simulation work.
+The AMMR thankfully provides 42 default soft drivers (see this <a class="reference external" href="https://anyscript.org/tutorials/A_Getting_started_modeling/lesson3.html" title="(in AnyBody Tutorials v7.2)"><span class="xref std std-doc">tutorial which introduces soft drivers</span></a>) which set joint angle values that hold the body in a default standing posture.
+These are termed <code class="docutils literal notranslate"><span class="pre">DefaultMannequinDrivers</span></code> and are included in the <code class="docutils literal notranslate"><span class="pre">Model</span></code> folder below.</p>
+<p>Due to the inclusion of soft drivers, solver settings need to be readjusted (see yellow highlting in code below).
+You can now gradually add more complex hard drivers (e.g, to constrain feet to ground, maintain balance etc.) to your model, which automatically over-ride the
+constraints enforced by soft drivers. The alternative would have been to create all 42 constraints manually before the simulation could even be tested
+- a debugging nightmare in the making!</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+
+    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">Human</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">;</span>
+<span class="hll">        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">MotionDrivers</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">DefaultMannequinDrivers</span><span class="p">;</span>
+</span>    <span class="p">};</span>
+
+
+    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">ModelForSim</span> <span class="o">=</span> <span class="p">.</span><span class="n">Model</span><span class="p">;</span> <span class="c1">// &#39;&amp;&#39; creates a local reference to existing folder</span>
+        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+
+<span class="hll">        <span class="n">InitialConditions</span><span class="p">.</span><span class="n">SolverType</span> <span class="o">=</span> <span class="kp">KinSolOverDeterminate</span><span class="p">;</span>
+</span><span class="hll">        <span class="n">Kinematics</span><span class="p">.</span><span class="n">SolverType</span> <span class="o">=</span> <span class="kp">KinSolOverDeterminate</span><span class="p">;</span>
+</span>    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 8</strong></p>
+<p>Add the highlighted code to create generalized reaction forces at the pelvis which support the model’s weight.</p>
+<p>It consists of 6 generalized forces applied on the human model by the Ground frame and is composed of 3 linear forces and 3 moments.
+The reaction force is constructed by an <code class="docutils literal notranslate"><span class="pre">AnyReacForce</span></code> class containing references to the kinematic measures (see this <a class="reference external" href="https://anyscript.org/tutorials/The_mechanical_elements/lesson4.html" title="(in AnyBody Tutorials v7.2)"><span class="xref std std-doc">tutorial on kinematic measures</span></a>)
+of the Pelvis w.r.t ground.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MYFILES&gt;/AnyBody.7.1.x/AMMR.v2.1.1-Demo/libdef.any&quot;</span>
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+
+    <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">Human</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">;</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">MotionDrivers</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">DefaultMannequinDrivers</span><span class="p">;</span>
+
+<span class="hll">        <span class="kt">AnyReacForce</span> <span class="n">HumanGroundResiduals</span> <span class="o">=</span>
+</span><span class="hll">        <span class="p">{</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisPosX</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisPosX</span><span class="p">;</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisPosY</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisPosY</span><span class="p">;</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisPosZ</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisPosZ</span><span class="p">;</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisRotX</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisRotX</span><span class="p">;</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisRotY</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisRotY</span><span class="p">;</span>
+</span><span class="hll">        <span class="kt">AnyKinMeasure</span><span class="o">&amp;</span> <span class="n">PelvisRotZ</span> <span class="o">=</span> <span class="p">.</span><span class="n">Human</span><span class="p">.</span><span class="n">Interface</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisRotZ</span><span class="p">;</span>
+</span><span class="hll">        <span class="p">};</span>
+</span>
+    <span class="p">};</span>
+
+
+    <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">ModelForSim</span> <span class="o">=</span> <span class="p">.</span><span class="n">Model</span><span class="p">;</span> <span class="c1">// &#39;&amp;&#39; creates a local reference to existing folder</span>
+        <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+        <span class="n">tStart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Start time</span>
+        <span class="n">tEnd</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// End time</span>
+
+        <span class="n">InitialConditions</span><span class="p">.</span><span class="n">SolverType</span> <span class="o">=</span> <span class="kp">KinSolOverDeterminate</span><span class="p">;</span>
+        <span class="n">Kinematics</span><span class="p">.</span><span class="n">SolverType</span> <span class="o">=</span> <span class="kp">KinSolOverDeterminate</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="centered"><strong>STEP 9</strong></p>
+<p>Load the model and run the <code class="docutils literal notranslate"><span class="pre">InverseDynamics</span></code> analysis contained within <code class="docutils literal notranslate"><span class="pre">Study</span></code>. Refer to <a class="reference external" href="https://anyscript.org/tutorials/Interface_features/lesson3.html" title="(in AnyBody Tutorials v7.2)"><span class="xref std std-doc">this tutorial</span></a> on how to view/plot the simulation outputs.</p>
+<p>We encourage you to experiment further by adding more complex model components such as motion drivers, external forces etc. to the current model. Refer
+to <a class="reference external" href="https://anyscript.org/tutorials/The_mechanical_elements/index.html" title="(in AnyBody Tutorials v7.2)"><span class="xref std std-doc">these tutorials</span></a> to understand these features better.</p>
+<video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="_static/Human_rotating_model.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="index.html" title="index">
+          <img class="logo" src="_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="Scaling/intro.html" title="Introduction to Scaling"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="auto_examples/Validation/plot_WilkeSpinePressure.html" title="Wilke Spine Disc Pressure Model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">AMMR v2.2.3 Documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

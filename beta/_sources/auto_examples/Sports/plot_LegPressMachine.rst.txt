@@ -1,0 +1,24 @@
+
+
+.. _sphx_glr_auto_examples_Sports_plot_LegPressMachine.py:
+
+
+Leg Press Machine
+===============================
+
+A model illustrating a leg press exercise and it demonstrates the use of the
+SolidModeling Class Template in the ToolBox of AMMR.
+
+**Main file:** ``Application/Examples/LegPressMachine/LegPressMachine.main.any``
+
+
+
+
+
+
+.. image:: /auto_examples/Sports/images/sphx_glr_plot_LegPressMachine_001.png
+    :class: sphx-glr-single-img
+
+
+
+

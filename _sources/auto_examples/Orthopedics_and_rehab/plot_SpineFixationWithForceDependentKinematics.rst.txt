@@ -1,0 +1,25 @@
+
+
+.. _sphx_glr_auto_examples_Orthopedics_and_rehab_plot_SpineFixationWithForceDependentKinematics.py:
+
+
+Spine Fixation Model using Force Dependent Kinematics
+=====================================================
+
+This application is an example of how to use the new force-dependent
+kinematics. The force dependent kinematics allows the kinematic spine
+rhythm which normally drives the vertebras to be switched entirely off.
+
+| **Example folder:**
+|  ``Application/Examples/SpineFixationWithForceDepKinematics/``
+
+
+
+
+
+.. image:: /auto_examples/Orthopedics_and_rehab/images/sphx_glr_plot_SpineFixationWithForceDependentKinematics_001.png
+    :class: sphx-glr-single-img
+
+
+
+

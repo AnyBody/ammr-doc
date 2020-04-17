@@ -1,0 +1,285 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Getting Started with AMMR &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installing Latest AMMR Files" href="ammr_installation.html" />
+    <link rel="prev" title="Welcome to the AMMR documentation!" href="index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ammr_installation.html" title="Installing Latest AMMR Files"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the AMMR documentation!"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started-with-ammr">
+<h1>Getting Started with AMMR<a class="headerlink" href="#getting-started-with-ammr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-intallation">
+<h2>AMMR Intallation<a class="headerlink" href="#ammr-intallation" title="Permalink to this headline">¶</a></h2>
+<p>The <em>AnyBody Model Repository</em> (AMMR) comes bundled with the
+<a class="reference external" href="https://www.anybodytech.com/software/ams/">AnyBody Modelling System</a>. But it must be installed/unpacked manually after you installed AnyBody.
+You can install the AMMR from the <em>AnyBody Assistent</em> dialog which is presented when AnyBody starts.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="ammr_installation.html"><span class="doc">Detailed guide on how to install the AMMR</span></a>:</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="understanding-the-anyscript-models">
+<h2>Understanding the AnyScript Models<a class="headerlink" href="#understanding-the-anyscript-models" title="Permalink to this headline">¶</a></h2>
+<p>Most examples you will encounter when using the AnyBody Managed Model Repository
+use the <a class="reference internal" href="body/models.html#the-body-model"><span class="std std-ref">Human Model</span></a>. Regardless of complexity, all models share a
+common structure used to set them up.</p>
+<p>The models will typically look like this:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;path_to_AMMR/libdef.any&quot;</span>
+
+<span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="c1">// Configure and include the Human Model</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_LEG_MODEL</span> <span class="x x-Options">_LEG_MODEL_TLEM2_</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_LEFT</span> <span class="x x-Options">OFF</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">OFF</span>
+  <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+
+  <span class="c1">// Compose the model</span>
+  <span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="kt">AnyFolder</span><span class="o">&amp;</span> <span class="n">Body</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">;</span>
+    <span class="kt">AnyFolder</span> <span class="n">Drivers</span> <span class="o">=</span> <span class="p">{...};</span>
+    <span class="kt">AnyFolder</span> <span class="n">Environment</span> <span class="o">=</span> <span class="p">{...};</span>
+  <span class="p">};</span>
+
+  <span class="c1">// Configuring  the Study</span>
+  <span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+    <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">Model</span><span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">Model</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Let us go throught the different components to understand how they work:</p>
+<div class="section" id="path-to-ammr">
+<h3>Path to AMMR<a class="headerlink" href="#path-to-ammr" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;path/to/AMMR/libdef.any&quot;</span>
+</pre></div>
+</div>
+<p>When having multiple versions of AMMR available on your computer, you have to
+specify which one will be used by AnyBody. Each AMMR includes a file called <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code>
+located at the top level folder. The AnyScript line used for instructing AnyBody
+which AMMR to use should be at the very beginning of your <code class="docutils literal notranslate"><span class="pre">.any</span></code> file:</p>
+</div>
+<div class="section" id="configuring-the-human-model">
+<h3>Configuring the Human Model<a class="headerlink" href="#configuring-the-human-model" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="c1">// Configure and include the Human Model</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_LEG_MODEL</span> <span class="x x-Options">_LEG_MODEL_TLEM2_</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_LEFT</span> <span class="x x-Options">OFF</span>
+  <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">OFF</span>
+</pre></div>
+</div>
+<p>The Human Body Model is configured through a number of <code class="docutils literal notranslate"><span class="pre">#define</span></code> and <code class="docutils literal notranslate"><span class="pre">#path</span></code>
+statements. These statements are all prefixed with <code class="docutils literal notranslate"><span class="pre">BM_</span></code> inside AnyScript,
+and they can also be referred to as “bm-statements”.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="bm_config/index.html"><span class="doc">The documentation on BM configuration</span></a></p>
+</div>
+</div>
+<div class="section" id="including-the-human-model">
+<h3>Including the Human Model<a class="headerlink" href="#including-the-human-model" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;/HumanModel.any&quot;</span>
+</pre></div>
+</div>
+<p>After the configuration statements the HumanModel is included. It is important that the configuration
+parameters are placed before this line.</p>
+</div>
+<div class="section" id="composing-the-model">
+<h3>Composing the Model<a class="headerlink" href="#composing-the-model" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyFolder</span> <span class="n">Model</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="kt">AnyFolder</span><span class="o">&amp;</span> <span class="n">Body</span> <span class="o">=</span> <span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">BodyModel</span><span class="p">;</span>
+  <span class="kt">AnyFolder</span> <span class="n">Drivers</span> <span class="o">=</span> <span class="p">{...};</span>
+  <span class="kt">AnyFolder</span> <span class="n">Environment</span> <span class="o">=</span> <span class="p">{...};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Most examples have a section where the model is composed. This is where we
+combine the <code class="docutils literal notranslate"><span class="pre">Body</span></code> from the HumanModel, and add extra things like drivers,
+external loads, and constraints.</p>
+<p>It could also be any models of the environment which the body interacts with.</p>
+</div>
+<div class="section" id="the-study-section">
+<h3>The Study section<a class="headerlink" href="#the-study-section" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyBodyStudy</span> <span class="n">Study</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="n">Gravity</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.81</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span> <span class="c1">// Gravity Vector</span>
+  <span class="kt">AnyFolder</span> <span class="o">&amp;</span><span class="n">Model</span><span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">Model</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">AnyBodyStudy</span></code> is where you configure and define your simulation. It
+specificies start and end times of the simulation, and number of steps. It also
+configures which solvers are used.</p>
+<p>Only the model elements which are referenced from within the Study, will be included in
+the simulation. In this case everything in <code class="docutils literal notranslate"><span class="pre">Main.Model</span></code> folder is part of the simulation.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="creating_model_from_scratch.html"><span class="doc">The full tutorial on how to create a HumanModel from scratch</span></a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="index.html" title="index">
+          <img class="logo" src="_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started with AMMR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ammr-intallation">AMMR Intallation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-anyscript-models">Understanding the AnyScript Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ammr_installation.html" title="Installing Latest AMMR Files"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the AMMR documentation!"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+ 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

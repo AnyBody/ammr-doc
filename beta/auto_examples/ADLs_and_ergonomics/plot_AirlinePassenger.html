@@ -1,0 +1,204 @@
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Airline passenger &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pedel demo" href="plot_PedalDemoConditional.html" />
+    <link rel="prev" title="Standing Model" href="plot_StandingModel.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_PedalDemoConditional.html" title="Pedel demo"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_StandingModel.html" title="Standing Model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="airline-passenger">
+<span id="sphx-glr-auto-examples-adls-and-ergonomics-plot-airlinepassenger-py"></span><h1>Airline passenger<a class="headerlink" href="#airline-passenger" title="Permalink to this headline">¶</a></h1>
+<p>The airline passenger example.</p>
+<p><strong>Main file:</strong> <code class="docutils literal notranslate"><span class="pre">Application/Examples/AirlinePassenger/AirlinePassenger.main.any</span></code></p>
+<p>This is a model of a coach class airline passenger seat
+characterized by the following:</p>
+<ul class="simple">
+<li><p>No arm rests (you always lose the battle for the armrest  to the person next to you)</p></li>
+<li><p>Horizontal seat pan</p></li>
+<li><p>Limited ability to incline the backrest due to the lack of clearance to the person behind</p></li>
+</ul>
+<p>The model assesses the comfort of the passenger in terms of
+the following:</p>
+<ul class="simple">
+<li><p>Muscle effort computed as the percentage of maximum
+voluntary contraction to maintain the given posture.</p></li>
+<li><p>The total shear force between the seat pan and the
+buttocks of the passenger. Shear forces are known to
+cause particular discomfort in static loading situations,
+typically as when the passenger tries to sleep.</p></li>
+</ul>
+<p>The posture of the passenger is controlled by the backrest
+angle. The bacrest offers pressure support for the back
+of the human model but no tension support. This means that
+forward leaning postures are realized by inclining the
+seat forward and the body is not getting any support from
+the backrest in this situation.</p>
+<p>The inverse dynamic analysis of the model inclines the
+backrest backwards from an initial 10 degree forward
+inclination to a 30 degree backward inclination, which
+is on the very upper limit of coach class passenger seats.</p>
+<img alt="../../_images/sphx_glr_plot_AirlinePassenger_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_AirlinePassenger_001.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Application Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#daily-activities-and-ergonomics">Daily activities and ergonomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#orthopedics-and-rehab">Orthopedics and rehab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-examples">Other examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#sports">Sports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_PedalDemoConditional.html" title="Pedel demo"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_StandingModel.html" title="Standing Model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
