@@ -1,0 +1,227 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Twente Lower Extremity Model v.1.2 &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Twente Lower Extremity Model v.2.1" href="leg_tlem2_model.html" />
+    <link rel="prev" title="The “Leg” Model" href="leg_model.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_tlem2_model.html" title="Twente Lower Extremity Model v.2.1"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_model.html" title="The “Leg” Model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="twente-lower-extremity-model-v-1-2">
+<span id="tlem1"></span><h1>Twente Lower Extremity Model v.1.2<a class="headerlink" href="#twente-lower-extremity-model-v-1-2" title="Permalink to this headline">¶</a></h1>
+<p>The AnyBody implementation of a the Twente lower extremity model (TLEM) consists
+of <strong>159 muscles</strong>, and <strong>6 joint degrees</strong>.</p>
+<video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="../_static/TLEM1_rotating_model.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<!--<img src="../_static/TLEM1_closeup.jpg" alt="TLEM model" width="45%">--><p>The model has been validated against ‘state of the
+art’ literature with respect to its biomechanical performance and first
+applications in gait and cycling deliver very convincing results.</p>
+<p>The model is based on published morphological consistent anatomical
+dataset on muscle and joint parameters by Martijn Klein-Horsman from the
+University of Twente, The Netherlands. The implementation of the model
+was started by Karin Gorter, a Master Student, also from the University
+of Twente, during a three-month stay at Aalborg University and has been
+finished by the AnyBody Technology.</p>
+<p>The current version has been updated several times and is still being
+maintained in collaboration with The AnyBody Research Group at Aalborg
+University (DK) (www.anybody.aau.dk) and University of Twente (NL) under
+the TLEMsafe project (<a class="reference external" href="http://www.tlemsafe.eu">www.tlemsafe.eu</a>).</p>
+<div class="section" id="example-configuration">
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Short example of how to configure the model with the TLEM model, Hill type
+muscle model and only one leg:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_LEG_MODEL</span> <span class="x x-Options">_LEG_MODEL_TLEM1_</span>
+<span class="cp">#define</span> <span class="x x-Statements">BM_LEG_RIGHT</span> <span class="x x-Options">ON</span>
+<span class="cp">#define</span> <span class="x x-Statements">BM_LEG_LEFT</span> <span class="x x-Options">OFF</span>
+<span class="cp">#define</span> <span class="n">BM_LEG_MUSCLE</span> <span class="x x-Options">_MUSCLES_3E_HILL_</span>
+</pre></div>
+</div>
+<div class="float-right admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../bm_config/leg.html"><span class="doc">Leg configuration parameters</span></a> for a
+full list of configuration parmaeters or <a class="reference internal" href="../bm_config/index.html"><span class="doc">configuration section</span></a>
+for more information on BM parameters.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>More details can be found online:</p>
+<ol class="arabic simple">
+<li><p>Dendorfer and Toerholm 2008: Report containing moment arm validation for <a class="reference external" href="http://www.anybodytech.com/fileadmin/downloads/Final_Report.pdf">ESA:
+report</a></p></li>
+<li><p>Horsman 2007: Klein Horsman, M. D., Koopman, H. F. J. M., van der Helm, F. C. T.,
+Prosé, L. P., and Veeger, H. E. J., 2007, “Morphological Muscle and Joint Parameters for
+Musculoskeletal Modelling of the Lower Extremity,” Clin. Biomech. , 22(2), pp. 239–247.
+<a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0268003306001896">link</a></p></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="models.html">The Body Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shoulder_arm_model.html">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Twente Lower Extremity Model v.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">Twente Lower Extremity Model v.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aalborg_mandible.html">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_tlem2_model.html" title="Twente Lower Extremity Model v.2.1"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_model.html" title="The “Leg” Model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

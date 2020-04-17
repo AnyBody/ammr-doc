@@ -1,0 +1,201 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Wilke Spine Disc Pressure Model &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating a Human model from scratch" href="../../creating_model_from_scratch.html" />
+    <link rel="prev" title="Symmetric Mandible example" href="plot_MandibleModel.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../../creating_model_from_scratch.html" title="Creating a Human model from scratch"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_MandibleModel.html" title="Symmetric Mandible example"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-example-title section" id="wilke-spine-disc-pressure-model">
+<span id="sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"></span><h1>Wilke Spine Disc Pressure Model<a class="headerlink" href="#wilke-spine-disc-pressure-model" title="Permalink to this headline">¶</a></h1>
+<p>The Wilke Spine Pressure models are eight models that compare intradiscal pressure measured between L4 and L5 discs in different postures.</p>
+<p>For the comparison, all data is normalized (100 %) to the forces from <em>‘SpinePressureStanding.Main.any’</em>  and <em>‘Relaxed Standing’</em> to show trend validity between the various postures.</p>
+<div class="figure align-center">
+<img alt="../../_images/wilke.svg" src="../../_images/wilke.svg" /></div>
+<p>Both papers refer to the same trial, but supplements each other with study information.</p>
+<ul class="simple">
+<li><p>Wilke, H.J., Neef, P., Caimi, M., Hoogland, T., Claes, L.E., 1999. New in vivo measurements of pressures in the intervertebral disc in daily life. Spine 24, 755–762.</p></li>
+<li><p>Wilke, H., Neef, P., Hinz, B., Seidel, H., Claes, L., 2001. Intradiscal pressure together with anthropometric data–a data set for the validation of models. Clin. Biomech. 16 Suppl 1, S111–26.</p></li>
+</ul>
+<p><em>‘Relaxed Standing’</em> compared with <em>‘SpinePressureStanding.Main.any’</em>.</p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_001.png" />
+<p><em>‘Lying in prone’</em> compared with <em>‘SpinePressureLyingOnBack.main.any’</em>.</p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_002.png" />
+<p><em>‘Seating relaxed’</em> compared with <em>‘SpinePressureSeatingRelaxed.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_003.png" />
+<p><em>‘Relaxed Erect Sitting’</em> compared with <em>‘SpinePressureSeatingStraitNoSupport.main.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_004.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_004.png" />
+<p><em>‘Standing flexed foward’</em> compared with <em>‘SpinePressurestandingflexed.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_005.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_005.png" />
+<p><em>‘Crate of beer held close at chest level’</em> compared with <em>‘SpinePressurestandingliftclose.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_006.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_006.png" />
+<p><em>‘Lifting bent over with round back’</em> compared with <em>‘SpinePressurestandingliftflexed.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_007.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_007.png" />
+<p><em>‘’Held away about 60 cm’</em> compared with <em>‘SpinePressurestandingliftstretched arms.main.any’</em></p>
+<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_008.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_008.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Application Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#daily-activities-and-ergonomics">Daily activities and ergonomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#orthopedics-and-rehab">Orthopedics and rehab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-examples">Other examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#sports">Sports</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../../creating_model_from_scratch.html" title="Creating a Human model from scratch"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_MandibleModel.html" title="Symmetric Mandible example"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

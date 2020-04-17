@@ -1,0 +1,26 @@
+.. only:: html
+
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_LowerExtremity.py:
+
+
+Simple Lower extremity model
+===============================
+
+Example of lower body MoCap model using the Plug-in-Gait marker protocol,
+and walking on three typ4 force platforms. The model is fairly simple and a
+good starting point for new users. If you plan to have many trials/subjects,
+take a look at the example which better support multiple trails.
+
+``Application/MocapExamples/Plug-in-gait_Simple/LowerExtremity.main.any``
+
+
+
+.. image:: /auto_examples/Mocap/images/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_001.png
+    :class: sphx-glr-single-img
+
+
+
+
+

@@ -1,0 +1,20 @@
+
+:orphan:
+
+.. _sphx_glr_auto_examples_Orthopedics_and_rehab_sg_execution_times:
+
+Computation times
+=================
+**00:00.532** total execution time for **auto_examples_Orthopedics_and_rehab** files:
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_KneeSimulator.py` (``plot_KneeSimulator.py``)                                                         | 00:00.116 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_FacetJointModel.py` (``plot_FacetJointModel.py``)                                                     | 00:00.112 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_SpineFixationWithForceDependentKinematics.py` (``plot_SpineFixationWithForceDependentKinematics.py``) | 00:00.108 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_WheelChairRancho.py` (``plot_WheelChairRancho.py``)                                                   | 00:00.104 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_THA-KneeBendDemo.py` (``plot_THA-KneeBendDemo.py``)                                                   | 00:00.092 | 0.0 MB |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+

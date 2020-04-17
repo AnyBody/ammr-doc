@@ -1,0 +1,225 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Leg Parameters &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm Parameters" href="arm.html" />
+    <link rel="prev" title="Configuring the Body Model" href="index.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="arm.html" title="Arm Parameters"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Configuring the Body Model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Configuring the Body Model</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="leg-parameters">
+<h1>Leg Parameters<a class="headerlink" href="#leg-parameters" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Leg Parameters</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-model" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MODEL</span></code></a></p></td>
+<td><p>Parameter defining the Leg model used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-left" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_LEFT</span></code></a></p></td>
+<td><p>Parameter for switching the left leg On/Off. To control which leg model is used, please use the <a class="reference internal" href="bm_statements.html#bm-leg-model" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MODEL</span></code></a> parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-right" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_RIGHT</span></code></a></p></td>
+<td><p>Parameter for switching the right leg On/Off. To control which leg model is used, please use the <a class="reference internal" href="bm_statements.html#bm-leg-model" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MODEL</span></code></a> parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-strength-index" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_STRENGTH_INDEX</span></code></a></p></td>
+<td><p>Index parameter to specify muscle strength for lower extremities</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-muscles-both" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MUSCLES_BOTH</span></code></a></p></td>
+<td><p>Parameter to define muscle behavior of both right and left leg</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-muscles-left" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MUSCLES_LEFT</span></code></a></p></td>
+<td><p>Parameter to define muscle behavior of the left leg</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-muscles-right" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MUSCLES_RIGHT</span></code></a></p></td>
+<td><p>Parameter to define muscle behavior of the right leg</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-dataset" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_DATASET</span></code></a></p></td>
+<td><p>Path to specify the underlying dataset. This currently only affects the TLEM based models. Valid options depends on which model (TLEM1/2) is used, and what dataset are available. If not specified, this will be configure automatically.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-morphology" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_MORPHOLOGY</span></code></a></p></td>
+<td><p>Parameter for the morphology method used by the Leg model. This currently only affects the TLEM based models.Valid options depends on which model (TLEM1/2) is used, and what dataset are available. If not specified, this will be configure automatically.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-leg-trunk-interface" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_LEG_TRUNK_INTERFACE</span></code></a></p></td>
+<td><p>Keyword for the interface morhping between the trunk and the leg pelvis segments.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuring the Body Model</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Leg Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm.html">Arm Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trunk.html">Trunk Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mannequin.html">Mannequin Driver Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaling.html">Scaling Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joint_type.html">Joint Type Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="other.html">Other Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bm_plugin.html">Body Model Plugin (BM-Plugin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#all-parameters-and-constants">All Parameters and constants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="arm.html" title="Arm Parameters"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="index.html" title="Configuring the Body Model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Configuring the Body Model</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

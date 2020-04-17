@@ -1,0 +1,260 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+
+    <title>Knee Simulator Model &#8212; AMMR v2.3.0-beta Documentation</title>
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Facet Joint Model" href="plot_FacetJointModel.html" />
+    <link rel="prev" title="Multi trial MoCap model" href="../Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_FacetJointModel.html" title="Facet Joint Model"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-example-title section" id="knee-simulator-model">
+<span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"></span><h1>Knee Simulator Model<a class="headerlink" href="#knee-simulator-model" title="Permalink to this headline">¶</a></h1>
+<p>Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK).
+For an indepth description of the mathematics and mechanics behind FDK please see <a class="reference internal" href="../../body/aalborg_mandible.html#azdn17" id="id1"><span>[AZDN17]</span></a>.</p>
+<p><strong>Main file:</strong> <code class="docutils literal notranslate"><span class="pre">Application/Examples/KneeSimulator/AnyKneeSimulator.Main.any</span></code></p>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/KneeSimulator_Full.jpg" src="../../_images/KneeSimulator_Full.jpg" />
+<p class="caption"><span class="caption-text">Overview of the knee simulator</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>This is stand alone demo model of a knee simulator device resembling the principles of the Kansas Knee simulator <a class="reference internal" href="#hcmt10" id="id2"><span>[HCMT10]</span></a>.
+The model is contructed as a stand-alone model and doesn’t use any elements and body parts from the model repository (AMMR).
+Data for the total knee replacement (TKR) implant comes from the <a class="reference external" href="https://simtk.org/projects/kneeloads">6th Grand Challenge Competition to Predict In Vivo Knee Loads</a>.</p>
+<div class="section" id="segments">
+<h2>Segments<a class="headerlink" href="#segments" title="Permalink to this headline">¶</a></h2>
+<p>The model is constructed of five main segments (femur, patella, tibia, ankle-fixture, and hip-fixture).
+In practice more segments are included. The mass of the femur/tibia is implemented as separate segments
+for easier specification of the moments of inertia. Likewise, the trans-spherical mechanism between ankle
+and ground segments is implmented using three segments connected with revolute and slider joints.</p>
+</div>
+<div class="section" id="ligaments">
+<h2>Ligaments<a class="headerlink" href="#ligaments" title="Permalink to this headline">¶</a></h2>
+<p>The ligaments are modeled using one-dimensional nonlinear elastic spring elements. In order to prevent
+ligaments from penetrating the bone/implant surfaces, they were wrapped around various geometrical shapes (cylinder, ellipsoid,…).
+Ligament properties (stiffness and reference strains) were adopted from the literature <a class="reference internal" href="#bkhg91" id="id3"><span>[BKHG91]</span></a> &amp; <a class="reference internal" href="#mvfk15" id="id4"><span>[MVFK15]</span></a>.</p>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/KneeSimulator_Ligaments.jpg" src="../../_images/KneeSimulator_Ligaments.jpg" />
+<p class="caption"><span class="caption-text">Ligaments in the model, abbreviations adopted from <a class="reference internal" href="#sbtp06" id="id5"><span>[SbTP06]</span></a> Figure 1.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="contacts">
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h2>
+<p>Three STL-based rigid-rigid contact models were defined: between the patella and femoral component,  the femoral component and tibia insert (lateral side),
+and the femoral component and tibia insert (medial side).</p>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/KneeSimulator_Contacts.jpg" src="../../_images/KneeSimulator_Contacts.jpg" />
+<p class="caption"><span class="caption-text">Contact surfaces in the model</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Model settings can be added and removed here: <code class="docutils literal notranslate"><span class="pre">UserDefinedSettings.Main.any</span></code> to use FDK define:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">USE_FDK</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Other adjustable settings include: ligament parameters, femur and tibia mass ratios, load applied to the hip fixture, and desired knee flexion.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">DEF_KNEE_FLEXION_MIN</span> <span class="mi">10</span>
+<span class="cp">#define</span> <span class="n">DEF_KNEE_FLEXION_MAX</span> <span class="mi">60</span>
+
+<span class="cp">#define</span> <span class="n">DEF_HIP_AXIAL_LOAD_MIN</span> <span class="mi">200</span>
+<span class="cp">#define</span> <span class="n">DEF_HIP_AXIAL_LOAD_MAX</span> <span class="mi">200</span>
+
+<span class="cp">#define</span> <span class="n">FEMUR_MASS_RATIO</span> <span class="mf">0.135</span>
+<span class="cp">#define</span> <span class="n">TIBIA_MASS_RATIO</span> <span class="mf">0.0465</span>
+
+<span class="cp">#include</span> <span class="s">&quot;Input/Ligament_Properties.any&quot;</span>
+</pre></div>
+</div>
+<p>Please note that this simulation is only a demo example.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="azdn17"><span class="brackets"><a class="fn-backref" href="#id1">AZDN17</a></span></dt>
+<dd><p>Andersen, M. S., de Zee, M., Damsgaard, M., Nolte, D., &amp; Rasmussen, J. Introduction to Force-Dependent Kinematics: Theory and Application
+to Mandible Modeling. J Biomech Eng. 139(9), 091001 (2017). doi: <a class="reference external" href="https://doi.org/10.1115/1.4037100">10.1115/1.4037100</a></p>
+</dd>
+<dt class="label" id="hcmt10"><span class="brackets"><a class="fn-backref" href="#id2">HCMT10</a></span></dt>
+<dd><p>Halloran JP, Clary CW, Maletsky LP, Taylor M, Petrella AJ, Rullkoetter PJ. Verification
+of predicted knee replacement kinematics during simulated gait in the Kansas knee simulator. J
+Biomech Eng. 132(8), 081010 (2010). doi:<a class="reference external" href="http://dx.doi.org/10.1115/1.4001678">10.1115/1.4001678</a></p>
+</dd>
+<dt class="label" id="bkhg91"><span class="brackets"><a class="fn-backref" href="#id3">BKHG91</a></span></dt>
+<dd><p>Blankevoort, L., Kuiper, J. H., Huiskes, R., and Grootenboer, H. J., “Articular Contact
+in a Three-Dimensional Model of the Knee,” J. Biomech., 24(11), pp. 1019–1031, (1991). doi:<a class="reference external" href="https://doi.org/10.1016/0021-9290(91)90019-J">10.1016/0021-9290(91)90019</a></p>
+</dd>
+<dt class="label" id="mvfk15"><span class="brackets"><a class="fn-backref" href="#id4">MVFK15</a></span></dt>
+<dd><p>Marra, M. A. et al. A subject-specific musculoskeletal modeling framework to predict in
+vivo mechanics of total knee arthroplasty. J. Biomech. Eng. 137, 020904 (2015). doi:<a class="reference external" href="http://dx.doi.org/10.1115/1.4029258">10.1115/1.4029258</a></p>
+</dd>
+<dt class="label" id="sbtp06"><span class="brackets"><a class="fn-backref" href="#id5">SbTP06</a></span></dt>
+<dd><p>Shelburne, K. B., Torry, M. R. &amp; Pandy, M. G. Contributions of muscles, ligaments, and the ground-reaction force to tibiofemoral joint loading
+during normal gait. J. Orthop. Res. 24, 1983–1990 (2006). doi:<a class="reference external" href="http://dx.doi.org/10.1002/jor.20255">10.1002/jor.20255</a></p>
+</dd>
+</dl>
+<img alt="../../_images/sphx_glr_plot_KneeSimulator_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_KneeSimulator_001.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Application Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#daily-activities-and-ergonomics">Daily activities and ergonomics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#orthopedics-and-rehab">Orthopedics and rehab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-examples">Other examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#sports">Sports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="plot_FacetJointModel.html" title="Facet Joint Model"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
