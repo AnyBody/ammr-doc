@@ -1,6 +1,6 @@
 ---
 name: Request development access
-about: Template for requesting development access to AMMR
+about: Create an issue to request access to the beta AMMR repository
 title: "[Request AMMR Access]"
 labels: request-ammr-access
 assignees: melund
