@@ -19,7 +19,10 @@ development version of the AMMR. Development takes place in a semi-closed
 repository. The repository is kept private to protect academic contributors who also
 often need to publish their models before release.
 
-However, access to the repository is given on request. Please submit a issue to this requesting access here:
+However, access to the repository is given on request. Please submit a issue to this repository requesting access:
 
-https://github.com/AnyBody/ammr-doc/issues
+1. Goto to https://github.com/AnyBody/ammr-doc/issues
 
+2. Create an issue to request acess. 
+
+![image](https://user-images.githubusercontent.com/1038978/79636339-334d0b80-8177-11ea-8e6f-e2e317f9b796.png)
