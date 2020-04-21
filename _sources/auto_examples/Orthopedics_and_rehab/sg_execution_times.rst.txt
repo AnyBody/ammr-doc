@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**00:00.526** total execution time for **auto_examples_Orthopedics_and_rehab** files:
+**00:00.493** total execution time for **auto_examples_Orthopedics_and_rehab** files:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_KneeSimulator.py` (``plot_KneeSimulator.py``)                                                         | 00:00.113 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_KneeSimulator.py` (``plot_KneeSimulator.py``)                                                         | 00:00.109 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_FacetJointModel.py` (``plot_FacetJointModel.py``)                                                     | 00:00.110 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_FacetJointModel.py` (``plot_FacetJointModel.py``)                                                     | 00:00.104 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_SpineFixationWithForceDependentKinematics.py` (``plot_SpineFixationWithForceDependentKinematics.py``) | 00:00.106 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_SpineFixationWithForceDependentKinematics.py` (``plot_SpineFixationWithForceDependentKinematics.py``) | 00:00.098 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_WheelChairRancho.py` (``plot_WheelChairRancho.py``)                                                   | 00:00.101 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_WheelChairRancho.py` (``plot_WheelChairRancho.py``)                                                   | 00:00.096 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_THA-KneeBendDemo.py` (``plot_THA-KneeBendDemo.py``)                                                   | 00:00.095 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Orthopedics_and_rehab_plot_THA-KneeBendDemo.py` (``plot_THA-KneeBendDemo.py``)                                                   | 00:00.086 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
