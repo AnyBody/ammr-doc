@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" /><meta content="noindex" name="robots" />
 
-    <title>Multi trial MoCap model &#8212; AMMR v2.3.0-beta Documentation</title>
+    <title>ADL Gait (beta) &#8212; AMMR v2.3.0-beta Documentation</title>
     <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -43,8 +43,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Knee Simulator Model" href="../Orthopedics_and_rehab/plot_KneeSimulator.html" />
-    <link rel="prev" title="ADL Gait (beta)" href="plot_ADL_Gait.html" /> 
+    <link rel="next" title="Multi trial MoCap model" href="plot_Plug-in-gait_MultiTrial_StandingRef.html" />
+    <link rel="prev" title="Simple GRF prediction model" href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -59,10 +59,10 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Orthopedics_and_rehab/plot_KneeSimulator.html" title="Knee Simulator Model"
+          <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ADL_Gait.html" title="ADL Gait (beta)"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
@@ -77,70 +77,123 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="sphx-glr-example-title section" id="multi-trial-mocap-model">
-<span id="sphx-glr-auto-examples-mocap-plot-plug-in-gait-multitrial-standingref-py"></span><h1>Multi trial MoCap model<a class="headerlink" href="#multi-trial-mocap-model" title="Permalink to this headline">¶</a></h1>
-<p>Example of a MoCap model structured for analyzing data from multiple subjects
-and trials. This special structure makes it much easier to work with large
-datasets with multiple subjects and trials. Hence, this model is the best
-starting point for analyzing bigger MoCap experiments.</p>
-<p>This example shows the <a class="reference internal" href="../../anymocap/index.html"><span class="doc">AnyMoCap framework</span></a> applied to a set
-of squatting trials.
-The subject specific scaling and marker optimization is done on a standing
-reference recording, and the values are then applied to a squatting trial.</p>
-<p>The data is provided by Maria Jönsson from KTH (Royal Institute of Technology
-School of Technology and Health) in Sweden.</p>
-<p>The files are structured so each trial has its own folder with a main file
+  <div class="sphx-glr-example-title section" id="adl-gait-beta">
+<span id="sphx-glr-auto-examples-mocap-plot-adl-gait-py"></span><h1>ADL Gait (beta)<a class="headerlink" href="#adl-gait-beta" title="Permalink to this headline">¶</a></h1>
+<p>Fullbody MoCap model with multple subjects and trials based on the
+“Rehazente Adult Walking Dataset” by <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">Schreiber and Moissenet (2019)</a>.</p>
+<p>The model has 50 subjects and 1145 trials. Subjects walk at five different
+speeds (conditions) C1: 0–0.4 m/s, C2: 0.4–0.8 m/s, C3: 0.8–1.2 m/s, C4: a
+self-selected spontaneous speed, C5, self-selected fast speed.</p>
+<p>The dataset uses 53 reflective markers and measured ground reaction forces. A
+standing reference trial is used to indentify a number parameters:</p>
+<ul class="simple">
+<li><p>Segment lengths</p></li>
+<li><p>Tibial torsion angle</p></li>
+<li><p>Varus-valgus angle</p></li>
+<li><p>Unconstrained marker positions</p></li>
+</ul>
+<p>These parameters are then loaded in the matching dynamic trials.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The model is a starting point for analysing the
+“<a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">Rehazenter adult walking dataset</a>”.
+The model has not been through <em>any</em> kind of validation or publication. It is likely that
+some results will not be correct without further adjustments.</p>
+</div>
+<p>Choises of model parameters are in some cases arbitrary as this model is a work in progress. If you come up
+with improvements to the model please share them back.</p>
+<p>The model was created by <a class="reference external" href="https://www.linkedin.com/in/enrico-de-pieri-13096a7a/">Enrico De Pieri</a>,
+<a class="reference external" href="https://vbn.aau.dk/en/persons/121260">Anderson de Souza Castelo Oliveira</a>, and Morten Enemark Lund.
+and <a class="reference external" href="https://www.linkedin.com/in/biomedical">Morten Enemark Lund</a>
+but has not yet been used for publication.</p>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>The full “Rehazenter adult walking dataset” is not distributed with the model. Schreiber and Moissenet (2009) has
+released the data under a Creative Commons license (CC BY 4.0).</p>
+<p>You must download the data sepearately from this model:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://figshare.com/articles/A_multimodal_dataset_of_human_gait_at_different_walking_speeds/7734767">Rehazenter adult walking dataset</a></p></li>
+</ul>
+<p>After downloading extract the data into the ´C3DFiles` sub folder.</p>
+</div>
+<div class="section" id="model-structure">
+<h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
+<p>The model files are structured so each trial has its own folder with a main file
 (<code class="docutils literal notranslate"><span class="pre">Main.any</span></code>) and a file with trial specific data (<code class="docutils literal notranslate"><span class="pre">TrialSpecificData.any</span></code>).
 The C3D files are placed together in a separate folder.</p>
 <p>The model is structured as outlined below:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Application/MocapExamples/Plug-in-gait_MultiTrial_StandingRef
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Application/MocapExamples/Rehazenter-adult-walking-model
  │   libdef.any
  │   C3DSettings.any
  │   BodyModelConfig.any
  │   ExtraDrivers.any
  │   ForcePlates.any
  │   MarkerProtocol.any
-<span class="hll"> │   LabSpecificData.any
-</span> │
- ├───c3d_files\
- |      S1_FlywheelSquat.c3d
- |      S1_StandingRef.c3d
- |      S2_FlywheelSquat.c3d
- |      S2_StandingRef.c3d
+ │   LabSpecificData.any
+ │
+ ├───C3DFiles\
+ |   │
+ |   ├───2014001\
+ |   |      2014001_C1_01.c3d
+ |   |      2014001_C1_02.c3d
+ |   |      ..
+ |   |      2014001_ST.c3d
+ │   |
+ |   └───2014002\
+ │          ..
  │
  ├───Output\
  │
  └───Subjects\
      │
-     ├───S1\
-<span class="hll">     │   |   SubjectSpecificData.any
-</span>     |   |
-     │   ├───S1_FlywheelSquat\
-<span class="hll">     |   |      Main.any
-</span><span class="hll">     |   |      TrialSpecificData.any
-</span>     |   |
-     │   └───S1_StandingRef\
+     ├───2014001\
+     │   |   SubjectSpecificData.any
+     |   |
+     │   ├───2014001_C1_01\
+     |   |      Main.any
+     |   |      TrialSpecificData.any
+     |   :
+     |   |
+     │   └───2014001_ST\
      |          Main.any
      |          TrialSpecificData.any
      │
-     └───S2\
+     └───2014002\
          |   SubjectSpecificData.any
          |
-         ├───S2_FlywheelSquat\
+         ├───2014002_C1_01\
          |      Main.any
          |      TrialSpecificData.any
-         |
-         └───S2_StandingRef\
-                Main.any
-                TrialSpecificData.any
+         :
 </pre></div>
 </div>
-<ul class="sphx-glr-horizontal">
-<li><img alt="../../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_001.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_001.png" />
-</li>
-<li><img alt="../../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_002.png" class="sphx-glr-multi-img" src="../../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_002.png" />
-</li>
-</ul>
+</div>
+<div class="section" id="batch-processing">
+<h2>Batch processing<a class="headerlink" href="#batch-processing" title="Permalink to this headline">¶</a></h2>
+<p>The model also contains a batch processing Python script for running all models autmatically. The script
+<code class="docutils literal notranslate"><span class="pre">batchprocess.py</span></code> is located in the top-level folder.</p>
+<p>To use the scirpt install the <a class="reference external" href="https://www.anaconda.com/distribution/#download-section">Anaconda Python Distribution</a>.</p>
+<p>The script uses the <a class="reference external" href="https://github.com/AnyBody-Research-Group/AnyPyTools">AnyPyTools</a> library for working with the
+AnyBody Model System (<a class="reference external" href="https://doi.org/10.21105/joss.01108">Lund 2019</a>). The library can be installed with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge anypytools
+</pre></div>
+</div>
+<p>Then run the following command in the model folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python batchprocess.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may need to modify the script to output the variables you are interested in. It may also
+be necessary to modify the number parrallel AnyBody instances to match the number of licenses you have.</p>
+</div>
+</div>
+<div class="section" id="bibliography">
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<p>Please cite the following paper when using the data.</p>
+<p>&gt; Schreiber, C., Moissenet, F. A multimodal dataset of human gait at different walking speeds established on injury-free adult participants. Sci Data 6, 111 (2019). <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">https://doi.org/10.1038/s41597-019-0124-4</a></p>
+<img alt="../../_images/sphx_glr_plot_ADL_Gait_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_ADL_Gait_001.png" />
+</div>
 </div>
 
 
@@ -217,10 +270,10 @@ The C3D files are placed together in a separate folder.</p>
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Orthopedics_and_rehab/plot_KneeSimulator.html" title="Knee Simulator Model"
+          <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ADL_Gait.html" title="ADL Gait (beta)"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
