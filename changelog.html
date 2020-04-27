@@ -113,8 +113,9 @@ would slide off the wrapping surface representing the thorax segment.</p></li>
 and <code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code>-&gt;:ref:<cite>AnyMuscleShortestPath</cite></p></li>
 <li><p>Changed the format used by the AnyMoCap models when transferring joint angles from the Marker tracking step to
 to inverse dynamics simulation.
-The joint-angles for the arms are now written in terms of rotation vectors instead of Euler angles. This fixes
-potential singularity problems.</p>
+The joint-angles for the arms and pelvis rotation are now written in terms of rotation vectors instead of Euler angles. This fixes
+potential singularity problems. The temporary joint angle files produced by the MoCap models
+have been renamed to indicate the data is no longer Euler angles.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This means that the data in these temporary files can not easily be interpreted from a clinical
