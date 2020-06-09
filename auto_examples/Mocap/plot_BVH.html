@@ -5,7 +5,8 @@
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" /><meta content="noindex" name="robots" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta content="noindex" name="robots" />
 
     <title>Inertial MoCap example &#8212; AMMR v2.3.0-beta Documentation</title>
     <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
@@ -66,7 +67,8 @@
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Inertial MoCap example</a></li> 
       </ul>
     </div>
     </div>
@@ -97,44 +99,19 @@ the size of the BVH stick figure. Hence the model contains no <em>Parameter inde
 The remaining parts of the model are equvilent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
 <div class="section" id="updating-old-ammr-2-2-3-bvh-based-models">
 <h2>Updating old (ammr &lt; 2.2.3) BVH based models<a class="headerlink" href="#updating-old-ammr-2-2-3-bvh-based-models" title="Permalink to this headline">¶</a></h2>
-<p>The safest approch is to reimplement your model based on the newest BVH example and AMMR v.2.2.3.</p>
+<p>The safest approch is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
 <p>However, it is also posible to change a few files in existing models to utilize the
-new BVH improvments in AnyBody v.7.2.3.</p>
-<ol class="arabic">
-<li><p><strong>Important</strong>: Make sure your use the new AMMR (&gt;=2.2.3) and new AnyBody Modeling System (&gt;=7.2.3).
+new BVH improvments in AnyBody v.7.3.</p>
+<ol class="arabic simple">
+<li><p><strong>Important</strong>: Make sure your use the new AMMR (&gt;=2.3) and new AnyBody Modeling System (&gt;=7.3).
 You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p></li>
-<li><p>Add following to the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to enable new features:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">MOCAP_FUTURE_BVH_READER_73</span>
-</pre></div>
-</div>
-<p>From future version 7.3 this will not be necessary</p>
-</li>
 </ol>
-<ol class="arabic" start="2">
-<li><p>Add the following  the follwing to <code class="docutils literal notranslate"><span class="pre">MarkerProtocol.any</span></code> file:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span><span class="p">.</span><span class="n">ModelSetup</span><span class="p">.</span><span class="n">BVHFileData</span><span class="p">.</span><span class="n">CompatibilityMode_72</span> <span class="o">=</span> <span class="kp">Off</span><span class="p">;</span>
-<span class="n">Main</span><span class="p">.</span><span class="n">ModelSetup</span><span class="p">.</span><span class="n">BVHFileData</span><span class="p">.</span><span class="n">MarkerNames</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s">&quot;HEAD&quot;</span><span class="p">,</span> <span class="s">&quot;HEAD_R&quot;</span><span class="p">,</span> <span class="s">&quot;HEAD_L&quot;</span><span class="p">,</span> <span class="s">&quot;SACR&quot;</span><span class="p">,</span> <span class="s">&quot;RHJC&quot;</span><span class="p">,</span> <span class="s">&quot;LHJC&quot;</span><span class="p">,</span> <span class="s">&quot;T1C7Jnt&quot;</span><span class="p">,</span> <span class="s">&quot;SPINE&quot;</span><span class="p">,</span>
-   <span class="s">&quot;L3&quot;</span><span class="p">,</span> <span class="s">&quot;CHEST&quot;</span><span class="p">,</span> <span class="s">&quot;RSJC&quot;</span><span class="p">,</span> <span class="s">&quot;REJC&quot;</span><span class="p">,</span> <span class="s">&quot;RALE&quot;</span><span class="p">,</span> <span class="s">&quot;RWRB&quot;</span><span class="p">,</span> <span class="s">&quot;RWJC&quot;</span><span class="p">,</span> <span class="s">&quot;RHT1&quot;</span><span class="p">,</span> <span class="s">&quot;RHT2&quot;</span><span class="p">,</span>
-   <span class="s">&quot;LSJC&quot;</span><span class="p">,</span> <span class="s">&quot;LEJC&quot;</span><span class="p">,</span> <span class="s">&quot;LALE&quot;</span><span class="p">,</span> <span class="s">&quot;LWRB&quot;</span><span class="p">,</span> <span class="s">&quot;LWJC&quot;</span><span class="p">,</span> <span class="s">&quot;LHT1&quot;</span><span class="p">,</span> <span class="s">&quot;LHT2&quot;</span><span class="p">,</span> <span class="s">&quot;RKJC&quot;</span><span class="p">,</span> <span class="s">&quot;RKNE&quot;</span><span class="p">,</span>
-   <span class="s">&quot;RAJC&quot;</span><span class="p">,</span> <span class="s">&quot;RTOE&quot;</span><span class="p">,</span> <span class="s">&quot;RTOE2&quot;</span><span class="p">,</span> <span class="s">&quot;LKJC&quot;</span><span class="p">,</span> <span class="s">&quot;LKNE&quot;</span><span class="p">,</span> <span class="s">&quot;LAJC&quot;</span><span class="p">,</span> <span class="s">&quot;LTOE&quot;</span><span class="p">,</span> <span class="s">&quot;LTOE2&quot;</span>
-<span class="p">};</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have adapted your protocol to anything else that the Xsens standard you need to use
-your own marker names. Also, the model may complain about deprecated members, which can just be deleted.</p>
-</div>
-</div></blockquote>
 <img alt="../../_images/sphx_glr_plot_BVH_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_BVH_001.png" />
 </div>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -215,14 +192,15 @@ your own marker names. Also, the model may complain about deprecated members, wh
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Inertial MoCap example</a></li> 
       </ul>
     </div>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, AnyBody Technology.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.0.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
