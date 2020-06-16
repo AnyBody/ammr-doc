@@ -2,7 +2,7 @@
 
     .. rst-class:: sphx-glr-example-title
 
-    .. _sphx_glr_auto_examples_Other_plot_PosturePredictureModel.py:
+    .. _sphx_glr_auto_examples_Other_plot_PosturePredictionModel.py:
 
 
 Posture Prediction Model
@@ -88,7 +88,7 @@ The following video shows an example of how you can manipulate the multiple widg
 
 
 
-.. image:: /auto_examples/Other/images/sphx_glr_plot_PosturePredictureModel_001.png
+.. image:: /auto_examples/Other/images/sphx_glr_plot_PosturePredictionModel_001.png
     :class: sphx-glr-single-img
 
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta content="noindex" name="robots" />
 
-    <title>Posture Prediction Model &#8212; AMMR v2.3.0-beta Documentation</title>
+    <title>Statistical Scaling Plugin &#8212; AMMR v2.3.0-beta Documentation</title>
     <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -44,8 +44,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Push Up" href="../Sports/plot_PushUp.html" />
-    <link rel="prev" title="Standin Model Scaling Display" href="plot_StandingModelScalingDisplay.html" /> 
+    <link rel="next" title="Standin Model Scaling Display" href="plot_StandingModelScalingDisplay.html" />
+    <link rel="prev" title="Jumping Jack" href="plot_JumpingJack.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -60,15 +60,15 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Sports/plot_PushUp.html" title="Push Up"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
+          <a href="plot_JumpingJack.html" title="Jumping Jack"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Posture Prediction Model</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Statistical Scaling Plugin</a></li> 
       </ul>
     </div>
     </div>
@@ -79,83 +79,61 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="sphx-glr-example-title section" id="posture-prediction-model">
-<span id="sphx-glr-auto-examples-other-plot-posturepredicturemodel-py"></span><h1>Posture Prediction Model<a class="headerlink" href="#posture-prediction-model" title="Permalink to this headline">¶</a></h1>
-<p>This is a model which can predict the posture as a consequence of applied loads in hands.
-It does this by minimizing joint torques and applying balance drivers which account for external
-applied loads.</p>
+  <div class="sphx-glr-example-title section" id="statistical-scaling-plugin">
+<span id="sphx-glr-auto-examples-other-plot-statisticalscalingplugin-py"></span><h1>Statistical Scaling Plugin<a class="headerlink" href="#statistical-scaling-plugin" title="Permalink to this headline">¶</a></h1>
+<p>Plugin for scaling subjects based on an anthropometric database.</p>
+<p>This example shows how to use the Statistical Scaling Plugin. The plugin is a
+small app which allows you to specify only few anatomical or functional
+parameters when scaling the model. The plugin calculates the remaining (free)
+anthropometric variables based on the ANSUR <a class="footnote-reference brackets" href="#f1" id="id1">1</a> anthropometrical database.</p>
 <div class="line-block">
 <div class="line"><strong>Main file:</strong></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">Application/Examples/StandingPosturePredictionWithLoad/StandingPosturePrediction.main.any</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Application/Examples/StandingModelScalingDisplay/StatisticalScalingPlugin/Main.any</span></code></div>
 </div>
+<p>The big advantage is that the correlation between variables are maintained, so
+the model will have realistic anthropometrical dimension as long as the
+contraints does not conflict (e.g. a very high stature with very short legs )</p>
 <div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_UpwardsForce.jpg" src="../../_images/StandingPosturePredictionModel_UpwardsForce.jpg" />
+<img alt="../../_images/StatisticalScalingPlugin1.png" src="../../_images/StatisticalScalingPlugin1.png" />
 </div>
-<dl class="simple">
-<dt>The model is driven by a combination of the following drivers:</dt><dd><ul class="simple">
-<li><p>Drivers which minimize the joint moments (arising from gravity and applied loads in hands) in elbow, shoulder, L4L5 and knee</p></li>
-<li><p>Driver which tries to keep the CoP inside the foot stance area.</p></li>
-<li><p>Feet maintain contact with the ground, but the position can be controlled by widgets</p></li>
-<li><p>Hands are linked to an object, of which positioning can be altered using widgets</p></li>
-</ul>
-</dd>
-</dl>
-<p>Two type of loads can be applied, either a fixed weight of the object and/or a force vector.</p>
-<dl class="simple">
-<dt>To run the model</dt><dd><ul class="simple">
-<li><p>Load the model</p></li>
-</ul>
-</dd>
-</dl>
-<div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_UponLoading.jpg" src="../../_images/StandingPosturePredictionModel_UponLoading.jpg" />
+<p>The algorithm used by the plugin is based on principal component analysis (PCA)
+of the correlations between variables in the anthropometric database. An optimization
+problem is then solved minimizing the normalized principal component subject to
+the anthropometical contraints given by the user. Please see:</p>
+<blockquote>
+<div><p>Rasmussen, J., Waagepetersen, R. P. &amp; Rasmussen, K. P.
+Projection of anthropometric correlation for virtual population modelling.
+International Journal of Human Factors Modelling and Simulation 6, 16–30 (2018)</p>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The plugin can not be used to generate subjects which are very
+different from the pubulation the ANSUR database. For example children.</p>
 </div>
-<p>The example model has a force vector applied on the object, currently the object has no weight (this is editable)</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyVar</span> <span class="n">ObjectWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">//weight of mass applied</span>
+<div class="section" id="use-the-plugin-in-other-models">
+<h2>Use the plugin in other models<a class="headerlink" href="#use-the-plugin-in-other-models" title="Permalink to this headline">¶</a></h2>
+<p>The plugin can be used in any model as long as it uses the
+<a class="reference internal" href="../../bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> scaling law. It is also necessary to speciy into
+which file the plugin should write the calculated antrhopometrics. This is done
+by setting <cite>#path ANSUR_PLUGIN_ANYMAN_FILE</cite> model file which contains the
+anthropometics.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_SCALING</span> <span class="x x-Options">_SCALING_XYZ_</span>
+
+<span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/Plugins/ANSUR_Plugin.any&quot;</span>
+<span class="cp">#path</span> <span class="n">ANSUR_PLUGIN_ANYMAN_FILE</span> <span class="s">&quot;anthropometics.any&quot;</span>
+
+<span class="c1">// Ensure that the generated anthropometrics are</span>
+<span class="cp">#include</span> <span class="s">&quot;anthropometics.any&quot;</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Try to drag (click and drag) one of the widgets in the ModelView (seen as small coordinate systems). For example the force vector widget:</p></li>
-</ul>
-<div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_WidgetMovement.jpg" src="../../_images/StandingPosturePredictionModel_WidgetMovement.jpg" />
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Gordon, C. C. et al. 1988 Anthropometric Survey of U.S. Army personnel: methods and summary statistics. (US Army Natick Research, Development and Engineering Center, 1989).</p>
+</dd>
+</dl>
+<img alt="../../_images/sphx_glr_plot_StatisticalScalingPlugin_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_StatisticalScalingPlugin_001.png" />
 </div>
-<ul class="simple">
-<li><p>When the widget is release the model will run the analysis. The Force vector is shown by the blue arrow, the weight of the object is represented by a red line, and the resulting reaction force is depicted by the green arrow.</p></li>
-</ul>
-<div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_PickupBox.jpg" src="../../_images/StandingPosturePredictionModel_PickupBox.jpg" />
-</div>
-<p>There are three remaining widgets, 2 controlling the starting position of the feet, and 1 controlling object’s location.</p>
-<div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_FootWidgets.jpg" src="../../_images/StandingPosturePredictionModel_FootWidgets.jpg" />
-</div>
-<p>The model can also be adjusted to apply the load to both hands or a single hand.
-Three combinations can be made using the define statements</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">LoadInRightHand</span> <span class="mi">1</span>
-<span class="cp">#define</span> <span class="n">LoadInLeftHand</span>  <span class="mi">1</span>
-</pre></div>
-</div>
-<p>In the following example a force vector is applied to only the right hand.</p>
-<div class="figure align-center">
-<img alt="../../_images/StandingPosturePredictionModel_Onearm.jpg" src="../../_images/StandingPosturePredictionModel_Onearm.jpg" />
-</div>
-<p>The following video shows an example of how you can manipulate the multiple widgets to achieve different predictive postures:</p>
-<video width="100%" style="display:block; margin: 0 auto;" controls autoplay loop>
-    <source src="../../_static/StandingPosturePrediction.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video><div class="line-block">
-<div class="line"><br /></div>
-</div>
-<p><strong>Please note the speed of the video was increased for viewing purposes.</strong></p>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-<img alt="../../_images/sphx_glr_plot_PosturePredictureModel_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_PosturePredictureModel_001.png" />
 </div>
 
 
@@ -233,22 +211,22 @@ Your browser does not support the video tag.
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Sports/plot_PushUp.html" title="Push Up"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
+          <a href="plot_JumpingJack.html" title="Jumping Jack"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Posture Prediction Model</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Statistical Scaling Plugin</a></li> 
       </ul>
     </div>
     </div>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

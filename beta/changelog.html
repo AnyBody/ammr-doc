@@ -108,7 +108,7 @@ Extensor_Digitorum_Digit2 to avoid wrapping surface collisions in certain hand p
 <li><p>Fixed a bug in FreePosture model, where input for the Left/Right arm drivers was switched places.</p></li>
 <li><p>Fixed missing visual indication of force plate forcecs for type 3 force plates in the MoCap models.</p></li>
 <li><p>Fixed a bug with in the built-in studies to
-<span class="xref std std-ref">evaluate arm joint strength</span>.
+<a class="reference internal" href="auto_examples/Validation/plot_EvaluateJointStrength.html#sphx-glr-auto-examples-validation-plot-evaluatejointstrength-py"><span class="std std-ref">evaluate arm joint strength</span></a>.
 The range of motion for the left arm elbow pronation/supination were not correct.</p></li>
 <li><p>Fixed a bug preventing the model from loading with with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> and both legs excluded.</p></li>
 <li><p>Fixed the load-time position of the head segment when neck scaling is changed.</p></li>
@@ -150,6 +150,8 @@ The model is configured to run all 50 subjects and 1145 trials in the data set. 
 download the actual data separately from
 <a class="reference external" href="https://figshare.com/articles/A_multimodal_dataset_of_human_gait_at_different_walking_speeds/7734767">FigShare</a>
 where it is hosted under a Creative Commons license.</p></li>
+<li><p>New GUI plugin which uses statistical information from the ANSUR database to set anthropometric values in AnyBody. A small example model
+is added <code class="docutils literal notranslate"><span class="pre">Examples/StatisticalScalingPlugin</span></code> which shows how to use the plugin.</p></li>
 <li><p>Added a new option to optimize “head width” / “head depth” / “neck length” / “Tibia torsion” /
 “hand breadth” as part of the <code class="docutils literal notranslate"><span class="pre">OptimizeAnthropometricsOnOff</span></code> class_template in the AnyMoCap framework.</p></li>
 <li><p>Added new rotation vector based measures in the interface folder for the arm degrees of freedom.
@@ -313,7 +315,7 @@ for more information.</p></li>
 to configure the Body Model (i.e. setting the <code class="docutils literal notranslate"><span class="pre">BM_*</span></code> parameters). Please see
 the <a class="reference external" href="https://anyscript.org/tools/body-model-configurator/">blog post</a>
 introducing the BM plugin.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_PosturePredictureModel.html#sphx-glr-auto-examples-other-plot-posturepredicturemodel-py"><span class="std std-ref">Posture prediction model</span></a>
+<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_PosturePredictionModel.html#sphx-glr-auto-examples-other-plot-posturepredictionmodel-py"><span class="std std-ref">Posture prediction model</span></a>
 based on standing posture. The model can predict posture as a consequence of applied loads in hands.
 It does this by minimizing joint torques and applying balance drivers which account for external applied loads.</p></li>
 <li><p>Added new standing model example which uses soft constraints and GRF
@@ -1089,7 +1091,7 @@ interested in this work.</p></li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

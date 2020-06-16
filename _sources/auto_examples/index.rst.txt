@@ -562,6 +562,26 @@ Other examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Plugin for scaling subjects based on an anthropometric database.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_StatisticalScalingPlugin_thumb.png
+
+     :ref:`sphx_glr_auto_examples_Other_plot_StatisticalScalingPlugin.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/Other/plot_StatisticalScalingPlugin
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This application shows all the scaling laws available.">
 
 .. only:: html
@@ -586,9 +606,9 @@ Other examples
 
 .. only:: html
 
- .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_PosturePredictureModel_thumb.png
+ .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_PosturePredictionModel_thumb.png
 
-     :ref:`sphx_glr_auto_examples_Other_plot_PosturePredictureModel.py`
+     :ref:`sphx_glr_auto_examples_Other_plot_PosturePredictionModel.py`
 
 .. raw:: html
 
@@ -598,7 +618,7 @@ Other examples
 .. toctree::
    :hidden:
 
-   /auto_examples/Other/plot_PosturePredictureModel
+   /auto_examples/Other/plot_PosturePredictionModel
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
