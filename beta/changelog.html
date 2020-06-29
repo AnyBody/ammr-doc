@@ -86,62 +86,8 @@
 <p>The default leg model has changed in AMMR 2.2 (from <a class="reference internal" href="body/leg_tlem_model.html#tlem1"><span class="std std-ref">TLEM1</span></a> to <a class="reference internal" href="body/leg_tlem2_model.html#tlem2"><span class="std std-ref">TLEM2</span></a>).
 To force the old leg model use: <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM1_</span></code></p>
 </div>
-<div class="section" id="ammr-beta">
-<h2>AMMR beta<a class="headerlink" href="#ammr-beta" title="Permalink to this headline">¶</a></h2>
-<p><strong>Fixed:</strong></p>
-<ul class="simple">
-<li><p>Added BM-Plugin v1.0.19</p></li>
-<li><p>Fixed problems with wrong output of SelectedOuput from the following variables: <code class="docutils literal notranslate"><span class="pre">HipAbductorMuscleForce</span></code>,
-<code class="docutils literal notranslate"><span class="pre">HipExtensorMuscleActivity</span></code>, <code class="docutils literal notranslate"><span class="pre">HipExtensorMuscleForce</span></code>, <code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleActivity</span></code> and <code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleForce</span></code>.</p></li>
-<li><p>Markers on BVH stick-figure model in the AnyMoCap framework now respects the
-setting: <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.BVHFileData.ModelDrawOnOff</span></code>.</p></li>
-<li><p>Fixed occasional kinematics problems with FullBody MoCap models during
-inverse dynamics simulation. This was fixed by changing the internal representation of the shoulder joint angles
-when transferring kinematics from marker tracking to the Inverse Dynamics simulations.</p></li>
-<li><p>Fixed bm_plugin error message “No Human Model” thrown when configuration file already exists.
-New bm_plugin version 1.0.18</p></li>
-<li><p>Corrected the location of via points of Flexor_Digitorum_Superficialis_Digit2 to avoid wrapping surface collisions
-in certain hand positions.</p></li>
-<li><p>Corrected the location of via points of Flexor_Digitorum_Superficialis_Digit3 and 4, Palmaris_Longus, Extensor_Carpi_Radialis_Brevis and
-Extensor_Digitorum_Digit2 to avoid wrapping surface collisions in certain hand positions.</p></li>
-<li><p>The via point representing the bicipital groove have been adjusted to ensure the Biceps Caput Longum wraps the humeral head correctly in</p></li>
-<li><p>Fixed a bug in FreePosture model, where input for the Left/Right arm drivers was switched places.</p></li>
-<li><p>Fixed missing visual indication of force plate forcecs for type 3 force plates in the MoCap models.</p></li>
-<li><p>Fixed a bug with in the built-in studies to
-<a class="reference internal" href="auto_examples/Validation/plot_EvaluateJointStrength.html#sphx-glr-auto-examples-validation-plot-evaluatejointstrength-py"><span class="std std-ref">evaluate arm joint strength</span></a>.
-The range of motion for the left arm elbow pronation/supination were not correct.</p></li>
-<li><p>Fixed a bug preventing the model from loading with with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> and both legs excluded.</p></li>
-<li><p>Fixed the load-time position of the head segment when neck scaling is changed.</p></li>
-</ul>
-<p><strong>Changed:</strong></p>
-<ul>
-<li><p>Split the SternoCleidomastoid muscle up into two muscle branches.
-This makes the two heads of the muscle able to work independent.</p></li>
-<li><p>Add extra muscle-via points on for the Latissimus dorsi on the Thorax segment.
-This change fixes wrapping problems where the Latissimus dorsi muscle strands
-would slide off the wrapping surface representing the thorax segment.</p></li>
-<li><p>Renamed all deprecated muscles class names. <code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span></code>-&gt;:ref:<cite>AnyMuscleViaPoint</cite>
-and <code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code>-&gt;:ref:<cite>AnyMuscleShortestPath</cite></p></li>
-<li><p>The AnyMoCap framework uses a more robust way of saving optimized parameters from the parameter optimization studies, when using AMS 7.3.</p></li>
-<li><p>Changed the format used by the AnyMoCap models when transferring joint angles from the Marker tracking step to
-to inverse dynamics simulation.
-The joint-angles for the arms and pelvis rotation are now written in terms of rotation vectors instead of Euler angles. This fixes
-potential singularity problems. The temporary joint angle files produced by the MoCap models
-have been renamed to indicate the data is no longer Euler angles.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This means that the data in these temporary files can not easily be interpreted from a clinical
-point of view. Create your own output files with physiological joint angles if you need to export that data.</p>
-</div>
-</li>
-<li><p>Rectus abdominis muscle has been split into eight branches to better represent geometry, than what is possible with one branch.
-The strength between the new branches has been split evenly. Additionally the PCSA has been increased from 2.6 cm^2 to 7.9 cm^2 according
-to McGill et al 1988, the 2.6 cm^2 originates from a study with elderly subjects, the McGill study used mid age subjects.</p></li>
-</ul>
-<p><strong>Removed:</strong></p>
-<ul class="simple">
-<li><p>Removed unused support files for muscle contact. <code class="docutils literal notranslate"><span class="pre">Tools/ModelUtilities/ContactMuscles/*</span></code></p></li>
-</ul>
+<div class="section" id="ammr-2-3-2020-07-02">
+<h2>AMMR 2.3 (2020-07-02)<a class="headerlink" href="#ammr-2-3-2020-07-02" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>Added a new Full Body <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a> MoCap
@@ -156,9 +102,9 @@ is added <code class="docutils literal notranslate"><span class="pre">Examples/S
 “hand breadth” as part of the <code class="docutils literal notranslate"><span class="pre">OptimizeAnthropometricsOnOff</span></code> class_template in the AnyMoCap framework.</p></li>
 <li><p>Added new rotation vector based measures in the interface folder for the arm degrees of freedom.
 These measures (<code class="docutils literal notranslate"><span class="pre">Interface.Right.RotVectorMeasures.*`</span></code>) for joint angles do not have a clinical
-meaning but are use full when exporting and importing joint angles.</p></li>
+meaning but are useful when exporting and importing joint angles.</p></li>
 <li><p>Added a new <a class="reference internal" href="bm_config/bm_statements.html#bm-calibration-type" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">option</span> <span class="pre">for</span> <span class="pre">setting</span> <span class="pre">custom</span> <span class="pre">muscle</span> <span class="pre">calibration</span></code></a>.
-I.e. a option which disables calibration so the user can add their own code.</p>
+I.e. an option which disables calibration so the user can add their own code.</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_CALIBRATION_TYPE</span> <span class="n">_CALIBRATION_TYPE_CUSTOM_</span>
 
 <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;\HumanModel.any&quot;</span>
@@ -177,6 +123,60 @@ I.e. a option which disables calibration so the user can add their own code.</p>
 <p>If you need to modify the calibration code, copy it to the application folder and include it from there.</p>
 </div>
 </li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul>
+<li><p>Split the SternoCleidomastoid muscle up into two muscle branches.
+This makes the two heads of the muscle able to work independent.</p></li>
+<li><p>Add extra muscle-via points on for the Latissimus dorsi on the Thorax segment.
+This change fixes wrapping problems where the Latissimus dorsi muscle strands
+would slide off the wrapping surface representing the thorax segment.</p></li>
+<li><p>Renamed all deprecated muscle class names. <code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span></code>-&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleViaPoint</span></code>
+and <code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code>-&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleShortestPath</span></code></p></li>
+<li><p>The AnyMoCap framework now uses a more robust way of saving optimized parameters from the parameter optimization studies, when using AMS 7.3.</p></li>
+<li><p>Changed the format used by the AnyMoCap models when transferring joint angles from the Marker tracking step to
+inverse dynamics simulation.
+The joint-angles for the arms and pelvis rotation are now written in terms of rotation vectors instead of Euler angles. This fixes
+potential singularity problems. The temporary joint angle files produced by the MoCap models
+have been renamed to indicate the data is no longer Euler angles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This means that the data in these temporary files can not easily be interpreted from a clinical
+point of view. Create your own output files with physiological joint angles if you need to export that data.</p>
+</div>
+</li>
+<li><p>The body model configuration plugin have been updated. This fixes a number of
+smaller issues and bugs.</p></li>
+<li><p>Rectus abdominis muscle has been split into eight branches to better represent geometry, than what is possible with one branch.
+The strength between the new branches has been split evenly. Additionally, the PCSA has been increased from 2.6 cm<sup>2</sup> to 7.9 cm<sub>2</sub> according
+to McGill et al 1988, the 2.6 cm<sup>2</sup> originates from a study with elderly subjects, the McGill study used mid age subjects.</p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Fixed problems with the following variables in the <code class="docutils literal notranslate"><span class="pre">SelectedOuput</span></code> folder: <code class="docutils literal notranslate"><span class="pre">HipAbductorMuscleForce</span></code>,
+<code class="docutils literal notranslate"><span class="pre">HipExtensorMuscleActivity</span></code>, <code class="docutils literal notranslate"><span class="pre">HipExtensorMuscleForce</span></code>, <code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleActivity</span></code> and <code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleForce</span></code>.</p></li>
+<li><p>Markers on BVH stick-figure model in the AnyMoCap framework now respects the
+setting: <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.BVHFileData.ModelDrawOnOff</span></code>.</p></li>
+<li><p>Fixed occasional kinematics problems with FullBody MoCap models during
+inverse dynamics simulation. This was fixed by changing the internal representation of the shoulder joint angles
+when transferring kinematics from marker tracking to the Inverse Dynamics simulations.</p></li>
+<li><p>Fixed a problem with the Body Model configurator plugin showing reporting: “No Human Model” when a configuration file already exists.</p></li>
+<li><p>Corrected the location of via points of Flexor_Digitorum_Superficialis_Digit2 to avoid wrapping surface collisions
+in certain hand positions.</p></li>
+<li><p>Corrected the location of via points of Flexor_Digitorum_Superficialis_Digit3 and 4, Palmaris_Longus, Extensor_Carpi_Radialis_Brevis and
+Extensor_Digitorum_Digit2 to avoid wrapping surface collisions in certain hand positions.</p></li>
+<li><p>The muscle via point representing the bicipital groove have been adjusted to ensure the Biceps Caput Longum wraps the humeral head correctly in</p></li>
+<li><p>Fixed a bug in the FreePosture model, where input for the Left/Right arm drivers was switched in some places.</p></li>
+<li><p>Fixed missing visual color indication of force plate forces for type 3 force plates in the MoCap models.</p></li>
+<li><p>Fixed a bug with in the built-in studies to
+<a class="reference internal" href="auto_examples/Validation/plot_EvaluateJointStrength.html#sphx-glr-auto-examples-validation-plot-evaluatejointstrength-py"><span class="std std-ref">evaluate arm joint strength</span></a>.
+The range of motion for the left arm elbow pronation/supination were not correct.</p></li>
+<li><p>Fixed a bug preventing the model from loading with with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> and both legs excluded.</p></li>
+<li><p>Fixed the load-time position of the head segment when neck scaling is changed.</p></li>
+</ul>
+<p><strong>Removed:</strong></p>
+<ul class="simple">
+<li><p>Removed unused support files for muscle contact. <code class="docutils literal notranslate"><span class="pre">Tools/ModelUtilities/ContactMuscles/*</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-2-3-2019-11-13">
