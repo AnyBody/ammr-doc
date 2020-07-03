@@ -23,6 +23,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
     
@@ -136,7 +137,7 @@ and <code class="docutils literal notranslate"><span class="pre">AnyShortestPath
 <li><p>The AnyMoCap framework now uses a more robust way of saving optimized parameters from the parameter optimization studies, when using AMS 7.3.</p></li>
 <li><p>Pectoralis Major has been split from 5 into 10 branches to better represent the real fiber direction of the muscle.
 Similarly the origins of the new Pectoralis Major muscles have been moved to align with real anatomy of the muscle.</p></li>
-<li><p>Changed the format used by the AnyMoCap models when transferring joint angles from the Marker tracking step to
+<li><p>Changed the format used by the AnyMoCap models when transferring joint angles from the mrker tracking step to
 inverse dynamics simulation.
 The joint-angles for the arms and pelvis rotation are now written in terms of rotation vectors instead of Euler angles. This fixes
 potential singularity problems. The temporary joint angle files produced by the MoCap models
@@ -150,8 +151,8 @@ point of view. Create your own output files with physiological joint angles if y
 <li><p>The body model configuration plugin have been updated. This fixes a number of
 smaller issues and bugs.</p></li>
 <li><p>Rectus abdominis muscle has been split into eight branches to better represent geometry, than what is possible with one branch.
-The strength between the new branches has been split evenly. Additionally, the PCSA has been increased from 2.6 cm<sup>2</sup> to 7.9 cm<sub>2</sub> according
-to McGill et al 1988, the 2.6 cm<sup>2</sup> originates from a study with elderly subjects, the McGill study used mid age subjects.</p></li>
+The strength between the new branches has been split evenly. Additionally, the PCSA has been increased from <span class="math notranslate nohighlight">\(2.6 cm^2\)</span> to <span class="math notranslate nohighlight">\(7.9 cm^2\)</span> according
+to McGill et al 1988, the <span class="math notranslate nohighlight">\(2.6 cm^2\)</span> originates from a study with elderly subjects, the McGill study used mid age subjects.</p></li>
 <li><p>Adjusted the origin of Serratus Anterior 1 so it aligns with the geometry of the rib on which it originates.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
