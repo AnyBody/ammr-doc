@@ -87,8 +87,9 @@
 <p>The default leg model has changed in AMMR 2.2 (from <a class="reference internal" href="body/leg_tlem_model.html#tlem1"><span class="std std-ref">TLEM1</span></a> to <a class="reference internal" href="body/leg_tlem2_model.html#tlem2"><span class="std std-ref">TLEM2</span></a>).
 To force the old leg model use: <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM1_</span></code></p>
 </div>
-<div class="section" id="ammr-2-3-2020-07-02">
-<h2>AMMR 2.3 (2020-07-02)<a class="headerlink" href="#ammr-2-3-2020-07-02" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ammr-2-3-2020-07-07">
+<h2>AMMR 2.3 (2020-07-07)<a class="headerlink" href="#ammr-2-3-2020-07-07" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3932764"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" /></a>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>Added a new Full Body <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a> MoCap
@@ -156,6 +157,9 @@ ensure the muscles maintain moment arm in a larger range of motion.</p></li>
 The strength between the new branches has been split evenly. Additionally, the PCSA has been increased from <span class="math notranslate nohighlight">\(2.6 cm^2\)</span> to <span class="math notranslate nohighlight">\(7.9 cm^2\)</span> according
 to McGill et al 1988, the <span class="math notranslate nohighlight">\(2.6 cm^2\)</span> originates from a study with elderly subjects, the McGill study used mid age subjects.</p></li>
 <li><p>Adjusted the origin of Serratus Anterior 1 so it aligns with the geometry of the rib on which it originates.</p></li>
+<li><p>The BVH virtual marker protocol have been adjusted. If older BVH models is used
+with AMMR 2.3 a warning/error is triggered to warn the user that the protocol needs
+to be updated.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
@@ -182,6 +186,7 @@ The range of motion for the left arm elbow pronation/supination were not correct
 <li><p>Fixed a problem with visualization in GRF prediction class which prevented GRF
 prediction to be used with moving base frames (i.e. treadmills).
 Thanks to Marco Antonio Marra (University of Twente) for fixing this.</p></li>
+<li><p>Fixed the marker node orientation for BVH (inertial based) MoCap models in the CreateMarkerDriver class template. Marker orientations are now handles identical to normal C3D based markers.```</p></li>
 </ul>
 <p><strong>Removed:</strong></p>
 <ul class="simple">
@@ -1100,7 +1105,7 @@ interested in this work.</p></li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
