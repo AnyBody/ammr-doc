@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:00.462** total execution time for **auto_examples_Other** files:
+**00:00.371** total execution time for **auto_examples_Other** files:
 
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_StatisticalScalingPlugin.py` (``plot_StatisticalScalingPlugin.py``)       | 00:00.163 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_StatisticalScalingPlugin.py` (``plot_StatisticalScalingPlugin.py``)       | 00:00.135 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_PosturePredictionModel.py` (``plot_PosturePredictionModel.py``)           | 00:00.105 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_PosturePredictionModel.py` (``plot_PosturePredictionModel.py``)           | 00:00.083 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_JumpingJack.py` (``plot_JumpingJack.py``)                                 | 00:00.097 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_JumpingJack.py` (``plot_JumpingJack.py``)                                 | 00:00.076 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_StandingModelScalingDisplay.py` (``plot_StandingModelScalingDisplay.py``) | 00:00.097 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_StandingModelScalingDisplay.py` (``plot_StandingModelScalingDisplay.py``) | 00:00.076 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+

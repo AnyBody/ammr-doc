@@ -128,6 +128,19 @@ I.e. an option which disables calibration so the user can add their own code.</p
 </ul>
 <p><strong>Changed:</strong></p>
 <ul>
+<li><p>All application examples use the new and fast experimental wrapping algorithmn
+in the AnyBody Modeling System 7.3.0. A notice is shown in the output window to
+remind the users that the algorithm is enabled. The experimental wrapping algorithm
+can be used in all models by setting:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">AnyBody73_ExperimentalShortestPathSolver</span> <span class="o">=</span> <span class="kp">On</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The release notes for the AnyBoy Modeling System has more information
+on the new and faster experimental wrapping algorithm.</p>
+</div>
+</li>
 <li><p>Split the SternoCleidomastoid muscle up into two muscle branches.
 This makes the two heads of the muscle able to work independent.</p></li>
 <li><p>Add extra muscle-via points on for the Latissimus dorsi on the Thorax segment.
