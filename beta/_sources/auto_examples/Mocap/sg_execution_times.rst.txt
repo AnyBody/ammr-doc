@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**00:00.846** total execution time for **auto_examples_Mocap** files:
+**00:00.957** total execution time for **auto_examples_Mocap** files:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py` (``plot_Plug-in-gait_MultiTrial_StandingRef.py``)               | 00:00.185 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py` (``plot_Plug-in-gait_MultiTrial_StandingRef.py``)               | 00:00.216 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_ADL_Gait.py` (``plot_ADL_Gait.py``)                                                                     | 00:00.146 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_ADL_Gait.py` (``plot_ADL_Gait.py``)                                                                     | 00:00.167 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py` (``plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py``) | 00:00.136 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py` (``plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py``) | 00:00.155 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_AnyMocapFeatures.py` (``plot_AnyMocapFeatures.py``)                                                     | 00:00.104 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_AnyMocapFeatures.py` (``plot_AnyMocapFeatures.py``)                                                     | 00:00.108 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_FullBody.py` (``plot_Plug-in-gait_Simple_FullBody.py``)                             | 00:00.094 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_FullBody.py` (``plot_Plug-in-gait_Simple_FullBody.py``)                             | 00:00.105 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_BVH.py` (``plot_BVH.py``)                                                                               | 00:00.091 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_LowerExtremity.py` (``plot_Plug-in-gait_Simple_LowerExtremity.py``)                 | 00:00.104 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_LowerExtremity.py` (``plot_Plug-in-gait_Simple_LowerExtremity.py``)                 | 00:00.090 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_BVH.py` (``plot_BVH.py``)                                                                               | 00:00.102 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
