@@ -91,9 +91,27 @@ To force the old leg model use: <code class="docutils literal notranslate"><span
 <h2>AMMR beta<a class="headerlink" href="#ammr-beta" title="Permalink to this headline">¶</a></h2>
 <p><strong>Added:</strong></p>
 <p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>Update the <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a>
+example. It now has muscles by default and the marker protocol has been adjust
+for a better shoulder posture. The batch processing script has also been
+updated to run without hickups.</p></li>
+</ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fixed mass calculation of the foot and talus segments in the <code class="docutils literal notranslate"><span class="pre">GaitVaughan</span></code> validation model.</p></li>
+<li><p>Fixed incorrect volume of Satorius muscle in TLEM1 and TLEM2. Thanks to Dr. Adam D. Sylvester
+from Johns Hopkins School of Medicine and Dr. Patricia A. Kramer from the University of
+Washington for pointing out the error. The error occurred since the satorius in the original <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0268003306001896">TLEM1 paper</a> was muscles
+in series with a pseudo insertion/origin on the femur. Both of these muscle
+elements were therefore listed with the full PSCA of Satorius. This detail was
+missed in the AnyBody TLEM1 and TLEM2 implementation where Satorius was
+implemented two parallel elements (TLEM1) and a single element (TLEM2). Hence
+the Satorius had twice the correct volume.</p></li>
+<li><p>Fixed a problem when the C3D files does not contain a
+<code class="docutils literal notranslate"><span class="pre">FORCE_PLATFORM.ZERO</span></code> variable. The C3D standard specifies that the variable
+should exist but since it not used in the models the reference could just be
+remvoed.</p></li>
 </ul>
 <p><strong>Removed:</strong></p>
 </div>
