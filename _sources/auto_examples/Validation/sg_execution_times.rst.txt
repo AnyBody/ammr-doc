@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**00:01.106** total execution time for **auto_examples_Validation** files:
+**00:01.125** total execution time for **auto_examples_Validation** files:
 
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py` (``plot_WilkeSpinePressure.py``)       | 00:00.613 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py` (``plot_WilkeSpinePressure.py``)       | 00:00.638 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_Validation_plot_AalborgMandible.py` (``plot_AalborgMandible.py``)             | 00:00.097 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_EvaluateJointStrength.py` (``plot_EvaluateJointStrength.py``) | 00:00.087 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_MandibleModel.py` (``plot_MandibleModel.py``)                 | 00:00.084 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_GaitVaughan.py` (``plot_GaitVaughan.py``)                     | 00:00.081 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_BergmannGH.py` (``plot_BergmannGH.py``)                       | 00:00.080 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_BergmannGH.py` (``plot_BergmannGH.py``)                       | 00:00.079 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_EvaluateMomentArms.py` (``plot_EvaluateMomentArms.py``)       | 00:00.079 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_EvaluateMomentArms.py` (``plot_EvaluateMomentArms.py``)       | 00:00.078 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_GaitVaughan.py` (``plot_GaitVaughan.py``)                     | 00:00.076 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Validation_plot_MandibleModel.py` (``plot_MandibleModel.py``)                 | 00:00.070 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Validation_plot_EvaluateJointStrength.py` (``plot_EvaluateJointStrength.py``) | 00:00.072 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------+-----------+--------+
