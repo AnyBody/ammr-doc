@@ -96,6 +96,10 @@ To force the old leg model use: <code class="docutils literal notranslate"><span
 example. It now has muscles by default and the marker protocol has been adjust
 for a better shoulder posture. The batch processing script has also been
 updated to run without hickups.</p></li>
+<li><p>Removed metabolic power (<code class="docutils literal notranslate"><span class="pre">Pmet</span></code>) contributions from artificial muscles defined
+as <code class="docutils literal notranslate"><span class="pre">AnyMuscle</span></code> derived classes. <code class="docutils literal notranslate"><span class="pre">Pmet</span></code> contributions from tools, such as GRF
+prediction, modelled as <code class="docutils literal notranslate"><span class="pre">AnyGeneralMuscles</span></code> will no longer be part of
+studies’ Pmet calculations.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
