@@ -94,7 +94,14 @@ To force the old leg model use: <code class="docutils literal notranslate"><span
 <li><p>New dedicated wrapping ellipsoid for Triceps at the glenohumeral head. This addition solves a few problems with overhead motion of the arms.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
-<ul class="simple">
+<ul>
+<li><p>All models now run with the new wrapping solver by default, which makes all models with wrapping
+muscles run much faster. Hence the <code class="docutils literal notranslate"><span class="pre">AnyBody73_ExperimentalShortestPathSolver</span></code> setting is
+deprecated and no effect. The old wrapping algorithm can be enabled (not recommended) by setting:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">ShortestPathSolverVersion</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 4 is default (new wrapping)</span>
+</pre></div>
+</div>
+</li>
 <li><p>Update the <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a>
 example. It now has muscles by default and the marker protocol has been adjust
 for a better shoulder posture. The batch processing script has also been
