@@ -95,15 +95,15 @@ deprecated and no effect. The old wrapping algorithm can be enabled (not recomme
 </div>
 </li>
 <li><p>New dedicated wrapping ellipsoid for Triceps at the glenohumeral head. This
-addition solves a few problems with overhead motion of the arms.</p></li>
+addition solves a few problems with overhead arm postures.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>Improvements to the <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a>
-example. The model now has muscles enabled and the marker protocol has been adjust
-for a better shoulder posture. Also, the batch processing script now runs without hickups.</p></li>
+<li><p>Improvements to the new <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a>
+example. The model now has muscles enabled and the marker protocol has been adjusted
+for a better shoulder posture. Also, the batch processing script now runs all trials without hickups.</p></li>
 <li><p>Improve the shoulder rhythm. Scapula position when using the shoulder rhythm
-is now determined by the Conoideum ligament driver. Similar to how scapula kinematic is
+is now determined by the Conoideum ligament driver, like how scapula kinematic is
 controlled with no shoulder rhythm. The rhythm is now controlled
 based on the <strong>plane of elevation</strong> and <strong>humerus elevation</strong> from the
 ‘ThoraxHumerus’ measures in the interface folder. This tracks the original
@@ -115,7 +115,28 @@ studies’ Pmet calculations.</p></li>
 <li><p>Adjusted the wrapping segments for deltoid posterior so it doesn’t affect the muscle in overhead arm posturess.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Fixed incorrect values in “SelectedOutput” for four reaction moments
+variables, which were wrong due an implementation change of
+<code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code>. The following variables in
+<code class="docutils literal notranslate"><span class="pre">SelectedOutput.Trunk.JointReactionForce</span></code> were incorrect.</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C2C1FlexionExtensionMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C2C1LateralMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C1C0AxialMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C1C0LateralMoment</span></code></p></li>
+</ul>
+<p>The values were wrong because they referered to the internal generalized force
+output of <code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code>.  (i.e. <code class="docutils literal notranslate"><span class="pre">Constraints.Reactions.Fout</span></code>). The
+values <code class="docutils literal notranslate"><span class="pre">Fout[3]</span></code> and <code class="docutils literal notranslate"><span class="pre">Fout[4]</span></code> can not be interpreted as real physical
+reaction moments because <code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code> is implemented using euler angles.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The use of generalized forces (<code class="docutils literal notranslate"><span class="pre">Fout</span></code>) is
+discouraged, and will be removed in the AMMR. Instead use the force and moment
+variables in <code class="docutils literal notranslate"><span class="pre">AnyRefFrameOutput</span></code> subfolder instead.</p>
+</div>
+</li>
 <li><p>Fixed incorrect volume of Satorius muscle in TLEM1 and TLEM2. Thanks to Dr. Adam D. Sylvester
 from Johns Hopkins School of Medicine and Dr. Patricia A. Kramer from the University of
 Washington for pointing out the error. The error occurred since the satorius in the original <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0268003306001896">TLEM1 paper</a> was muscles
@@ -124,12 +145,12 @@ elements were therefore listed with the full PSCA of Satorius. This detail was
 missed in the AnyBody TLEM1 and TLEM2 implementation where Satorius was
 implemented two parallel elements (TLEM1) and a single element (TLEM2). Hence
 the Satorius had twice the correct volume.</p></li>
-<li><p>Fixed a problem when C3D files does not contain a
+<li><p>Fixed a problem when C3D files are malformed and doesn’t contain a
 <code class="docutils literal notranslate"><span class="pre">FORCE_PLATFORM.ZERO</span></code> variable. The C3D standard specifies that the variable
 should exist but since it not used in the models the reference could just be
 remvoed.</p></li>
 <li><p>Fixed incorrect output of <code class="docutils literal notranslate"><span class="pre">ThoraxHumerus</span></code> interface measures. The mesure wasn’t used
-by other parts of the AMMR until now, so th bug should have affected anything.</p></li>
+by other parts of the AMMR until now so the bug had no consequences in previous AMMR versions.</p></li>
 <li><p>Fixed mass calculation of the foot and talus segments in the <code class="docutils literal notranslate"><span class="pre">GaitVaughan</span></code> validation model.</p></li>
 </ul>
 <p><strong>Removed:</strong></p>
