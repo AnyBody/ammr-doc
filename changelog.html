@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Changelog &#8212; AMMR v2.3.0 Documentation</title>
+    <title>Changelog &#8212; AMMR v2.3.1 Documentation</title>
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -65,7 +65,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.0 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -81,10 +81,86 @@
             
   <div class="section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>The default leg model has changed in AMMR 2.2 (from <a class="reference internal" href="body/leg_tlem_model.html#tlem1"><span class="std std-ref">TLEM1</span></a> to <a class="reference internal" href="body/leg_tlem2_model.html#tlem2"><span class="std std-ref">TLEM2</span></a>).
-To force the old leg model use: <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM1_</span></code></p>
+<div class="section" id="ammr-2-3-1-2020-09-30">
+<h2>AMMR 2.3.1 (2020-09-30)<a class="headerlink" href="#ammr-2-3-1-2020-09-30" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4023956"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" /></a>
+<p><strong>Added:</strong></p>
+<ul>
+<li><p>All models now run with the new wrapping solver by default, which makes all models with wrapping
+muscles run much faster. Hence the <code class="docutils literal notranslate"><span class="pre">AnyBody73_ExperimentalShortestPathSolver</span></code> setting is
+deprecated and no effect. The old wrapping algorithm can be enabled (not recommended) by setting:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">ShortestPathSolverVersion</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 4 is default (new wrapping)</span>
+</pre></div>
+</div>
+</li>
+<li><p>New dedicated wrapping ellipsoid for Triceps at the glenohumeral head. This
+addition solves a few problems with overhead arm postures.</p></li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>Improvements to the new <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a>
+example. The model now has muscles enabled and the marker protocol has been adjusted
+for a better shoulder posture. Also, the batch processing script now runs all trials without hickups.</p></li>
+<li><p>Improve the shoulder rhythm. Scapula position when using the shoulder rhythm
+is now determined by the Conoideum ligament driver, like how scapula kinematic is
+controlled with no shoulder rhythm. The rhythm is now controlled
+based on the <strong>plane of elevation</strong> and <strong>humerus elevation</strong> from the
+‘ThoraxHumerus’ measures in the interface folder. This tracks the original
+specification of the shoulder rhythm in “De Groot, J. H. <em>The shoulder: a kinematic and dynamic analysis of motion and loading.</em> (1998)”.
+One difference is still shoulder protraction/retraction where regression coefficients needed
+to be tweaked for the shoulder to work in the full range of motion. De Groot et al (1998) had
+only based their shoulder rhythm on arm position in front of the body (e.i. positive elevation planes).</p></li>
+<li><p>Removed metabolic power (<code class="docutils literal notranslate"><span class="pre">Pmet</span></code>) contributions from artificial muscles defined
+as <code class="docutils literal notranslate"><span class="pre">AnyMuscle</span></code> derived classes. <code class="docutils literal notranslate"><span class="pre">Pmet</span></code> contributions from tools, such as GRF
+prediction, modelled as <code class="docutils literal notranslate"><span class="pre">AnyGeneralMuscles</span></code> will no longer be part of
+studies’ Pmet calculations.</p></li>
+<li><p>Adjusted the wrapping segments for deltoid posterior so it doesn’t affect the muscle in overhead arm posturess.</p></li>
+<li><p>Teres minor now uses a torus for wrapping at the humeral head.</p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul>
+<li><p>Fixed incorrect values in “SelectedOutput” for four reaction moments
+variables, which were wrong due an implementation change of
+<code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code>. The following variables in
+<code class="docutils literal notranslate"><span class="pre">SelectedOutput.Trunk.JointReactionForce</span></code> were incorrect.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C2C1FlexionExtensionMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C2C1LateralMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C1C0AxialMoment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C1C0LateralMoment</span></code></p></li>
+</ul>
+<p>The values were wrong because they referered to the internal generalized force
+output of <code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code>.  (i.e. <code class="docutils literal notranslate"><span class="pre">Constraints.Reactions.Fout</span></code>). The
+values <code class="docutils literal notranslate"><span class="pre">Fout[3]</span></code> and <code class="docutils literal notranslate"><span class="pre">Fout[4]</span></code> can not be interpreted as real physical
+reaction moments because <code class="docutils literal notranslate"><span class="pre">AnyRevoluteJoint</span></code> is implemented using euler angles.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The use of generalized forces (<code class="docutils literal notranslate"><span class="pre">Fout</span></code>) is
+discouraged, and will be removed in the AMMR. Instead use the force and moment
+variables in <code class="docutils literal notranslate"><span class="pre">AnyRefFrameOutput</span></code> subfolder instead.</p>
+</div>
+</li>
+<li><p>Fixed incorrect volume of Satorius muscle in TLEM1 and TLEM2. Thanks to Dr. Adam D. Sylvester
+from Johns Hopkins School of Medicine and Dr. Patricia A. Kramer from the University of
+Washington for pointing out the error. The error occurred since the satorius in the original <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0268003306001896">TLEM1 paper</a> was muscles
+in series with a pseudo insertion/origin on the femur. Both of these muscle
+elements were therefore listed with the full PSCA of Satorius. This detail was
+missed in the AnyBody TLEM1 and TLEM2 implementation where Satorius was
+implemented two parallel elements (TLEM1) and a single element (TLEM2). Hence
+the Satorius had twice the correct volume.</p></li>
+<li><p>Fixed a problem when C3D files are malformed and doesn’t contain a
+<code class="docutils literal notranslate"><span class="pre">FORCE_PLATFORM.ZERO</span></code> variable. The C3D standard specifies that the variable
+should exist but since it not used in the models the reference could just be
+remvoed.</p></li>
+<li><p>Fixed an problem which prevented the ANSUR scaling plugin example from working correctly 7.3.0</p></li>
+<li><p>Fixed incorrect output of <code class="docutils literal notranslate"><span class="pre">ThoraxHumerus</span></code> interface measures. The mesure wasn’t used
+by other parts of the AMMR until now so the bug had no consequences in previous AMMR versions.</p></li>
+<li><p>Fixed mass calculation of the foot and talus segments in the <code class="docutils literal notranslate"><span class="pre">GaitVaughan</span></code> validation model.</p></li>
+</ul>
+<p><strong>Removed:</strong></p>
+<ul class="simple">
+<li><p>Removed unused <code class="docutils literal notranslate"><span class="pre">BM_TRUNK_CERVICAL_LIGAMENTS</span></code> switch which had no effect since there were no ligaments defined in the neck model.</p></li>
+</ul>
 </div>
 <div class="section" id="ammr-2-3-2020-07-07">
 <h2>AMMR 2.3 (2020-07-07)<a class="headerlink" href="#ammr-2-3-2020-07-07" title="Permalink to this headline">¶</a></h2>
@@ -1116,7 +1192,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.0 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
