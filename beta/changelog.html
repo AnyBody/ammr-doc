@@ -98,6 +98,9 @@ run the standing reference trials.</p></li>
 This has been fixed.</p></li>
 <li><p>Fixed a problem with the ADL gait MoCap example, where the batch processing
 script would report some trials as failed even if they successed correctly.</p></li>
+<li><p>Use correct times in BVH example S01-Trial2. The fixes the wrong <code class="docutils literal notranslate"><span class="pre">tStart</span></code>/<code class="docutils literal notranslate"><span class="pre">tEnd</span></code> in
+the BVH MoCap example S01-Trial2. The model stopped walking after a number of time steps
+because <code class="docutils literal notranslate"><span class="pre">tEnd</span></code> was set after the last data point in the BVH data file.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
