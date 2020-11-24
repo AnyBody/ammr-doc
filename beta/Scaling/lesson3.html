@@ -104,7 +104,7 @@ constructed by establishing a correspondence between available data and
 virtual measurements on the model. Let us consider the following example:</p>
 <p>Looking at the AnyMan.any we could notice that the head scaling depends only
 on a single parameter:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyVar</span> <span class="n">HeadHeight</span> <span class="o">=</span> <span class="mf">0.14</span><span class="o">*</span><span class="p">.</span><span class="n">BodyHeight</span><span class="o">/</span><span class="mf">1.8</span><span class="p">;</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyVar</span> <span class="n">HeadHeight</span> <span class="o">=</span> <span class="mf">0.14</span><span class="o">*</span><span class="p">.</span><span class="n">BodyHeight</span><span class="o">/</span><span class="mf">1.75</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>and in case of the <code class="docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code> it would also depend on the
@@ -251,7 +251,7 @@ by defining a common scaling factor and applying it to all dimensions like this:
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyVar</span> <span class="n">BodyMass</span> <span class="o">=</span> <span class="mi">75</span> <span class="p">;</span>
 <span class="kt">AnyVar</span> <span class="n">BodyHeight</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">/</span><span class="mi">100</span><span class="p">;</span>
 
-<span class="gr">#define STATURE_SCALE_FACTOR 1.733/1.8</span>
+<span class="gr">#define STATURE_SCALE_FACTOR 1.733/1.75</span>
 
 <span class="p">...</span>
 

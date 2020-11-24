@@ -85,6 +85,13 @@
 <div class="section" id="ammr-2-3-2-2020-11-25">
 <h2>AMMR 2.3.2 (2020-11-25)<a class="headerlink" href="#ammr-2-3-2-2020-11-25" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4023956"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" /></a>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>A bug was fixed in AMMR 2.3.2. This affect model scaling when using
+<a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">length-mass-fat</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">uniform</span></code></a>
+scaling with only Body Height as input.</p>
+<p><strong>The results will change as models now better match the requested body height.</strong></p>
+</div>
 <p><strong>Added:</strong></p>
 <ul class="simple">
 <li><p>Add scaling and maker position data from running all standing refrence trials to the
@@ -93,7 +100,19 @@ This means that all the dynamic trials will work even if the user forgets to fir
 run the standing reference trials.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
-<ul class="simple">
+<ul>
+<li><p>Fixes a bug with using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
+and only specifing the body height as input.</p>
+<p>The segment length were set to slightly smaller value, which caused the total
+body height to be less than what used as input.The bug occured since a body
+for the default segments length in AnyMan files was assumed to be 1.8 m
+instead of the correct 1.75.</p>
+<p>This fix alligns the results with <cite>__SCALING_XYZ_</cite> (used int the MoCap models)
+and <cite>_SCALING_STANDARD_</cite> (50% persentile) which were both correct.</p>
+</li>
+<li><p>Fixed a problem with foot support in the
+<a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a>
+lying flat on the back. The foot is now supported in the right direction.</p></li>
 <li><p>The Standing Model template was running in the mode where foot contraints were disabled.
 This has been fixed.</p></li>
 <li><p>Fixed a problem with the ADL gait MoCap example, where the batch processing
@@ -109,6 +128,10 @@ colision between the rectus femoris origin and the wrapping surface. Further,
 the surface is now used for both the straight and reflected head of the rectus
 femoris.</p></li>
 <li><p>Increase the discretization (StringMesh) on approx 30 muscles to improve wrapping.</p></li>
+<li><p>The results for the <a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Wilke Spine Pressure”</span></a>
+validation model has been updated due to the fix
+<a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
+results slightly.</p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-3-1-2020-09-30">
