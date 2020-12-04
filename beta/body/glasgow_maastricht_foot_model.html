@@ -84,9 +84,10 @@
 <h1>The Glasgow-Maastricht Foot Model (GM Foot)<a class="headerlink" href="#the-glasgow-maastricht-foot-model-gm-foot" title="Permalink to this headline">¶</a></h1>
 <div class="without-title admonition caution">
 <p class="admonition-title">Caution</p>
-<p><strong>Unreleased model:</strong> The FootGM model is not included in the public release.
+<p><strong>Unreleased model:</strong> The model is under development and not yet included in the managed model repository.
 An updated version of the Glasgow-Maastricht Foot model
-is under development, and used in various research projects.</p>
+is under development, and used in various research projects.
+See the <a class="reference external" href="https://github.com/AnyBody/GMFoot">GitHub repository</a> for more info.</p>
 <p>Access to the model can be given on request. so please
 <a class="reference external" href="mailto:sales&#37;&#52;&#48;anybodytech&#46;com">contact us</a> if you are interested in this work.</p>
 </div>
@@ -101,7 +102,12 @@ a validation process comparing it with other experimental and computational stud
 <video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
     <source src="../_static/footgm.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video><div class="section" id="usage">
+</video><div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Complex model:</strong> The GM Foot model is very complex and not recommended for
+beginners in musculoskeletal modeling and AnyBody.</p>
+</div>
+<div class="section" id="usage">
 <h2>Usage:<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>The model can added to the TLEM 2.0 leg model and requires AMMR 2.0.1 or later.</p>
 <p>To use the GM foot model the file GM_Foot_libdef.any must be included before the first Main statement.</p>
@@ -121,11 +127,6 @@ Your browser does not support the video tag.
 </div>
 <div class="section" id="model-structure">
 <h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
-<div class="without-title admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Complex model:</strong> The GM Foot model is very complex and not recommended for
-beginners in musculoskeletal modeling and AnyBody.</p>
-</div>
 <p>The foot model includes 26 rigid segments representing all the bones of
 the human foot (except the sesamoid bones), namely:</p>
 <blockquote>

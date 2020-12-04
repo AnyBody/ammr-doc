@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:00.725** total execution time for **auto_examples_Mocap** files:
+**00:00.723** total execution time for **auto_examples_Mocap** files:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py` (``plot_Plug-in-gait_MultiTrial_StandingRef.py``)               | 00:00.151 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py` (``plot_Plug-in-gait_MultiTrial_StandingRef.py``)               | 00:00.150 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Mocap_plot_ADL_Gait.py` (``plot_ADL_Gait.py``)                                                                     | 00:00.139 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Mocap_plot_ADL_Gait.py` (``plot_ADL_Gait.py``)                                                                     | 00:00.138 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py` (``plot_Plug-in-gait_Simple_FullBody_GRFPrediction.py``) | 00:00.126 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
