@@ -278,7 +278,7 @@ Motion Capture and gait analysis
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap mdoel using data from an inertial motional caputure suit. The model uses a B...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model using data from an inertial motional caputure suit. The model uses a B...">
 
 .. only:: html
 
@@ -378,7 +378,7 @@ Motion Capture and gait analysis
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multple subjects and trials based on the  &quot;Rehazente Adult Walking Da...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multiple subjects and trials based on the  &quot;Rehazenter Adult Walking ...">
 
 .. only:: html
 

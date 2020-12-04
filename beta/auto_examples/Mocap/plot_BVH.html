@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
 
-    <title>Inertial MoCap example &#8212; AMMR v2.3.1-beta Documentation</title>
+    <title>Inertial MoCap example &#8212; AMMR v2.3.2-beta Documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -66,7 +66,7 @@
         <li class="right" >
           <a href="../ADLs_and_ergonomics/plot_PosturePredictionModel.html" title="Posture Prediction Model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="../../index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Inertial MoCap example</a></li> 
@@ -82,7 +82,7 @@
             
   <div class="sphx-glr-example-title section" id="inertial-mocap-example">
 <span id="sphx-glr-auto-examples-mocap-plot-bvh-py"></span><h1>Inertial MoCap example<a class="headerlink" href="#inertial-mocap-example" title="Permalink to this headline">¶</a></h1>
-<p>Example of a MoCap mdoel using data from an inertial motional caputure suit.
+<p>Example of a MoCap model using data from an inertial motional caputure suit.
 The model uses a BVH file with data from an Xsens suit. The ground reaction
 forces are predicted using the GRF prediction algorithm.</p>
 <div class="without-title admonition seealso">
@@ -92,7 +92,7 @@ forces are predicted using the GRF prediction algorithm.</p>
 </div>
 <p>The model works using virtual markers placed on the BVH rig (i.e. the stick-figure
 model specified by the BVH file). The virtual markers are used to make the
-Musculoskeletal model moved similar to marker based mocap models.</p>
+Musculoskeletal model moved similar to marker based MoCap models.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 2.2.3: </span>The example was updated use the new features in v.7.2.3 of the AnyBody Modeling system.
 It fixes the problems which can occur in some BVH files due to gimbal locks and multiple
@@ -100,13 +100,13 @@ solutions (N*2*pi) to the euler angle equations. See the section below on how to
 old examples.</p>
 </div>
 <p>AnyBody automatically calculates the virtual markers positions, and the model is scaled directly from
-the size of the BVH stick figure. Hence the model contains no <em>Parameter indentifcation</em> step to find
-The remaining parts of the model are equvilent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
+the size of the BVH stick figure. Hence the model contains no <em>Parameter identification</em> step to find
+The remaining parts of the model are equivalent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
 <div class="section" id="updating-old-ammr-2-2-3-bvh-based-models">
 <h2>Updating old (ammr &lt; 2.2.3) BVH based models<a class="headerlink" href="#updating-old-ammr-2-2-3-bvh-based-models" title="Permalink to this headline">¶</a></h2>
-<p>The safest approch is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
-<p>However, it is also posible to change a few files in existing models to utilize the
-new BVH improvments in AnyBody v.7.3.</p>
+<p>The safest approach is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
+<p>However, it is also possible to change a few files in existing models to utilize the
+new BVH improvements in AnyBody v.7.3.</p>
 <ol class="arabic simple">
 <li><p><strong>Important</strong>: Make sure your use the new AMMR (&gt;=2.3) and new AnyBody Modeling System (&gt;=7.3).
 You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p></li>
@@ -195,7 +195,7 @@ You can copy your existing model folder into the new AMMR, or edit the local <co
         <li class="right" >
           <a href="../ADLs_and_ergonomics/plot_PosturePredictionModel.html" title="Posture Prediction Model"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="../../index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Inertial MoCap example</a></li> 

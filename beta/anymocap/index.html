@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
 
-    <title>The AnyMoCap Framework &#8212; AMMR v2.3.1-beta Documentation</title>
+    <title>The AnyMoCap Framework &#8212; AMMR v2.3.2-beta Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -66,7 +66,7 @@
         <li class="right" >
           <a href="../Scaling/lesson3.html" title="Lesson 3: Scaling using segmental scaling vectors"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">The AnyMoCap Framework</a></li> 
       </ul>
@@ -82,7 +82,7 @@
   <div class="section" id="the-anymocap-framework">
 <span id="anymocap"></span><h1>The AnyMoCap Framework<a class="headerlink" href="#the-anymocap-framework" title="Permalink to this headline">¶</a></h1>
 <p>The AnyMoCap model is an effort to create a simple and unified framework for
-doing any kind of mocap analysis with the <a class="reference external" href="http://anybodytech.com">AnyBody Modeling
+doing any kind of MoCap analysis with the <a class="reference external" href="http://anybodytech.com">AnyBody Modeling
 System</a>.</p>
 <a class="reference internal image-reference" href="../_images/anymocap.jpg"><img alt="../_images/anymocap.jpg" class="align-center" src="../_images/anymocap.jpg" style="width: 50%;" /></a>
 <div class="section" id="features">
@@ -101,13 +101,13 @@ System</a>.</p>
 <div class="section" id="over-determinate-kinematic-analysis">
 <h2>Over determinate kinematic analysis<a class="headerlink" href="#over-determinate-kinematic-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Musculoskeletal models that use Motion capture data are different from other
-types of models found the AMMR.  Most importantly, MOCAP models usually require
+types of models found the AMMR.  Most importantly, MoCap models usually require
 an over-determinate kinematic solver to handle the excess in information that
 the optical markers provide.</p>
 <p>The over-determinate solver in AMS works great, but
 it can only find velocities and accelerations numerically. That has some
 performance issue when running inverse dynamics analysis. To overcome the
-problem, the MOCAP analysis is split into a two-step procedure, as illustrated on
+problem, the MoCap analysis is split into a two-step procedure, as illustrated on
 the figure below:</p>
 <div class="figure align-default" id="id1">
 <span id="anymocap-flow-figure"></span><img alt="../_images/anymocap_flow.png" src="../_images/anymocap_flow.png" />
@@ -127,7 +127,7 @@ with the determinate kinematic solver in the inverse dynamic analysis.</p>
 <div class="section" id="anymocap-examples">
 <h2>AnyMoCap examples<a class="headerlink" href="#anymocap-examples" title="Permalink to this headline">¶</a></h2>
 <p>The following gallery shows different examples using the AnyMoCap framework.</p>
-<div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap mdoel using data from an inertial motional caputure suit. The model uses a B..."><div class="figure align-default" id="id2">
+<div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model using data from an inertial motional caputure suit. The model uses a B..."><div class="figure align-default" id="id2">
 <img alt="../_images/sphx_glr_plot_BVH_thumb.png" src="../_images/sphx_glr_plot_BVH_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_BVH.html#sphx-glr-auto-examples-mocap-plot-bvh-py"><span class="std std-ref">Inertial MoCap example</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
@@ -147,7 +147,7 @@ with the determinate kinematic solver in the inverse dynamic analysis.</p>
 <img alt="../_images/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png" src="../_images/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_LowerExtremity.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-lowerextremity-py"><span class="std std-ref">Simple Lower extremity model</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multple subjects and trials based on the  &quot;Rehazente Adult Walking Da..."><div class="figure align-default" id="id7">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multiple subjects and trials based on the  &quot;Rehazenter Adult Walking ..."><div class="figure align-default" id="id7">
 <img alt="../_images/sphx_glr_plot_ADL_Gait_thumb.png" src="../_images/sphx_glr_plot_ADL_Gait_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">ADL Gait (beta)</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
@@ -581,7 +581,7 @@ double of this value.</p></td>
         <li class="right" >
           <a href="../Scaling/lesson3.html" title="Lesson 3: Scaling using segmental scaling vectors"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">The AnyMoCap Framework</a></li> 
       </ul>

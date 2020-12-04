@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**00:00.683** total execution time for **auto_examples_Sports** files:
+**00:00.689** total execution time for **auto_examples_Sports** files:
 
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_BikeModel.py` (``plot_BikeModel.py``)             | 00:00.178 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_BikeModel.py` (``plot_BikeModel.py``)             | 00:00.182 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_CrossTrainer.py` (``plot_CrossTrainer.py``)       | 00:00.103 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_CrossTrainer.py` (``plot_CrossTrainer.py``)       | 00:00.107 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_BikeModel2D.py` (``plot_BikeModel2D.py``)         | 00:00.087 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_BikeModel2D.py` (``plot_BikeModel2D.py``)         | 00:00.093 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_LegPressMachine.py` (``plot_LegPressMachine.py``) | 00:00.083 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_LegPressMachine.py` (``plot_LegPressMachine.py``) | 00:00.084 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_BenchPress.py` (``plot_BenchPress.py``)           | 00:00.081 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_ArmCurl.py` (``plot_ArmCurl.py``)                 | 00:00.077 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_ArmCurl.py` (``plot_ArmCurl.py``)                 | 00:00.080 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_BenchPress.py` (``plot_BenchPress.py``)           | 00:00.075 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Sports_plot_PushUp.py` (``plot_PushUp.py``)                   | 00:00.071 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Sports_plot_PushUp.py` (``plot_PushUp.py``)                   | 00:00.070 | 0.0 MB |
 +--------------------------------------------------------------------------------------------+-----------+--------+

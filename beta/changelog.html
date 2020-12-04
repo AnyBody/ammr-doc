@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
 
-    <title>Changelog &#8212; AMMR v2.3.1-beta Documentation</title>
+    <title>Changelog &#8212; AMMR v2.3.2-beta Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -66,7 +66,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -82,23 +82,16 @@
             
   <div class="section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ammr-2-3-2-2020-11-25">
-<h2>AMMR 2.3.2 (2020-11-25)<a class="headerlink" href="#ammr-2-3-2-2020-11-25" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4023956"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" /></a>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
+<div class="section" id="ammr-2-3-2-2020-12-07">
+<h2>AMMR 2.3.2 (2020-12-07)<a class="headerlink" href="#ammr-2-3-2-2020-12-07" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4305559"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" /></a>
+<div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Model results can change!</strong></p>
 <p>A bug was fixed in AMMR 2.3.2. This affect model scaling when using
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">length-mass-fat</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">uniform</span></code></a>
-scaling with only Body Height as input.</p>
-<p><strong>The results will change as models now better match the requested body height.</strong></p>
+scaling with only Body Height as input. The results can change as models now better match the requested body height.</p>
 </div>
-<p><strong>Added:</strong></p>
-<ul class="simple">
-<li><p>Add scaling and maker position data from running all standing refrence trials to the
-<a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a> example.
-This means that all the dynamic trials will work even if the user forgets to first
-run the standing reference trials.</p></li>
-</ul>
 <p><strong>Fixed:</strong></p>
 <ul>
 <li><p>Fixed tibialis anterior/posterior variables in <code class="docutils literal notranslate"><span class="pre">SelectedOutput</span></code>
@@ -108,21 +101,19 @@ Hospital Basel for fixing this issue.</p></li>
 <li><p>Fixes a bug with using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
 and only specifing the body height as input.</p>
 <p>The segment length were set to slightly smaller value, which caused the total
-body height to be less than what used as input.The bug occured since a body
-for the default segments length in AnyMan files was assumed to be 1.8 m
+body height to be less than what used as input. The bug occurred since a body
+for the default segments length in some ‘AnyMan’ files was assumed to be 1.8 m
 instead of the correct 1.75.</p>
-<p>This fix alligns the results with <cite>__SCALING_XYZ_</cite> (used int the MoCap models)
-and <cite>_SCALING_STANDARD_</cite> (50% persentile) which were both correct.</p>
+<p>This fix aligns the results with <cite>_SCALING_XYZ_</cite> (used in the MoCap models)
+and <cite>_SCALING_STANDARD_</cite> (50 percentile) which were both correct.</p>
 </li>
 <li><p>Fixed a problem with foot support in the
 <a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a>
 lying flat on the back. The foot is now supported in the right direction.</p></li>
-<li><p>The Standing Model template was running in the mode where foot contraints were disabled.
-This has been fixed.</p></li>
+<li><p>Fixed a problem with the Standing Model template that set to use the mode where foot constraints were disabled.</p></li>
 <li><p>Fixed a problem with the ADL gait MoCap example, where the batch processing
-script would report some trials as failed even if they successed correctly.</p></li>
-<li><p>Use correct times in BVH example S01-Trial2. The fixes the wrong <code class="docutils literal notranslate"><span class="pre">tStart</span></code>/<code class="docutils literal notranslate"><span class="pre">tEnd</span></code> in
-the BVH MoCap example S01-Trial2. The model stopped walking after a number of time steps
+script would report some trials as failed even if they succeeded correctly.</p></li>
+<li><p>Use correct times in BVH example “S01-Trial2”. The model stopped walking after a number of time steps
 because <code class="docutils literal notranslate"><span class="pre">tEnd</span></code> was set after the last data point in the BVH data file.</p></li>
 <li><p>Fixed/improved the wrapping surface for subscapularis. The muscles can no longer slide off
 its wrapping surface in extreme range of motions.</p></li>
@@ -130,7 +121,7 @@ its wrapping surface in extreme range of motions.</p></li>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
 <li><p>The rectus femoris wrapping surface at the hip has been adjusted to prevent
-colision between the rectus femoris origin and the wrapping surface. Further,
+collision between the rectus femoris origin and the wrapping surface. Further,
 the surface is now used for both the straight and reflected head of the rectus
 femoris.</p></li>
 <li><p>Increase the discretization (StringMesh) on approx 30 muscles to improve wrapping.</p></li>
@@ -138,6 +129,11 @@ femoris.</p></li>
 validation model has been updated due to the fix
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
 results slightly.</p></li>
+<li><p>The new large scale <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">” MoCap model (ADL gait)”</span></a> has been updated
+so the results of running all standing reference trials have been added to the
+model. This means that all the dynamic trials will work even if the user
+forgets to first run the standing reference trials. It is still necessary to
+run the standing reference trials again if any changes are made to the model.</p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-3-1-2020-09-30">
@@ -1251,7 +1247,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.2-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
