@@ -1,0 +1,224 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
+
+    <title>Regensburg-Ulm Hand Model (RUHM) &#8212; AMMR v2.3.1-beta Documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The “Leg” Model" href="leg_model.html" />
+    <link rel="prev" title="Detailed hand model" href="detailed_hand_model.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_model.html" title="The “Leg” Model"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="detailed_hand_model.html" title="Detailed hand model"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Regensburg-Ulm Hand Model (RUHM)</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="regensburg-ulm-hand-model-ruhm">
+<h1>Regensburg-Ulm Hand Model (RUHM)<a class="headerlink" href="#regensburg-ulm-hand-model-ruhm" title="Permalink to this headline">¶</a></h1>
+<div class="without-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Unreleased model:</strong> The model is still under development and not included in the public model repository.
+The model is, however, used for various research projects and access to the development version
+can be given on request. See the <a class="reference external" href="https://github.com/AnyBody/GMFoot">GitHub repository</a> for more info.</p>
+</div>
+<p>The Regensburg-Ulm hand model (RUHM) is a detailed
+hand model which includes all extrinsic and intrinsic muscles using data
+from an anatomical study by Havelková et al. <a class="reference internal" href="#hazi20" id="id1"><span>[HAZI20]</span></a> (Charles University, Pilsen) of 16 cadaveric forearms.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/ruhm1.png"><img alt="../_images/ruhm1.png" src="../_images/ruhm1.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/ruhm2.png"><img alt="../_images/ruhm2.png" src="../_images/ruhm2.png" style="width: 70%;" /></a>
+</div>
+<p>The hand model consists of 22 hand segments
+(including ulna and radius) modelled as rigid bodies
+linked by physiological idealized joints giving a total of 31 DOF.
+For the sake of reduced complexity the carpal bones where treated as one rigid body.</p>
+<p>The Regensburg-Ulm-Hand-Model was developed by Lucas Engelhardt and Maximilian Melzner <a class="reference internal" href="#emhf20" id="id2"><span>[EMHF20]</span></a>
+from Ulm University and OTH Regensburg respectively.</p>
+<div class="without-title section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>If you need to cite the model use the following references:</p>
+<dl class="citation">
+<dt class="label" id="emhf20"><span class="brackets"><a class="fn-backref" href="#id2">EMHF20</a></span></dt>
+<dd><p>Engelhardt, L., Melzner, M., Havelkova, L. &amp; Fiala, P.
+A new musculoskeletal AnyBodyTM detailed hand model i. Journal of Computer Methods in Biomechanics and Biomedical Engineering (2020)
+doi: 10.1080/10255842.2020.1851367</p>
+</dd>
+<dt class="label" id="hazi20"><span class="brackets"><a class="fn-backref" href="#id1">HAZI20</a></span></dt>
+<dd><p>Havelková L., Zítka T., Fiala P., Rybarova M., Tupý R., Kalis V., &amp; Ismail K.M. (2020).
+Data for: Hand muscles attachments: A Geometrical model (Version pre pub sc v1.1) [Data set]. Zenodo.
+(<a class="reference external" href="http://doi.org/10.5281/zenodo.3954024">link</a>)</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="models.html">The Body Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thoracic_model.html">Thoracic spine model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shoulder_arm_model.html">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Regensburg-Ulm hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem_model.html">Twente Lower Extremity Model v.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">Twente Lower Extremity Model v.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glasgow_maastricht_foot_model.html">GM Foot model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aalborg_mandible.html">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_model.html" title="The “Leg” Model"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="detailed_hand_model.html" title="Detailed hand model"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Regensburg-Ulm Hand Model (RUHM)</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

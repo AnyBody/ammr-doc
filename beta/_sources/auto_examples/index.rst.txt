@@ -216,6 +216,26 @@ Daily activities and ergonomics
    :hidden:
 
    /auto_examples/ADLs_and_ergonomics/plot_FreePosture
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" This is a model which can predict the posture as a consequence of applied loads in hands.  It ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/ADLs_and_ergonomics/images/thumb/sphx_glr_plot_PosturePredictionModel_thumb.png
+
+     :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PosturePredictionModel.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/ADLs_and_ergonomics/plot_PosturePredictionModel
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
@@ -562,6 +582,46 @@ Other examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="The Index finger model is developed by John Z. Wu (NIOSH, Morgantwon, WV 26505, USA) in 2008.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_IndexFingerModel_thumb.png
+
+     :ref:`sphx_glr_auto_examples_Other_plot_IndexFingerModel.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/Other/plot_IndexFingerModel
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The Ulm Rat hindlimb model is a simlation of the internal forces and moments in the femur of a ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_UlmRatHindLimbModel_thumb.png
+
+     :ref:`sphx_glr_auto_examples_Other_plot_UlmRatHindLimbModel.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/Other/plot_UlmRatHindLimbModel
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Plugin for scaling subjects based on an anthropometric database.">
 
 .. only:: html
@@ -599,26 +659,6 @@ Other examples
    :hidden:
 
    /auto_examples/Other/plot_StandingModelScalingDisplay
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This is a model which can predict the posture as a consequence of applied loads in hands.  It d...">
-
-.. only:: html
-
- .. figure:: /auto_examples/Other/images/thumb/sphx_glr_plot_PosturePredictionModel_thumb.png
-
-     :ref:`sphx_glr_auto_examples_Other_plot_PosturePredictionModel.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/Other/plot_PosturePredictionModel
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
@@ -816,7 +856,7 @@ Validation
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="**Main file:** Application/Validation/GaitVaughan/GaitVaughan.Main.any">
+    <div class="sphx-glr-thumbcontainer" tooltip="  Application --&gt; Validation --&gt; GaitVaughan --&gt; GaitVaughan.Main.any">
 
 .. only:: html
 

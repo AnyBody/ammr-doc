@@ -46,7 +46,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Standin Model Scaling Display" href="plot_StandingModelScalingDisplay.html" />
-    <link rel="prev" title="Jumping Jack" href="plot_JumpingJack.html" /> 
+    <link rel="prev" title="Rat Hindlimb model" href="plot_UlmRatHindLimbModel.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -64,7 +64,7 @@
           <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_JumpingJack.html" title="Jumping Jack"
+          <a href="plot_UlmRatHindLimbModel.html" title="Rat Hindlimb model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
 
@@ -87,20 +87,21 @@
 small app which allows you to simply specify a few anatomical or functional
 parameters when scaling the model. The plugin calculates the remaining (free)
 anthropometric variables based on the ANSUR <a class="footnote-reference brackets" href="#f1" id="id1">1</a> anthropometrical database.</p>
-<div class="line-block">
-<div class="line"><strong>Main file:</strong></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">Application/Examples/StandingModelScalingDisplay/StatisticalScalingPlugin/Main.any</span></code></div>
+<div class="without-title admonition seealso">
+<p class="admonition-title">See also</p>
+<p><strong>Main file location in AMMR:</strong></p>
+<p><span class="menuselection">Application ‣ Examples ‣ StatisticalScalingPlugin ‣ Main.any</span></p>
 </div>
 <p>The big advantage is that the correlation between variables are maintained, so
 the model will have realistic anthropometrical dimension as long as the
-contraints does not conflict (e.g. a very high stature with very short legs )</p>
+constraints does not conflict (e.g. a very high stature with very short legs )</p>
 <div class="figure align-center">
 <img alt="../../_images/StatisticalScalingPlugin1.png" src="../../_images/StatisticalScalingPlugin1.png" />
 </div>
 <p>The algorithm used by the plugin is based on principal component analysis (PCA)
 of the correlations between variables in the anthropometric database. An optimization
 problem is then solved minimizing the normalized principal component subject to
-the anthropometical contraints given by the user. Please see:</p>
+the anthropometricall constraintsngiven by the user. Please see:</p>
 <blockquote>
 <div><p>Rasmussen, J., Waagepetersen, R. P. &amp; Rasmussen, K. P.
 Projection of anthropometric correlation for virtual population modelling.
@@ -109,22 +110,23 @@ International Journal of Human Factors Modelling and Simulation 6, 16–30 (2018
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The plugin can not be used to generate subjects which are very
-different from the pubulation the ANSUR database. For example children.</p>
+different from the population of the ANSUR database. For example children.</p>
 </div>
 <div class="section" id="use-the-plugin-in-other-models">
 <h2>Use the plugin in other models<a class="headerlink" href="#use-the-plugin-in-other-models" title="Permalink to this headline">¶</a></h2>
 <p>The plugin can be used in any model as long as it uses the
-<a class="reference internal" href="../../bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> scaling law. It is also necessary to speciy into
-which file the plugin should write the calculated antrhopometrics. This is done
+<a class="reference internal" href="../../bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> scaling law. It is also necessary to specify into
+which file the plugin should write the calculated anthropometrics. This is done
 by setting <cite>#path ANSUR_PLUGIN_ANYMAN_FILE</cite> model file which contains the
-anthropometics.</p>
+anthropometrics
+.</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_SCALING</span> <span class="x x-Options">_SCALING_XYZ_</span>
 
 <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/Plugins/ANSUR_Plugin.any&quot;</span>
-<span class="cp">#path</span> <span class="n">ANSUR_PLUGIN_ANYMAN_FILE</span> <span class="s">&quot;anthropometics.any&quot;</span>
+<span class="cp">#path</span> <span class="n">ANSUR_PLUGIN_ANYMAN_FILE</span> <span class="s">&quot;anthropometrics.any&quot;</span>
 
 <span class="c1">// Ensure that the generated anthropometrics are</span>
-<span class="cp">#include</span> <span class="s">&quot;anthropometics.any&quot;</span>
+<span class="cp">#include</span> <span class="s">&quot;anthropometrics.any&quot;</span>
 </pre></div>
 </div>
 <p class="rubric">Footnotes</p>
@@ -215,7 +217,7 @@ anthropometics.</p>
           <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_JumpingJack.html" title="Jumping Jack"
+          <a href="plot_UlmRatHindLimbModel.html" title="Rat Hindlimb model"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.1-beta Documentation</a> &#187;</li>
 
