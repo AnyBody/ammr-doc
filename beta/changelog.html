@@ -22,7 +22,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
@@ -117,6 +116,11 @@ script would report some trials as failed even if they succeeded correctly.</p><
 because <code class="docutils literal notranslate"><span class="pre">tEnd</span></code> was set after the last data point in the BVH data file.</p></li>
 <li><p>Fixed/improved the wrapping surface for subscapularis. The muscles can no longer slide off
 its wrapping surface in extreme range of motions.</p></li>
+<li><p>Fixed infraspinatus wrapping for high arm positions. This fix adds a torus for infraspinatus wrapping on the humerus.
+It fixes a problem where infraspinatus could slide of its wrapping surface in
+over head arm postures.</p></li>
+<li><p>Fix problem with latissimus dorsi wrapping in over-head arm postures. A new wrapping ellipsoid has been added at
+humeral head.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
@@ -1256,8 +1260,8 @@ interested in this work.</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2020, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+        &#169; Copyright 2021, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
