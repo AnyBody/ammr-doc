@@ -81,8 +81,8 @@
             
   <div class="section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ammr-2-3-2-2020-12-07">
-<h2>AMMR 2.3.2 (2020-12-07)<a class="headerlink" href="#ammr-2-3-2-2020-12-07" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ammr-2-3-2-2021-01-21">
+<h2>AMMR 2.3.2 (2021-01-21)<a class="headerlink" href="#ammr-2-3-2-2021-01-21" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4305559"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" /></a>
 <div class="without-title admonition warning">
 <p class="admonition-title">Warning</p>
@@ -93,38 +93,37 @@ scaling with only Body Height as input. The results can change as models now bet
 </div>
 <p><strong>Fixed:</strong></p>
 <ul>
-<li><p>Fixed tibialis anterior/posterior variables in <code class="docutils literal notranslate"><span class="pre">SelectedOutput</span></code>
-section. The force values were summerized as the <cite>max()</cite> of the muscle elements
+<li><p>Fixed tibialis anterior/posterior variables in the <code class="docutils literal notranslate"><span class="pre">SelectedOutput</span></code>
+section. The force values were represented as the <cite>max()</cite> of the muscle elements
 instead of the <cite>sum()</cite>. Thanks to Dr. Enrico De Pierie from University Children’s
 Hospital Basel for fixing this issue.</p></li>
-<li><p>Fixes a bug with using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
-and only specifing the body height as input.</p>
-<p>The segment length were set to slightly smaller value, which caused the total
-body height to be less than what used as input. The bug occurred since a body
-for the default segments length in some ‘AnyMan’ files was assumed to be 1.8 m
-instead of the correct 1.75.</p>
+<li><p>Fixed a bug when using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
+and only specifying the body height as input.</p>
+<p>The segment length were set to slightly smaller values, which caused the total
+body height to be less than what was used as input. The bug occurred since a standard body height
+in some ‘AnyMan’ files was assumed to be 1.8 m instead of the correct 1.75 m.</p>
 <p>This fix aligns the results with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> (used in the MoCap models)
 and <a class="reference internal" href="bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_STANDARD_</span></code></a> (50 percentile) which were both correct.</p>
 </li>
 <li><p>Fixed a problem with foot support in the
 <a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a>
 lying flat on the back. The foot is now supported in the right direction.</p></li>
-<li><p>Fixed a problem with the Standing Model template that set to use the mode where foot constraints were disabled.</p></li>
+<li><p>Fixed a problem with the Standing Model template which was using a alternate mode where foot constraints were disabled.</p></li>
 <li><p>Fixed a problem with the ADL gait MoCap example, where the batch processing
 script would report some trials as failed even if they succeeded correctly.</p></li>
-<li><p>Use correct times in BVH example “S01-Trial2”. The model stopped walking after a number of time steps
+<li><p>Use correct times in the Xsens example MoCap (trial “S01-Trial2”). The model stopped walking after a number of time steps
 because <code class="docutils literal notranslate"><span class="pre">tEnd</span></code> was set after the last data point in the BVH data file.</p></li>
-<li><p>Fixed/improved the wrapping surface for subscapularis. The muscles can no longer slide off
+<li><p>Fixed/improved the wrapping surface for the subscapularis muscles. The muscles can no longer slide off
 its wrapping surface in extreme range of motions.</p></li>
-<li><p>Fixed infraspinatus wrapping for high arm positions. This fix adds a torus for infraspinatus wrapping on the humerus.
+<li><p>Fixed infraspinatus muscle wrapping for high arm positions. This fix adds a torus for infraspinatus wrapping on the humerus.
 It fixes a problem where infraspinatus could slide of its wrapping surface in
-over head arm postures.</p></li>
-<li><p>Fix problem with latissimus dorsi wrapping in over-head arm postures. A new wrapping ellipsoid has been added at
+high arm postures.</p></li>
+<li><p>Fix problem with latissimus dorsi muscle wrapping in over-head arm postures. A new wrapping ellipsoid has been added at
 humeral head.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>The rectus femoris wrapping surface at the hip has been adjusted to prevent
+<li><p>The rectus femoris muscle wrapping surface at the hip has been adjusted to prevent
 collision between the rectus femoris origin and the wrapping surface. Further,
 the surface is now used for both the straight and reflected head of the rectus
 femoris.</p></li>
