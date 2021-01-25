@@ -5,26 +5,26 @@
 
 Computation times
 =================
-**00:00.938** total execution time for **auto_examples_ADLs_and_ergonomics** files:
+**00:00.986** total execution time for **auto_examples_ADLs_and_ergonomics** files:
 
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PosturePredictionModel.py` (``plot_PosturePredictionModel.py``) | 00:00.101 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_Squat.py` (``plot_Squat.py``)                                   | 00:00.110 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_WheelTurn.py` (``plot_WheelTurn.py``)                           | 00:00.098 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_WheelTurn.py` (``plot_WheelTurn.py``)                           | 00:00.104 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_Squat.py` (``plot_Squat.py``)                                   | 00:00.098 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PedalDemo.py` (``plot_PedalDemo.py``)                           | 00:00.101 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PosturePredictionModel.py` (``plot_PosturePredictionModel.py``) | 00:00.100 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_StandingModel.py` (``plot_StandingModel.py``)                   | 00:00.100 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PedalDemoConditional.py` (``plot_PedalDemoConditional.py``)     | 00:00.097 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_PedalDemo.py` (``plot_PedalDemo.py``)                           | 00:00.095 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_SeatedHuman.py` (``plot_SeatedHuman.py``)                       | 00:00.097 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_SeatedHuman.py` (``plot_SeatedHuman.py``)                       | 00:00.094 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_AirlinePassenger.py` (``plot_AirlinePassenger.py``)             | 00:00.096 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_StandingLift.py` (``plot_StandingLift.py``)                     | 00:00.092 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_FreePosture.py` (``plot_FreePosture.py``)                       | 00:00.090 | 0.0 MB |
-+-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_AirlinePassenger.py` (``plot_AirlinePassenger.py``)             | 00:00.089 | 0.0 MB |
-+-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_StandingLift.py` (``plot_StandingLift.py``)                     | 00:00.089 | 0.0 MB |
-+-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_ADLs_and_ergonomics_plot_StandingModel.py` (``plot_StandingModel.py``)                   | 00:00.087 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------+-----------+--------+
