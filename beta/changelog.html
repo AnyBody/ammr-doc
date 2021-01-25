@@ -87,39 +87,45 @@
 <div class="without-title admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Model results can change!</strong></p>
-<p>A bug was fixed in AMMR 2.3.2. This affect model scaling when using
-<a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">length-mass-fat</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">uniform</span></code></a>
-scaling with only Body Height as input. The results can change as models now better match the requested body height.</p>
+<p>A bug related to scaling was fixed in AMMR 2.3.2. This affect models using
+<a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">length-mass-fat</span></code></a> and
+<a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">uniform</span></code></a> when only Body Height is
+specified. The results can change as models more accurately match the
+requested body height.</p>
 </div>
 <p><strong>Fixed:</strong></p>
-<ul>
+<ul class="simple">
 <li><p>Fixed tibialis anterior/posterior variables in the <code class="docutils literal notranslate"><span class="pre">SelectedOutput</span></code>
 section. The force values were represented as the <cite>max()</cite> of the muscle elements
 instead of the <cite>sum()</cite>. Thanks to Dr. Enrico De Pierie from University Children’s
 Hospital Basel for fixing this issue.</p></li>
 <li><p>Fixed a bug when using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
-and only specifying the body height as input.</p>
-<p>The segment length were set to slightly smaller values, which caused the total
-body height to be less than what was used as input. The bug occurred since a standard body height
-in some ‘AnyMan’ files was assumed to be 1.8 m instead of the correct 1.75 m.</p>
-<p>This fix aligns the results with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> (used in the MoCap models)
-and <a class="reference internal" href="bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_STANDARD_</span></code></a> (50 percentile) which were both correct.</p>
-</li>
+and only specifying the body height as input. The segment length were set to
+slightly smaller values, which caused the total body height to be less than
+what was used as input. The bug occurred since a standard body height in some
+‘AnyMan’ files was assumed to be 1.8 m instead of the correct 1.75 m. This fix
+aligns the results with <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> (used in the MoCap
+models) and <a class="reference internal" href="bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_STANDARD_</span></code></a> (50 percentile) which were both
+correct.</p></li>
 <li><p>Fixed a problem with foot support in the
-<a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a>
-lying flat on the back. The foot is now supported in the right direction.</p></li>
-<li><p>Fixed a problem with the Standing Model template which was using a alternate mode where foot constraints were disabled.</p></li>
+<a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a> lying flat on
+the back. The foot is now supported in the right direction.</p></li>
+<li><p>Fixed a problem with the Standing Model template which was using an alternate
+mode where foot constraints were disabled.</p></li>
 <li><p>Fixed a problem with the ADL gait MoCap example, where the batch processing
 script would report some trials as failed even if they succeeded correctly.</p></li>
-<li><p>Use correct times in the Xsens example MoCap (trial “S01-Trial2”). The model stopped walking after a number of time steps
+<li><p>Use correct times in the Xsens example MoCap (trial “S01-Trial2”). The model
+stopped walking after a number of time steps
 because <code class="docutils literal notranslate"><span class="pre">tEnd</span></code> was set after the last data point in the BVH data file.</p></li>
-<li><p>Fixed/improved the wrapping surface for the subscapularis muscles. The muscles can no longer slide off
+<li><p>Fixed/improved the wrapping surface for the subscapularis muscles. The muscles
+can no longer slide off
 its wrapping surface in extreme range of motions.</p></li>
-<li><p>Fixed infraspinatus muscle wrapping for high arm positions. This fix adds a torus for infraspinatus wrapping on the humerus.
+<li><p>Fixed infraspinatus muscle wrapping for high arm positions. This fix adds a
+torus for infraspinatus wrapping on the humerus.
 It fixes a problem where infraspinatus could slide of its wrapping surface in
 high arm postures.</p></li>
-<li><p>Fix problem with latissimus dorsi muscle wrapping in over-head arm postures. A new wrapping ellipsoid has been added at
-humeral head.</p></li>
+<li><p>Fix problem with latissimus dorsi muscle wrapping in over-head arm postures. A
+new wrapping ellipsoid has been added at humeral head.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
@@ -132,15 +138,20 @@ femoris.</p></li>
 validation model has been updated due to the fix
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
 results slightly.</p></li>
-<li><p>The new large scale <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">” MoCap model (ADL gait)”</span></a> has been updated
-so the results of running all standing reference trials have been added to the
-model. This means that all the dynamic trials will work even if the user
-forgets to first run the standing reference trials. It is still necessary to
-run the standing reference trials again if any changes are made to the model.</p></li>
+<li><p>The new large scale <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">” MoCap model (ADL gait)”</span></a>
+has been updated so the results of running all standing reference trials have
+been added to the model. This means that all the dynamic trials will work even
+if the user forgets to first run the standing reference trials. It is still
+necessary to run the standing reference trials again if any changes are made to the model.</p></li>
 <li><p>The wrapping for Triceps Long Head has been updated at the humeral head
 to avoid the muscle wrapping incorrectly in over-head arm postures. This fix
 also adds a via point at the middle of the humerus to make wrapping solution
 more robust.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">VideoLookAtCamera</span></code> camera class template in the AMMR now saves videos as they look in
+the model view. I.e. if things are hidden in the model view they will not show up in the video.
+This feature is enabled by a new setting <span class="xref std std-ref">AnyCameraLookAt.RenderUserInterfaceViewState</span> in
+AnyBody version 7.3.2. The old behavior can be restored by setting <code class="docutils literal notranslate"><span class="pre">Camera.RenderUserInterfaceViewState=Off;</span></code>
+in the class template.</p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-3-1-2020-09-30">
