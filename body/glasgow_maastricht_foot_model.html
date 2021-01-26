@@ -1,0 +1,374 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Glasgow-Maastricht Foot Model (GM Foot) &#8212; AMMR v2.3.2 Documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+    
+     
+        <script src="../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Symmetric Mandible" href="symmetric_mandible_model.html" />
+    <link rel="prev" title="Twente Lower Extremity Model v.2.1" href="leg_tlem2_model.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="symmetric_mandible_model.html" title="The Symmetric Mandible"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_tlem2_model.html" title="Twente Lower Extremity Model v.2.1"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.2 Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The Glasgow-Maastricht Foot Model (GM Foot)</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-glasgow-maastricht-foot-model-gm-foot">
+<h1>The Glasgow-Maastricht Foot Model (GM Foot)<a class="headerlink" href="#the-glasgow-maastricht-foot-model-gm-foot" title="Permalink to this headline">¶</a></h1>
+<div class="without-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>External model:</strong> The model is under development and not yet included in the managed model repository.
+You can find this model in a public <a class="reference external" href="https://github.com/AnyBody/gm-foot">repository on GitHub</a>.</p>
+</div>
+<p>AnyBody Technology developed in corporation with Glasgow Caledonian
+University and University of Maastricht inside the <a class="reference external" href="http://www.afootprint.eu/">AFootprint EU project</a>
+a detailed multisegmental foot model, which is fully dynamic and
+contains 26 segments representing all the foot bones, muscles,
+ligaments, and joints connecting them.</p>
+<p>The model can be used with the
+anatomy and recorded motion from different subjects. It has been through
+a validation process comparing it with other experimental and computational studies.</p>
+<video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="../_static/footgm.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video><div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Complex model:</strong> The GM Foot model is very complex and not recommended for
+beginners in musculoskeletal modeling and AnyBody.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage:<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The model can added to the TLEM 2.0 leg model and requires AMMR 2.0.1 or later.</p>
+<p>To use the GM foot model the file GM_Foot_libdef.any must be included before the first Main statement.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// Include before the first Main</span>
+<span class="cp">#include</span> <span class="s">&quot;path/to/GM_Foot/GM_Foot_libdef.any&quot;</span>
+
+<span class="n">Main</span> <span class="o">=</span> <span class="p">{</span>
+
+   <span class="c1">// Add body model configuration. E.g.</span>
+   <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">OFF</span>
+   <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_LEFT</span> <span class="x x-Options">OFF</span>
+
+   <span class="c1">// Include the GM foot model. It handles inlcuding the human model as well.</span>
+   <span class="cp">#include</span> <span class="s">&quot;&lt;GM_FOOT_PATH&gt;/GM_foot_model.any&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="model-structure">
+<h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
+<p>The foot model includes 26 rigid segments representing all the bones of
+the human foot (except the sesamoid bones), namely:</p>
+<blockquote>
+<div><p>Talus, Calcaneus,
+Cuboid, Navicular, Medial cuneiform, Intermediate cuneiform, Lateral
+cuneiform, First metatarsal, Second metatarsal, Third metatarsal, Fourth
+metatarsal, Fifth metatarsal, First proximal phalange, First distal
+phalange, Second proximal phalange, Second medial phalange, Second
+distal phalange, Third proximal phalange, Third medial phalange, Third
+distal phalange, Fourth proximal phalange, Fourth medial phalange,
+Fourth distal phalange, Fifth proximal phalange, Fifth medial phalange,
+Fifth distal phalange.</p>
+</div></blockquote>
+<p>It includes the following joints and kinematic constraints:</p>
+<blockquote>
+<div><p><em>Talocrural</em>  <em>and Subtalar joint [20],</em>  <em>Talonavicular joint,</em>
+<em>Calcaneocuboid joint,</em>  <em>Medialcuneonavicular joint,</em>
+<em>Intermediate and lateral cuneonavicular joints,</em>  <em>First
+tarsometatarsal joint,</em>  <em>Second, third and fourth tarsometatarsal
+joints,</em>  <em>Fifth tarsometatarsal joint,</em>  <em>Metatarsophalangeal
+joints,</em>  <em>Interphalangeal joints,</em>  <em>Toe flexion rhythm,</em>
+<em>Intertarsal contact,</em>  <em>Metatarsal head contact,</em>  <em>Metatarsal
+transverse arch,</em>  <em>Tarsal transverse arch,</em>  <em>Longitudinal medial
+arch,</em>  <em>Longitudinal lateral arch.</em></p>
+</div></blockquote>
+<p>The GM-Foot model includes following additional ligaments:</p>
+<blockquote>
+<div><p>Collateral
+(tibiotalar anterior, tibiotalar posterior, tibiocalcaneal and
+tibionavicular, and the lateral group constituted of the talofibular
+anterior, talofibular posterior and talocalcaneal), Deep metatarsal
+transverse, Plantar fascia, Long plantar, Calcaneo cuboid plantar,
+Calcaneo navicular plantar, Tarsal ligaments ( Talonavicular dorsal,
+Bifurcate, Calcaneocuboid dorsal, Cuneonavicular dorsal 1, 2 and 3,
+Cuneonavicular plantar 1, 2 and 3, Intercuneiform dorsal 1 and 2,
+Cuneocuboid dorsal, Intercuneiform plantar 1 and 2, Cuneocuboid plantar,
+Cuboideonavicular dorsal, Cuboideonavicular plantar, Tarsometatarsal
+dorsal 1 to 8, Tarsometatarsal plantar 1 to 7, Intermetatarsal dorsal 1,
+2 and 3, Intermetatarsal plantar 1, 2 and 3) and Phalangeal ligaments</p>
+</div></blockquote>
+<p>The muscles of the foot can be divided into two groups: the intrinsic
+muscles and the extrinsic muscles. All the extrinsic muscles come from
+the TLEM leg model of the AMMR. The intrinsic foot musculature is
+constituted of the following muscles:</p>
+<blockquote>
+<div><p>abductor hallucis (ABDH), flexor hallucis brevis medialis (FHBM) and
+lateralis (FHBL), adductor hallucis transverse (ADHT) and oblique
+(ADHO), abductor digiti minimi (ABDM), flexor digiti minimi brevis
+(FDMB), dorsal interosseous (DI), plantar interosseous (PI), flexor
+digitorum brevis (FDB), lumbricals (LB), quadratus plantar medialis
+(QPM) and lateralis (QPL), extensor hallucis brevis (EHB), extensor
+digitorum brevis (EDB)</p>
+</div></blockquote>
+<p>More information can be found online:</p>
+<ul>
+<li><p><strong>The new Glasgow-Maastricht AnyBody foot model</strong> (Sylvain Carbes,
+20. September, 2012)</p>
+<p><a class="reference external" href="http://www.anybodytech.com/download.html?did=webcasts.files&amp;fname=AnyBodyWebcast-2012-09-20-FootModel.pdf&amp;t=1&amp;tt=wc">Presentation
+(2Mb)</a>,
+<a class="reference external" href="http://www.anybodytech.com/download.html?did=webcasts.files&amp;fname=AnyBodyWebcast-2012-09-20-FootModel.wmv&amp;t=1&amp;tt=wc">Playback
+(36Mb)</a></p>
+<p>This webcast presents a detailed AnyBody musculoskeletal foot model
+which includes all bones and joints of a real foot. Developed in
+collaboration with Glasgow Caledonian University and University
+Hospital Maastricht and referred to as the “Glasgow-Maastricht foot
+model” this model can be driven by motion capture data and uses
+combined force plate/pressure plate for accurate loading of the
+different joints. Built-in scaling allows the user to reproduce
+principal foot deformities such as flat foot and hallux valgus. The
+high detail level of the model and a built-in scaling protocol allows
+the user to investigate a wide range of parameters like joints motion
+and load, muscles activation, both in healthy and pathologic feet.</p>
+</li>
+</ul>
+<p>References used as input:</p>
+<ul class="simple">
+<li><p>Arampatzis, S. et al., Strain and elongation of the human
+gastrocnemius tendon and aponeurosis during maximal plantarflexion
+effort. J Biomech, 38(4):833–841, Apr 2005.</p></li>
+<li><p>Arndt, P. et al., Intrinsic foot kinematics measured in vivo during
+the stance phase of slow running. J Biomech, 40(12):2672–2678, 2007.</p></li>
+<li><p>Bandholm, T et al., Foot medial longitudinal-arch deformation during
+quiet standing and gait in subjects with medial tibial stress
+syndrome. J Foot Ankle Surg, 47(2):89–95, 2008.</p></li>
+<li><p>Bloome, DM et al., Variations on the insertion of the posterior
+tibialis tendon: a cadaveric study. Foot Ankle Int, 24(10):780–783,
+Oct 2003.</p></li>
+<li><p>Cailliet, R. The Illustrated Guide to Functional Anatomy of the
+Musculoskel. Sys.. D J R Evans, 2004.</p></li>
+<li><p>Cheung, JT et al., Three-dimensional finite element analysis of the
+foot during standing–a material sensitivity study. J Biomech,
+38(5):1045–1054, May 2005.</p></li>
+<li><p>Fernandes, R. et al., Tendons in the plantar aspect of the foot: Mr
+imaging and anatomic correlation in cadavers. Skeletal Radiol,
+36(2):115–122, Feb 2007.</p></li>
+<li><p>Funk, JR et al., Linear and quasi-linear viscoelastic
+characterization of ankle ligaments. J Biomech Eng, 122(1):15–22, Feb
+2000.</p></li>
+<li><p>Kanatli, U. et al., Evaluation of the transverse metatarsal arch of
+the foot with gait analysis. Arch Orthop Trauma Surg, 123(4):148–150,
+May 2003.</p></li>
+<li><p>Kitaoka, HB, et al., Mat properties of the plantar aponeurosis. Foot
+Ankle Int, 15(10):557–560, 1994.</p></li>
+<li><p>Kura, H, et al., Quant. analysis of the intrinsic muscles of the
+foot. Anat Rec, 249(1):143–151,1997.</p></li>
+<li><p>Lundberg and O.K. Svensson. The axes of rotation of the talocalcaneal
+and talonavicular joints. The Foot, 3(2):65 – 70, 1993.</p></li>
+<li><p>Lundgren, P, et al., Invasive in vivo measurement of rear-, mid- and
+forefoot motion during walking. Gait Posture, 28(1):93–100, Jul 2008.</p></li>
+<li><p>MacWilliams, BA, et al., Foot kinematics and kinetics during
+adolescent gait. Gait Posture, 17(3):214–224, Jun 2003.</p></li>
+<li><p>Mengiardi, B, et al., Spring ligament complex: Mr imaging-anatomic
+correlation and findings in asymptomatic subjects. Radiology,
+237(1):242–249, Oct 2005.</p></li>
+<li><p>Moraes do Carmo, CC, et al., Anatomical features of plantar
+aponeurosis: cadaveric study using ultrasonography and magnetic
+resonance imaging. Skeletal Radiol, 37(10):929–935, Oct 2008.</p></li>
+<li><p>Netter, FH. Atlas der Anatomie des Menschen 3nd. Georg Thieme Verlag
+Stuttgart, 2003.</p></li>
+<li><p>Pastore, D, et al., Complex distal insertions of the tibialis
+posterior tendon: detailed anatomic and mr imaging investigation in
+cadavers. Skeletal Radiol, 37(9):849–855, Sep 2008.</p></li>
+<li><p>Patil, V. et al. Morphometric dimensions of the calcaneonavicular
+(spring) ligament. Foot Ankle Int, 28(8):927–932, Aug 2007.</p></li>
+<li><p>Patil, V. et al., Anatomical variations in the insertion of the
+peroneus (fibularis) longus tendon. Foot Ankle Int, 28(11):1179–1182,
+Nov 2007.</p></li>
+<li><p>Picard, M et al., orthopedic physical assessment 3rd edition (1997)
+wb saunders company,philadelphia 805 pp. 49.95. Journal of Hand
+Therapy, 11(4):286 –, 1998.</p></li>
+<li><p>Siegler, S, et al., Mechanics of the ankle and subtalar joints
+revealed through a 3d quasi-static stress mri technique. J Biomech,
+38(3):567–578, Mar 2005.</p></li>
+<li><p>Sooriakumaran, P and Sivananthan, S. Why does man have a quadratus
+plantae? a review of its comparative anatomy. Croat Med J,
+46(1):30–35, Feb 2005.</p></li>
+<li><p>Stagni, R., et al., Ligament fibre recruitment at the human ankle
+joint complex in passive flexion. J Biomech, 37(12):1823–1829, Dec
+2004.</p></li>
+<li><p>Taniguchi, A. et al., Anat. of the spring ligament. J Bone Joint Surg
+Am, 85-A(11):2174–2178, 2003.</p></li>
+<li><p>Ward, KA and R. W. Soames. Morphology of the plantar calcaneocuboid
+ligaments. Foot Ankle Int, 18(10):649–653, Oct 1997.</p></li>
+<li><p>Winson, IC., et al., Metatarsal motion. The Foot, 5(2):91 – 94, 1995.</p></li>
+<li><p>Winson, IC., et al., Passive regulation of impact forces in heel-toe
+running. Clin Biomech (Bristol, Avon), 13(7):521–531, Oct 1998.</p></li>
+</ul>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../index.html" title="index">
+          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="models.html">The Body Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thoracic_model.html">Thoracic spine model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shoulder_arm_model.html">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regensburg_ulm_hand_model.html">Regensburg-Ulm hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem_model.html">Twente Lower Extremity Model v.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">Twente Lower Extremity Model v.2.1</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GM Foot model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aalborg_mandible.html">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="symmetric_mandible_model.html" title="The Symmetric Mandible"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="leg_tlem2_model.html" title="Twente Lower Extremity Model v.2.1"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../index.html">AMMR v2.3.2 Documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">The Glasgow-Maastricht Foot Model (GM Foot)</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
