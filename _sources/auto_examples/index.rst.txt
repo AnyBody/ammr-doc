@@ -338,26 +338,6 @@ Motion Capture and gait analysis
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example of lower body MoCap model using the Plug-in-Gait marker protocol, and walking on three ...">
-
-.. only:: html
-
- .. figure:: /auto_examples/Mocap/images/thumb/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png
-
-     :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_LowerExtremity.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/Mocap/plot_Plug-in-gait_Simple_LowerExtremity
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Example of full body MoCap model using the Plug-in-Gait marker protocol but without force plate...">
 
 .. only:: html
@@ -375,6 +355,26 @@ Motion Capture and gait analysis
    :hidden:
 
    /auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Example of lower body MoCap model using the Plug-in-Gait marker protocol, and walking on three ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/Mocap/images/thumb/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png
+
+     :ref:`sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_Simple_LowerExtremity.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/Mocap/plot_Plug-in-gait_Simple_LowerExtremity
 
 .. raw:: html
 

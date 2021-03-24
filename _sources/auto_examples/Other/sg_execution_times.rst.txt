@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**00:00.660** total execution time for **auto_examples_Other** files:
+**00:00.541** total execution time for **auto_examples_Other** files:
 
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_UlmRatHindLimbModel.py` (``plot_UlmRatHindLimbModel.py``)                 | 00:00.167 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_IndexFingerModel.py` (``plot_IndexFingerModel.py``)                       | 00:00.134 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_IndexFingerModel.py` (``plot_IndexFingerModel.py``)                       | 00:00.164 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_UlmRatHindLimbModel.py` (``plot_UlmRatHindLimbModel.py``)                 | 00:00.134 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_StatisticalScalingPlugin.py` (``plot_StatisticalScalingPlugin.py``)       | 00:00.157 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_StatisticalScalingPlugin.py` (``plot_StatisticalScalingPlugin.py``)       | 00:00.130 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_JumpingJack.py` (``plot_JumpingJack.py``)                                 | 00:00.088 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_JumpingJack.py` (``plot_JumpingJack.py``)                                 | 00:00.072 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_Other_plot_StandingModelScalingDisplay.py` (``plot_StandingModelScalingDisplay.py``) | 00:00.085 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_Other_plot_StandingModelScalingDisplay.py` (``plot_StandingModelScalingDisplay.py``) | 00:00.071 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
