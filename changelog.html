@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Changelog &#8212; AMMR v2.3.2 Documentation</title>
+    <title>Changelog &#8212; AMMR v2.3.3 Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -64,7 +64,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.2 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.3 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -80,6 +80,28 @@
             
   <div class="section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-2-3-3-2021-03-24">
+<h2>AMMR 2.3.3 (2021-03-24)<a class="headerlink" href="#ammr-2-3-3-2021-03-24" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4616316"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" /></a>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Fix a problem single leg models in AnyMocap. The file <code class="docutils literal notranslate"><span class="pre">OptimizeAnthropometricsOnOff.any</span></code>
+preventing models with only one leg included from being loaded.</p></li>
+<li><p>Removed two unused measures with references to thorax in the scapula and clavicula segments.
+The references could cause problems for ´AnyKinCOM` which uses search when including segments.
+Thanks to Handa Kensuke from Terrabyte helping fix this error.</p></li>
+<li><p>Fix bug in initial wrapping guess for Triceps LH muscle wrapping. This bug could cause the
+left side Triceps LH muscle to wrap incorrectly at shoulder.</p></li>
+<li><p>Fix calibration of of element 4 and 5 of the latissimus dorsi muscle. These two stands of
+the muscles where not included correctly in the calibration study when using the three element
+muscles model.</p></li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>The settings of the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_KneeSimulator.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"><span class="std std-ref">Knee Simulator example</span></a> has been
+tweaked to make it run faster.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-3-2-2021-01-21">
 <h2>AMMR 2.3.2 (2021-01-21)<a class="headerlink" href="#ammr-2-3-2-2021-01-21" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4305559"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" /></a>
@@ -148,7 +170,7 @@ also adds a via point at the middle of the humerus to make the wrapping solution
 more robust.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">VideoLookAtCamera</span></code> camera class template in the AMMR now saves videos as they look in
 the model view. I.e. if things are hidden in the model view they will not show up in the video.
-This feature is enabled by a new setting <span class="xref std std-ref">AnyCameraLookAt.RenderUserInterfaceViewState</span> in
+This feature is enabled by a new setting <code class="docutils literal notranslate"><span class="pre">AnyCameraLookAt.RenderUserInterfaceViewState</span></code> in
 AnyBody version 7.3.2. The old behavior can be restored by setting <code class="docutils literal notranslate"><span class="pre">Camera.RenderUserInterfaceViewState=Off;</span></code>
 in the class template.</p></li>
 </ul>
@@ -1264,7 +1286,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.2 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.3 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
