@@ -7,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Changelog &#8212; AMMR v2.3.3 Documentation</title>
+    <title>Changelog &#8212; AMMR v2.3.4 Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -64,7 +64,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.3 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -80,6 +80,38 @@
             
   <div class="section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-2-3-4-2021-07-05">
+<h2>AMMR 2.3.4 (2021-07-05)<a class="headerlink" href="#ammr-2-3-4-2021-07-05" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.5060249"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.5060249.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.5060249.svg" /></a>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Improved the intial guess for Latissimus dorsi wrapping, so the wrapping solutions becomes more
+robust to extreeme starting postions.</p></li>
+<li><p>Fix a problem with “&lt;ANYBODY_PATH_MODELUTILS&gt;Reactions” support files preventing models from loading correctly.
+Thanks to prof. Michael Skipper Andersen (Aalborg University) for finding this bug.</p></li>
+</ul>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Add small helper class template <code class="docutils literal notranslate"><span class="pre">DriverBasedOnLoadPos</span></code> which makes it easy to add constraints
+between two segments based on their load time positions.</p></li>
+<li><p>Refactor the way pelvis rotations are measured in the interface folder. This allows the user to
+override the default implicit global reference frame and thus output pelvis rotation relative to
+a custom frame.</p></li>
+<li><p>Add a new ability to evaluate trunk strength into the built-in studies for
+<a class="reference internal" href="auto_examples/Validation/plot_EvaluateJointStrength.html#sphx-glr-auto-examples-validation-plot-evaluatejointstrength-py"><span class="std std-ref">joint strength evaluation</span></a>.</p></li>
+</ul>
+<p><strong>Changed:</strong>
+* The <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL gait (MoCap model)”</span></a> has been updated with</p>
+<blockquote>
+<div><p>most recent improvements from our internal projects. The marker protocol has
+been adjust and a lot of small data problems (marker dropouts etc) has been
+fixed.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>The posture of the <span class="xref std std-ref">standing lift example</span>
+have been modified to make the example more robust.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-3-3-2021-03-24">
 <h2>AMMR 2.3.3 (2021-03-24)<a class="headerlink" href="#ammr-2-3-3-2021-03-24" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4616316"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" /></a>
@@ -1286,7 +1318,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.3 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 

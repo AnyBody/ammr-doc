@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
 
-    <title>Changelog &#8212; AMMR v2.3.3-beta Documentation</title>
+    <title>Changelog &#8212; AMMR v2.3.4-beta Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -23,6 +23,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
 
     
     
@@ -65,7 +66,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.3-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -79,16 +80,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="changelog">
+  <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ammr-2-3-4-2021-07-05">
 <h2>AMMR 2.3.4 (2021-07-05)<a class="headerlink" href="#ammr-2-3-4-2021-07-05" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.5060249"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.5060249.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.5060249.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.5060249"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.5060249.svg" /></a></p>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Improved the intial guess for Latissimus dorsi wrapping, so the wrapping solutions becomes more
 robust to extreeme starting postions.</p></li>
-<li><p>Fix a problem with “&lt;ANYBODY_PATH_MODELUTILS&gt;Reactions” support files preventing models from loading correctly.
+<li><p>Fix a problem with <code class="docutils literal notranslate"><span class="pre">&lt;ANYBODY_PATH_MODELUTILS&gt;/Reactions</span></code> support files preventing models from loading correctly.
 Thanks to prof. Michael Skipper Andersen (Aalborg University) for finding this bug.</p></li>
 </ul>
 <p><strong>Added:</strong></p>
@@ -101,21 +102,19 @@ a custom frame.</p></li>
 <li><p>Add a new ability to evaluate trunk strength into the built-in studies for
 <a class="reference internal" href="auto_examples/Validation/plot_EvaluateJointStrength.html#sphx-glr-auto-examples-validation-plot-evaluatejointstrength-py"><span class="std std-ref">joint strength evaluation</span></a>.</p></li>
 </ul>
-<p><strong>Changed:</strong>
-* The <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL gait (MoCap model)”</span></a> has been updated with</p>
-<blockquote>
-<div><p>most recent improvements from our internal projects. The marker protocol has
-been adjust and a lot of small data problems (marker dropouts etc) has been
-fixed.</p>
-</div></blockquote>
+<p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>The posture of the <span class="xref std std-ref">standing lift example</span>
+<li><p>The <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL gait (MoCap model)”</span></a> has been updated with
+most recent improvements from our internal projects. The marker protocol has
+been adjust and a lot of small data problems (marker dropouts etc) has been
+fixed.</p></li>
+<li><p>The posture of the <a class="reference internal" href="auto_examples/ADLs_and_ergonomics/plot_StandingLift.html#sphx-glr-auto-examples-adls-and-ergonomics-plot-standinglift-py"><span class="std std-ref">standing lift example</span></a>
 have been modified to make the example more robust.</p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-3-3-2021-03-24">
 <h2>AMMR 2.3.3 (2021-03-24)<a class="headerlink" href="#ammr-2-3-3-2021-03-24" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4616316"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.4616316"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4616316.svg" /></a></p>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fix a problem single leg models in AnyMocap. The file <code class="docutils literal notranslate"><span class="pre">OptimizeAnthropometricsOnOff.any</span></code>
@@ -137,7 +136,7 @@ tweaked to make it run faster.</p></li>
 </div>
 <div class="section" id="ammr-2-3-2-2021-01-21">
 <h2>AMMR 2.3.2 (2021-01-21)<a class="headerlink" href="#ammr-2-3-2-2021-01-21" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4305559"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.4305559"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4305559.svg" /></a></p>
 <div class="without-title admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Model results can change!</strong></p>
@@ -150,8 +149,8 @@ requested body height.</p>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fixed tibialis anterior/posterior variables in the <code class="docutils literal notranslate"><span class="pre">SelectedOutput</span></code>
-section. The force values were represented as the <cite>max()</cite> of the muscle elements
-instead of the <cite>sum()</cite>. Thanks to Dr. Enrico De Pierie from University Children’s
+section. The force values were represented as the <code class="docutils literal notranslate"><span class="pre">max()</span></code> of the muscle elements
+instead of the <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. Thanks to Dr. Enrico De Pierie from University Children’s
 Hospital Basel for fixing this issue.</p></li>
 <li><p>Fixed a bug when using <a class="reference internal" href="bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_LENGTHMASSFAT_</span></code></a> and  <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>
 and only specifying the body height as input. The segment lengths were set to
@@ -162,7 +161,7 @@ aligns the results with <a class="reference internal" href="bm_config/bm_constan
 models) and <a class="reference internal" href="bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_STANDARD_</span></code></a> (50 percentile) which were both
 correct.</p></li>
 <li><p>Fixed a problem with foot support in the
-<a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a> lying flat on
+{ref}<code class="docutils literal notranslate"><span class="pre">&quot;Spine</span> <span class="pre">Pressure</span> <span class="pre">validation</span> <span class="pre">model&quot;</span> <span class="pre">&lt;sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py&gt;</span></code> lying flat on
 the back. The foot is now supported in the right direction.</p></li>
 <li><p>Fixed a problem with the Standing Model template which was using an alternate
 mode where foot constraints were disabled.</p></li>
@@ -188,7 +187,7 @@ collision between the rectus femoris origin and the wrapping surface. Further,
 the surface is now used for both the straight and reflected head of the rectus
 femoris.</p></li>
 <li><p>Increase the discretization (StringMesh) on approx 30 muscles to improve wrapping.</p></li>
-<li><p>The results for the <a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Wilke Spine Pressure”</span></a>
+<li><p>The results for the {ref}<code class="docutils literal notranslate"><span class="pre">&quot;Wilke</span> <span class="pre">Spine</span> <span class="pre">Pressure&quot;</span> <span class="pre">&lt;sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py&gt;</span></code>
 validation model has been updated due to the fix for the
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
 results slightly.</p></li>
@@ -210,7 +209,7 @@ in the class template.</p></li>
 </div>
 <div class="section" id="ammr-2-3-1-2020-09-30">
 <h2>AMMR 2.3.1 (2020-09-30)<a class="headerlink" href="#ammr-2-3-1-2020-09-30" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4023956"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.4023956"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4023956.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>All models now run with the new wrapping solver by default, which makes all models with wrapping
@@ -291,7 +290,7 @@ by other parts of the AMMR until now so the bug had no consequences in previous 
 </div>
 <div class="section" id="ammr-2-3-2020-07-07">
 <h2>AMMR 2.3 (2020-07-07)<a class="headerlink" href="#ammr-2-3-2020-07-07" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3932764"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.3932764"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>Added a new Full Body <a class="reference internal" href="auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">“ADL Gait”</span></a> MoCap
@@ -305,7 +304,7 @@ is added <code class="docutils literal notranslate"><span class="pre">Examples/S
 <li><p>Added a new option to optimize “head width” / “head depth” / “neck length” / “Tibia torsion” /
 “hand breadth” as part of the <code class="docutils literal notranslate"><span class="pre">OptimizeAnthropometricsOnOff</span></code> class_template in the AnyMoCap framework.</p></li>
 <li><p>Added new rotation vector based measures in the interface folder for the arm degrees of freedom.
-These measures (<code class="docutils literal notranslate"><span class="pre">Interface.Right.RotVectorMeasures.*`</span></code>) for joint angles do not have a clinical
+These measures (<code class="docutils literal notranslate"><span class="pre">Interface.Right.RotVectorMeasures.*</span></code>) for joint angles do not have a clinical
 meaning but are useful when exporting and importing joint angles.</p></li>
 <li><p>Added a new <a class="reference internal" href="bm_config/bm_statements.html#bm-calibration-type" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">option</span> <span class="pre">for</span> <span class="pre">setting</span> <span class="pre">custom</span> <span class="pre">muscle</span> <span class="pre">calibration</span></code></a>.
 I.e. an option which disables calibration so the user can add their own code.</p>
@@ -419,7 +418,7 @@ to the wrong side of the humerus.</p></li>
 </div>
 <div class="section" id="ammr-2-2-3-2019-11-13">
 <h2>AMMR 2.2.3 (2019-11-13)<a class="headerlink" href="#ammr-2-2-3-2019-11-13" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3521521"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.3521521.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3521521.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.3521521"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3521521.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>Add new option to set the type of wrapping surface used in the deltoid wrapping implementation.
@@ -477,7 +476,7 @@ is handled specially and often used for static trials.</p></li>
 </div>
 <div class="section" id="ammr-2-2-2-2019-09-12">
 <h2>AMMR 2.2.2 (2019-09-12)<a class="headerlink" href="#ammr-2-2-2-2019-09-12" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.3404750"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.3404750.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3404750.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.3404750"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3404750.svg" /></a></p>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fixed kinematic problems when driving specific wrist-flexion/abduction values.
@@ -503,7 +502,7 @@ and reduces the max muscle activity.</p></li>
 </div>
 <div class="section" id="ammr-2-2-1-2019-05-13">
 <h2>AMMR 2.2.1 (2019-05-13)<a class="headerlink" href="#ammr-2-2-1-2019-05-13" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.2657673"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.2657673.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.2657673.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.2657673"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.2657673.svg" /></a></p>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fixed a symmetry issue with Scapula scaling in the <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> scaling law.</p></li>
@@ -538,7 +537,7 @@ functions from the Python’s <code class="docutils literal notranslate"><span c
 </div>
 <div class="section" id="ammr-2-2-2019-04-03">
 <h2>AMMR 2.2 (2019-04-03)<a class="headerlink" href="#ammr-2-2-2019-04-03" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.1481635"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.1481635.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1481635.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.1481635"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1481635.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul>
 <li><p>New implementation of the Deltoid muscles that uses wrapping instead of previous rake-segment/via-point approach.
@@ -668,7 +667,7 @@ New surfaces ensure that muscles don’t penetrate the pelvis bone at high hip f
 on original TLEM2 dataset. This improves range of motion in which Gluteus
 Medius and Gluteus Minimus has a moment arm for internal rotation of the hip.</p></li>
 <li><p>Kinematic rhythms for the shoulder, lumber-spine and cervical-spine can now be specified as soft contraints.
-The setting is controlled by setting the BM control statement <cite>BM_XXX RHYTHM</cite> to <a class="reference internal" href="bm_config/bm_constants.html#rhythm-soft" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_RHYTHM_SOFT_</span></code></a>.
+The setting is controlled by setting the BM control statement <code class="docutils literal notranslate"><span class="pre">BM_XXX</span> <span class="pre">RHYTHM</span></code> to <a class="reference internal" href="bm_config/bm_constants.html#rhythm-soft" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_RHYTHM_SOFT_</span></code></a>.
 For example:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_SHOULDER_RHYTHM</span> <span class="n">_RHYTHM_SOFT_</span>
 </pre></div>
@@ -764,7 +763,7 @@ rotation equally between SC and AC joint.</p></li>
 </div>
 <div class="section" id="ammr-2-1-1-2018-06-12">
 <h2>AMMR 2.1.1 (2018-06-12)<a class="headerlink" href="#ammr-2-1-1-2018-06-12" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.1287730"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.1287730.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1287730.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.1287730"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1287730.svg" /></a></p>
 <p>The AMMR 2.1.1 version is a minor release of the AMMR with smaller changes and bugfixes.
 The AnyBody Managed Model Repository now has a DOI (<a class="reference external" href="https://doi.org/10.5281/zenodo.1250764">10.5281/zenodo.1250764</a>).
 This is handled by <a class="reference external" href="https://zenodo.org/">Zenodo.org</a> (The European Open Science platform hosted at CERN).</p>
@@ -779,7 +778,7 @@ easily compensate for errors in the c3d file (i.e. swapped channel and wrong sig
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>Enhanced the <a class="reference internal" href="auto_examples/Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-multitrial-standingref-py"><span class="std std-ref">multi-trial MoCap example</span></a> for best practice for
+<li><p>Enhanced the {ref}<code class="docutils literal notranslate"><span class="pre">multi-trial</span> <span class="pre">MoCap</span> <span class="pre">example</span> <span class="pre">&lt;sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py&gt;</span></code> for best practice for
 MoCap trials with multiple subjects and trials. The example now shows how to deal with multiple
 subjects and storing the c3d files in a separate folder.</p></li>
 </ul>
@@ -810,7 +809,7 @@ are created manually in MATLAB.</p></li>
 </div>
 <div class="section" id="ammr-2-1-0-2018-03-22">
 <h2>AMMR 2.1.0 (2018-03-22)<a class="headerlink" href="#ammr-2-1-0-2018-03-22" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.1251276"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.1251276.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1251276.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.1251276"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1251276.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul class="simple">
 <li><p>New <a class="reference internal" href="auto_examples/ADLs_and_ergonomics/plot_Squat.html#sphx-glr-auto-examples-adls-and-ergonomics-plot-squat-py"><span class="std std-ref">squat example</span></a>
@@ -964,25 +963,24 @@ the solution within the given number of iterations.</p></li>
 </div>
 <div class="section" id="ammr-2-0-0-2017-11-29">
 <h2>AMMR 2.0.0 (2017-11-29)<a class="headerlink" href="#ammr-2-0-0-2017-11-29" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.1251274"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.1251274.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1251274.svg" /></a>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.1251274"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.1251274.svg" /></a></p>
 <div class="section" id="major-changes">
 <h3>Major changes:<a class="headerlink" href="#major-changes" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="new-lower-extremity-model-tlem2-1">
 <h4>New lower extremity model (TLEM2.1)<a class="headerlink" href="#new-lower-extremity-model-tlem2-1" title="Permalink to this headline">¶</a></h4>
-<ul>
+<ul class="simple">
 <li><p>The <a class="reference external" href="http://dx.doi.org/10.1016/j.jbiomech.2014.12.034">Twente Lower Extremity Model version 2.0 dataset</a>, developed in the
 TLEM<em>safe</em> EU project was implemented in the AMMR repository. The model is not
-the default model, but can be enabled with the <a class="reference internal" href="bm_config/index.html#bm-config"><span class="std std-ref">BM parameter</span></a> <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM2_</span></code></p></li>
+the default model, but can be enabled with the {ref}<code class="docutils literal notranslate"><span class="pre">BM</span> <span class="pre">parameter</span> <span class="pre">&lt;bm-config&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM2_</span></code></p></li>
 <li><p>The model is versioned TLEM 2.1, to indicate the number of changes and
 correction which has been added in the process. The changes and updates to the
 TLEM2 dataset was done in the <a class="reference external" href="https://lifelongjoints.eu/">Life Long Joints</a> EU research project (paper submitted for publication).</p></li>
 <li><p>The most important changes to the TLEM 2 dataset include the following:</p>
-<blockquote>
-<div><ul class="simple">
+<ul>
 <li><p>Updated wrapping for the Gluteus Maximus, Iliacus, Psoas around the hip.</p></li>
 <li><p>Reworked muscle topology for Gluteus Medius and Gluteus Minimus</p></li>
 <li><p>Updated wrapping for Hamstring muscles, and Gastrocnemius around the knee.</p></li>
-<li><p>Redefined revolute knee axis and patella joint axis and patella tendon length based on the bone geometry.
+<li><p>Redefined revolute knee axis and patella joint axis and patella tendon length based on the bone   geometry.
 The original TLEM knee axis was estimated using a functional method, and was only valid
 for very small flexion angles.
 Thanks to Marco Antonio Marra (Radboudumc) for this for this improvement.</p></li>
@@ -998,7 +996,6 @@ where the hip joint center was found using a functional method.</p></li>
 <li><p>Update ankle joint nodes with positions fitted to the bone geometry</p></li>
 <li><p>Small correction to wrong insertion points for Adductor Longus and Vastus Medialis.</p></li>
 </ul>
-</div></blockquote>
 </li>
 <li><p>See the dedicated <a class="reference internal" href="body/leg_tlem2_model.html"><span class="doc">TLEM2.1 page</span></a> page for more information.</p></li>
 </ul>
@@ -1163,7 +1160,7 @@ more when the model starts in extreme postures.</p></li>
 <li><p>BM mannequin drivers are now implemented with a class_template allowing all weights and other settings to be customized.</p></li>
 <li><p>A default <code class="docutils literal notranslate"><span class="pre">HumanModel.Mannequin</span></code> folder is now automatically created with a <code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined Mannequin file is set.</p></li>
 <li><p>A default <code class="docutils literal notranslate"><span class="pre">Main.DrawSettings</span></code> folder is now automatically created with a
-<code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined <a class="reference internal" href="bm_config/bm_statements.html#bm-drawsettings-file" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">DrawSettings</span></code></a> file is set.</p></li>
+<code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined {bm_statement}<code class="docutils literal notranslate"><span class="pre">DrawSettings</span> <span class="pre">&lt;BM_DRAWSETTINGS_FILE&gt;</span></code> file is set.</p></li>
 <li><p>Extra Mannequin drivers for the individual shoulder degrees of freedom:
 <a class="reference internal" href="bm_config/bm_statements.html#bm-mannequin-driver-sternoclavicular-protraction-right" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">Sterno</span> <span class="pre">clavicula</span> <span class="pre">protraction</span></code></a>,
 <a class="reference internal" href="bm_config/bm_statements.html#bm-mannequin-driver-sternoclavicular-elevation-right" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">Sterno</span> <span class="pre">clavicula</span> <span class="pre">elevation</span></code></a>,
@@ -1276,6 +1273,7 @@ interested in this work.</p></li>
 <li class="toctree-l1 current"><a class="reference internal" href="about.html">About the AMMR</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contribute.html">Contribute to Model Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#either-use-the-ammr-zip-file-created-by-the-ams-build-this-it-con-or-create-a">Either use the AMMR zip file created by the AMS build. This  (it con or create a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="legal.html">Legal, Trademarks and Copyrights</a></li>
 </ul>
 </li>
@@ -1319,7 +1317,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.3-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
