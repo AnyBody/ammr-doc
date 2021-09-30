@@ -6,11 +6,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="noindex" name="robots" />
 
     <title>The Shoulder Arm Model &#8212; AMMR v2.3.4-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -18,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -78,7 +79,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-shoulder-arm-model">
+  <section class="tex2jax_ignore mathjax_ignore" id="the-shoulder-arm-model">
 <h1>The Shoulder Arm Model<a class="headerlink" href="#the-shoulder-arm-model" title="Permalink to this headline">¶</a></h1>
 <p>The ShoulderArm model contains data from two different persons. Most of this data
 comes from the Dutch Shoulder Group and their
@@ -105,7 +106,7 @@ Report</a>.</p>
     <source src="../_static/ShoulderArm_rotating_model.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-<!--<img src="../_static/ShoulderCloseupBack.jpg" alt="Smiley face" width="45%">--><div class="section" id="example-configuration">
+<!--<img src="../_static/ShoulderCloseupBack.jpg" alt="Smiley face" width="45%">--><section id="example-configuration">
 <h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Short example of how to configure the Shoulder Arm model:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">ON</span>
@@ -122,8 +123,8 @@ full list of configuration parmaeters or <a class="reference internal" href="../
 for more information on BM parameters.</p>
 </div>
 <p>The model consists of the following joints:</p>
-</div>
-<div class="centered section" id="deltoid-wrapping">
+</section>
+<section class="centered" id="deltoid-wrapping">
 <span id="deltoidwrapping"></span><h2>Deltoid wrapping<a class="headerlink" href="#deltoid-wrapping" title="Permalink to this headline">¶</a></h2>
 <p>A new implementation of the deltoid muscles have been added. The implementation
 uses multiple wrapping cylinders for each element of the deltoid muscle. The new
@@ -143,8 +144,8 @@ CA. Please cite the following work if you need it:</p>
 wrapping approach for the deltoid muscle modelling. in The Proceedings of the
 20th Biennial Meeting of theCanadian Society for Biomechanics (2018).</p>
 </div></blockquote>
-</div>
-<div class="section" id="degrees-of-freedom">
+</section>
+<section id="degrees-of-freedom">
 <h2>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this headline">¶</a></h2>
 <p>The arm has the following basic dof, which can be controlled by combinations
 joint drivers directly or indirectly through connections to the environment</p>
@@ -160,8 +161,8 @@ joint drivers directly or indirectly through connections to the environment</p>
 <li><p>WristFlexion</p></li>
 <li><p>WristAbduction</p></li>
 </ul>
-</div>
-<div class="section" id="joint-terminology">
+</section>
+<section id="joint-terminology">
 <h2>Joint terminology<a class="headerlink" href="#joint-terminology" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given styled-table centered docutils align-center" id="id1">
 <caption><span class="caption-text">Joints and kinematic contraints of the arm model</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -228,15 +229,15 @@ the axes of rotations are not coincident</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="resources">
+</section>
+<section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <p>More details on the ShoulderArm model can be found online:</p>
 <ul class="simple">
 <li><p>Webcast: <a class="reference external" href="https://www.anybodytech.com/downloads/documentation/#2007426">Validation of the AnyBody version of the Dutch Shoulder Model by the in-vivo measurement of GH contact forces by Bergmann et al.</a></p></li>
 </ul>
-</div>
-<div class="section" id="anatomy-references">
+</section>
+<section id="anatomy-references">
 <h2>Anatomy References<a class="headerlink" href="#anatomy-references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>F.C.T. van der Helm and R. Veenbaas, Modeling the mechanical efect of
@@ -272,8 +273,8 @@ and R.H. Rozendal,Inertia and muscle contraction parameters for
 musculoskeletal modelling of the shoulder mechanism. Journal of
 Biomechanics, vol. 24, no. 7, pp. 615-629, 1991</p></li>
 </ul>
-</div>
-<div class="section" id="muscle-references">
+</section>
+<section id="muscle-references">
 <h2>Muscle References<a class="headerlink" href="#muscle-references" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Jacobson, M. D., R. Raab, B. M. Fazeli, R. A. Abrams, M. J. Botte,
@@ -290,8 +291,8 @@ selected wrist flexor and extensor muscles. J. Hand Surg. [Am.]
 with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
 1995</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -307,7 +308,7 @@ with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -389,7 +390,7 @@ with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

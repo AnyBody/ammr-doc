@@ -6,11 +6,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="noindex" name="robots" />
 
     <title>Lesson 1: Joint to Joint Scaling Methods &#8212; AMMR v2.3.4-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -18,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -78,7 +79,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-1-joint-to-joint-scaling-methods">
+  <section class="tex2jax_ignore mathjax_ignore" id="lesson-1-joint-to-joint-scaling-methods">
 <h1>Lesson 1: Joint to Joint Scaling Methods<a class="headerlink" href="#lesson-1-joint-to-joint-scaling-methods" title="Permalink to this headline">¶</a></h1>
 <p>This lesson covers five of the scaling laws available in AnyBody:</p>
 <ul class="simple">
@@ -91,7 +92,7 @@ joint distances and mass)</p></li>
 <li><p>ScalingLengthMassFat (scale taking mass and fat into account; input
 is joint to joint distances)</p></li>
 </ul>
-<div class="section" id="scalingstandard">
+<section id="scalingstandard">
 <h2>ScalingStandard<a class="headerlink" href="#scalingstandard" title="Permalink to this headline">¶</a></h2>
 <p>This scaling law produces a model with the default parameters for mass and
 size (corresponding roughly to the 50th percentile European male). It is
@@ -141,8 +142,8 @@ will be set to use the default value:</p>
 standing model with the standard size.</p>
 <a class="reference internal image-reference" href="../_images/ScalingStandardFront.jpg"><img alt="../_images/ScalingStandardFront.jpg" src="../_images/ScalingStandardFront.jpg" style="width: 49%;" /></a>
 <a class="reference internal image-reference" href="../_images/ScalingStandardBack.jpg"><img alt="../_images/ScalingStandardBack.jpg" src="../_images/ScalingStandardBack.jpg" style="width: 49%;" /></a>
-</div>
-<div class="section" id="scalingnone">
+</section>
+<section id="scalingnone">
 <h2>ScalingNone<a class="headerlink" href="#scalingnone" title="Permalink to this headline">¶</a></h2>
 <p>This particular scaling law can be used for the studies, which require the unscaled cadaveric
 datasets, which were used for the construction of the body parts. Please enable _SCALING_NONE_
@@ -174,8 +175,8 @@ option in order to switch to this scaling law.</p>
 </div>
 <p>The result will not noticeably change as compared to the ScalingStandard, but minor differences
 can be observed when looking at the actual locations of the muscle attachment sites and so on.</p>
-</div>
-<div class="section" id="working-with-known-body-part-dimensions">
+</section>
+<section id="working-with-known-body-part-dimensions">
 <h2>Working with known body part dimensions<a class="headerlink" href="#working-with-known-body-part-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>When modelling a specific person with known anthropometric factors, e.g. weight,
 height, body part lengths, etc., these details need to be incorporated into the model.
@@ -282,8 +283,8 @@ and select a variable that needs to be defined:</p>
 </div>
 <p>But for this tutorial we will predefined AnyMan files to have an
 overview of the entire personalization scheme in one place.</p>
-</div>
-<div class="section" id="scalinguniform">
+</section>
+<section id="scalinguniform">
 <h2>ScalingUniform<a class="headerlink" href="#scalinguniform" title="Permalink to this headline">¶</a></h2>
 <p>This law allows you to define the total weight of the model and the
 individual sizes of the bones. The length of each bone is defined as a
@@ -411,8 +412,8 @@ height variable as following:</p>
 <p>When you load the model you will see all the segments automatically
 scaling down. The mass is also scaled, but as we said previously this is
 not visible graphically with this scaling law.</p>
-</div>
-<div class="section" id="scaling-based-on-length-and-mass">
+</section>
+<section id="scaling-based-on-length-and-mass">
 <h2>Scaling based on length and mass<a class="headerlink" href="#scaling-based-on-length-and-mass" title="Permalink to this headline">¶</a></h2>
 <p>This law scales the size of the body according not only to the segment
 lengths but also to the segments masses, so unlike the ScalingUniform
@@ -630,8 +631,8 @@ resultant value.</p>
 <p>For the same load on the hands (50 N) the tall heavy model has a muscle
 activity of 42.1 %, whereas the short model reaches 56.5 % of muscle
 activity. So our small model is definitely weaker than the tall one.</p>
-</div>
-<div class="section" id="scalinglengthmassfat">
+</section>
+<section id="scalinglengthmassfat">
 <h2>ScalingLengthMassFat<a class="headerlink" href="#scalinglengthmassfat" title="Permalink to this headline">¶</a></h2>
 <p>Most scaled models used for practical investigations use the
 ScalingLengthMassFat law. It works exactly like the ScalingLengthMass
@@ -705,8 +706,8 @@ AnyManUniform file.</p>
 <p class="admonition-title">See also</p>
 <p><strong>Next lesson:</strong> <a class="reference internal" href="lesson2.html"><span class="doc">Lesson 2: Scaling based on External Body Measurements</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -722,7 +723,7 @@ AnyManUniform file.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -795,7 +796,7 @@ AnyManUniform file.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

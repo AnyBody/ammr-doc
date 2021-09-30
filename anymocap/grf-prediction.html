@@ -6,10 +6,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Ground Reaction force prediction &#8212; AMMR v2.3.4 Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -17,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -77,9 +78,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ground-reaction-force-prediction">
+  <section id="ground-reaction-force-prediction">
 <h1>Ground Reaction force prediction<a class="headerlink" href="#ground-reaction-force-prediction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="background">
+<section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
 <p>Motion capture data is often recorded without force plates. In traditional
 inverse dynamics, this would make it impossible to perform a dynamic analysis.
@@ -98,14 +99,14 @@ class template will generate all the necessary AnyScript code. Thus, adding GRF
 prediction is similar to adding force plates to a model.</p>
 <p>This new functionality is now part of the AnyBody Managed Model Repository
 (AMMR).</p>
-</div>
-<div class="section" id="adding-ground-force-prediction-to-a-model">
+</section>
+<section id="adding-ground-force-prediction-to-a-model">
 <h2>Adding ground force prediction to a model<a class="headerlink" href="#adding-ground-force-prediction-to-a-model" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-grfprediction-py"><span class="std std-ref">GRF example model</span></a>
 is already preconfigured to use the GRF prediction. But
 if you need to add GRF prediction to new model the following outlines the
 procedure.</p>
-<div class="section" id="including-the-class-templates">
+<section id="including-the-class-templates">
 <h3>Including the class templates<a class="headerlink" href="#including-the-class-templates" title="Permalink to this headline">¶</a></h3>
 <p>The class template is already included in the AnyMoCap framework, so this step
 can be skipped. However, when using GRF prediction in other models it is
@@ -113,8 +114,8 @@ necessary to include the following line at the beginning of the model:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/GRFPrediction/FootPlateConditionalContact.any&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-the-grf-prediction-classes">
+</section>
+<section id="adding-the-grf-prediction-classes">
 <h3>Adding the GRF prediction classes<a class="headerlink" href="#adding-the-grf-prediction-classes" title="Permalink to this headline">¶</a></h3>
 <p>In the AnyMoCap models GRF prediction is enabled by setting the following
 setting:</p>
@@ -147,8 +148,8 @@ model.</p>
 </pre></div>
 </div>
 <p>See below for more information on the GRF prediction classes.</p>
-</div>
-<div class="section" id="setting-up-new-residuals-hand-of-god">
+</section>
+<section id="setting-up-new-residuals-hand-of-god">
 <h3>Setting up new residuals (Hand of God)<a class="headerlink" href="#setting-up-new-residuals-hand-of-god" title="Permalink to this headline">¶</a></h3>
 <p>Adding conditional contacts to the feet is not enough. The AnyMoCap model comes
 reactions forces applied to the pelvis. These are the reactions that carry any
@@ -172,20 +173,20 @@ following file in your model:</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">WeakResiduals.any</span></code> does the job of removing the ‘Hand of God’ and adding
 the new, weak residuals. Again this is handled automatically in the AnyMoCap
 based models.</p>
-</div>
-</div>
-<div class="section" id="running-the-model">
+</section>
+</section>
+<section id="running-the-model">
 <h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
 <p>The model is run in the same way as other models. The only difference is that it
 now uses GRF prediction instead of force plates data.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/grf_output.png" src="../_images/grf_output.png" />
-</div>
+</figure>
 <p>It may be necessary to adjust the parameters of the GRF prediction class to
 obtain a good prediction of the ground reactions. This is especially important
 around heel strike and toe-off, where the model can have problems.</p>
-</div>
-<div class="section" id="grf-prediction-trouble-shooting">
+</section>
+<section id="grf-prediction-trouble-shooting">
 <h2>GRF prediction trouble shooting<a class="headerlink" href="#grf-prediction-trouble-shooting" title="Permalink to this headline">¶</a></h2>
 <p>Here are some things to check if a GRF prediction model fails running inverse
 dynamic:</p>
@@ -205,8 +206,8 @@ in the model if the feet contact are not enough, this is defined in  the file
 of the artificial muscles, but this will lead to higher residuals so be
 careful.</p></li>
 </ul>
-</div>
-<div class="section" id="a-closer-look-at-the-grf-template">
+</section>
+<section id="a-closer-look-at-the-grf-template">
 <h2>A closer look at the GRF template<a class="headerlink" href="#a-closer-look-at-the-grf-template" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we can take a closer look at the <code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span></code> template.</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">FootPlateConditionalContact</span> <span class="n">GRF_Prediction_Right</span><span class="p">(</span>
@@ -235,7 +236,7 @@ specific to the model implementation. One could also imagine class-templates
 that produce a higher number of nodes or nodes in positions that corresponds to
 particular shoes or on other body parts.</p>
 <p>Of course, there are also many options that can be tweaked and adjusted.</p>
-<div class="section" id="class-templates-footplateconditionalcontact">
+<section id="class-templates-footplateconditionalcontact">
 <h3>Class templates: FootPlateConditionalContact<a class="headerlink" href="#class-templates-footplateconditionalcontact" title="Permalink to this headline">¶</a></h3>
 <p>Obligatory members are marked with <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> and optional values are marked with
 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>. Default values are <strong>bold</strong>:</p>
@@ -295,9 +296,9 @@ friction force which can be recruited.</p>
 <dt><code class="docutils literal notranslate"><span class="pre">Settings.ForceVectorDrawScaleFactor</span></code>:</dt><dd><p>Scale factor for the drawing of the GRF force vector</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -313,7 +314,7 @@ friction force which can be recruited.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -389,7 +390,7 @@ friction force which can be recruited.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

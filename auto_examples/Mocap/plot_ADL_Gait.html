@@ -6,10 +6,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>ADL Gait (beta) &#8212; AMMR v2.3.4 Documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -17,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -43,7 +44,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multi trial MoCap model" href="plot_Plug-in-gait_MultiTrial_StandingRef.html" />
-    <link rel="prev" title="Simple Lower extremity model" href="plot_Plug-in-gait_Simple_LowerExtremity.html" /> 
+    <link rel="prev" title="Simple GRF prediction model" href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -61,7 +62,7 @@
           <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_Plug-in-gait_Simple_LowerExtremity.html" title="Simple Lower extremity model"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
@@ -77,7 +78,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="sphx-glr-example-title section" id="adl-gait-beta">
+  <section class="sphx-glr-example-title" id="adl-gait-beta">
 <span id="sphx-glr-auto-examples-mocap-plot-adl-gait-py"></span><h1>ADL Gait (beta)<a class="headerlink" href="#adl-gait-beta" title="Permalink to this headline">¶</a></h1>
 <p>Fullbody MoCap model with multiple subjects and trials based on the
 “Rehazenter Adult Walking Dataset” by <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">Schreiber and Moissenet (2019)</a>.</p>
@@ -110,7 +111,7 @@ with improvements to the model please share them back.</p>
 <p>The model was created by <a class="reference external" href="https://www.linkedin.com/in/enrico-de-pieri-13096a7a/">Enrico De Pieri</a>,
 <a class="reference external" href="https://vbn.aau.dk/en/persons/121260">Anderson de Souza Castelo Oliveira</a>, and <a class="reference external" href="https://www.linkedin.com/in/biomedical">Morten Enemark Lund</a>
 but has not yet been used for publication.</p>
-<div class="section" id="dataset">
+<section id="dataset">
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <p>The full “Rehazenter adult walking dataset” is not distributed with the model. Schreiber and Moissenet (2019) has
 released the data under a Creative Commons license (CC BY 4.0).</p>
@@ -119,8 +120,8 @@ released the data under a Creative Commons license (CC BY 4.0).</p>
 <li><p><a class="reference external" href="https://figshare.com/articles/A_multimodal_dataset_of_human_gait_at_different_walking_speeds/7734767">Rehazenter adult walking dataset</a></p></li>
 </ul>
 <p>After downloading extract the data into the <code class="docutils literal notranslate"><span class="pre">C3DFiles</span></code> sub folder.</p>
-</div>
-<div class="section" id="model-structure">
+</section>
+<section id="model-structure">
 <h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
 <p>The model files are structured so each trial has its own folder with a main file
 (<code class="docutils literal notranslate"><span class="pre">Main.any</span></code>) and a file with trial specific data (<code class="docutils literal notranslate"><span class="pre">TrialSpecificData.any</span></code>).
@@ -171,8 +172,8 @@ The C3D files are placed together in a separate folder.</p>
          :
 </pre></div>
 </div>
-</div>
-<div class="section" id="batch-processing">
+</section>
+<section id="batch-processing">
 <h2>Batch processing<a class="headerlink" href="#batch-processing" title="Permalink to this headline">¶</a></h2>
 <p>The model also contains a batch processing Python script for running all models. The script
 <code class="docutils literal notranslate"><span class="pre">batchprocess.py</span></code> is located in the top-level folder.</p>
@@ -191,14 +192,14 @@ AnyBody Model System (<a class="reference external" href="https://doi.org/10.211
 <p>You may need to modify the script to output the variables you are interested in. It may also
 be necessary to modify the number parallel AnyBody instances to match the number of licenses you have.</p>
 </div>
-</div>
-<div class="section" id="bibliography">
+</section>
+<section id="bibliography">
 <h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <p>Please cite the following paper when using the data.</p>
 <p>&gt; Schreiber, C., Moissenet, F. A multimodal dataset of human gait at different walking speeds established on injury-free adult participants. Sci Data 6, 111 (2019). <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">https://doi.org/10.1038/s41597-019-0124-4</a></p>
 <img alt="../../_images/sphx_glr_plot_ADL_Gait_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_ADL_Gait_001.png" />
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -214,7 +215,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -278,7 +279,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
           <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_Plug-in-gait_Simple_LowerExtremity.html" title="Simple Lower extremity model"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
@@ -290,7 +291,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

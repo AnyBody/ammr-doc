@@ -6,10 +6,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Statistical Scaling Plugin &#8212; AMMR v2.3.4 Documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -17,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -77,7 +78,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="sphx-glr-example-title section" id="statistical-scaling-plugin">
+  <section class="sphx-glr-example-title" id="statistical-scaling-plugin">
 <span id="sphx-glr-auto-examples-other-plot-statisticalscalingplugin-py"></span><h1>Statistical Scaling Plugin<a class="headerlink" href="#statistical-scaling-plugin" title="Permalink to this headline">¶</a></h1>
 <p>Plugin for scaling subjects based on an anthropometric database.</p>
 <p>This example shows how to use the Statistical Scaling Plugin. The plugin is a
@@ -92,9 +93,9 @@ anthropometric variables based on the ANSUR <a class="footnote-reference bracket
 <p>The big advantage is that the correlation between variables are maintained, so
 the model will have realistic anthropometrical dimension as long as the
 constraints does not conflict (e.g. a very high stature with very short legs )</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../../_images/StatisticalScalingPlugin1.png" src="../../_images/StatisticalScalingPlugin1.png" />
-</div>
+</figure>
 <p>The algorithm used by the plugin is based on principal component analysis (PCA)
 of the correlations between variables in the anthropometric database. An optimization
 problem is then solved minimizing the normalized principal component subject to
@@ -109,7 +110,7 @@ International Journal of Human Factors Modelling and Simulation 6, 16–30 (2018
 <p>The plugin can not be used to generate subjects which are very
 different from the population of the ANSUR database. For example children.</p>
 </div>
-<div class="section" id="use-the-plugin-in-other-models">
+<section id="use-the-plugin-in-other-models">
 <h2>Use the plugin in other models<a class="headerlink" href="#use-the-plugin-in-other-models" title="Permalink to this headline">¶</a></h2>
 <p>The plugin can be used in any model as long as it uses the
 <a class="reference internal" href="../../bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> scaling law. It is also necessary to specify into
@@ -133,8 +134,8 @@ anthropometrics
 </dd>
 </dl>
 <img alt="../../_images/sphx_glr_plot_StatisticalScalingPlugin_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_StatisticalScalingPlugin_001.png" />
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -150,7 +151,7 @@ anthropometrics
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -226,7 +227,7 @@ anthropometrics
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
