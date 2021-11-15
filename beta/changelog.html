@@ -23,7 +23,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
 
     
@@ -90,8 +90,17 @@
 <li><p>Improved the selected output by adding the m. Semimembranosus and m.
 Semitendinosus contributions to the knee flexor group for both muscle activity (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleActivity</span></code>)
 and muscle force (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleForce</span></code>).</p></li>
+<li><p>Fixed a problem where custom scaling and <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> would
+prevent the model from loading.</p></li>
 </ul>
 <p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Added a <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">new model tool</span></a>
+to apply femoral torsion to the TLEM2.0 leg model.
+This tool was developed by Dr. Enrico De Pieri from University of Basel
+Children’s Hospital (UKBB). Please see the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">documentation</span></a>
+or the web cast (Link to come) by Enrico on his work and publication on femoral torsion.</p></li>
+</ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
 <li><p>Improve the trunk model’s strength for trunk external rotation. This change
@@ -1360,7 +1369,7 @@ interested in this work.</p></li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
