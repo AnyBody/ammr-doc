@@ -81,11 +81,11 @@
             
   <section class="sphx-glr-example-title" id="femoral-torsion-tool">
 <span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"></span><h1>Femoral Torsion tool<a class="headerlink" href="#femoral-torsion-tool" title="Permalink to this headline">¶</a></h1>
-<p>This is an example of modifying the femoral torsion of the generic TLEM geometry
-by using a model utility tool included within the model repository. The  model
-is the simple standing model where the femoral torsion has been altered to 20
-degrees. The model is also a good example on how a similar morphing approach can
-be used to personalize different body segments.</p>
+<p>This is an example of modifying the femoral torsion of the default leg
+({ref}`TLEM 2.0 &lt;tlem2&gt;`) geometry by using a model utility tool included within
+the model repository. The  model is the simple standing model where the femoral
+torsion has been altered to 20 degrees. The model is also a good example on how
+a similar morphing approach can be used to personalize different body segments.</p>
 <div class="without-title admonition seealso">
 <p class="admonition-title">See also</p>
 <p><strong>Model location in AMMR:</strong></p>
@@ -123,7 +123,7 @@ be included in any model using the following code:</p>
 <span class="p">};</span>
 
 <span class="c1">// This line must be included before the &quot;HumanModel&quot;.</span>
-<span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/FemoralTorsion/FemoralTorsionInclude.any&quot;</span>
+<span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/FemoralTorsion/Include.any&quot;&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
