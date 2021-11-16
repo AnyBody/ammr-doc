@@ -12,10 +12,7 @@ Contribute to Model Development
 -------------------------------
 
 The development of the Model Repository is a collaboration between AnyBody Technology
-and many academic institutions and research projects. 
-
-Development takes place in a private repository to protect academic contributors who
-often need to publish their models before they are publicly available.
+and many academic institutions and research projects. Development takes place in a private repository to protect academic contributors who often need to publish their models before they are publicly available.
 
 However, access to the repository is given on request, if you want to contribute new models or 
 just want to help improve existing models.
