@@ -16,11 +16,4 @@ The development of the Model Repository is a collaboration between AnyBody Techn
 and many academic institutions and research projects. Development takes place in a private repository to protect academic contributors who often need to publish their models before they are publicly available.
 
 However, access to the repository is given on request, if you want to contribute new models or 
-just want to help improve existing models.
-
-Please submit an issue here to request access:
-
-1. Goto to https://github.com/AnyBody/ammr-doc/issues
-
-2. Create an issue to request acess. 
-
+just want to help improve existing models. Please click the green button above and create a issue to create access. 
