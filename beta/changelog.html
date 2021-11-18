@@ -90,16 +90,31 @@
 <li><p>Improved the selected output by adding the m. Semimembranosus and m.
 Semitendinosus contributions to the knee flexor group for both muscle activity (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleActivity</span></code>)
 and muscle force (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleForce</span></code>).</p></li>
+<li><p>Fixed a bug in scaling where the mass of the trunk model pelvis was used in some cases instead of the
+pelvis mass from the leg model. This could cause a slightly incorrect mass to be used for the pelvis segment.</p></li>
 <li><p>Fixed a problem where custom scaling and <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> would
 prevent the model from loading.</p></li>
+<li><p>Fixed some logical issues with the <code class="docutils literal notranslate"><span class="pre">ContactSurfaceDistanceAndVelocityDepLinPush.any</span></code> file.</p>
+<ul>
+<li><p>Fix length calculation and drawing of the normal force</p></li>
+<li><p>Fixed an extrapolation error when changing the internal setting <code class="docutils literal notranslate"><span class="pre">_SMOOTHING_FUNCTION_PROFILE_</span></code> to
+<code class="docutils literal notranslate"><span class="pre">FUNC_PROFILE_BSPLINE</span></code>. We now cap the height ratio to only be in the interpolation area.
+Values outside infers that no contact is present.</p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Added:</strong></p>
-<ul class="simple">
+<ul>
 <li><p>Added a <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">new model tool</span></a>
 to apply femoral torsion to the TLEM2.0 leg model.
 This tool was developed by Dr. Enrico De Pieri from University of Basel
 Children’s Hospital (UKBB). Please see the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">documentation</span></a>
 or the web cast (Link to come) by Enrico on his work and publication on femoral torsion.</p></li>
+<li><p>New utility macros which makes it easier to create 3D grid arrays.
+<code class="docutils literal notranslate"><span class="pre">MESHTRIPLES(xarr,</span> <span class="pre">yarr,</span> <span class="pre">zarr)</span></code> and  <code class="docutils literal notranslate"><span class="pre">MESHGRID(xarr,yarr,zarr)</span></code>. I.e. for
+creating arrays of all points in a 3D grid array.</p>
+<p>See the file: <span class="menuselection">Body ‣ AAUHuman ‣ BodyModels ‣ GenericBodyModel ‣ Helper.ClassTemplates.any</span></p>
+</li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
