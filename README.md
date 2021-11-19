@@ -4,7 +4,7 @@
 # AnyBody Managed Model Repository 
 > An open library of musculoskeletal models
 
-Official releases of the model repository is distributed with the AnyBody Modeling System, or can be downloaded from [Zenodo, (an open access service operated by CERN)](https://doi.org/10.5281/zenodo.1251306).  
+Official releases of the model repository is distributed with the [AnyBody Modeling System](https://www.anybodytech.com/software), or can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.1251306), (an open access service operated by CERN).  
 
 If you want access to the bleeding edge development repository here on GitHub, click the link below:
 [![image](https://user-images.githubusercontent.com/1038978/79636339-334d0b80-8177-11ea-8e6f-e2e317f9b796.png)](https://github.com/AnyBody/ammr-doc/issues/new?assignees=melund&labels=request-ammr-access&template=request-development-access.md&title=%5BRequest+AMMR+Access%5D)
