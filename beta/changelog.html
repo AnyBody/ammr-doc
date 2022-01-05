@@ -90,6 +90,11 @@
 <li><p>Improved the selected output by adding the m. Semimembranosus and m.
 Semitendinosus contributions to the knee flexor group for both muscle activity (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleActivity</span></code>)
 and muscle force (<code class="docutils literal notranslate"><span class="pre">KneeFlexorMuscleForce</span></code>).</p></li>
+<li><p>Updated and improved origin of the hamstring muscles. The muscles biceps
+femoris, semitendinosus and semimembranosus have been updated to improve their
+moment arms in certain lunge movements. The origin points at pelvis has been
+moved down a bit to ensure the muscles wraps correctly in lunge movements,
+while maintaining the same moment arm in gait etc.</p></li>
 <li><p>Fixed a bug in scaling where the mass of the trunk model pelvis was used in some cases instead of the
 pelvis mass from the leg model. This could cause a slightly incorrect mass to be used for the pelvis segment.</p></li>
 <li><p>Fixed a problem where custom scaling and <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> would
@@ -221,7 +226,7 @@ aligns the results with <a class="reference internal" href="bm_config/bm_constan
 models) and <a class="reference internal" href="bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_STANDARD_</span></code></a> (50 percentile) which were both
 correct.</p></li>
 <li><p>Fixed a problem with foot support in the
-{ref}<code class="docutils literal notranslate"><span class="pre">&quot;Spine</span> <span class="pre">Pressure</span> <span class="pre">validation</span> <span class="pre">model&quot;</span> <span class="pre">&lt;sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py&gt;</span></code> lying flat on
+<a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Spine Pressure validation model”</span></a> lying flat on
 the back. The foot is now supported in the right direction.</p></li>
 <li><p>Fixed a problem with the Standing Model template which was using an alternate
 mode where foot constraints were disabled.</p></li>
@@ -247,7 +252,7 @@ collision between the rectus femoris origin and the wrapping surface. Further,
 the surface is now used for both the straight and reflected head of the rectus
 femoris.</p></li>
 <li><p>Increase the discretization (StringMesh) on approx 30 muscles to improve wrapping.</p></li>
-<li><p>The results for the {ref}<code class="docutils literal notranslate"><span class="pre">&quot;Wilke</span> <span class="pre">Spine</span> <span class="pre">Pressure&quot;</span> <span class="pre">&lt;sphx_glr_auto_examples_Validation_plot_WilkeSpinePressure.py&gt;</span></code>
+<li><p>The results for the <a class="reference internal" href="auto_examples/Validation/plot_WilkeSpinePressure.html#sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"><span class="std std-ref">“Wilke Spine Pressure”</span></a>
 validation model has been updated due to the fix for the
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
 results slightly.</p></li>
@@ -838,7 +843,7 @@ easily compensate for errors in the c3d file (i.e. swapped channel and wrong sig
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>Enhanced the {ref}<code class="docutils literal notranslate"><span class="pre">multi-trial</span> <span class="pre">MoCap</span> <span class="pre">example</span> <span class="pre">&lt;sphx_glr_auto_examples_Mocap_plot_Plug-in-gait_MultiTrial_StandingRef.py&gt;</span></code> for best practice for
+<li><p>Enhanced the <a class="reference internal" href="auto_examples/Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-multitrial-standingref-py"><span class="std std-ref">multi-trial MoCap example</span></a> for best practice for
 MoCap trials with multiple subjects and trials. The example now shows how to deal with multiple
 subjects and storing the c3d files in a separate folder.</p></li>
 </ul>
@@ -1031,7 +1036,7 @@ the solution within the given number of iterations.</p></li>
 <ul class="simple">
 <li><p>The <a class="reference external" href="http://dx.doi.org/10.1016/j.jbiomech.2014.12.034">Twente Lower Extremity Model version 2.0 dataset</a>, developed in the
 TLEM<em>safe</em> EU project was implemented in the AMMR repository. The model is not
-the default model, but can be enabled with the {ref}<code class="docutils literal notranslate"><span class="pre">BM</span> <span class="pre">parameter</span> <span class="pre">&lt;bm-config&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM2_</span></code></p></li>
+the default model, but can be enabled with the <a class="reference internal" href="bm_config/index.html#bm-config"><span class="std std-ref">BM parameter</span></a> <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_MODEL</span> <span class="pre">_LEG_MODEL_TLEM2_</span></code></p></li>
 <li><p>The model is versioned TLEM 2.1, to indicate the number of changes and
 correction which has been added in the process. The changes and updates to the
 TLEM2 dataset was done in the <a class="reference external" href="https://lifelongjoints.eu/">Life Long Joints</a> EU research project (paper submitted for publication).</p></li>
@@ -1220,7 +1225,7 @@ more when the model starts in extreme postures.</p></li>
 <li><p>BM mannequin drivers are now implemented with a class_template allowing all weights and other settings to be customized.</p></li>
 <li><p>A default <code class="docutils literal notranslate"><span class="pre">HumanModel.Mannequin</span></code> folder is now automatically created with a <code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined Mannequin file is set.</p></li>
 <li><p>A default <code class="docutils literal notranslate"><span class="pre">Main.DrawSettings</span></code> folder is now automatically created with a
-<code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined {bm_statement}<code class="docutils literal notranslate"><span class="pre">DrawSettings</span> <span class="pre">&lt;BM_DRAWSETTINGS_FILE&gt;</span></code> file is set.</p></li>
+<code class="docutils literal notranslate"><span class="pre">class_template</span></code> when no user-defined <a class="reference internal" href="bm_config/bm_statements.html#bm-drawsettings-file" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">DrawSettings</span></code></a> file is set.</p></li>
 <li><p>Extra Mannequin drivers for the individual shoulder degrees of freedom:
 <a class="reference internal" href="bm_config/bm_statements.html#bm-mannequin-driver-sternoclavicular-protraction-right" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">Sterno</span> <span class="pre">clavicula</span> <span class="pre">protraction</span></code></a>,
 <a class="reference internal" href="bm_config/bm_statements.html#bm-mannequin-driver-sternoclavicular-elevation-right" title="records.config"><code class="xref any ammr ammr-bm_statement docutils literal notranslate"><span class="pre">Sterno</span> <span class="pre">clavicula</span> <span class="pre">elevation</span></code></a>,
@@ -1386,8 +1391,8 @@ interested in this work.</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+        &#169; Copyright 2022, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
