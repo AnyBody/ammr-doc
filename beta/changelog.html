@@ -107,6 +107,7 @@ prevent the model from loading.</p></li>
 Values outside infers that no contact is present.</p></li>
 </ul>
 </li>
+<li><p>Refactored the way Trunk nodes are mirrored between left and right. This is more consistent with the remaining bodyparts and handled in the cadaver data files.</p></li>
 </ul>
 <p><strong>Added:</strong></p>
 <ul>
@@ -137,6 +138,11 @@ This makes it consistent with the rest of varaibles in the folder, and correctly
 the mass is assigned to both the scapula and clavicle segment.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">OptimalFiberLength</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalTendonLength</span></code> in the TLEM leg models, are no longer ‘DesignVar’, when the
 parameters are also calibrated. This prevents huge amount warning when calibrating the leg muscles.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">L5LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L4LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L3LContactNode</span></code>,
+<code class="docutils literal notranslate"><span class="pre">L4LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L1LContactNode</span></code> nodes where scaled using the Right node Z-axis. This
+is now changed to use the Left node Z-axis.</p></li>
+<li><p>The trunk model has been restructured in preparation for a full Thoracic model.
+This means that all the vertebra and ribs have been created in the model structure, but only as <code class="docutils literal notranslate"><span class="pre">AnyFolder&amp;</span></code> references to the single rigid thorax segment.</p></li>
 </ul>
 <p><strong>Removed:</strong></p>
 <ul class="simple">
