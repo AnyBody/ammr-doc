@@ -108,6 +108,8 @@ Values outside infers that no contact is present.</p></li>
 </ul>
 </li>
 <li><p>Refactored the way Trunk nodes are mirrored between left and right. This is more consistent with the remaining bodyparts and handled in the cadaver data files.</p></li>
+<li><p>Fix a problem in MoCap models where calibration studies were not run automatically in model
+which only had 3-element muscles on the upper body.</p></li>
 <li><p>The <a class="reference internal" href="auto_examples/Validation/plot_EvaluateMomentArms.html#sphx-glr-auto-examples-validation-plot-evaluatemomentarms-py"><span class="std std-ref">example to evaluate moments arms</span></a>
 now works when the shoulder rhythm is enabled.</p></li>
 </ul>
@@ -126,6 +128,8 @@ with simple revolute knee joints.</p></li>
 creating arrays of all points in a 3D grid array.</p>
 <p>See the file: <span class="menuselection">Body ‣ AAUHuman ‣ BodyModels ‣ GenericBodyModel ‣ Helper.ClassTemplates.any</span></p>
 </li>
+<li><p>Added a warning when the glenohumeral flexion/abduction in the
+mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
