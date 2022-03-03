@@ -132,7 +132,7 @@ creating arrays of all points in a 3D grid array.</p>
 mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
-<ul class="simple">
+<ul>
 <li><p>Improve the trunk model’s strength for trunk external rotation. This change
 improves the implementation of the internal/external obliques and latissimus
 dorsi muscles. More branches are added to the internal obliques and the
@@ -149,6 +149,12 @@ parameters are also calibrated. This prevents huge amount warning when calibrati
 is now changed to use the Left node Z-axis.</p></li>
 <li><p>The trunk model has been restructured in preparation for a full Thoracic model.
 This means that all the vertebra and ribs have been created in the model structure, but only as <code class="docutils literal notranslate"><span class="pre">AnyFolder&amp;</span></code> references to the single rigid thorax segment.</p></li>
+<li><p>Updated the neutral scapula position and scapula sliding. The default neutral scapula position
+(medial rotation) have been updated to a more realistic position. Additionally, the node at scapula
+TS point on which scapula slides have been moved to provide a more realistic clearance between
+the scapula and the ellipsoid sliding surface representing thorax.</p>
+<p>Thanks to Johanna Menze (&#64;menzejo) from the University of Bern from updating the model.</p>
+</li>
 </ul>
 <p><strong>Removed:</strong></p>
 <ul class="simple">

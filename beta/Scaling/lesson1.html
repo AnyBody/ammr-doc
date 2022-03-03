@@ -425,9 +425,9 @@ coefficients, but the size scaling is different. Let us investigate it.
 In the main file, please choose the ScalingLengthMass law and switch
 back to the AnyMan file:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scaling laws using joint to joint measures</span>
-<span class="gr">//#define BM_SCALING CONST_SCALING_UNIFORM</span>
-<span class="gr">  #define BM_SCALING CONST_SCALING_LENGTHMASS</span>
-<span class="c1">//  #define BM_SCALING CONST_SCALING_LENGTHMASSFAT</span>
+<span class="gr">//#define BM_SCALING _SCALING_UNIFORM_</span>
+<span class="gr">  #define BM_SCALING _SCALING_LENGTHMASS_</span>
+<span class="c1">//  #define BM_SCALING _SCALING_LENGTHMASSFAT_</span>
 <span class="p">...</span>
 <span class="c1">// Anthropometric data file (unchanged files can be found in AAUHuman\Scaling\AnyFamily)</span>
 <span class="gr">#path BM_SCALING_ANTHRO_FILE &quot;Model\AnyFamily\AnyMan.any&quot;</span>
@@ -539,13 +539,13 @@ forces from different scaled models. To do so we need a body with
 muscles. Please add the muscles by commenting out the following section
 of the general configuration block:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="gr">//#ifndef BM_LEG_MUSCLES_BOTH</span>
-<span class="gr">//  #define BM_LEG_MUSCLES_BOTH _MUSCLES_NONE_</span>
+<span class="gr">//  #define BM_LEG_MUSCLES_BOTH OFF</span>
 <span class="gr">//#endif</span>
 <span class="gr">//#ifndef BM_ARM_MUSCLES_BOTH</span>
-<span class="gr">//  #define BM_ARM_MUSCLES_BOTH _MUSCLES_NONE_</span>
+<span class="gr">//  #define BM_ARM_MUSCLES_BOTH OFF</span>
 <span class="gr">//#endif</span>
 <span class="gr">//#ifndef BM_TRUNK_MUSCLES</span>
-<span class="gr">//  #define BM_TRUNK_MUSCLES _MUSCLES_NONE_</span>
+<span class="gr">//  #define BM_TRUNK_MUSCLES OFF</span>
 <span class="gr">//#endif</span>
 <span class="gr">    </span>
 </pre></div>
@@ -684,9 +684,9 @@ the following value for the maximum muscle activity.</p>
 <p>The next step is to run an analysis with the same body but with the
 ScalingLengthMassFat law:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scaling laws using joint to joint measures</span>
-<span class="c1">//  #define BM_SCALING CONST_SCALING_UNIFORM</span>
-<span class="gr">//  #define BM_SCALING CONST_SCALING_LENGTHMASS</span>
-<span class="gr">#define BM_SCALING CONST_SCALING_LENGTHMASSFAT</span>
+<span class="c1">//  #define BM_SCALING _SCALING_UNIFORM_</span>
+<span class="gr">//  #define BM_SCALING _SCALING_LENGTHMASS_</span>
+<span class="gr">#define BM_SCALING _SCALING_LENGTHMASSFAT_</span>
 </pre></div>
 </div>
 <p>Once again load the model and run the inverse dynamics
