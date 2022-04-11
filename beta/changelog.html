@@ -146,6 +146,10 @@ creating arrays of all points in a 3D grid array. More information in the file:
 mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
 <li><p>There is a new option to override more settings in the <code class="docutils literal notranslate"><span class="pre">DefaultMannequinDrivers</span></code> section. Now the driver
 type (<code class="docutils literal notranslate"><span class="pre">CType=Hard/Soft</span></code>), can be overridden directly by the users.</p></li>
+<li><p>Fixed a lack of robustness with muscle recruitment of the abdominal muscles (<code class="docutils literal notranslate"><span class="pre">buckle</span> <span class="pre">support</span></code>).
+Muscle recruitment could previously fail with high lumbar flexion.
+A small support “artificial muscle” has beeen added to the buckle
+segment, preventing muscle reqruitment from failing.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
