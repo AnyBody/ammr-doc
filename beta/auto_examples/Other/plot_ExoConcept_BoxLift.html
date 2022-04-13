@@ -9,21 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <meta content="noindex" name="robots" />
 
-<meta property="og:title" content="Standin Model Scaling Display" />
+<meta property="og:title" content="Exoskeleton concept model" />
   
 <meta property="og:type" content="website" />
   
-<meta property="og:url" content="https://anyscript.org/auto_examples/Other/plot_StandingModelScalingDisplay.html" />
+<meta property="og:url" content="https://anyscript.org/auto_examples/Other/plot_ExoConcept_BoxLift.html" />
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="This application shows all the scaling laws available. The model can be scaled either regarding to measures between joint center, or exteranal measures of bony tips, or by representation of a certa..." />
+<meta property="og:description" content="Exoskeleton concept model. This example shows how to study different exoskeleton concepts on an activity. The model is based on the webcast presented by Prof. John Rasmussen from Aalborg University..." />
   
-<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" />
+<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_ExoConcept_BoxLift_001.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Standin Model Scaling Display &#8212; AMMR v2.3.4-beta Documentation</title>
+    <title>Exoskeleton concept model &#8212; AMMR v2.3.4-beta Documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -58,8 +58,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Push Up" href="../Sports/plot_PushUp.html" />
-    <link rel="prev" title="Exoskeleton concept model" href="plot_ExoConcept_BoxLift.html" /> 
+    <link rel="next" title="Standin Model Scaling Display" href="plot_StandingModelScalingDisplay.html" />
+    <link rel="prev" title="Statistical Scaling Plugin" href="plot_StatisticalScalingPlugin.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -74,15 +74,15 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Sports/plot_PushUp.html" title="Push Up"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConcept_BoxLift.html" title="Exoskeleton concept model"
+          <a href="plot_StatisticalScalingPlugin.html" title="Statistical Scaling Plugin"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Standin Model Scaling Display</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Exoskeleton concept model</a></li> 
       </ul>
     </div>
     </div>
@@ -93,19 +93,40 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section class="sphx-glr-example-title" id="standin-model-scaling-display">
-<span id="sphx-glr-auto-examples-other-plot-standingmodelscalingdisplay-py"></span><h1>Standin Model Scaling Display<a class="headerlink" href="#standin-model-scaling-display" title="Permalink to this headline">¶</a></h1>
-<p>This application shows all the scaling laws available.</p>
+  <section class="sphx-glr-example-title" id="exoskeleton-concept-model">
+<span id="sphx-glr-auto-examples-other-plot-exoconcept-boxlift-py"></span><h1>Exoskeleton concept model<a class="headerlink" href="#exoskeleton-concept-model" title="Permalink to this headline">¶</a></h1>
+<p>Exoskeleton concept model.</p>
 <div class="without-title admonition seealso">
 <p class="admonition-title">See also</p>
 <p><strong>Main file location in AMMR:</strong></p>
-<p><span class="menuselection">Application ‣ Examples ‣ StandingModelScalingDisplay ‣
-StandingModelScalingDisplay.Main.any</span></p>
+<p><span class="menuselection">Application ‣ Examples ‣ ExoskeletonConcept ‣ ExoConcept_BoxLift.Main.any</span></p>
 </div>
-<p>The model can be scaled either regarding to measures between joint center,
-or exteranal measures of bony tips, or by representation of a certain percentile of the population.</p>
-<p>For further details see <a class="reference internal" href="../../Scaling/intro.html"><span class="doc">the tutorial about scaling</span></a></p>
-<img alt="../../_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" />
+<p>This example shows how to study different exoskeleton concepts on an activity. The model is
+based on the <a class="reference external" href="https://www.anybodytech.com/simulation-driven-conceptual-design-of-exoskeletons/">webcast</a>
+presented by Prof. John Rasmussen from Aalborg University on March 28, 2022.</p>
+<p>The model points to the existing <a class="reference internal" href="../Mocap/plot_BVH_BoxLift.html#sphx-glr-auto-examples-mocap-plot-bvh-boxlift-py"><span class="std std-ref">BVH Box Lift model</span></a> in the AMMR and implements
+the different steps described in the webcast. In this model, two different concepts can be studied:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Rotational springs at the knees</p></li>
+<li><p>Extensible rods crossing the knees, hips and lumbar spine.</p></li>
+</ul>
+</div></blockquote>
+<p>For each concept, you can apply idealized forces through AnyReacForce. The idealized
+forces are like hypothetical actuators that will provide as much force as is needed by the system. This
+can be useful to study requirement of assistive force and its relation with kinematic data such as joint
+angles. Subsequently, the assistive force can be implemented through springs whose characteristics
+have been determined by the idealized force required at the joints.</p>
+<dl class="simple">
+<dt>Thus, there are four possibilities in this exoskeleton concept model:</dt><dd><ol class="arabic simple">
+<li><p>Idealized force at knees.</p></li>
+<li><p>Spring force at knees.</p></li>
+<li><p>Idealized extensible rods crossing the knees, hips and lumbar spine.</p></li>
+<li><p>Spring force-based extensible rods crossing the knees, hips and lumbar spine.</p></li>
+</ol>
+</dd>
+</dl>
+<img alt="../../_images/sphx_glr_plot_ExoConcept_BoxLift_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_ExoConcept_BoxLift_001.png" />
 </section>
 
 
@@ -183,15 +204,15 @@ or exteranal measures of bony tips, or by representation of a certain percentile
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../Sports/plot_PushUp.html" title="Push Up"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConcept_BoxLift.html" title="Exoskeleton concept model"
+          <a href="plot_StatisticalScalingPlugin.html" title="Statistical Scaling Plugin"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Standin Model Scaling Display</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Exoskeleton concept model</a></li> 
       </ul>
     </div>
     </div>
