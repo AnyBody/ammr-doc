@@ -17,13 +17,13 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR BETA: Fixed: Improved the selected output by adding the m. Semimembranosus and m. Semitendinosus contributions to the knee flexor group for both muscle activity ( KneeFlexorMuscleActivity) and..." />
+<meta property="og:description" content="AMMR 2.4 (2022-04-26): Zenodo link New: Added a new exoskeleton concept model for simulation-driven conceptual design of exoskeletons. The model was developed by Prof. John Rasmussen from Aalborg U..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Changelog &#8212; AMMR v2.3.4-beta Documentation</title>
+    <title>Changelog &#8212; AMMR v2.4.0-beta Documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -81,7 +81,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -97,8 +97,42 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<section id="ammr-beta">
-<h2>AMMR BETA<a class="headerlink" href="#ammr-beta" title="Permalink to this headline">¶</a></h2>
+<section id="ammr-2-4-2022-04-26">
+<h2>AMMR 2.4 (2022-04-26)<a class="headerlink" href="#ammr-2-4-2022-04-26" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.6471999"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6471999.svg" /></a></p>
+<p><strong>New:</strong></p>
+<ul class="simple">
+<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_ExoConcept_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcept-boxlift-py"><span class="std std-ref">exoskeleton concept model</span></a>
+for simulation-driven conceptual design of exoskeletons. The model was developed by Prof. John Rasmussen from
+Aalborg University. Please see the <a class="reference external" href="https://www.anybodytech.com/simulation-driven-conceptual-design-of-exoskeletons/">web cast</a>
+for more details.</p></li>
+<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">femoral torsion tool</span></a>
+to apply femoral torsion to the TLEM2.0 leg model.
+This model tool was developed by Dr. Enrico De Pieri from University of Basel
+Children’s Hospital (UKBB). Please see the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">documentation</span></a>
+or the <a class="reference external" href="https://www.anybodytech.com/modeling-subject-specific-femoral-torsion-for-the-analysis-of-lower-limb-joint-loads/">web cast</a>
+by Enrico on his work and publication on femoral torsion.</p></li>
+<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_KneeForcesExample.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneeforcesexample-py"><span class="std std-ref">Knee force model</span></a>
+example. The model shows how to calculate a simple estimate of the medial and lateral knee force.</p></li>
+<li><p>Many AnyScript example models now include an option to automatically
+create a video from the model. To use this functionality find and run
+the new <code class="docutils literal notranslate"><span class="pre">VideoTool.CreateVideo</span></code> operation under the Study folder.
+This will automatically run the example model, output still frames,
+and combine them into a video afterwards. The script can easily be
+addapted and moved to other examples.</p></li>
+<li><p>Two new utility macros which makes it easier to create 3D grid arrays have been added to the model repository.
+<code class="docutils literal notranslate"><span class="pre">MESHTRIPLES(xarr,</span> <span class="pre">yarr,</span> <span class="pre">zarr)</span></code> and  <code class="docutils literal notranslate"><span class="pre">MESHGRID(xarr,yarr,zarr)</span></code>. I.e. for
+creating arrays of all points in a 3D grid array. More information in the file:
+<span class="menuselection">Body ‣ AAUHuman ‣ BodyModels ‣ GenericBodyModel ‣ Helper.ClassTemplates.any</span></p></li>
+<li><p>Added a warning when the glenohumeral flexion/abduction in the
+mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
+<li><p>There is a new option to override more settings in the <code class="docutils literal notranslate"><span class="pre">DefaultMannequinDrivers</span></code> section. Now the driver
+type (<code class="docutils literal notranslate"><span class="pre">CType=Hard/Soft</span></code>), can be overridden directly by the users.</p></li>
+<li><p>Fixed a lack of robustness with muscle recruitment of the abdominal muscles (<code class="docutils literal notranslate"><span class="pre">buckle</span> <span class="pre">support</span></code>).
+Muscle recruitment could previously fail with high lumbar flexion.
+A small support “artificial muscle” has beeen added to the buckle
+segment, preventing muscle reqruitment from failing.</p></li>
+</ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Improved the selected output by adding the m. Semimembranosus and m.
@@ -127,39 +161,6 @@ with the remaining bodyparts and handled in the cadaver data files.</p></li>
 which only had 3-element muscles on the upper body.</p></li>
 <li><p>The <a class="reference internal" href="auto_examples/Validation/plot_EvaluateMomentArms.html#sphx-glr-auto-examples-validation-plot-evaluatemomentarms-py"><span class="std std-ref">example to evaluate moments arms</span></a>
 now works when the shoulder rhythm is enabled.</p></li>
-</ul>
-<p><strong>Added:</strong></p>
-<ul class="simple">
-<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_ExoConcept_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcept-boxlift-py"><span class="std std-ref">exoskeleton concept model</span></a>
-for simulation-driven conceptual design of exoskeletons. The model was developed by Prof. John Rasmussen from
-Aalborg University. Please see the <a class="reference external" href="https://www.anybodytech.com/simulation-driven-conceptual-design-of-exoskeletons/">web cast</a>
-for more details.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">femoral torsion tool</span></a>
-to apply femoral torsion to the TLEM2.0 leg model.
-This model tool was developed by Dr. Enrico De Pieri from University of Basel
-Children’s Hospital (UKBB). Please see the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">documentation</span></a>
-or the <a class="reference external" href="https://www.anybodytech.com/modeling-subject-specific-femoral-torsion-for-the-analysis-of-lower-limb-joint-loads/">web cast</a>
-by Enrico on his work and publication on femoral torsion.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_KneeForcesExample.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneeforcesexample-py"><span class="std std-ref">Knee force model</span></a>
-example. The model shows how to calculate a simple estimate of the medial and lateral knee force.</p></li>
-<li><p>Two new utility macros which makes it easier to create 3D grid arrays have been added to the model repository.
-<code class="docutils literal notranslate"><span class="pre">MESHTRIPLES(xarr,</span> <span class="pre">yarr,</span> <span class="pre">zarr)</span></code> and  <code class="docutils literal notranslate"><span class="pre">MESHGRID(xarr,yarr,zarr)</span></code>. I.e. for
-creating arrays of all points in a 3D grid array. More information in the file:
-<span class="menuselection">Body ‣ AAUHuman ‣ BodyModels ‣ GenericBodyModel ‣ Helper.ClassTemplates.any</span></p></li>
-<li><p>Added a warning when the glenohumeral flexion/abduction in the
-mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
-<li><p>Many AnyScript example models now include an option to automatically
-create a video from the model. To use this functionality find and run
-the new <code class="docutils literal notranslate"><span class="pre">VideoTool.CreateVideo</span></code> operation under the Study folder.
-This will automatically run the example model, output still frames,
-and combine them into a video afterwards. The script can easily be
-addapted and moved to other examples.</p></li>
-<li><p>There is a new option to override more settings in the <code class="docutils literal notranslate"><span class="pre">DefaultMannequinDrivers</span></code> section. Now the driver
-type (<code class="docutils literal notranslate"><span class="pre">CType=Hard/Soft</span></code>), can be overridden directly by the users.</p></li>
-<li><p>Fixed a lack of robustness with muscle recruitment of the abdominal muscles (<code class="docutils literal notranslate"><span class="pre">buckle</span> <span class="pre">support</span></code>).
-Muscle recruitment could previously fail with high lumbar flexion.
-A small support “artificial muscle” has beeen added to the buckle
-segment, preventing muscle reqruitment from failing.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
@@ -1441,7 +1442,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.3.4-beta Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
