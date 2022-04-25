@@ -17,7 +17,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4 (2022-04-26): Zenodo link New: Added a new trunk exoskeleton concept model for simulating assistance at the trunk in a box lifting task. This simple example shows how to apply assistive to..." />
+<meta property="og:description" content="AMMR 2.4 (2022-04-26): Zenodo link New example models: Added a new trunk exoskeleton concept model for simulating assistance at the trunk in a box lifting task. This simple example shows how to app..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -100,23 +100,28 @@
 <section id="ammr-2-4-2022-04-26">
 <span id="ammr-2-4-changelog"></span><h2>AMMR 2.4 (2022-04-26)<a class="headerlink" href="#ammr-2-4-2022-04-26" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.6471999"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6471999.svg" /></a></p>
-<p><strong>New:</strong></p>
+<p><strong>New example models:</strong></p>
 <ul class="simple">
-<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_ExoConceptTrunk_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcepttrunk-boxlift-py"><span class="std std-ref">trunk exoskeleton concept model</span></a>
+<li><p>Added a new trunk exoskeleton concept model
 for simulating assistance at the trunk in a box lifting task. This simple example shows how to apply assistive torque directly
-to the human model.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Other/plot_ExoConcept_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcept-boxlift-py"><span class="std std-ref">exoskeleton concept model</span></a>
+to the human model. &lt;<a class="reference internal" href="auto_examples/Other/plot_ExoConceptTrunk_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcepttrunk-boxlift-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+<li><p>Added a new exoskeleton concept model
 for simulation-driven conceptual design of exoskeletons. The model was developed by Prof. John Rasmussen from
 Aalborg University. Please see the <a class="reference external" href="https://www.anybodytech.com/simulation-driven-conceptual-design-of-exoskeletons/">web cast</a>
-for more details.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">femoral torsion tool</span></a>
-to apply femoral torsion to the TLEM2.0 leg model.
+for more details. &lt;<a class="reference internal" href="auto_examples/Other/plot_ExoConcept_BoxLift.html#sphx-glr-auto-examples-other-plot-exoconcept-boxlift-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+<li><p>Added a new femoral torsion tool to apply femoral torsion to the TLEM2.0 leg model.
 This model tool was developed by Dr. Enrico De Pieri from University of Basel
-Children’s Hospital (UKBB). Please see the <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">documentation</span></a>
+Children’s Hospital (UKBB). Please see the documentation
 or the <a class="reference external" href="https://www.anybodytech.com/modeling-subject-specific-femoral-torsion-for-the-analysis-of-lower-limb-joint-loads/">web cast</a>
-by Enrico on his work and publication on femoral torsion.</p></li>
-<li><p>Added a new <a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_KneeForcesExample.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneeforcesexample-py"><span class="std std-ref">Knee force model</span></a>
-example. The model shows how to calculate a simple estimate of the medial and lateral knee force.</p></li>
+by Enrico on his work and publication on femoral torsion. &lt;<a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_FemoralTorsionTool.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+<li><p>Added a new knee force model
+example. The model shows how to calculate a simple estimate of the medial and lateral knee force. &lt;<a class="reference internal" href="auto_examples/Orthopedics_and_rehab/plot_KneeForcesExample.html#sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneeforcesexample-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+<li><p>A new box lifting motion capture model has been added. The model is based on data from an inertial measurement
+unit based suit (<a class="reference external" href="https://www.xsens.com/products/mtw-awinda">Xsens</a>), and illustrates how to connect MoCap models with objects in the environment.
+&lt;<a class="reference internal" href="auto_examples/Mocap/plot_BVH_BoxLift.html#sphx-glr-auto-examples-mocap-plot-bvh-boxlift-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+</ul>
+<p><strong>New features:</strong></p>
+<ul class="simple">
 <li><p>Many AnyScript example models now include an option to automatically
 create a video from the model. To use this functionality find and run
 the new <code class="docutils literal notranslate"><span class="pre">VideoTool.CreateVideo</span></code> operation under the Study folder.
