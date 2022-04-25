@@ -9,21 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <meta content="noindex" name="robots" />
 
-<meta property="og:title" content="Standin Model Scaling Display" />
+<meta property="og:title" content="Trunk exoskeleton concept model" />
   
 <meta property="og:type" content="website" />
   
-<meta property="og:url" content="https://anyscript.org/auto_examples/Other/plot_StandingModelScalingDisplay.html" />
+<meta property="og:url" content="https://anyscript.org/auto_examples/Other/plot_ExoConceptTrunk_BoxLift.html" />
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="This application shows all the scaling laws available. The model can be scaled either regarding to measures between joint center, or exteranal measures of bony tips, or by representation of a certa..." />
+<meta property="og:description" content="Trunk exoskeleton concept model. This simple example shows how the effects of an exoskeleton can be investigated by applying assistive torque directly at the human joints. The model points to the e..." />
   
-<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" />
+<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_ExoConceptTrunk_BoxLift_001.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Standin Model Scaling Display &#8212; AMMR v2.4.0-beta Documentation</title>
+    <title>Trunk exoskeleton concept model &#8212; AMMR v2.4.0-beta Documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -58,8 +58,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Trunk exoskeleton concept model" href="plot_ExoConceptTrunk_BoxLift.html" />
-    <link rel="prev" title="Exoskeleton concept model" href="plot_ExoConcept_BoxLift.html" /> 
+    <link rel="next" title="Push Up" href="../Sports/plot_PushUp.html" />
+    <link rel="prev" title="Standin Model Scaling Display" href="plot_StandingModelScalingDisplay.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -74,15 +74,15 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConceptTrunk_BoxLift.html" title="Trunk exoskeleton concept model"
+          <a href="../Sports/plot_PushUp.html" title="Push Up"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConcept_BoxLift.html" title="Exoskeleton concept model"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Standin Model Scaling Display</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Trunk exoskeleton concept model</a></li> 
       </ul>
     </div>
     </div>
@@ -93,19 +93,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section class="sphx-glr-example-title" id="standin-model-scaling-display">
-<span id="sphx-glr-auto-examples-other-plot-standingmodelscalingdisplay-py"></span><h1>Standin Model Scaling Display<a class="headerlink" href="#standin-model-scaling-display" title="Permalink to this headline">¶</a></h1>
-<p>This application shows all the scaling laws available.</p>
+  <section class="sphx-glr-example-title" id="trunk-exoskeleton-concept-model">
+<span id="sphx-glr-auto-examples-other-plot-exoconcepttrunk-boxlift-py"></span><h1>Trunk exoskeleton concept model<a class="headerlink" href="#trunk-exoskeleton-concept-model" title="Permalink to this headline">¶</a></h1>
+<p>Trunk exoskeleton concept model.</p>
+<p>This simple example shows how the effects of an exoskeleton can be investigated by applying assistive torque
+directly at the human joints.</p>
 <div class="without-title admonition seealso">
 <p class="admonition-title">See also</p>
 <p><strong>Main file location in AMMR:</strong></p>
-<p><span class="menuselection">Application ‣ Examples ‣ StandingModelScalingDisplay ‣
-StandingModelScalingDisplay.Main.any</span></p>
+<p><span class="menuselection">Application ‣ Examples ‣ ExoskeletonTrunk ‣ ExoConceptTrunk_BoxLift.main.any</span></p>
 </div>
-<p>The model can be scaled either regarding to measures between joint center,
-or exteranal measures of bony tips, or by representation of a certain percentile of the population.</p>
-<p>For further details see <a class="reference internal" href="../../Scaling/intro.html"><span class="doc">the tutorial about scaling</span></a></p>
-<img alt="../../_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_StandingModelScalingDisplay_001.png" />
+<p>The model points to the existing <a class="reference internal" href="../Mocap/plot_BVH_BoxLift.html#sphx-glr-auto-examples-mocap-plot-bvh-boxlift-py"><span class="std std-ref">BVH Box Lift model</span></a> in the AMMR and implements
+the trunk exoskeleton concept. In this example, a spring force is applied at the pelvis-thorax extension measure of the body model.</p>
+<img alt="../../_images/sphx_glr_plot_ExoConceptTrunk_BoxLift_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_ExoConceptTrunk_BoxLift_001.png" />
 </section>
 
 
@@ -183,15 +183,15 @@ or exteranal measures of bony tips, or by representation of a certain percentile
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConceptTrunk_BoxLift.html" title="Trunk exoskeleton concept model"
+          <a href="../Sports/plot_PushUp.html" title="Push Up"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_ExoConcept_BoxLift.html" title="Exoskeleton concept model"
+          <a href="plot_StandingModelScalingDisplay.html" title="Standin Model Scaling Display"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.0-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Standin Model Scaling Display</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Trunk exoskeleton concept model</a></li> 
       </ul>
     </div>
     </div>
