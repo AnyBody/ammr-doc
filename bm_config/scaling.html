@@ -7,7 +7,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scaling Parameters &#8212; AMMR v2.3.4 Documentation</title>
+<meta property="og:title" content="Scaling Parameters" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/bm_config/scaling.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Scaling Parameters:,, Name, Description,,, BM_SCALING, Definition of an anthropometric scaling law,, BM_SCALING_ANTHRO_FILE, Custom file with all anthropometric measurements used by the scaling law..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>Scaling Parameters &#8212; AMMR v2.4.0 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -63,7 +77,7 @@
         <li class="right" >
           <a href="mannequin.html" title="Mannequin Driver Parameters"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Configuring the Body Model</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Scaling Parameters</a></li> 
@@ -77,7 +91,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="scaling-parameters">
+  <div class="tex2jax_ignore mathjax_ignore section" id="scaling-parameters">
 <h1>Scaling Parameters<a class="headerlink" href="#scaling-parameters" title="Permalink to this headline">¶</a></h1>
 <table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Scaling Parameters</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -91,16 +105,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-scaling" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_SCALING</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_SCALING</p></td>
 <td><p>Definition of an anthropometric scaling law</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-scaling-anthro-file" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_SCALING_ANTHRO_FILE</span></code></a></p></td>
+<tr class="row-odd"><td><p>BM_SCALING_ANTHRO_FILE</p></td>
 <td><p>Custom file with all anthropometric measurements used by the scaling law. This is some times called the AnyMan file.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-scaling-file" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_SCALING_FILE</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_SCALING_MY_FILE</p></td>
+<td><p>Path with the ScalingLaw used. Can be set to override the BM_SCALING parameter and select a custom scaling law.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BM_SCALING_FILE</p></td>
 <td><p>Path with the ScalingLaw used. Can be set to override the BM_SCALING parameter and select a user defined scaling law.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-scaling-standardparam-exterior" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_SCALING_STANDARDPARAM_EXTERIOR</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_SCALING_STANDARDPARAM_EXTERIOR</p></td>
 <td><p>Specifies if the standard parameters and anthropometrics parameters are given as external measurements. This defaults to OFF, which means that all segment length are joint-joint distances. This is set automatically based on the <code class="docutils literal notranslate"><span class="pre">BM_SCALING</span></code> parameter, but can be overridden if you implement your own scaling law and need to use external mesaurements.</p></td>
 </tr>
 </tbody>
@@ -190,7 +207,7 @@
         <li class="right" >
           <a href="mannequin.html" title="Mannequin Driver Parameters"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Configuring the Body Model</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Scaling Parameters</a></li> 
