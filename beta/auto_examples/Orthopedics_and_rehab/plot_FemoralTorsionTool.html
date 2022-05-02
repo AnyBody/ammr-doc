@@ -6,8 +6,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="noindex" name="robots" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
 
 <meta property="og:title" content="Femoral Torsion tool" />
   
@@ -24,8 +23,8 @@
 <meta property="og:image:alt" content="AMMR Documentation" />
   
     <title>Femoral Torsion tool &#8212; AMMR v2.4.0-beta Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -33,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -93,7 +92,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section class="sphx-glr-example-title" id="femoral-torsion-tool">
+  <div class="sphx-glr-example-title section" id="femoral-torsion-tool">
 <span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-femoraltorsiontool-py"></span><h1>Femoral Torsion tool<a class="headerlink" href="#femoral-torsion-tool" title="Permalink to this headline">¶</a></h1>
 <p>This is an example of modifying the femoral torsion of the default leg
 (<a class="reference internal" href="../../body/leg_tlem2_model.html#tlem2"><span class="std std-ref">TLEM 2.0</span></a>) geometry by using a model utility tool included within
@@ -113,21 +112,17 @@ subject-specific values of femoral torsion, and investigate the effect of
 torsional alignment on hip loading. This work is published in ‘Frontiers in
 Bioengineering and Biotechnology’ <a class="reference internal" href="#dflm21" id="id1"><span>[DFLM21]</span></a>. Please cite this article when using
 this tool.</p>
-<figure class="align-center" id="id2">
+<div class="figure align-center" id="id2">
 <img alt="../../_images/femoral-torsion.png" src="../../_images/femoral-torsion.png" />
-<figcaption>
-<p><span class="caption-text">The tool works by adding a 8 control points around the hip center and knee
+<p class="caption"><span class="caption-text">The tool works by adding a 8 control points around the hip center and knee
 center, which control a RBF scale function. The control points are scaled
 with the default model scaling, while the femoral torsion is added on top.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id3">
+</div>
+<div class="figure align-center" id="id3">
 <img alt="../../_images/femoral-torsion_2.png" src="../../_images/femoral-torsion_2.png" />
-<figcaption>
-<p><span class="caption-text">The origin and insertion points of the muscles follow the morphed femoral
+<p class="caption"><span class="caption-text">The origin and insertion points of the muscles follow the morphed femoral
 geometry.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</div>
 <p>The model tool is a simple include file located in the model repository. It can
 be included in any model using the following code:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="c1">// The femoral torsion tool expects the following variables to be defined</span>
@@ -164,7 +159,7 @@ thigh.</p>
 more information on how to use the custom scaling functionality in the
 general case.</p>
 </div>
-<section id="references">
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="citation">
 <dt class="label" id="dflm21"><span class="brackets"><a class="fn-backref" href="#id1">DFLM21</a></span></dt>
@@ -175,8 +170,8 @@ Biotechnol. 2021;9: 679360. doi:<a class="reference external" href="https://doi.
 </dd>
 </dl>
 <img alt="../../_images/sphx_glr_plot_FemoralTorsionTool_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_FemoralTorsionTool_001.png" />
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -192,7 +187,7 @@ Biotechnol. 2021;9: 679360. doi:<a class="reference external" href="https://doi.
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -268,7 +263,7 @@ Biotechnol. 2021;9: 679360. doi:<a class="reference external" href="https://doi.
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

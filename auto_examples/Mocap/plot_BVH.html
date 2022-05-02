@@ -6,11 +6,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inertial MoCap example &#8212; AMMR v2.3.4 Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -18,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -78,7 +77,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section class="sphx-glr-example-title" id="inertial-mocap-example">
+  <div class="sphx-glr-example-title section" id="inertial-mocap-example">
 <span id="sphx-glr-auto-examples-mocap-plot-bvh-py"></span><h1>Inertial MoCap example<a class="headerlink" href="#inertial-mocap-example" title="Permalink to this headline">¶</a></h1>
 <p>Example of a MoCap model using data from an inertial motional caputure suit.
 The model uses a BVH file with data from an Xsens suit. The ground reaction
@@ -100,7 +99,7 @@ old examples.</p>
 <p>AnyBody automatically calculates the virtual markers positions, and the model is scaled directly from
 the size of the BVH stick figure. Hence the model contains no <em>Parameter identification</em> step to find
 The remaining parts of the model are equivalent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
-<section id="updating-old-ammr-2-2-3-bvh-based-models">
+<div class="section" id="updating-old-ammr-2-2-3-bvh-based-models">
 <h2>Updating old (ammr &lt; 2.2.3) BVH based models<a class="headerlink" href="#updating-old-ammr-2-2-3-bvh-based-models" title="Permalink to this headline">¶</a></h2>
 <p>The safest approach is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
 <p>However, it is also possible to change a few files in existing models to utilize the
@@ -110,8 +109,8 @@ new BVH improvements in AnyBody v.7.3.</p>
 You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p></li>
 </ol>
 <img alt="../../_images/sphx_glr_plot_BVH_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_BVH_001.png" />
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -127,7 +126,7 @@ You can copy your existing model folder into the new AMMR, or edit the local <co
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -203,7 +202,7 @@ You can copy your existing model folder into the new AMMR, or edit the local <co
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
