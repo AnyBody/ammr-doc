@@ -7,7 +7,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arm Parameters &#8212; AMMR v2.3.4 Documentation</title>
+<meta property="og:title" content="Arm Parameters" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/bm_config/arm.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Arm Parameters:,, Name, Description,,, BM_ARM_THORAX_SCAPULA_CONTACT, Parameter defining the contact type between Thorax and Scapula,, BM_ARM_STRENGTH_INDEX, Index parameter to specify muscle stren..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>Arm Parameters &#8212; AMMR v2.4.0 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -63,7 +77,7 @@
         <li class="right" >
           <a href="leg.html" title="Leg Parameters"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Configuring the Body Model</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Arm Parameters</a></li> 
@@ -77,7 +91,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="arm-parameters">
+  <div class="tex2jax_ignore mathjax_ignore section" id="arm-parameters">
 <span id="bm-arm-config"></span><h1>Arm Parameters<a class="headerlink" href="#arm-parameters" title="Permalink to this headline">¶</a></h1>
 <table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Arm Parameters</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -91,37 +105,49 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-thorax-scapula-contact" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_THORAX_SCAPULA_CONTACT</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_ARM_THORAX_SCAPULA_CONTACT</p></td>
 <td><p>Parameter defining the contact type between Thorax and Scapula</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-strength-index" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_STRENGTH_INDEX</span></code></a></p></td>
+<tr class="row-odd"><td><p>BM_ARM_STRENGTH_INDEX</p></td>
 <td><p>Index parameter to specify muscle strength for upper extremities.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-left" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_LEFT</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_ARM_LEFT</p></td>
 <td><p>Switch for the left arm model being present or not.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-right" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_RIGHT</span></code></a></p></td>
+<tr class="row-odd"><td><p>BM_ARM_DETAIL_HAND_LEFT</p></td>
+<td><p>Keyword for the type of left hand.</p></td>
+</tr>
+<tr class="row-even"><td><p>BM_ARM_SHOULDER_RHYTHM_LEFT</p></td>
+<td><p>Switch for the shoulder rhythm constraints for the left arm being present or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BM_ARM_RIGHT</p></td>
 <td><p>Switch for the right arm model being present or not.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-shoulder-rhythm" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_SHOULDER_RHYTHM</span></code></a></p></td>
-<td><p>Switch for the shoulder rhythm constraints. ON indicate that the rhythm is a hard contraint while _RHYTHM_SOFT_ will make the rhythm as soft kinematic contraint.</p></td>
+<tr class="row-even"><td><p>BM_ARM_DETAIL_HAND_RIGHT</p></td>
+<td><p>Keyword for the type of right hand.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-clavicula-rotation-rhythm" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_CLAVICULA_ROTATION_RHYTHM</span></code></a></p></td>
+<tr class="row-odd"><td><p>BM_ARM_SHOULDER_RHYTHM_RIGHT</p></td>
+<td><p>Switch for the shoulder rhythm constraints for the right arm being present or not.</p></td>
+</tr>
+<tr class="row-even"><td><p>BM_ARM_SHOULDER_RHYTHM</p></td>
+<td><p>Switch for the shoulder rhythm constraints. ON indicate that the rhythm is a hard contraint while <em>RHYTHM_SOFT</em> will make the rhythm as soft kinematic contraint.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BM_ARM_CLAVICULA_ROTATION_RHYTHM</p></td>
 <td><p>Switch for the clavicula rotation rhythm. If enabled axial rotation of the clavicula will be distributed evenly between the sterno-clavicula and acromio-clavicula joint. Effectively removing clavicula axial rotation as an independent degree of freedom.resterno-clavicula axial rotation.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-detailed-hand" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_DETAILED_HAND</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_ARM_DETAILED_HAND</p></td>
 <td><p>Switch for enabling the detailed hand.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-deltoid-wrapping" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_DELTOID_WRAPPING</span></code></a></p></td>
-<td><p>Switch for deltoid wrapping. Setting this to OFF or _DELTOID_WRAPPING_RAKE_ will revert to the older rake based implementation of the deltoid.</p></td>
+<tr class="row-odd"><td><p>BM_ARM_DELTOID_WRAPPING</p></td>
+<td><p>Switch for deltoid wrapping. Setting this to OFF or <em>DELTOID_WRAPPING_RAKE</em> will revert to the older rake based implementation of the deltoid.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-muscles-both" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_MUSCLES_BOTH</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_ARM_MUSCLES_BOTH</p></td>
 <td><p>Keyword for the muscle model type for both left and right arms.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-muscles-left" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_MUSCLES_LEFT</span></code></a></p></td>
+<tr class="row-odd"><td><p>BM_ARM_MUSCLES_LEFT</p></td>
 <td><p>Keyword for the muscle model type for the left arm.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="bm_statements.html#bm-arm-muscles-right" title="records.config"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_MUSCLES_RIGHT</span></code></a></p></td>
+<tr class="row-even"><td><p>BM_ARM_MUSCLES_RIGHT</p></td>
 <td><p>Keyword for the muscle model for both the right arm.</p></td>
 </tr>
 </tbody>
@@ -211,7 +237,7 @@
         <li class="right" >
           <a href="leg.html" title="Leg Parameters"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Configuring the Body Model</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Arm Parameters</a></li> 
