@@ -7,21 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="The AnyMoCap Framework" />
-  
-<meta property="og:type" content="website" />
-  
-<meta property="og:url" content="https://anyscript.org/anymocap/index.html" />
-  
-<meta property="og:site_name" content="AMMR Documentation" />
-  
-<meta property="og:description" content="The AnyMoCap model is an effort to create a simple and unified framework for doing any kind of MoCap analysis with the AnyBody Modeling System. Making MoCap models the easier, Features: Adapts to a..." />
-  
-<meta property="og:image" content="https://anyscript.org/_images/anymocap.jpg" />
-  
-<meta property="og:image:alt" content="AMMR Documentation" />
-  
-    <title>The AnyMoCap Framework &#8212; AMMR v2.4.0 Documentation</title>
+    <title>The AnyMoCap Framework &#8212; AMMR v2.3.4 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -77,7 +63,7 @@
         <li class="right" >
           <a href="../Scaling/lesson3.html" title="Lesson 3: Scaling using segmental scaling vectors"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">The AnyMoCap Framework</a></li> 
       </ul>
@@ -90,15 +76,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-anymocap-framework">
+  <div class="section" id="the-anymocap-framework">
 <span id="anymocap"></span><h1>The AnyMoCap Framework<a class="headerlink" href="#the-anymocap-framework" title="Permalink to this headline">¶</a></h1>
 <p>The AnyMoCap model is an effort to create a simple and unified framework for
-doing any kind of MoCap analysis with the <a class="reference external" href="https://anybodytech.com">AnyBody Modeling
+doing any kind of MoCap analysis with the <a class="reference external" href="http://anybodytech.com">AnyBody Modeling
 System</a>.</p>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/anymocap.jpg"><img alt="../_images/anymocap.jpg" src="../_images/anymocap.jpg" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">Making MoCap models the easier</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<a class="reference internal image-reference" href="../_images/anymocap.jpg"><img alt="../_images/anymocap.jpg" class="align-center" src="../_images/anymocap.jpg" style="width: 50%;" /></a>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -123,11 +106,11 @@ it can only find velocities and accelerations numerically. That has some
 performance issue when running inverse dynamics analysis. To overcome the
 problem, the MoCap analysis is split into a two-step procedure, as illustrated on
 the figure below:</p>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id1">
 <span id="anymocap-flow-figure"></span><img alt="../_images/anymocap_flow.png" src="../_images/anymocap_flow.png" />
 <p class="caption"><span class="caption-text">Figure 1: The framework of the AnyMoCap model. Analysis is split into three
 steps. <em>Parameter identification</em>, <em>Marker tracking</em>, <em>Inverse dynamic
-analysis</em>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+analysis</em>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The over determinate kinematic analysis solves the model for positions, and
 writes joint angles to a a set of files. These joint angles can then be used
@@ -141,37 +124,33 @@ with the determinate kinematic solver in the inverse dynamic analysis.</p>
 <div class="section" id="anymocap-examples">
 <h2>AnyMoCap examples<a class="headerlink" href="#anymocap-examples" title="Permalink to this headline">¶</a></h2>
 <p>The following gallery shows different examples using the AnyMoCap framework.</p>
-<div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model using data from an inertial motion capture suit. The model uses a BVH ..."><div class="figure align-default" id="id3">
+<div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model using data from an inertial motional caputure suit. The model uses a B..."><div class="figure align-default" id="id2">
 <img alt="../_images/sphx_glr_plot_BVH_thumb.png" src="../_images/sphx_glr_plot_BVH_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_BVH.html#sphx-glr-auto-examples-mocap-plot-bvh-py"><span class="std std-ref">Inertial MoCap example</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_BVH.html#sphx-glr-auto-examples-mocap-plot-bvh-py"><span class="std std-ref">Inertial MoCap example</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model using data from an inertial measurement unit (IMU) based suit. The mod..."><div class="figure align-default" id="id4">
-<img alt="../_images/sphx_glr_plot_BVH_BoxLift_thumb.png" src="../_images/sphx_glr_plot_BVH_BoxLift_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_BVH_BoxLift.html#sphx-glr-auto-examples-mocap-plot-bvh-boxlift-py"><span class="std std-ref">BVH driven box lift example</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="A collection of small models that show-off special features of the *AnyMoCap* framework."><div class="figure align-default" id="id5">
+</div><div class="sphx-glr-thumbcontainer" tooltip="A collection of small models that show-off special features of the *AnyMoCap* framework."><div class="figure align-default" id="id3">
 <img alt="../_images/sphx_glr_plot_AnyMocapFeatures_thumb.png" src="../_images/sphx_glr_plot_AnyMocapFeatures_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_AnyMocapFeatures.html#sphx-glr-auto-examples-mocap-plot-anymocapfeatures-py"><span class="std std-ref">AnyMoCap Features</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_AnyMocapFeatures.html#sphx-glr-auto-examples-mocap-plot-anymocapfeatures-py"><span class="std std-ref">AnyMoCap Features</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of full body MoCap model using the Plug-in-Gait marker protocol, and walking on three t..."><div class="figure align-default" id="id6">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Example of full body MoCap model using the Plug-in-Gait marker protocol, and walking on three t..."><div class="figure align-default" id="id4">
 <img alt="../_images/sphx_glr_plot_Plug-in-gait_Simple_FullBody_thumb.png" src="../_images/sphx_glr_plot_Plug-in-gait_Simple_FullBody_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-py"><span class="std std-ref">Simple Full body model</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-py"><span class="std std-ref">Simple Full body model</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of lower body MoCap model using the Plug-in-Gait marker protocol, and walking on three ..."><div class="figure align-default" id="id7">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Example of lower body MoCap model using the Plug-in-Gait marker protocol, and walking on three ..."><div class="figure align-default" id="id5">
 <img alt="../_images/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png" src="../_images/sphx_glr_plot_Plug-in-gait_Simple_LowerExtremity_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_LowerExtremity.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-lowerextremity-py"><span class="std std-ref">Simple Lower extremity model</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_LowerExtremity.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-lowerextremity-py"><span class="std std-ref">Simple Lower extremity model</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of full body MoCap model using the Plug-in-Gait marker protocol but without force plate..."><div class="figure align-default" id="id8">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Example of full body MoCap model using the Plug-in-Gait marker protocol but without force plate..."><div class="figure align-default" id="id6">
 <img alt="../_images/sphx_glr_plot_Plug-in-gait_Simple_FullBody_GRFPrediction_thumb.png" src="../_images/sphx_glr_plot_Plug-in-gait_Simple_FullBody_GRFPrediction_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-grfprediction-py"><span class="std std-ref">Simple GRF prediction model</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-grfprediction-py"><span class="std std-ref">Simple GRF prediction model</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multiple subjects and trials based on the  &quot;Rehazenter Adult Walking ..."><div class="figure align-default" id="id9">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Fullbody MoCap model with multiple subjects and trials based on the  &quot;Rehazenter Adult Walking ..."><div class="figure align-default" id="id7">
 <img alt="../_images/sphx_glr_plot_ADL_Gait_thumb.png" src="../_images/sphx_glr_plot_ADL_Gait_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">ADL Gait (beta)</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_ADL_Gait.html#sphx-glr-auto-examples-mocap-plot-adl-gait-py"><span class="std std-ref">ADL Gait (beta)</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model structured for analyzing data from multiple subjects and trials. This ..."><div class="figure align-default" id="id10">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Example of a MoCap model structured for analyzing data from multiple subjects and trials. This ..."><div class="figure align-default" id="id8">
 <img alt="../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_thumb.png" src="../_images/sphx_glr_plot_Plug-in-gait_MultiTrial_StandingRef_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-multitrial-standingref-py"><span class="std std-ref">Multi trial MoCap model</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_MultiTrial_StandingRef.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-multitrial-standingref-py"><span class="std std-ref">Multi trial MoCap model</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div><div style='clear:both'></div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -215,8 +194,8 @@ Copy the example elsewhere before using.</p>
 </div>
 <div class="html-toggle section" id="description-of-model-folders">
 <h4>Description of Model folders<a class="headerlink" href="#description-of-model-folders" title="Permalink to this headline">¶</a></h4>
-<table class="styled-table plain docutils align-default" id="id11">
-<caption><span class="caption-text">Top-level model structure</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<table class="styled-table plain docutils align-default" id="id9">
+<caption><span class="caption-text">Top-level model structure</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 27%" />
 <col style="width: 73%" />
@@ -273,8 +252,8 @@ and variables which can be set directly. For example:</p>
 <h3>Paths settings and switches<a class="headerlink" href="#paths-settings-and-switches" title="Permalink to this headline">¶</a></h3>
 <p>Path settings and switches are usually prefixed by <code class="docutils literal notranslate"><span class="pre">MOCAP_</span></code> to indicate that
 they are specific to the AnyMoCap framework.</p>
-<table class="styled-table docutils align-default" id="id12">
-<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">#path</span></code> settings for AnyMoCap.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table class="styled-table docutils align-default" id="id10">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">#path</span></code> settings for AnyMoCap.</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 54%" />
@@ -349,8 +328,8 @@ This file is included in <code class="docutils literal notranslate"><span class=
 </tr>
 </tbody>
 </table>
-<table class="styled-table docutils align-default" id="id13">
-<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">#define</span></code> settings for AnyMoCap.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table class="styled-table docutils align-default" id="id11">
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">#define</span></code> settings for AnyMoCap.</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 26%" />
 <col style="width: 52%" />
@@ -409,13 +388,13 @@ from Marker tracking.</p></td>
 <p>The <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup</span></code> folder contains all the machinery of the AnyMoCap
 framework. It has three important subfolder (<code class="docutils literal notranslate"><span class="pre">TrialSpecificData</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SubjectSpecificData</span></code> and <code class="docutils literal notranslate"><span class="pre">LabSpecificData</span></code>).</p>
-<div class="figure align-default" id="id14">
+<div class="figure align-default" id="id12">
 <img alt="../_images/model-setup-structure.png" src="../_images/model-setup-structure.png" />
 <p class="caption"><span class="caption-text">These three folders contain variables specific to the application but also has
-a few variables which can be assigned directly by the user.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+a few variables which can be assigned directly by the user.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<table class="styled-table docutils align-default" id="id15">
-<caption><span class="caption-text">Variables in the <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.TrialSpecificData</span></code> folder which can be overridden.</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table class="styled-table docutils align-default" id="id13">
+<caption><span class="caption-text">Variables in the <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.TrialSpecificData</span></code> folder which can be overridden.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 54%" />
@@ -460,8 +439,8 @@ dynamic analysis will be 4 less than this values)</p></td>
 </tr>
 </tbody>
 </table>
-<table class="styled-table docutils align-default" id="id16">
-<caption><span class="caption-text">Variables in the <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.LabSpecificData</span></code> folder which can be overridden.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<table class="styled-table docutils align-default" id="id14">
+<caption><span class="caption-text">Variables in the <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.LabSpecificData</span></code> folder which can be overridden.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 54%" />
@@ -599,7 +578,7 @@ double of this value.</p></td>
         <li class="right" >
           <a href="../Scaling/lesson3.html" title="Lesson 3: Scaling using segmental scaling vectors"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
         <li class="nav-item nav-item-this"><a href="">The AnyMoCap Framework</a></li> 
       </ul>

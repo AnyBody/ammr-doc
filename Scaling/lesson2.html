@@ -7,21 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="Lesson 2: Scaling based on External Body Measurements" />
-  
-<meta property="og:type" content="website" />
-  
-<meta property="og:url" content="https://anyscript.org/Scaling/lesson2.html" />
-  
-<meta property="og:site_name" content="AMMR Documentation" />
-  
-<meta property="og:description" content="This tutorial presumes that you have completed Scaling tutorial Lesson 1: Joint to joint scaling methods. It covered the methods ScalingStandard, ScalingUniform, ScalingLengthMass and ScalingLength..." />
-  
-<meta property="og:image" content="https://anyscript.org/_images/image1.jpeg" />
-  
-<meta property="og:image:alt" content="AMMR Documentation" />
-  
-    <title>Lesson 2: Scaling based on External Body Measurements &#8212; AMMR v2.4.0 Documentation</title>
+    <title>Lesson 2: Scaling based on External Body Measurements &#8212; AMMR v2.3.4 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -77,7 +63,7 @@
         <li class="right" >
           <a href="lesson1.html" title="Lesson 1: Joint to Joint Scaling Methods"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="intro.html" accesskey="U">Introduction to Scaling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Lesson 2: Scaling based on External Body Measurements</a></li> 
@@ -91,9 +77,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-2-scaling-based-on-external-body-measurements">
+  <div class="section" id="lesson-2-scaling-based-on-external-body-measurements">
 <h1>Lesson 2: Scaling based on External Body Measurements<a class="headerlink" href="#lesson-2-scaling-based-on-external-body-measurements" title="Permalink to this headline">¶</a></h1>
-<p>This tutorial presumes that you have completed <a class="reference internal" href="lesson1.html"><span class="doc">Scaling tutorial Lesson 1: Joint to joint scaling methods</span></a>. It
+<p>This tutorial presumes that you have completed <a class="reference internal" href="lesson1.html"><span class="doc">Scaling tutorial
+Lesson 1: Joint to joint scaling methods</span></a>. It
 covered the methods ScalingStandard, ScalingUniform, ScalingLengthMass
 and ScalingLengthMassFat.</p>
 <p>This lesson introduces more scaling methods, more precisely:</p>
@@ -209,13 +196,13 @@ Environment.any file:</p>
 </div>
 <p>And secondly switch off muscles in the Main file by uncommenting these lines:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="gr">#ifndef BM_LEG_MUSCLES_BOTH</span>
-<span class="gr">        #define BM_LEG_MUSCLES_BOTH OFF</span>
+<span class="gr">        #define BM_LEG_MUSCLES_BOTH _MUSCLES_NONE_</span>
 <span class="gr">#endif</span>
 <span class="gr">    #ifndef BM_ARM_MUSCLES_BOTH</span>
-<span class="gr">      #define BM_ARM_MUSCLES_BOTH OFF</span>
+<span class="gr">      #define BM_ARM_MUSCLES_BOTH _MUSCLES_NONE_</span>
 <span class="gr">    #endif</span>
 <span class="gr">    #ifndef BM_TRUNK_MUSCLES</span>
-<span class="gr">      #define BM_TRUNK_MUSCLES OFF</span>
+<span class="gr">      #define BM_TRUNK_MUSCLES _MUSCLES_NONE_</span>
 <span class="gr">    #endif</span>
 </pre></div>
 </div>
@@ -384,7 +371,7 @@ sponsoring the scaling implementation.</p>
         <li class="right" >
           <a href="lesson1.html" title="Lesson 1: Joint to Joint Scaling Methods"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.3.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="intro.html" >Introduction to Scaling</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Lesson 2: Scaling based on External Body Measurements</a></li> 
