@@ -16,7 +16,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.1 (??): Zenodo link Fixed: Fixed a small syntax error which caused the BVH example S1/S01_Trial02/ to fail loading.. AMMR 2.4 (2022-04-28): Zenodo link New example models: Added a new trun..." />
+<meta property="og:description" content="AMMR 2.4.1 (??): Zenodo link Fixed: Fixed a small syntax error which caused the BVH example S1/S01_Trial02/ to fail loading., Fixed a problem with the “interface” morphing between the TLEM2 pelvis ..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -102,6 +102,8 @@
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
 <li><p>Fixed a small syntax error which caused the BVH example <code class="docutils literal notranslate"><span class="pre">S1/S01_Trial02/</span></code> to fail loading.</p></li>
+<li><p>Fixed a problem with the “interface” morphing between the TLEM2 pelvis and Trunk Pelvis at the tip of the scarum bone.
+This bug was visible when using <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_TRUNK_INTERFACE</span> <span class="pre">_MORPH_LEG_TO_TRUNK_</span></code>, (i.e. when using the trunk pelvis morphology with the TLEM2 model), which is not the default.</p></li>
 </ul>
 </div>
 <div class="section" id="ammr-2-4-2022-04-28">
