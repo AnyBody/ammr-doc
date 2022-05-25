@@ -114,6 +114,24 @@ This bug was visible when using <code class="docutils literal notranslate"><span
 <li><p>Fixed missing calibration for the new latissimus dorsi elements introduced in AMMR 2.4. This fix also ensures that all
 latissimus dorsi elements are calibrated in the same arm posture.</p></li>
 </ul>
+<p><strong>Changed:</strong></p>
+<ul>
+<li><p>The anyscript implemenatation of the acromio-clavicuala, sterno-clavicular, gleno-humeral, and elbow<br />
+joints have been refactored. They now use explicit AnyScript joint classes (e.g. <code class="docutils literal notranslate"><span class="pre">AnySphericalJoint</span></code>)
+instead of implementing the joints directly with measures and constraints. This simplifies the
+implementation, but also changes the structure of the model tree. However, it has no influence
+the kinematics of the model, which remains identical.</p>
+<p>The new names of the explicit joint objects in <code class="docutils literal notranslate"><span class="pre">ShoulderArm.Jnt</span></code> are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SternoClavicularJoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AcromioClavicularJoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GlenoHumeralJoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HumeroUlnarJoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DistalRadioUlnarJoint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProximalRadioUlnarJoint</span></code></p></li>
+</ul>
+</li>
+</ul>
 <p><strong>Added:</strong></p>
 <ul class="simple">
 <li><p>A few previously renamed nodes in pelvis were added back to improve backwards compatibility when loading old seating models.</p></li>
