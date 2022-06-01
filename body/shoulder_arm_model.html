@@ -21,7 +21,7 @@
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>The Shoulder Arm Model &#8212; AMMR v2.4.0 Documentation</title>
+    <title>The Shoulder Arm Model &#8212; AMMR v2.4.1 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -77,7 +77,7 @@
         <li class="right" >
           <a href="thoracic_model.html" title="Thoracic spine model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">The Shoulder Arm Model</a></li> 
@@ -186,15 +186,15 @@ joint drivers directly or indirectly through connections to the environment</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>SC</p></td>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>SternoClavicularJoint</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>SternoClavicular</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Spherical joint</p></td>
 </tr>
-<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>AC</p></td>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>AcromioClavicularJoint</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>AcromioClavicular</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Spherical joint</p></td>
 </tr>
-<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>GH</p></td>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>GlenoHumeralJoint</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Glenohumeral joint</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Spherical joint (The default joint reactions are
 disabled, since they do not automatically ensure that
@@ -217,17 +217,26 @@ AA on the scapula, to stay in contact with the thorax</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>The length of this ligament is driven
 to always remain constant</p></td>
 </tr>
-<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>FE</p></td>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>HumeroUlnarJoint</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Flexion-extension
 of the elbow</p></td>
 <td class="left-align no-left-divider no-right-divider"><p>Revolute joint</p></td>
 </tr>
-<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>PS</p></td>
-<td class="left-align no-left-divider no-right-divider"><p>Pronation-supination
-joint or the forearm</p></td>
-<td class="left-align no-left-divider no-right-divider"><p>Combination of joints at the distal and
-proximal end of the radius bone that
-leaves one DOF free which is
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>HumeroRadialJoint</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Pronation-supination</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Single linear constraint (5 DOF joint) between radius
+and humerus</p></td>
+</tr>
+<tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>ProximalRadioUlnarJoint</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Pronation-supination</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Trans Spherical joint between radius and ulna at the
+proximal part.</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align nowrap no-left-divider no-right-divider"><p>DistalRadioUlnarJoint</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Pronation-supination</p></td>
+<td class="left-align no-left-divider no-right-divider"><p>Trans Spherical joint between radius and ulna at the
+proximal part. The HumeroRadialJoint, ProximalRadioUlnarJoint
+DistalRadioUlnarJoint leaves one DOF free which is
 pronation/supination of the forearm</p></td>
 </tr>
 <tr class="row-even"><td class="center-align nowrap no-left-divider no-right-divider"><p>Wrist joint</p></td>
@@ -388,7 +397,7 @@ with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
         <li class="right" >
           <a href="thoracic_model.html" title="Thoracic spine model"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">The Shoulder Arm Model</a></li> 

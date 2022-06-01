@@ -7,21 +7,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="Wilke Spine Disc Pressure Model" />
+<meta property="og:title" content="Optimize BVH Origin example" />
   
 <meta property="og:type" content="website" />
   
-<meta property="og:url" content="https://anyscript.org/auto_examples/Validation/plot_WilkeSpinePressure.html" />
+<meta property="og:url" content="https://anyscript.org/auto_examples/Mocap/plot_BVH_OptimizeOrigin.html" />
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="The Wilke Spine Pressure models are eight models that compare intradiscal pressure measured between L4 and L5 discs in different postures. For the comparison, all data is normalized (100 %) to the ..." />
+<meta property="og:description" content="Example of a MoCap model using data from an inertial motion capture suit. The model uses a BVH file with data from an Xsens suit. The ground reaction forces are predicted using the GRF prediction a..." />
   
-<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_BVH_OptimizeOrigin_001.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Wilke Spine Disc Pressure Model &#8212; AMMR v2.4.1 Documentation</title>
+    <title>Optimize BVH Origin example &#8212; AMMR v2.4.1 Documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -56,8 +56,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating a Human model from scratch" href="../../creating_model_from_scratch.html" />
-    <link rel="prev" title="Symmetric Mandible example" href="plot_MandibleModel.html" /> 
+    <link rel="next" title="Simple GRF prediction model" href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" />
+    <link rel="prev" title="Simple Full body model" href="plot_Plug-in-gait_Simple_FullBody.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -72,15 +72,15 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../../creating_model_from_scratch.html" title="Creating a Human model from scratch"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_MandibleModel.html" title="Symmetric Mandible example"
+          <a href="plot_Plug-in-gait_Simple_FullBody.html" title="Simple Full body model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Wilke Spine Disc Pressure Model</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Optimize BVH Origin example</a></li> 
       </ul>
     </div>
     </div>
@@ -91,38 +91,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="sphx-glr-example-title section" id="wilke-spine-disc-pressure-model">
-<span id="sphx-glr-auto-examples-validation-plot-wilkespinepressure-py"></span><h1>Wilke Spine Disc Pressure Model<a class="headerlink" href="#wilke-spine-disc-pressure-model" title="Permalink to this headline">¶</a></h1>
-<p>The Wilke Spine Pressure models are eight models that compare intradiscal pressure measured between L4 and L5 discs in different postures.</p>
+  <div class="sphx-glr-example-title section" id="optimize-bvh-origin-example">
+<span id="sphx-glr-auto-examples-mocap-plot-bvh-optimizeorigin-py"></span><h1>Optimize BVH Origin example<a class="headerlink" href="#optimize-bvh-origin-example" title="Permalink to this headline">¶</a></h1>
+<p>Example of a MoCap model using data from an inertial motion capture suit.
+The model uses a BVH file with data from an Xsens suit. The ground reaction
+forces are predicted using the GRF prediction algorithm.</p>
 <div class="without-title admonition seealso">
 <p class="admonition-title">See also</p>
-<p><strong>Model location in AMMR:</strong></p>
-<p><span class="menuselection">Application ‣ Validation ‣ WilkeSpinalDiscPressure ‣</span></p>
+<p><strong>Main file Example:</strong></p>
+<p><span class="menuselection">Application ‣ MocapExamples ‣ BVH_Xsens_OptimizeOrigin ‣ Subjects ‣ S1 ‣ S01_Trial01 ‣ Main.any</span></p>
 </div>
-<p>For the comparison, all data is normalized (100 %) to the forces from <em>‘SpinePressureStanding.Main.any’</em>  and <em>‘Relaxed Standing’</em> to show trend validity between the various postures.</p>
-<div class="figure align-center">
-<img alt="../../_images/wilke.svg" src="../../_images/wilke.svg" /></div>
-<p>Both papers refer to the same trial, but supplements each other with study information.</p>
-<ul class="simple">
-<li><p>Wilke, H.J., Neef, P., Caimi, M., Hoogland, T., Claes, L.E., 1999. New in vivo measurements of pressures in the intervertebral disc in daily life. Spine 24, 755–762.</p></li>
-<li><p>Wilke, H., Neef, P., Hinz, B., Seidel, H., Claes, L., 2001. Intradiscal pressure together with anthropometric data–a data set for the validation of models. Clin. Biomech. 16 Suppl 1, S111–26.</p></li>
-</ul>
-<p><em>‘Relaxed Standing’</em> compared with <em>‘SpinePressureStanding.Main.any’</em>.</p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_001.png" />
-<p><em>‘Lying in prone’</em> compared with <em>‘SpinePressureLyingOnBack.main.any’</em>.</p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_002.png" />
-<p><em>‘Seating relaxed’</em> compared with <em>‘SpinePressureSeatingRelaxed.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_003.png" />
-<p><em>‘Relaxed Erect Sitting’</em> compared with <em>‘SpinePressureSeatingStraitNoSupport.main.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_004.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_004.png" />
-<p><em>‘Standing flexed foward’</em> compared with <em>‘SpinePressurestandingflexed.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_005.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_005.png" />
-<p><em>‘Crate of beer held close at chest level’</em> compared with <em>‘SpinePressurestandingliftclose.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_006.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_006.png" />
-<p><em>‘Lifting bent over with round back’</em> compared with <em>‘SpinePressurestandingliftflexed.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_007.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_007.png" />
-<p><em>‘’Held away about 60 cm’</em> compared with <em>‘SpinePressurestandingliftstretched arms.main.any’</em></p>
-<img alt="../../_images/sphx_glr_plot_WilkeSpinePressure_008.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_WilkeSpinePressure_008.png" />
+<p>This particular example demonstrates a class template that can be used to optimize the origin of the
+BVH recording. The class template can be useful when BVH recordings consist of interaction of the subject
+with environment objects. In such trials, it can be hard to locate the environment object relative to
+the subject. The origin of the BVH model (recording) can be set to another position and orientation with
+respect to the Global Ref. This class template can optimize the origin of the BVH model such that a
+target segment of the human model (Left/Right Foot/Hand) hits a known position and orientation in a
+given time interval while following the recorded motion from the trial.</p>
+<p>Normally, in BVH models, AnyBody automatically calculates the virtual markers positions, and the model is scaled directly from
+the size of the BVH stick figure. Hence the model contains no <em>Parameter identification</em> step to find the parameters.
+In this model for optimizing the origin, the parameter identification step must be run manually prior
+to running the model.</p>
+<img alt="../../_images/sphx_glr_plot_BVH_OptimizeOrigin_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_BVH_OptimizeOrigin_001.png" />
 </div>
 
 
@@ -154,11 +144,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Application Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#daily-activities-and-ergonomics">Daily activities and ergonomics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#motion-capture-and-gait-analysis">Motion Capture and gait analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#orthopedics-and-rehab">Orthopedics and rehab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#other-examples">Other examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#sports">Sports</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#validation">Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#validation">Validation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
@@ -200,15 +190,15 @@
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../../creating_model_from_scratch.html" title="Creating a Human model from scratch"
+          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_MandibleModel.html" title="Symmetric Mandible example"
+          <a href="plot_Plug-in-gait_Simple_FullBody.html" title="Simple Full body model"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Wilke Spine Disc Pressure Model</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Optimize BVH Origin example</a></li> 
       </ul>
     </div>
     </div>

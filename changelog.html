@@ -15,13 +15,13 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4 (2022-04-28): Zenodo link New example models: Added a new trunk exoskeleton concept model for simulating assistance at the trunk in a box lifting task. This simple example shows how to app..." />
+<meta property="og:description" content="AMMR 2.4.1 (2022-05-30): Zenodo link New example models: Added a model using a new class template to optimize the origin of BVH model. This model shows how to optimize the origin of the BVH model s..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Changelog &#8212; AMMR v2.4.0 Documentation</title>
+    <title>Changelog &#8212; AMMR v2.4.1 Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -79,7 +79,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -95,8 +95,51 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-2-4-1-2022-05-30">
+<span id="ammr-2-4-changelog"></span><h2>AMMR 2.4.1 (2022-05-30)<a class="headerlink" href="#ammr-2-4-1-2022-05-30" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.6533249"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6533249.svg" /></a></p>
+<p><strong>New example models:</strong></p>
+<ul class="simple">
+<li><p>Added a model using a new class template to optimize the origin of BVH model. This model shows how to optimize
+the origin of the BVH model such that a target segment of the human model (Left/Right Foot/Hand) hits a known
+position and orientation in a given time interval while following the recorded motion from the trial.
+&lt;<a class="reference internal" href="auto_examples/Mocap/plot_BVH_OptimizeOrigin.html#sphx-glr-auto-examples-mocap-plot-bvh-optimizeorigin-py"><span class="std std-ref">See more</span></a>&gt;</p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Fixed a small syntax error which caused the BVH example <code class="docutils literal notranslate"><span class="pre">S1/S01_Trial02/</span></code> to fail loading.</p></li>
+<li><p>Fixed a problem with the “interface” morphing between the TLEM2 pelvis and Trunk Pelvis at the tip of the scarum bone.
+This bug was visible when using <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">BM_LEG_TRUNK_INTERFACE</span> <span class="pre">_MORPH_LEG_TO_TRUNK_</span></code>, (i.e. when using the trunk pelvis morphology with the TLEM2 model), which is not the default.</p></li>
+<li><p>Fixed missing calibration for the new latissimus dorsi elements introduced in AMMR 2.4. This fix also ensures that all
+latissimus dorsi elements are calibrated in the same arm posture.</p></li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul>
+<li><p>The anyscript implemenatation of the acromio-clavicuala, sterno-clavicular, gleno-humeral, and elbow
+joints have been refactored. They now use explicit AnyScript joint classes (e.g. <code class="docutils literal notranslate"><span class="pre">AnySphericalJoint</span></code>)
+instead of implementing the joints directly with measures and constraints. This simplifies the
+implementation, but also changes the structure of the model tree. However, it has no influence
+the kinematics of the model, which remains identical.</p>
+<p>The new names of the explicit joint objects in <code class="docutils literal notranslate"><span class="pre">ShoulderArm.Jnt</span></code> are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SternoClavicularJoint</span></code> (-3 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AcromioClavicularJoint</span></code> (-3 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GlenoHumeralJoint</span></code> (-3 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HumeroUlnarJoint</span></code> (-5 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HumeroRadialJoint</span></code> (-1 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProximalRadioUlnarJoint</span></code> (-2 DOF)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DistalRadioUlnarJoint</span></code> (-2 DOF)</p></li>
+</ul>
+</li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">HumeroUlnarJoint</span></code> is the elbow flexion extension, and together <code class="docutils literal notranslate"><span class="pre">HumeroRadialJoint</span></code>, <code class="docutils literal notranslate"><span class="pre">ProximalRadioUlnarJoint</span></code> and <code class="docutils literal notranslate"><span class="pre">DistalRadioUlnarJoint</span></code> adds 5 constraints leaving the forearm rotation degree of freedom.</p>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>A few previously renamed nodes in pelvis were added back to improve backwards compatibility when loading old seating models.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-4-2022-04-28">
-<span id="ammr-2-4-changelog"></span><h2>AMMR 2.4 (2022-04-28)<a class="headerlink" href="#ammr-2-4-2022-04-28" title="Permalink to this headline">¶</a></h2>
+<h2>AMMR 2.4 (2022-04-28)<a class="headerlink" href="#ammr-2-4-2022-04-28" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.6471999"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6471999.svg" /></a></p>
 <p><strong>New example models:</strong></p>
 <ul class="simple">
@@ -125,19 +168,19 @@ create a video from the model. To use this functionality find and run
 the new <code class="docutils literal notranslate"><span class="pre">VideoTool.CreateVideo</span></code> operation under the Study folder.
 This will automatically run the example model, output still frames,
 and combine them into a video afterwards. The script can easily be
-addapted and moved to other examples.</p></li>
-<li><p>Two new utility macros which makes it easier to create 3D grid arrays have been added to the model repository.
-<code class="docutils literal notranslate"><span class="pre">MESHTRIPLES(xarr,</span> <span class="pre">yarr,</span> <span class="pre">zarr)</span></code> and  <code class="docutils literal notranslate"><span class="pre">MESHGRID(xarr,yarr,zarr)</span></code>. I.e. for
+adapted and moved to other examples.</p></li>
+<li><p>Two new utility macros, which make it easier to create 3D grid arrays, have been added to the model repository.
+<code class="docutils literal notranslate"><span class="pre">MESHTRIPLES(xarr,</span> <span class="pre">yarr,</span> <span class="pre">zarr)</span></code> and  <code class="docutils literal notranslate"><span class="pre">MESHGRID(xarr,yarr,zarr)</span></code>. i.e. for
 creating arrays of all points in a 3D grid array. More information in the file:
 <span class="menuselection">Body ‣ AAUHuman ‣ BodyModels ‣ GenericBodyModel ‣ Helper.ClassTemplates.any</span></p></li>
 <li><p>Added a warning when the glenohumeral flexion/abduction in the
-mannequin values can cause problems as start guess for the kinematic solver. An small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) are also added in these cases so the shoulder rhythm will work as expected.</p></li>
+mannequin values can cause problems as start guess for the kinematic solver. A small automatic pertubation of the Humerus orientation (<code class="docutils literal notranslate"><span class="pre">Axes0</span></code>) is also added in these cases so the shoulder rhythm will work as expected.</p></li>
 <li><p>There is a new option to override more settings in the <code class="docutils literal notranslate"><span class="pre">DefaultMannequinDrivers</span></code> section. Now the driver
 type (<code class="docutils literal notranslate"><span class="pre">CType=Hard/Soft</span></code>), can be overridden directly by the users.</p></li>
 <li><p>Fixed a lack of robustness with muscle recruitment of the abdominal muscles (<code class="docutils literal notranslate"><span class="pre">buckle</span> <span class="pre">support</span></code>).
 Muscle recruitment could previously fail with high lumbar flexion.
 A small support “artificial muscle” has beeen added to the buckle
-segment, preventing muscle reqruitment from failing.</p></li>
+segment, preventing muscle recruitment from failing.</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
@@ -151,7 +194,7 @@ moved down a bit to ensure the muscles wraps correctly in lunge movements,
 while maintaining the same moment arm in gait etc.</p></li>
 <li><p>Fixed a bug in scaling where the mass of the trunk model pelvis was used in some cases instead of the
 pelvis mass from the leg model. This could cause a slightly incorrect mass to be used for the pelvis segment.</p></li>
-<li><p>Fixed wrong sign for the WristJoint flexion variable. This values users provided in the mannequin
+<li><p>Fixed wrong sign for the WristJoint flexion variable. The values users provided in the mannequin
 section was incorrectly interpreted as wrist extension.</p></li>
 <li><p>Fixed a problem where custom scaling and <a class="reference internal" href="bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_XYZ_</span></code></a> would
 prevent the model from loading.</p></li>
@@ -160,18 +203,18 @@ prevent the model from loading.</p></li>
 <li><p>Fix length calculation and drawing of the normal force</p></li>
 <li><p>Fixed an extrapolation error when changing the internal setting <code class="docutils literal notranslate"><span class="pre">_SMOOTHING_FUNCTION_PROFILE_</span></code> to
 <code class="docutils literal notranslate"><span class="pre">FUNC_PROFILE_BSPLINE</span></code>. We now cap the height ratio to only be in the interpolation area.
-Values outside infers that no contact is present.</p></li>
+Values outside this area infer that no contact is present.</p></li>
 </ul>
 </li>
 <li><p>Refactored the way Trunk nodes are mirrored between left and right. This is more consistent
-with the remaining bodyparts and handled in the cadaver data files.</p></li>
-<li><p>Fix a problem in MoCap models where calibration studies were not run automatically in model
-which only had 3-element muscles on the upper body.</p></li>
+with the remaining body parts and handled in the cadaver data files.</p></li>
+<li><p>Fixed a problem in MoCap models where calibration studies were not run automatically in models
+that only had 3-element muscles on the upper body.</p></li>
 <li><p>The <a class="reference internal" href="auto_examples/Validation/plot_EvaluateMomentArms.html#sphx-glr-auto-examples-validation-plot-evaluatemomentarms-py"><span class="std std-ref">example to evaluate moments arms</span></a>
 now works when the shoulder rhythm is enabled.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
-<ul class="simple">
+<ul>
 <li><p>Improve the trunk model’s strength for trunk external rotation. This change
 improves the implementation of the internal/external obliques and latissimus
 dorsi muscles. More branches are added to the internal obliques and the
@@ -181,20 +224,25 @@ inserting on every vertebra.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">clavicle</span></code> entry in the <code class="docutils literal notranslate"><span class="pre">Anthropometric.SegmentMasses</span></code> folder have been renamed to <code class="docutils literal notranslate"><span class="pre">shoulder</span></code>.
 This makes it consistent with the rest of varaibles in the folder, and correctly reflect that
 the mass is assigned to both the scapula and clavicle segment.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">OptimalFiberLength</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalTendonLength</span></code> in the TLEM leg models, are no longer ‘DesignVar’, when the
-parameters are also calibrated. This prevents huge amount warnings when calibrating the leg muscles.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">OptimalFiberLength</span></code> and <code class="docutils literal notranslate"><span class="pre">TotalTendonLength</span></code> in the TLEM leg models are no longer ‘DesignVar’ when the
+parameters are also calibrated. This prevents the huge amount of warnings when calibrating the leg muscles.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">L5LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L4LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L3LContactNode</span></code>,
 <code class="docutils literal notranslate"><span class="pre">L4LContactNode</span></code>,<code class="docutils literal notranslate"><span class="pre">L1LContactNode</span></code> nodes were scaled using the Right node Z-axis. This
 is now changed to use the Left node Z-axis.</p></li>
 <li><p>The trunk model has been restructured in preparation for a full Thoracic model.
 This means that all the vertebra and ribs have been created in the model structure, but only as
-<code class="docutils literal notranslate"><span class="pre">AnyFolder&amp;</span></code> references to the single rigid thorax segment.</p></li>
+<code class="docutils literal notranslate"><span class="pre">AnyFolder&amp;</span></code> references to the single rigid thorax segment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A number of nodes have been renamed in the process. If you have problems loading old model due to missing nodes, please consult the new model examples to find the new names.</p>
+</div>
+</li>
 <li><p>Updated the neutral scapula position and scapula sliding. The default neutral scapula position
-(medial rotation) have been updated to a more realistic position. Additionally, the node at scapula
-TS point on which scapula slides have been moved to provide a more realistic clearance between
+(medial rotation) has been updated to a more realistic position. Additionally, the node at scapula
+TS point, on which the scapula slides, has been moved to provide a more realistic clearance between
 the scapula and the ellipsoid sliding surface representing thorax.<br />
-Thanks to Johanna Menze (&#64;menzejo) from the University of Bern from updating the model.</p></li>
-<li><p>Renamed a few variable named <code class="docutils literal notranslate"><span class="pre">r</span></code> which could collide with builtin <code class="docutils literal notranslate"><span class="pre">r</span></code> variable.</p></li>
+Thanks to Johanna Menze (&#64;menzejo) from the University of Bern for updating the model.</p></li>
+<li><p>Renamed a few variables named <code class="docutils literal notranslate"><span class="pre">r</span></code> which could collide with built-in <code class="docutils literal notranslate"><span class="pre">r</span></code> variable.</p></li>
 </ul>
 <p><strong>Removed:</strong></p>
 <ul class="simple">
@@ -1450,7 +1498,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.4.0 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.1 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
