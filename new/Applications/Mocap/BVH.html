@@ -14,9 +14,9 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="Example of a MoCap model using data from an inertial motion capture suit. The model uses a BVH file with data from an Xsens suit. The ground reaction forces are predicted using the GRF prediction a..." />
+<meta property="og:description" content="Example: Example of a MoCap model using data from an inertial motion capture suit. The model uses a BVH file with data from an Xsens suit. The ground reaction forces are predicted using the GRF pre..." />
   
-<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+<meta property="og:image" content="https://anyscript.org/_images/BVH.jpg" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
@@ -58,6 +58,8 @@
     <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -675,36 +677,12 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-old-ammr-2-2-3-bvh-based-models">
-   Updating old (ammr &lt; 2.2.3) BVH based models
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -716,19 +694,6 @@ title="Fullscreen mode"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-old-ammr-2-2-3-bvh-based-models">
-   Updating old (ammr &lt; 2.2.3) BVH based models
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -737,7 +702,11 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="inertial-mocap-example">
-<span id="sphx-glr-auto-examples-mocap-plot-bvh-py"></span><h1>Inertial MoCap example<a class="headerlink" href="#inertial-mocap-example" title="Permalink to this headline">#</a></h1>
+<span id="example-mocap-bvh"></span><span id="sphx-glr-auto-examples-mocap-plot-bvh-py"></span><h1>Inertial MoCap example<a class="headerlink" href="#inertial-mocap-example" title="Permalink to this headline">#</a></h1>
+<div class="sidebar">
+<p class="sidebar-title"><strong>Example</strong></p>
+<a class="reference internal image-reference" href="../../_images/BVH.jpg"><img alt="../../_images/BVH.jpg" class="align-center" src="../../_images/BVH.jpg" style="width: 70%;" /></a>
+</div>
 <p>Example of a MoCap model using data from an inertial motion capture suit.
 The model uses a BVH file with data from an Xsens suit. The ground reaction
 forces are predicted using the GRF prediction algorithm.</p>
@@ -749,23 +718,29 @@ forces are predicted using the GRF prediction algorithm.</p>
 <p>The model works using virtual markers placed on the BVH rig (i.e. the stick-figure
 model specified by the BVH file). The virtual markers are used to make the
 Musculoskeletal model moved similar to marker based MoCap models.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 2.2.3: </span>The example was updated use the new features in v.7.2.3 of the AnyBody Modeling system. It fixes the problems which can occur in some BVH files due to gimbal locks and multiple solutions (N<em>2</em>pi) to the euler angle equations. See the section below on how to update old examples.</p>
-</div>
 <p>AnyBody automatically calculates the virtual markers positions, and the model is scaled directly from
 the size of the BVH stick figure. Hence the model contains no <em>Parameter identification</em> step to find the parameters.
 The remaining parts of the model are equivalent to other <a class="reference internal" href="../../anymocap/index.html#anymocap"><span class="std std-ref">MoCap model</span></a>  based on C3D files.</p>
-<div class="section" id="updating-old-ammr-2-2-3-bvh-based-models">
-<h2>Updating old (ammr &lt; 2.2.3) BVH based models<a class="headerlink" href="#updating-old-ammr-2-2-3-bvh-based-models" title="Permalink to this headline">#</a></h2>
-<p>The safest approach is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
-<p>However, it is also possible to change a few files in existing models to utilize the
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2.2.3: </span>The example uses features added in v.7.2.3 of the AnyBody Modeling system. It fixes the problems which can occur in some BVH files due to gimbal locks and multiple solutions (<span class="math notranslate nohighlight">\(N2\pi\)</span>) to the euler angle equations. See the section below on how to update old examples.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Updating old (ammr &lt; 2.2.3) BVH based models<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The safest approach is to reimplement your model based on the newest BVH example and AMMR v.2.3.</p>
+<p class="sd-card-text">However, it is also possible to change a few files in existing models to utilize the
 new BVH improvements in AnyBody v.7.3.</p>
-<ol class="arabic simple">
-<li><p><strong>Important</strong>: Make sure your use the new AMMR (&gt;=2.3) and new AnyBody Modeling System (&gt;=7.3).
-You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p></li>
-</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="sd-card-text">Make sure your use the new AMMR (&gt;=2.3) and new AnyBody Modeling System (&gt;=7.3).
+You can copy your existing model folder into the new AMMR, or edit the local <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file to point to the new AMMR.</p>
 </div>
 </div>
+</details></div>
 
 
               </div>

@@ -1038,7 +1038,7 @@ title="Fullscreen mode"
 <li><p>Added a model using a new class template to optimize the origin of BVH model. This model shows how to optimize
 the origin of the BVH model such that a target segment of the human model (Left/Right Foot/Hand) hits a known
 position and orientation in a given time interval while following the recorded motion from the trial.
-&lt;<span class="xref myst">See more</span>&gt;</p></li>
+&lt;<a class="reference internal" href="Applications/Mocap/BVH_OptimizeOrigin.html#examples-mocap-bvhorigin"><span class="std std-ref">See more</span></a>&gt;</p></li>
 </ul>
 <p><strong>Fixed:</strong></p>
 <ul class="simple">
@@ -1094,7 +1094,7 @@ by Enrico on his work and publication on femoral torsion. &lt;<a class="referenc
 example. The model shows how to calculate a simple estimate of the medial and lateral knee force. &lt;<a class="reference internal" href="Applications/Orthopedics_and_rehab/KneeForcesExample.html#example-knee-forces-estimate"><span class="std std-ref">See more</span></a>&gt;</p></li>
 <li><p>A new box lifting motion capture model has been added. The model is based on data from an inertial measurement
 unit based suit (<a class="reference external" href="https://www.xsens.com/products/mtw-awinda">Xsens</a>), and illustrates how to connect MoCap models with objects in the environment.
-&lt;<span class="xref myst">See more</span>&gt;</p></li>
+&lt;<a class="reference internal" href="Applications/Mocap/BVH_BoxLift.html#example-bvh-boxlift"><span class="std std-ref">See more</span></a>&gt;</p></li>
 </ul>
 <p><strong>New features:</strong></p>
 <ul class="simple">
@@ -1213,7 +1213,7 @@ define statement.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>The <span class="xref myst">“ADL gait (MoCap model)”</span> has been updated with
+<li><p>The <a class="reference internal" href="Applications/Mocap/ADL_Gait.html#example-adlgait"><span class="std std-ref">“ADL gait (MoCap model)”</span></a> has been updated with
 most recent improvements from our internal projects. The marker protocol has
 been adjust and a lot of small data problems (marker dropouts etc) has been
 fixed.</p></li>
@@ -1308,7 +1308,7 @@ femoris.</p></li>
 validation model has been updated due to the fix for the
 <a class="reference internal" href="bm_config/bm_constants.html#scaling-uniform" title="_SCALING_UNIFORM_"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_SCALING_UNIFORM_</span></code></a>. The updated model improved the validation
 results slightly.</p></li>
-<li><p>The new large scale <span class="xref myst">“MoCap model (ADL gait)”</span>
+<li><p>The new large scale <a class="reference internal" href="Applications/Mocap/ADL_Gait.html#example-adlgait"><span class="std std-ref">“MoCap model (ADL gait)”</span></a>
 has been updated so the results of running all standing reference trials have
 been added to the model. This means that all the dynamic trials will work even
 if the user forgets to first run the standing reference trials. It is still
@@ -1341,7 +1341,7 @@ addition solves a few problems with overhead arm postures.</p></li>
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>Improvements to the new <span class="xref myst">“ADL Gait”</span>
+<li><p>Improvements to the new <a class="reference internal" href="Applications/Mocap/ADL_Gait.html#example-adlgait"><span class="std std-ref">“ADL Gait”</span></a>
 example. The model now has muscles enabled and the marker protocol has been adjusted
 for a better shoulder posture. Also, the batch processing script now runs all trials without hickups.</p></li>
 <li><p>Improve the shoulder rhythm. Scapula position when using the shoulder rhythm
@@ -1410,7 +1410,7 @@ by other parts of the AMMR until now so the bug had no consequences in previous 
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.3932764"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3932764.svg" /></a></p>
 <p><strong>Added:</strong></p>
 <ul>
-<li><p>Added a new Full Body <span class="xref std std-ref">“ADL Gait”</span> MoCap
+<li><p>Added a new Full Body <a class="reference internal" href="Applications/Mocap/ADL_Gait.html#example-adlgait"><span class="std std-ref">“ADL Gait”</span></a> MoCap
 Example based on the “Rehazenter Adult Walking Dataset” by <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">Schreiber and Moissenet (2019)</a>.
 The model is configured to run all 50 subjects and 1145 trials in the data set. However, you must
 download the actual data separately from
@@ -1552,7 +1552,7 @@ The following will force the use of cylinders (which is faster) instead of ellip
 solutions to the Euler angle equations when gimbal locks occur.
 The fix requires a new structure of the BVH model,
 where virtual marker trajectories are calculated by the <code class="docutils literal notranslate"><span class="pre">AnyInputBVH</span></code> class.
-See the updated <span class="xref std std-ref">BVH_Xsens example</span>,
+See the updated <a class="reference internal" href="Applications/Mocap/ADL_Gait.html#example-adlgait"><span class="std std-ref">BVH_Xsens example</span></a>,
 and port your existing BVH models to the new example structure.</p></li>
 <li><p>Fixed a problem in <a class="reference internal" href="anymocap/index.html#anymocap"><span class="std std-ref">AnyMoCap models</span></a>, where model view operations in
 <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.Views.SetViewMacros</span></code> would not trigger
@@ -1635,8 +1635,8 @@ by increasing the Augmented Lagrangian coefficient  <code class="docutils litera
 <p><strong>Changed:</strong></p>
 <ul class="simple">
 <li><p>Changed the recruitment criterion to the power of 2 (quadratic) in the two MoCap examples using GRF prediction and weak human-ground residuals.
-(<span class="xref std std-ref">link 1</span>
-and <span class="xref std std-ref">link 2</span>). This greatly increases the robustness of recruitment solver
+(<a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html#example-mocap-grf-prediction"><span class="std std-ref">link 1</span></a>
+and <a class="reference internal" href="Applications/Mocap/BVH.html#example-mocap-bvh"><span class="std std-ref">link 2</span></a>). This greatly increases the robustness of recruitment solver
 and prevents many muscle recruitment failures.</p></li>
 </ul>
 <p><strong>Added:</strong></p>
@@ -1895,7 +1895,7 @@ easily compensate for errors in the c3d file (i.e. swapped channel and wrong sig
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
-<li><p>Enhanced the <span class="xref std std-ref">multi-trial MoCap example</span> for best practice for
+<li><p>Enhanced the <a class="reference internal" href="Applications/Mocap/Plug-in-gait_MultiTrial_StandingRef.html#example-mocap-multitrial"><span class="std std-ref">multi-trial MoCap example</span></a> for best practice for
 MoCap trials with multiple subjects and trials. The example now shows how to deal with multiple
 subjects and storing the c3d files in a separate folder.</p></li>
 </ul>
@@ -2126,7 +2126,7 @@ the AnyBody Modeling System. See the <a class="reference internal" href="Applica
 for more information.</p></li>
 <li><p>Algorithms and file for Ground reaction force prediction are added to: <code class="docutils literal notranslate"><span class="pre">ammr/tools/GRFPrediction/</span></code>.
 See the
-<span class="xref std std-ref">MoCap examples</span>
+<a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html#example-mocap-grf-prediction"><span class="std std-ref">MoCap examples</span></a>
 for how they are used.</p></li>
 </ul>
 </div>
