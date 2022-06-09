@@ -62,7 +62,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started with AMMR" href="getting_started.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -112,10 +112,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <p class="caption">
+ <span class="caption-text">
+  Examples and applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="getting_started.html">
-   Getting Started with AMMR
+   Getting Started
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -131,8 +136,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="about.html">
-   About the model repository
+  <a class="reference internal" href="Applications/index.html">
+   Example Gallery
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -140,98 +145,328 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="changelog.html">
-     Changelog
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/index.html">
+     Ergonomics and ADLs
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/AirlinePassenger.html">
+       Airline passenger
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/FreePosture.html">
+       Free posture Models
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PedalDemo.html">
+       Pedel demo simple
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PedalDemoConditional.html">
+       Pedel demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PosturePredictionModel.html">
+       Posture Prediction Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/SeatedHuman.html">
+       Seated Human
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/Squat.html">
+       Squat
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/StandingLift.html">
+       Lifting Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/StandingModel.html">
+       Standing Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/WheelTurn.html">
+       Hand crank model
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="contribute.html">
-     Contribute to Model Development
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Mocap/index.html">
+     MoCap
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/ADL_Gait.html">
+       ADL Gait (beta)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/AnyMocapFeatures.html">
+       AnyMoCap Features
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/BVH.html">
+       Inertial MoCap example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/BVH_BoxLift.html">
+       BVH driven box lift example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/BVH_OptimizeOrigin.html">
+       Optimize BVH Origin example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_MultiTrial_StandingRef.html">
+       Multi trial MoCap model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody.html">
+       Simple Full body model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html">
+       Simple GRF prediction model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_LowerExtremity.html">
+       Simple Lower extremity model
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="legal.html">
-     Legal, Trademarks and Copyrights
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Orthopedics_and_rehab/index.html">
+     Orthopedics
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/FacetJointModel.html">
+       Facet Joint Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/FemoralTorsionTool.html">
+       Femoral Torsion tool
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/KneeForcesExample.html">
+       Knee forces example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/KneeSimulator.html">
+       Knee Simulator Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/SpineFixationWithForceDependentKinematics.html">
+       Spine Fixation Model using Force Dependent Kinematics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/THA-KneeBendDemo.html">
+       Total Hip Arthroplasty (THA) Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Orthopedics_and_rehab/WheelChairRancho.html">
+       Wheel Chair model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Sports/index.html">
+     Sports
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/ArmCurl.html">
+       Arm curl
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/BenchPress.html">
+       Bench Press
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/BikeModel.html">
+       Bike Model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/BikeModel2D.html">
+       Bike Model 2D
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/CrossTrainer.html">
+       Cross Trainer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/LegPressMachine.html">
+       Leg Press Machine
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Sports/PushUp.html">
+       Push Up
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Other/index.html">
+     Other
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/ExoConceptTrunk_BoxLift.html">
+       Trunk exoskeleton concept model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/ExoConcept_BoxLift.html">
+       Exoskeleton concept model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/IndexFingerModel.html">
+       Index finger model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/JumpingJack.html">
+       Jumping Jack
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/StandingModelScalingDisplay.html">
+       Standing Model Scaling Display
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/StatisticalScalingPlugin.html">
+       Statistical Scaling Plugin
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Other/UlmRatHindLimbModel.html">
+       Rat Hindlimb model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Applications/Validation/index.html">
+     Validation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/AalborgMandible.html">
+       The Aalborg Mandible model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/BergmannGH.html">
+       Bergmann GH
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/EvaluateJointStrength.html">
+       Evaluate joint strength
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/EvaluateMomentArms.html">
+       Evaluate moment arms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/GaitVaughan.html">
+       Gait Vaughan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/MandibleModel.html">
+       Symmetric Mandible example
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Applications/Validation/WilkeSpinePressure.html">
+       Wilke Spine Disc Pressure Model
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Reference
+  Body Models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="bm_config/index.html">
-   Configuring the Body Model
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/leg.html">
-     Leg Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/arm.html">
-     Arm Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/trunk.html">
-     Trunk Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/mannequin.html">
-     Mannequin Driver Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/scaling.html">
-     Scaling Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/joint_type.html">
-     Joint Type Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/other.html">
-     Other Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/bm_plugin.html">
-     Body Model Plugin (BM-Plugin)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/bm_statements.html">
-     All BodyModel parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="bm_config/bm_constants.html">
-     All BodyModel constants
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
   <a class="reference internal" href="body/models.html">
    Body Models
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -299,321 +534,64 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Applications/index.html">
-   Example Gallery
+  <a class="reference internal" href="bm_config/index.html">
+   Configuring the Body Model
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/index.html">
-     Ergonomics and ADLs
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/leg.html">
+     Leg Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/AirlinePassenger.html">
-       Airline passenger
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/FreePosture.html">
-       Free posture Models
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PedalDemo.html">
-       Pedel demo simple
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PedalDemoConditional.html">
-       Pedel demo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/PosturePredictionModel.html">
-       Posture Prediction Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/SeatedHuman.html">
-       Seated Human
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/Squat.html">
-       Squat
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/StandingLift.html">
-       Lifting Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/StandingModel.html">
-       Standing Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/WheelTurn.html">
-       Hand crank model
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Mocap/index.html">
-     MoCap
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/arm.html">
+     Arm Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-    <label for="toctree-checkbox-7">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/ADL_Gait.html">
-       ADL Gait (beta)
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/AnyMocapFeatures.html">
-       AnyMoCap Features
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/BVH.html">
-       Inertial MoCap example
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/BVH_BoxLift.html">
-       BVH driven box lift example
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/BVH_OptimizeOrigin.html">
-       Optimize BVH Origin example
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_MultiTrial_StandingRef.html">
-       Multi trial MoCap model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody.html">
-       Simple Full body model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html">
-       Simple GRF prediction model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Mocap/Plug-in-gait_Simple_LowerExtremity.html">
-       Simple Lower extremity model
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Orthopedics_and_rehab/index.html">
-     Orthopedics
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/trunk.html">
+     Trunk Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/FacetJointModel.html">
-       Facet Joint Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/FemoralTorsionTool.html">
-       Femoral Torsion tool
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/KneeForcesExample.html">
-       Knee forces example
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/KneeSimulator.html">
-       Knee Simulator Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/SpineFixationWithForceDependentKinematics.html">
-       Spine Fixation Model using Force Dependent Kinematics
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/THA-KneeBendDemo.html">
-       Total Hip Arthroplasty (THA) Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Orthopedics_and_rehab/WheelChairRancho.html">
-       Wheel Chair model
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Sports/index.html">
-     Sports
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/mannequin.html">
+     Mannequin Driver Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/ArmCurl.html">
-       Arm curl
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/BenchPress.html">
-       Bench Press
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/BikeModel.html">
-       Bike Model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/BikeModel2D.html">
-       Bike Model 2D
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/CrossTrainer.html">
-       Cross Trainer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/LegPressMachine.html">
-       Leg Press Machine
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Sports/PushUp.html">
-       Push Up
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Other/index.html">
-     Other
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/scaling.html">
+     Scaling Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/ExoConceptTrunk_BoxLift.html">
-       Trunk exoskeleton concept model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/ExoConcept_BoxLift.html">
-       Exoskeleton concept model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/IndexFingerModel.html">
-       Index finger model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/JumpingJack.html">
-       Jumping Jack
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/StandingModelScalingDisplay.html">
-       Standing Model Scaling Display
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/StatisticalScalingPlugin.html">
-       Statistical Scaling Plugin
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Other/UlmRatHindLimbModel.html">
-       Rat Hindlimb model
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="Applications/Validation/index.html">
-     Validation
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/joint_type.html">
+     Joint Type Parameters
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/AalborgMandible.html">
-       The Aalborg Mandible model
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/BergmannGH.html">
-       Bergmann GH
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/EvaluateJointStrength.html">
-       Evaluate joint strength
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/EvaluateMomentArms.html">
-       Evaluate moment arms
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/GaitVaughan.html">
-       Gait Vaughan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/MandibleModel.html">
-       Symmetric Mandible example
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="Applications/Validation/WilkeSpinePressure.html">
-       Wilke Spine Disc Pressure Model
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/other.html">
+     Other Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/bm_plugin.html">
+     Body Model Plugin (BM-Plugin)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/bm_statements.html">
+     All BodyModel parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bm_config/bm_constants.html">
+     All BodyModel constants
+    </a>
    </li>
   </ul>
  </li>
@@ -633,8 +611,8 @@
   <a class="reference internal" href="Scaling/intro.html">
    Introduction to Scaling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -660,8 +638,8 @@
   <a class="reference internal" href="anymocap/index.html">
    The AnyMoCap Framework
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -669,6 +647,40 @@
    <li class="toctree-l2">
     <a class="reference internal" href="anymocap/grf-prediction.html">
      Ground Reaction force prediction
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  ━━━━━━━━
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="about.html">
+   About the model repository
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="changelog.html">
+     Changelog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="contribute.html">
+     Contribute to Model Development
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="legal.html">
+     Legal, Trademarks and Copyrights
     </a>
    </li>
   </ul>
@@ -767,7 +779,7 @@ title="Fullscreen mode"
 </div>
 <div class="sd-col sd-d-flex-column sd-col-12 sd-col-xs-12 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 sd-align-major-justify sd-text-white sd-fs-3 docutils">
 <p>Documentation for the AnyBody Managed Model Repository - AMMR</p>
-<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-white sd-px-4 sd-fs-5 reference external" href="changelog.html"><span><svg version="4.0.0.63c5cb3" width="1.5em" height="1.5em" class="sd-material-icon sd-material-icon-timeline" viewBox="0 0 24 24" aria-hidden="true"><g><rect fill="none" height="24" width="24" x="0"></rect></g><g><g><path d="M23,8c0,1.1-0.9,2-2,2c-0.18,0-0.35-0.02-0.51-0.07l-3.56,3.55C16.98,13.64,17,13.82,17,14c0,1.1-0.9,2-2,2s-2-0.9-2-2 c0-0.18,0.02-0.36,0.07-0.52l-2.55-2.55C10.36,10.98,10.18,11,10,11c-0.18,0-0.36-0.02-0.52-0.07l-4.55,4.56 C4.98,15.65,5,15.82,5,16c0,1.1-0.9,2-2,2s-2-0.9-2-2s0.9-2,2-2c0.18,0,0.35,0.02,0.51,0.07l4.56-4.55C8.02,9.36,8,9.18,8,9 c0-1.1,0.9-2,2-2s2,0.9,2,2c0,0.18-0.02,0.36-0.07,0.52l2.55,2.55C14.64,12.02,14.82,12,15,12c0.18,0,0.36,0.02,0.52,0.07 l3.55-3.56C19.02,8.35,19,8.18,19,8c0-1.1,0.9-2,2-2S23,6.9,23,8z"></path></g></g></svg> New in AMMR 2.4.1</span></a></p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-white sd-px-4 sd-fs-5 reference external" href="./changelog.html#linkcheck_ignore"><span><svg version="4.0.0.63c5cb3" width="1.5em" height="1.5em" class="sd-material-icon sd-material-icon-timeline" viewBox="0 0 24 24" aria-hidden="true"><g><rect fill="none" height="24" width="24" x="0"></rect></g><g><g><path d="M23,8c0,1.1-0.9,2-2,2c-0.18,0-0.35-0.02-0.51-0.07l-3.56,3.55C16.98,13.64,17,13.82,17,14c0,1.1-0.9,2-2,2s-2-0.9-2-2 c0-0.18,0.02-0.36,0.07-0.52l-2.55-2.55C10.36,10.98,10.18,11,10,11c-0.18,0-0.36-0.02-0.52-0.07l-4.55,4.56 C4.98,15.65,5,15.82,5,16c0,1.1-0.9,2-2,2s-2-0.9-2-2s0.9-2,2-2c0.18,0,0.35,0.02,0.51,0.07l4.56-4.55C8.02,9.36,8,9.18,8,9 c0-1.1,0.9-2,2-2s2,0.9,2,2c0,0.18-0.02,0.36-0.07,0.52l2.55,2.55C14.64,12.02,14.82,12,15,12c0.18,0,0.36,0.02,0.52,0.07 l3.55-3.56C19.02,8.35,19,8.18,19,8c0-1.1,0.9-2,2-2S23,6.9,23,8z"></path></g></g></svg> New in AMMR 2.4.1</span></a></p>
 </div>
 </div>
 </div>
@@ -834,9 +846,11 @@ maintained by AnyBody Technology who ensure that various body part models can
 be used together as full body, scalable musculoskeletal model.</p>
 <div class="hint dropdown admonition">
 <p class="admonition-title"><strong>First time user?</strong></p>
-<p>If you are a new user check the <a class="reference external" href="https://anyscript.org/tutorials">AnyBody Tutorials</a> and the getting started video on AnyBody.</p>
+<p>If you are a new user check the <a class="reference external" href="https://anyscript.org/tutorials/">AnyBody Tutorials</a> and the getting started video on AnyBody.</p>
 <p>The following <a class="reference internal" href="getting_started.html"><span class="doc">Getting Started section</span></a> on the AMMR provides insight into how AMMR is structured, how to
 install it and how to use it.</p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -857,7 +871,7 @@ install it and how to use it.</p>
     <a class='right-next' id="next-link" href="getting_started.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started with AMMR</p>
+        <p class="prev-next-title">Getting Started</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
