@@ -16,7 +16,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.2 (2022-07-08): Zenodo link AMMR version 2.4.2 contains only a few minor changes and fixes compared to version 2.4.1. Changed: Changed defintion (sign) of the SkullThoraxRotation and Skull..." />
+<meta property="og:description" content="AMMR beta: Added: Added a few utility helper class templates ( Template_OperationSaveValues/ Template_OperationLoadValues/ Template_OperationUpdateValues) to make it easier to do common class opera..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -96,6 +96,27 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-beta">
+<h2>AMMR beta<a class="headerlink" href="#ammr-beta" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<ul>
+<li><p>Added a few utility helper class templates (<code class="docutils literal notranslate"><span class="pre">Template_OperationSaveValues</span></code>/<code class="docutils literal notranslate"><span class="pre">Template_OperationLoadValues</span></code>/<code class="docutils literal notranslate"><span class="pre">Template_OperationUpdateValues</span></code>)
+to make it easier to do common class operations without manually having to create the operations with macros.</p>
+<p>To create a operation which loads a file do:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Template_OperationLoadValues</span> <span class="n">LoadAnySetFile</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="n">FileName</span><span class="o">=</span> <span class="s">&quot;MyFile.anyset&quot;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>It is no longer necessasry to supply the <code class="docutils literal notranslate"><span class="pre">MarkerName</span></code> argument in the CreateMarkerDriver template
+MoCap models. The argument can still be used if the marker name and the data entry in the c3d file
+are different.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-4-2-2022-07-08">
 <span id="ammr-2-4-changelog"></span><h2>AMMR 2.4.2 (2022-07-08)<a class="headerlink" href="#ammr-2-4-2-2022-07-08" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.6809697"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6809697.svg" /></a></p>
