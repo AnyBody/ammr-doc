@@ -119,6 +119,10 @@ to make it easier to do common class operations without manually having to creat
 </ul>
 <p><strong>Changed:</strong></p>
 <ul class="simple">
+<li><p>The load-time position of the box in the <a class="reference internal" href="auto_examples/Mocap/plot_BVH_BoxLift.html#sphx-glr-auto-examples-mocap-plot-bvh-boxlift-py"><span class="std std-ref">BVH_BoxLift model</span></a> is now
+calculated using the position of the hands. Also, <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.EnvironmentParameters.GravityDirection</span></code> defined in <code class="docutils literal notranslate"><span class="pre">box.any</span></code> file
+is now calculated automatically from <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.LabSpecificData.Gravity</span></code> defined in <code class="docutils literal notranslate"><span class="pre">LabSpecificData.any</span></code> file. These changes should
+make the model more robust when dealing with different bvh files.</p></li>
 <li><p>It is no longer necessasry to supply the <code class="docutils literal notranslate"><span class="pre">MarkerName</span></code> argument in the CreateMarkerDriver template
 MoCap models. The argument can still be used if the marker name and the data entry in the c3d file
 are different.</p></li>
