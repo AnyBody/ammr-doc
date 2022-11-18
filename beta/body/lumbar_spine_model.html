@@ -7,24 +7,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="The Lumbar Spine Model" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/lumbar_spine_model.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The Lumbar spine contains 5 vertebrae with 3 DoF spherical joints in between, 188 muscle fascicles and a model of intra-abdominal pressure. Since it is impractical to measure or specify the motions..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The Lumbar spine contains 5 vertebrae with 3 DoF spherical joints in between, 188 muscle fascicles and a model of intra-abdominal pressure. Since it is impractical to measure or specify the motions..." />
+
     <title>The Lumbar Spine Model &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -32,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -93,7 +89,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="the-lumbar-spine-model">
-<h1>The Lumbar Spine Model<a class="headerlink" href="#the-lumbar-spine-model" title="Permalink to this headline">¶</a></h1>
+<h1>The Lumbar Spine Model<a class="headerlink" href="#the-lumbar-spine-model" title="Permalink to this heading">¶</a></h1>
 <p>The Lumbar spine contains <strong>5 vertebrae</strong> with 3 DoF spherical joints in
 between, <strong>188 muscle fascicles</strong> and a model of intra-abdominal pressure.</p>
 <!--<img src="../_static/LumbarSpineBack.jpg" alt="Smiley face" width="32%">
@@ -139,7 +135,7 @@ geometric/anatomical estimates of pressure surface area and area
 centroids, which in turn determines the effective moment arm of the
 resulting forces.</p>
 <div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">¶</a></h2>
 <p>The lumbar spine model is always part of the AnyBody Human model. The muscles can
 be enabled/disabled, and the lumbar disc stiffness can be controlled.</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_TRUNK_MUSCLES</span> <span class="x x-Options">ON</span>
@@ -153,7 +149,7 @@ full list of Trunk parameters.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
 <p>More details on the lumbar spine model can be found online:</p>
 <ul class="simple">
 <li><p>Presentation about the <a class="reference external" href="https://www.anybodytech.com/wp-content/uploads/publication_files/AbdominalPressureModel.pdf">Abdominal pressure
@@ -175,7 +171,7 @@ generic detailed rigid-body lumbar spine model. J.Biomech. 40:
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Andersson,E., Oddsson,L., Grundstrom,H.,Thorstensson,A., The role of
 the psoas and iliacus muscles for stability and movement of the
@@ -242,12 +238,12 @@ ligaments”, J Biomech, Vol. 25(11), 1992, pp.1351-1356.</p></li>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -324,7 +320,7 @@ ligaments”, J Biomech, Vol. 25(11), 1992, pp.1351-1356.</p></li>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

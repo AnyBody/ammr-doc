@@ -7,24 +7,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="ADL Gait (beta)" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/auto_examples/Mocap/plot_ADL_Gait.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="Fullbody MoCap model with multiple subjects and trials based on the “Rehazenter Adult Walking Dataset” by Schreiber and Moissenet (2019). The model has 50 subjects and 1145 trials. Subjects walk at..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_ADL_Gait_001.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="Fullbody MoCap model with multiple subjects and trials based on the “Rehazenter Adult Walking Dataset” by Schreiber and Moissenet (2019). The model has 50 subjects and 1145 trials. Subjects walk at..." />
+
     <title>ADL Gait (beta) &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -32,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
 
     
     
@@ -58,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Multi trial MoCap model" href="plot_Plug-in-gait_MultiTrial_StandingRef.html" />
-    <link rel="prev" title="Simple GRF prediction model" href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" /> 
+    <link rel="prev" title="Simple Lower extremity model" href="plot_Plug-in-gait_Simple_LowerExtremity.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -76,7 +72,7 @@
           <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
+          <a href="plot_Plug-in-gait_Simple_LowerExtremity.html" title="Simple Lower extremity model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.2-beta Documentation</a> &#187;</li>
 
@@ -93,7 +89,7 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-example-title section" id="adl-gait-beta">
-<span id="sphx-glr-auto-examples-mocap-plot-adl-gait-py"></span><h1>ADL Gait (beta)<a class="headerlink" href="#adl-gait-beta" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-mocap-plot-adl-gait-py"></span><h1>ADL Gait (beta)<a class="headerlink" href="#adl-gait-beta" title="Permalink to this heading">¶</a></h1>
 <p>Fullbody MoCap model with multiple subjects and trials based on the
 “Rehazenter Adult Walking Dataset” by <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">Schreiber and Moissenet (2019)</a>.</p>
 <div class="without-title admonition seealso">
@@ -126,7 +122,7 @@ with improvements to the model please share them back.</p>
 <a class="reference external" href="https://vbn.aau.dk/en/persons/121260">Anderson de Souza Castelo Oliveira</a>, and <a class="reference external" href="https://www.linkedin.com/in/biomedical">Morten Enemark Lund</a>
 but has not yet been used for publication.</p>
 <div class="section" id="dataset">
-<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">¶</a></h2>
 <p>The full “Rehazenter adult walking dataset” is not distributed with the model. Schreiber and Moissenet (2019) has
 released the data under a Creative Commons license (CC BY 4.0).</p>
 <p>You must download the data sepearately from this model:</p>
@@ -136,7 +132,7 @@ released the data under a Creative Commons license (CC BY 4.0).</p>
 <p>After downloading extract the data into the <code class="docutils literal notranslate"><span class="pre">C3DFiles</span></code> sub folder.</p>
 </div>
 <div class="section" id="model-structure">
-<h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
+<h2>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this heading">¶</a></h2>
 <p>The model files are structured so each trial has its own folder with a main file
 (<code class="docutils literal notranslate"><span class="pre">Main.any</span></code>) and a file with trial specific data (<code class="docutils literal notranslate"><span class="pre">TrialSpecificData.any</span></code>).
 The C3D files are placed together in a separate folder.</p>
@@ -188,7 +184,7 @@ The C3D files are placed together in a separate folder.</p>
 </div>
 </div>
 <div class="section" id="batch-processing">
-<h2>Batch processing<a class="headerlink" href="#batch-processing" title="Permalink to this headline">¶</a></h2>
+<h2>Batch processing<a class="headerlink" href="#batch-processing" title="Permalink to this heading">¶</a></h2>
 <p>The model also contains a batch processing Python script for running all models. The script
 <code class="docutils literal notranslate"><span class="pre">batchprocess.py</span></code> is located in the top-level folder.</p>
 <p>To use the scirpt install the <a class="reference external" href="https://www.anaconda.com/distribution/#download-section">Anaconda Python Distribution</a>.</p>
@@ -208,7 +204,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
 </div>
 </div>
 <div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this heading">¶</a></h2>
 <p>Please cite the following paper when using the data.</p>
 <p>&gt; Schreiber, C., Moissenet, F. A multimodal dataset of human gait at different walking speeds established on injury-free adult participants. Sci Data 6, 111 (2019). <a class="reference external" href="https://doi.org/10.1038/s41597-019-0124-4">https://doi.org/10.1038/s41597-019-0124-4</a></p>
 <img alt="../../_images/sphx_glr_plot_ADL_Gait_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_ADL_Gait_001.png" />
@@ -229,12 +225,12 @@ be necessary to modify the number parallel AnyBody instances to match the number
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -293,7 +289,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
           <a href="plot_Plug-in-gait_MultiTrial_StandingRef.html" title="Multi trial MoCap model"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html" title="Simple GRF prediction model"
+          <a href="plot_Plug-in-gait_Simple_LowerExtremity.html" title="Simple Lower extremity model"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.2-beta Documentation</a> &#187;</li>
 
@@ -305,7 +301,7 @@ be necessary to modify the number parallel AnyBody instances to match the number
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

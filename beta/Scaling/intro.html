@@ -7,24 +7,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="Introduction to Scaling" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/Scaling/intro.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="Musculoskeletal models must be scalable to sizes of different individuals to be useful for product design. Scaling pertains not only to the overall geometry, but also muscle insertion points, muscl..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="Musculoskeletal models must be scalable to sizes of different individuals to be useful for product design. Scaling pertains not only to the overall geometry, but also muscle insertion points, muscl..." />
+
     <title>Introduction to Scaling &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -32,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -92,7 +88,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-scaling">
-<span id="scaling-intro"></span><h1>Introduction to Scaling<a class="headerlink" href="#introduction-to-scaling" title="Permalink to this headline">¶</a></h1>
+<span id="scaling-intro"></span><h1>Introduction to Scaling<a class="headerlink" href="#introduction-to-scaling" title="Permalink to this heading">¶</a></h1>
 <p>Musculoskeletal models must be scalable to sizes of different
 individuals to be useful for product design. Scaling pertains not only to the overall geometry,
 but also muscle insertion points, muscle parameters, wrapping
@@ -117,35 +113,35 @@ choose the actual law.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-standard" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingStandard</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-standard" title="_SCALING_STANDARD_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingStandard</span></code></a></p></td>
 <td><p>scale to a standard size; i.e. use 50th percentile sizes for a European male</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-none" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingNone</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-none" title="_SCALING_NONE_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingNone</span></code></a></p></td>
 <td><p>do not scale; i.e. use underlying cadaveric dataset as is</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-uniform" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingUniform</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-uniform" title="_SCALING_UNIFORM_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingUniform</span></code></a></p></td>
 <td><p>cale segments equally in all directions; input is joint to
 joint distances</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmass" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMass</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmass" title="_SCALING_LENGTHMASS_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMass</span></code></a></p></td>
 <td><p>scale taking mass into account; input is joint to
 joint distances and mass</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmassfat" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassFat</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmassfat" title="_SCALING_LENGTHMASSFAT_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassFat</span></code></a></p></td>
 <td><p>scale taking mass and fat into account; input
 is joint to joint distances</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-uniform-extmeasurements" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingUniformExt</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-uniform-extmeasurements" title="_SCALING_UNIFORM_EXTMEASUREMENTS_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingUniformExt</span></code></a></p></td>
 <td><p>scale equally in all directions; input is external
 measurements</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmass-extmeasurements" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassExt</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmass-extmeasurements" title="_SCALING_LENGTHMASS_EXTMEASUREMENTS_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassExt</span></code></a></p></td>
 <td><p>scale taking mass into account; input is external measurement</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmassfat-extmeasurements" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassFatExt</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-lengthmassfat-extmeasurements" title="_SCALING_LENGTHMASSFAT_EXTMEASUREMENTS_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingLengthMassFatExt</span></code></a></p></td>
 <td><p>scale taking mass and fat into account; input is external measurements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-xyz" title="records.config"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingXYZ</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../bm_config/bm_constants.html#scaling-xyz" title="_SCALING_XYZ_"><code class="xref any ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ScalingXYZ</span></code></a></p></td>
 <td><p>scale taking mass and fat into account; scale segments along X, Y, Z axes;
 input is scale factors along X, Y, Z axes.</p></td>
 </tr>
@@ -198,12 +194,12 @@ the menu. As a starting point for this tutorial please find the model
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -270,7 +266,7 @@ the menu. As a starting point for this tutorial please find the model
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

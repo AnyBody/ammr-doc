@@ -7,24 +7,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="Configuring the Body Model" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/bm_config/index.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The body model can be configured in multiple ways. This include what limb segments are include, the type of muscles, scaling etc. All these choises are controlled through a number of switches calle..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The body model can be configured in multiple ways. This include what limb segments are include, the type of muscles, scaling etc. All these choises are controlled through a number of switches calle..." />
+
     <title>Configuring the Body Model &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -32,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -92,7 +88,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="configuring-the-body-model">
-<span id="bm-config"></span><h1>Configuring the Body Model<a class="headerlink" href="#configuring-the-body-model" title="Permalink to this headline">¶</a></h1>
+<span id="bm-config"></span><h1>Configuring the Body Model<a class="headerlink" href="#configuring-the-body-model" title="Permalink to this heading">¶</a></h1>
 <p>The body model can be configured in multiple ways. This include what limb
 segments are include, the type of muscles, scaling etc.</p>
 <div class="admonition note">
@@ -116,7 +112,7 @@ muscles model on the legs.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some parameters have simple <a class="reference internal" href="bm_constants.html#on" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ON</span></code></a>/<a class="reference internal" href="bm_constants.html#off" title="records.config"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">OFF</span></code></a>
+<p>Some parameters have simple <a class="reference internal" href="bm_constants.html#on" title="ON"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">ON</span></code></a>/<a class="reference internal" href="bm_constants.html#off" title="OFF"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">OFF</span></code></a>
 options, while others have more options.</p>
 </div>
 <p>The next section shows an overview of what BM statements are available for the different body parts.</p>
@@ -137,7 +133,7 @@ mannequin drivers (click to see tutorial on <a class="reference internal" href="
 </ul>
 </div>
 <div class="section" id="all-parameters-and-constants">
-<h2>All Parameters and constants<a class="headerlink" href="#all-parameters-and-constants" title="Permalink to this headline">¶</a></h2>
+<h2>All Parameters and constants<a class="headerlink" href="#all-parameters-and-constants" title="Permalink to this heading">¶</a></h2>
 <p>The full list of all the parameter and their options is available in the links below:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -162,12 +158,12 @@ mannequin drivers (click to see tutorial on <a class="reference internal" href="
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -240,7 +236,7 @@ mannequin drivers (click to see tutorial on <a class="reference internal" href="
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

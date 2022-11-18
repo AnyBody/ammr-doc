@@ -5,21 +5,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="The Cervical Spine Model" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/cervical_spine_model.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The cervical spine model is the neck of the human model. It is always present when the human model is used. The cervical spine model contains 7 vertebrae with 3 DoF spherical joints from T1 to C2, ..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The cervical spine model is the neck of the human model. It is always present when the human model is used. The cervical spine model contains 7 vertebrae with 3 DoF spherical joints from T1 to C2, ..." />
+
     <title>The Cervical Spine Model &#8212; AMMR v2.4.1-beta Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,8 +28,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -44,20 +38,21 @@
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -113,7 +108,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples and applications
  </span>
@@ -456,7 +451,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Body Models
  </span>
@@ -597,7 +592,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guides
  </span>
@@ -653,7 +648,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   ━━━━━━━━
  </span>
@@ -828,7 +823,7 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="the-cervical-spine-model">
-<h1>The Cervical Spine Model<a class="headerlink" href="#the-cervical-spine-model" title="Permalink to this headline">#</a></h1>
+<h1>The Cervical Spine Model<a class="headerlink" href="#the-cervical-spine-model" title="Permalink to this heading">#</a></h1>
 <p>The cervical spine model is the neck of the human model. It is always present
 when the human model is used.</p>
 <p>The cervical spine model contains <strong>7 vertebrae</strong> with 3 DoF spherical
@@ -849,7 +844,7 @@ arms with muscles are present.</p>
 Your browser does not support the video tag.
 </video>
 <!--<img src="../_static/CervicalSpineCloseupBack.jpg" alt="Smiley face" width="49%">--><div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">#</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">#</a></h2>
 <p>Enabling muscles from the cervical spine model, requires that the arms
 also enabled.</p>
 <div class="margin admonition seealso">
@@ -865,7 +860,7 @@ full list of Trunk parmaeters.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <p>More details on the cervical spine can be found online at:</p>
 <ul class="simple">
 <li><p>Thesis: Data on which the cervical spine model, described by <a class="reference external" href="http://alexandria.tue.nl/extra2/200211336.pdf">Marike van der
@@ -875,7 +870,7 @@ dynamics</a></p></li>
 </ul>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>de Zee, M., Falla, D., Farina, D. &amp; Rasmussen, J. (2007), “A detailed
 rigid-body cervical spine model based on inverse dynamics”, Journal

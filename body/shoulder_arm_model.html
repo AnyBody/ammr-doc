@@ -6,24 +6,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="The Shoulder Arm Model" />
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta property="og:title" content="The Shoulder Arm Model" />
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/shoulder_arm_model.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The ShoulderArm model contains data from two different persons. Most of this data comes from the Dutch Shoulder Group and their shoulder model available online The model is built using data from su..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The ShoulderArm model contains data from two different persons. Most of this data comes from the Dutch Shoulder Group and their shoulder model available online The model is built using data from su..." />
+
     <title>The Shoulder Arm Model &#8212; AMMR v2.4.2 Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -31,10 +25,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -92,7 +88,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="the-shoulder-arm-model">
-<h1>The Shoulder Arm Model<a class="headerlink" href="#the-shoulder-arm-model" title="Permalink to this headline">¶</a></h1>
+<h1>The Shoulder Arm Model<a class="headerlink" href="#the-shoulder-arm-model" title="Permalink to this heading">¶</a></h1>
 <p>The ShoulderArm model contains data from two different persons. Most of this data
 comes from the Dutch Shoulder Group and their
 <a class="reference external" href="http://homepage.tudelft.nl/g6u61/repository/shoulder/overview.htm">shoulder model available online</a></p>
@@ -115,7 +111,7 @@ Report</a>.</p>
 Your browser does not support the video tag.
 </video>
 <!--<img src="../_static/ShoulderCloseupBack.jpg" alt="Smiley face" width="45%">--><div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">¶</a></h2>
 <p>Short example of how to configure the Shoulder Arm model:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_RIGHT</span> <span class="x x-Options">ON</span>
 <span class="cp">#define</span> <span class="x x-Statements">BM_ARM_LEFT</span> <span class="x x-Options">ON</span>
@@ -133,7 +129,7 @@ for more information on BM parameters.</p>
 <p>The model consists of the following joints:</p>
 </div>
 <div class="centered section" id="deltoid-wrapping">
-<span id="deltoidwrapping"></span><h2>Deltoid wrapping<a class="headerlink" href="#deltoid-wrapping" title="Permalink to this headline">¶</a></h2>
+<span id="deltoidwrapping"></span><h2>Deltoid wrapping<a class="headerlink" href="#deltoid-wrapping" title="Permalink to this heading">¶</a></h2>
 <p>A new implementation of the deltoid muscles have been added. The implementation
 uses multiple wrapping cylinders for each element of the deltoid muscle. The new
 approach ensures a more realistic path of the muscle fibers compared to the
@@ -154,7 +150,7 @@ wrapping approach for the deltoid muscle modelling. in The Proceedings of the
 </div></blockquote>
 </div>
 <div class="section" id="degrees-of-freedom">
-<h2>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this headline">¶</a></h2>
+<h2>Degrees of freedom<a class="headerlink" href="#degrees-of-freedom" title="Permalink to this heading">¶</a></h2>
 <p>The arm has the following basic dof, which can be controlled by combinations
 joint drivers directly or indirectly through connections to the environment</p>
 <ul class="simple">
@@ -171,7 +167,7 @@ joint drivers directly or indirectly through connections to the environment</p>
 </ul>
 </div>
 <div class="section" id="joint-terminology">
-<h2>Joint terminology<a class="headerlink" href="#joint-terminology" title="Permalink to this headline">¶</a></h2>
+<h2>Joint terminology<a class="headerlink" href="#joint-terminology" title="Permalink to this heading">¶</a></h2>
 <table class="colwidths-given styled-table centered docutils align-center" id="id1">
 <caption><span class="caption-text">Joints and kinematic contraints of the arm model</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -248,14 +244,14 @@ the axes of rotations are not coincident</p></td>
 </table>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
 <p>More details on the ShoulderArm model can be found online:</p>
 <ul class="simple">
 <li><p>Webcast: <a class="reference external" href="https://www.anybodytech.com/validation-of-the-anybody-version-of-the-dutch-shoulder-model-by-the-in-vivo-measurement-of-gh-contact-forces-by-bergmann-et-al/">Validation of the AnyBody version of the Dutch Shoulder Model by the in-vivo measurement of GH contact forces by Bergmann et al.</a></p></li>
 </ul>
 </div>
 <div class="section" id="anatomy-references">
-<h2>Anatomy References<a class="headerlink" href="#anatomy-references" title="Permalink to this headline">¶</a></h2>
+<h2>Anatomy References<a class="headerlink" href="#anatomy-references" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>F.C.T. van der Helm and R. Veenbaas, Modeling the mechanical efect of
 muscles with large attachment sites: aplication to the shoulder
@@ -292,7 +288,7 @@ Biomechanics, vol. 24, no. 7, pp. 615-629, 1991</p></li>
 </ul>
 </div>
 <div class="section" id="muscle-references">
-<h2>Muscle References<a class="headerlink" href="#muscle-references" title="Permalink to this headline">¶</a></h2>
+<h2>Muscle References<a class="headerlink" href="#muscle-references" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Jacobson, M. D., R. Raab, B. M. Fazeli, R. A. Abrams, M. J. Botte,
 and R. L. Lieber. Architectural design of the human intrinsic hand
@@ -325,12 +321,12 @@ with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -407,7 +403,7 @@ with the elbow and forearm position J. Biomech. Vol. 28, pp. 513-525,
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

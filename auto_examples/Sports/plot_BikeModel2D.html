@@ -6,24 +6,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta property="og:title" content="Bike Model 2D" />
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta property="og:title" content="Bike Model 2D" />
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/auto_examples/Sports/plot_BikeModel2D.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="A simple bicycle rider model using a planar leg model. Although this model can be rotated in 3-D space it really is just a saggital plane pedaling model with only a few muscles in each leg. The bea..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_BikeModel2D_001.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="A simple bicycle rider model using a planar leg model. Although this model can be rotated in 3-D space it really is just a saggital plane pedaling model with only a few muscles in each leg. The bea..." />
+
     <title>Bike Model 2D &#8212; AMMR v2.4.2 Documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -31,10 +25,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
 
     
     
@@ -56,8 +52,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cross Trainer" href="plot_CrossTrainer.html" />
-    <link rel="prev" title="Bench Press" href="plot_BenchPress.html" /> 
+    <link rel="next" title="Leg Press Machine" href="plot_LegPressMachine.html" />
+    <link rel="prev" title="Cross Trainer" href="plot_CrossTrainer.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -72,10 +68,10 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_CrossTrainer.html" title="Cross Trainer"
+          <a href="plot_LegPressMachine.html" title="Leg Press Machine"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_BenchPress.html" title="Bench Press"
+          <a href="plot_CrossTrainer.html" title="Cross Trainer"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.2 Documentation</a> &#187;</li>
 
@@ -92,7 +88,7 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-example-title section" id="bike-model-2d">
-<span id="sphx-glr-auto-examples-sports-plot-bikemodel2d-py"></span><h1>Bike Model 2D<a class="headerlink" href="#bike-model-2d" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-sports-plot-bikemodel2d-py"></span><h1>Bike Model 2D<a class="headerlink" href="#bike-model-2d" title="Permalink to this heading">¶</a></h1>
 <p>A simple bicycle rider model using a planar
 leg model.</p>
 <div class="without-title admonition seealso">
@@ -130,12 +126,12 @@ wheels.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -191,10 +187,10 @@ wheels.</p>
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_CrossTrainer.html" title="Cross Trainer"
+          <a href="plot_LegPressMachine.html" title="Leg Press Machine"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_BenchPress.html" title="Bench Press"
+          <a href="plot_CrossTrainer.html" title="Cross Trainer"
              >previous</a> &nbsp; &nbsp;</li>
     <li><a href="../../index.html">AMMR v2.4.2 Documentation</a> &#187;</li>
 
@@ -206,7 +202,7 @@ wheels.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

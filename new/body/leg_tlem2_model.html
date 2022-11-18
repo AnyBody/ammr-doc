@@ -5,21 +5,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="Twente Lower Extremity Model v.2.1" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/leg_tlem2_model.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The Twente lower extremity model version 2 (TLEM2) is a successor to the TLEM model. It contains 6 DOF and 169 muscles. The model is based on published anatomical data produced from a cadaver study..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/Wrapping_TLEM2.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The Twente lower extremity model version 2 (TLEM2) is a successor to the TLEM model. It contains 6 DOF and 169 muscles. The model is based on published anatomical data produced from a cadaver study..." />
+
     <title>Twente Lower Extremity Model v.2.1 &#8212; AMMR v2.4.1-beta Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,8 +28,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -44,20 +38,21 @@
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -113,7 +108,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples and applications
  </span>
@@ -456,7 +451,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Body Models
  </span>
@@ -597,7 +592,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guides
  </span>
@@ -653,7 +648,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   ━━━━━━━━
  </span>
@@ -828,7 +823,7 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="twente-lower-extremity-model-v-2-1">
-<span id="tlem2"></span><h1>Twente Lower Extremity Model v.2.1<a class="headerlink" href="#twente-lower-extremity-model-v-2-1" title="Permalink to this headline">#</a></h1>
+<span id="tlem2"></span><h1>Twente Lower Extremity Model v.2.1<a class="headerlink" href="#twente-lower-extremity-model-v-2-1" title="Permalink to this heading">#</a></h1>
 <p>The Twente lower extremity model version 2 (TLEM2) is a successor to the <a class="reference internal" href="leg_tlem_model.html"><span class="doc">TLEM model</span></a>. It contains <strong>6 DOF</strong> and <strong>169
 muscles</strong>.</p>
 <video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
@@ -864,7 +859,7 @@ medius &amp; minimus, Hamstrings &amp; Gastrocnemius (version 1.2). All figures 
 from the publication by De Pieri et al.</em> <a class="footnote-reference brackets" href="#cite-dlgr17" id="id4">2</a></span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </div>
 <div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">#</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">#</a></h2>
 <p>Short example of how to configure the model with the TLEM model, Hill type
 muscle model and only one leg:</p>
 <div class="margin admonition seealso">
@@ -880,7 +875,7 @@ full list of configuration parameters.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <p>More details on the TLEM2 model can be found online:</p>
 <ul class="simple">
 <li><p>Webcast: <a class="reference external" href="https://www.anybodytech.com/tlemsafe-personalization-of-musculoskeletal-models-and-prediction-of-functional-outcome/">TLEMsafe: Personalization of musculoskeletal models and prediction of functional outcome</a></p></li>
@@ -888,7 +883,7 @@ full list of configuration parameters.</p>
 </ul>
 </div>
 <div class="section" id="citing-and-references">
-<h2>Citing and references<a class="headerlink" href="#citing-and-references" title="Permalink to this headline">#</a></h2>
+<h2>Citing and references<a class="headerlink" href="#citing-and-references" title="Permalink to this heading">#</a></h2>
 <p>If you need to cite the model use the following references <a class="footnote-reference brackets" href="#cite-dlgr17" id="id5">2</a>, <a class="footnote-reference brackets" href="#cite-cfpk15" id="id6">1</a>. Other usefull papers using or related to the TLEM2 model are: <a class="footnote-reference brackets" href="#cite-ca16" id="id7">3</a> and <a class="footnote-reference brackets" href="#cite-ckkv16" id="id8">4</a>.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">

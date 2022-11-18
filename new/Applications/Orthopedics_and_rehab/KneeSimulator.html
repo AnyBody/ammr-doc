@@ -5,21 +5,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="Knee Simulator Model" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/Applications/Orthopedics_and_rehab/KneeSimulator.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="Example: Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK). For an indepth description of the mathematics and mechanics behind FDK please see 1. Main file: A..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/KneeSimulator.jpg" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="Example: Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK). For an indepth description of the mathematics and mechanics behind FDK please see 1. Main file: A..." />
+
     <title>Knee Simulator Model &#8212; AMMR v2.4.1-beta Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,8 +28,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
@@ -44,20 +38,21 @@
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -113,7 +108,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples and applications
  </span>
@@ -456,7 +451,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Body Models
  </span>
@@ -597,7 +592,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guides
  </span>
@@ -653,7 +648,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   ━━━━━━━━
  </span>
@@ -838,7 +833,7 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="knee-simulator-model">
-<span id="example-kneesimulator"></span><span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"></span><h1>Knee Simulator Model<a class="headerlink" href="#knee-simulator-model" title="Permalink to this headline">#</a></h1>
+<span id="example-kneesimulator"></span><span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"></span><h1>Knee Simulator Model<a class="headerlink" href="#knee-simulator-model" title="Permalink to this heading">#</a></h1>
 <div class="sidebar">
 <p class="sidebar-title"><strong>Example</strong></p>
 <a class="reference internal image-reference" href="../../_images/KneeSimulator.jpg"><img alt="../../_images/KneeSimulator.jpg" class="align-center" src="../../_images/KneeSimulator.jpg" style="width: 70%;" /></a>
@@ -850,7 +845,7 @@ For an indepth description of the mathematics and mechanics behind FDK please se
 The model is contructed as a stand-alone model and doesn’t use any elements and body parts from the model repository (AMMR).
 Data for the total knee replacement (TKR) implant comes from the <a class="reference external" href="https://simtk.org/projects/kneeloads">6th Grand Challenge Competition to Predict In Vivo Knee Loads</a>.</p>
 <div class="section" id="segments">
-<h2>Segments<a class="headerlink" href="#segments" title="Permalink to this headline">#</a></h2>
+<h2>Segments<a class="headerlink" href="#segments" title="Permalink to this heading">#</a></h2>
 <p>The model is constructed of five main segments (femur, patella, tibia, ankle-fixture, and hip-fixture).
 In practice more segments are included. The mass of the femur/tibia is implemented as separate segments
 for easier specification of the moments of inertia. Likewise, the trans-spherical mechanism between ankle
@@ -861,7 +856,7 @@ and ground segments is implmented using three segments connected with revolute a
 </div>
 </div>
 <div class="section" id="ligaments">
-<h2>Ligaments<a class="headerlink" href="#ligaments" title="Permalink to this headline">#</a></h2>
+<h2>Ligaments<a class="headerlink" href="#ligaments" title="Permalink to this heading">#</a></h2>
 <p>The ligaments are modeled using one-dimensional nonlinear elastic spring elements. In order to prevent
 ligaments from penetrating the bone/implant surfaces, they were wrapped around various geometrical shapes (cylinder, ellipsoid,…).
 Ligament properties (stiffness and reference strains) were adopted from the literature <a class="footnote-reference brackets" href="#cite-bkhg91" id="id3">3</a> &amp; <a class="footnote-reference brackets" href="#cite-mvfk15" id="id4">4</a>.</p>
@@ -871,7 +866,7 @@ Ligament properties (stiffness and reference strains) were adopted from the lite
 </div>
 </div>
 <div class="section" id="contacts">
-<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">#</a></h2>
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this heading">#</a></h2>
 <p>Three STL-based rigid-rigid contact models were defined: between the patella and femoral component,  the femoral component and tibia insert (lateral side),
 and the femoral component and tibia insert (medial side).</p>
 <div class="figure align-center" id="id8">
@@ -880,7 +875,7 @@ and the femoral component and tibia insert (medial side).</p>
 </div>
 </div>
 <div class="section" id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">#</a></h2>
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">#</a></h2>
 <p>Model settings can be added and removed here: <code class="docutils literal notranslate"><span class="pre">UserDefinedSettings.Main.any</span></code> to use FDK define:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">USE_FDK</span> <span class="mi">1</span>
 </pre></div>

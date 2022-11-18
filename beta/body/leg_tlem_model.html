@@ -7,24 +7,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="Twente Lower Extremity Model v.1.2" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/leg_tlem_model.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The AnyBody implementation of a the Twente lower extremity model (TLEM) consists of 159 muscles, and 6 joint degrees. The model has been validated against ‘state of the art’ literature with respect..." />
-  
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The AnyBody implementation of a the Twente lower extremity model (TLEM) consists of 159 muscles, and 6 joint degrees. The model has been validated against ‘state of the art’ literature with respect..." />
+
     <title>Twente Lower Extremity Model v.1.2 &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -32,10 +26,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -93,7 +89,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="twente-lower-extremity-model-v-1-2">
-<span id="tlem1"></span><h1>Twente Lower Extremity Model v.1.2<a class="headerlink" href="#twente-lower-extremity-model-v-1-2" title="Permalink to this headline">¶</a></h1>
+<span id="tlem1"></span><h1>Twente Lower Extremity Model v.1.2<a class="headerlink" href="#twente-lower-extremity-model-v-1-2" title="Permalink to this heading">¶</a></h1>
 <p>The AnyBody implementation of a the Twente lower extremity model (TLEM) consists
 of <strong>159 muscles</strong>, and <strong>6 joint degrees</strong>.</p>
 <video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
@@ -114,7 +110,7 @@ maintained in collaboration with The AnyBody Research Group at Aalborg
 University (DK) (www.anybody.aau.dk) and University of Twente (NL) under
 the TLEMsafe project (<a class="reference external" href="http://www.tlemsafe.eu">www.tlemsafe.eu</a>).</p>
 <div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">¶</a></h2>
 <p>Short example of how to configure the model with the TLEM model, Hill type
 muscle model and only one leg:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_LEG_MODEL</span> <span class="x x-Options">_LEG_MODEL_TLEM1_</span>
@@ -131,7 +127,7 @@ for more information on BM parameters.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
 <p>More details can be found online:</p>
 <ol class="arabic simple">
 <li><p>Dendorfer and Toerholm 2008: Report containing moment arm validation for <a class="reference external" href="https://paperpile.com/app/p/28bfe52d-29e1-0c5f-bdfb-68a0597117ff">ESA:
@@ -158,12 +154,12 @@ Musculoskeletal Modelling of the Lower Extremity,” Clin. Biomech. , 22(2), pp.
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -240,7 +236,7 @@ Musculoskeletal Modelling of the Lower Extremity,” Clin. Biomech. , 22(2), pp.
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

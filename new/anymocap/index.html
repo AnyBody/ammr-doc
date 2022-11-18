@@ -5,21 +5,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
 <meta property="og:title" content="The AnyMoCap Framework" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/anymocap/index.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="The AnyMoCap model is an effort to create a simple and unified framework for doing any kind of MoCap analysis with the AnyBody Modeling System. Making MoCap models the easier, Features: Adapts to a..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/anymocap.jpg" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
-  
+<meta name="description" content="The AnyMoCap model is an effort to create a simple and unified framework for doing any kind of MoCap analysis with the AnyBody Modeling System. Making MoCap models the easier, Features: Adapts to a..." />
+
     <title>The AnyMoCap Framework &#8212; AMMR v2.4.1-beta Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,8 +28,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -44,20 +38,21 @@
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -113,7 +108,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples and applications
  </span>
@@ -456,7 +451,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Body Models
  </span>
@@ -597,7 +592,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Guides
  </span>
@@ -653,7 +648,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   ━━━━━━━━
  </span>
@@ -910,7 +905,7 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="the-anymocap-framework">
-<span id="anymocap"></span><h1>The AnyMoCap Framework<a class="headerlink" href="#the-anymocap-framework" title="Permalink to this headline">#</a></h1>
+<span id="anymocap"></span><h1>The AnyMoCap Framework<a class="headerlink" href="#the-anymocap-framework" title="Permalink to this heading">#</a></h1>
 <p>The AnyMoCap model is an effort to create a simple and unified framework for
 doing any kind of MoCap analysis with the <a class="reference external" href="https://www.anybodytech.com">AnyBody Modeling
 System</a>.</p>
@@ -919,7 +914,7 @@ System</a>.</p>
 <p class="caption"><span class="caption-text">Making MoCap models the easier</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </div>
 <div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h2>
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Adapts to any Mocap protocol</p></li>
 <li><p>Optimization of marker locations and anthropometrics.</p></li>
@@ -930,7 +925,7 @@ System</a>.</p>
 </ul>
 </div>
 <div class="section" id="over-determinate-kinematic-analysis">
-<h2>Over determinate kinematic analysis<a class="headerlink" href="#over-determinate-kinematic-analysis" title="Permalink to this headline">#</a></h2>
+<h2>Over determinate kinematic analysis<a class="headerlink" href="#over-determinate-kinematic-analysis" title="Permalink to this heading">#</a></h2>
 <div class="margin admonition seealso">
 <p class="admonition-title">See also</p>
 <p>The AnyBody tutorials, and the lesson on using the
@@ -956,7 +951,7 @@ writes joint angles to a a set of files. These joint angles can then be used
 with the determinate kinematic solver in the inverse dynamic analysis.</p>
 </div>
 <div class="section" id="anymocap-examples">
-<h2>AnyMoCap examples<a class="headerlink" href="#anymocap-examples" title="Permalink to this headline">#</a></h2>
+<h2>AnyMoCap examples<a class="headerlink" href="#anymocap-examples" title="Permalink to this heading">#</a></h2>
 <p>The following gallery shows different examples using the AnyMoCap framework.</p>
 <div class="margin admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1068,7 +1063,7 @@ Simple Lower extremity model</div>
 </div>
 </div>
 <div class="section" id="get-started">
-<h2>Get started<a class="headerlink" href="#get-started" title="Permalink to this headline">#</a></h2>
+<h2>Get started<a class="headerlink" href="#get-started" title="Permalink to this heading">#</a></h2>
 <div class="margin admonition caution">
 <p class="admonition-title">Caution</p>
 <p>It is recommended <em>not</em> to place working models inside the AMMR folder.
@@ -1076,33 +1071,26 @@ Copy the example elsewhere before using.</p>
 </div>
 <p>The easiest way to get started, is to adapt one the example application above.</p>
 <p>A typical application using the AnyMoCap framework will look something like this:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span> <span class="cp">#include</span> <span class="s">&quot;../libdef.any&quot;</span>
-
- <span class="cp">#path</span> <span class="n">MOCAP_TRIAL_SPECIFIC_DATA</span> <span class="s">&quot;TrialSpecificData.any&quot;</span>
- <span class="cp">#path</span> <span class="n">MOCAP_SUBJECT_SPECIFIC_DATA</span> <span class="s">&quot;SubjectSpecificData.any&quot;</span>
- <span class="cp">#path</span> <span class="n">MOCAP_LAB_SPECIFIC_DATA</span> <span class="s">&quot;LabSpecificData.any&quot;</span>
-
- <span class="c1">// Include the AnyMoCap Framwork</span>
- <span class="cp">#include</span> <span class="s">&quot;&lt;ANYMOCAP_MODEL&gt;&quot;</span>
-</pre></div></td></tr></table></div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="cp">#include</span> <span class="s">&quot;../libdef.any&quot;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span> <span class="cp">#path</span> <span class="n">MOCAP_TRIAL_SPECIFIC_DATA</span> <span class="s">&quot;TrialSpecificData.any&quot;</span>
+<span class="linenos">4</span> <span class="cp">#path</span> <span class="n">MOCAP_SUBJECT_SPECIFIC_DATA</span> <span class="s">&quot;SubjectSpecificData.any&quot;</span>
+<span class="linenos">5</span> <span class="cp">#path</span> <span class="n">MOCAP_LAB_SPECIFIC_DATA</span> <span class="s">&quot;LabSpecificData.any&quot;</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span> <span class="c1">// Include the AnyMoCap Framwork</span>
+<span class="linenos">8</span> <span class="cp">#include</span> <span class="s">&quot;&lt;ANYMOCAP_MODEL&gt;&quot;</span>
+</pre></div>
 </div>
 <p>You can place this main file anywhere on your computer as long the
 <code class="docutils literal notranslate"><span class="pre">libdef.any</span></code> file points to model repository (AMMR) you want to use.</p>
 <div class="section" id="model-structure">
-<h3>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">#</a></h3>
+<h3>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this heading">#</a></h3>
 <p>When loading the AnyMoCap model the following layout shows up in the model tree:</p>
 <div class="figure align-default">
 <img alt="../_images/model-structure.png" src="../_images/model-structure.png" />
 </div>
 <div class="section" id="description-of-model-folders">
-<h4>Description of Model folders<a class="headerlink" href="#description-of-model-folders" title="Permalink to this headline">#</a></h4>
+<h4>Description of Model folders<a class="headerlink" href="#description-of-model-folders" title="Permalink to this heading">#</a></h4>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-file-directory" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg></span>Top-level model structure.<div class="sd-summary-down docutils">
@@ -1154,7 +1142,7 @@ tracking and finally 3. run inverse dynamics analysis, 4. save results to and HD
 </div>
 </div>
 <div class="section" id="options-and-settings">
-<span id="anymocap-settings"></span><h2>Options and settings<a class="headerlink" href="#options-and-settings" title="Permalink to this headline">#</a></h2>
+<span id="anymocap-settings"></span><h2>Options and settings<a class="headerlink" href="#options-and-settings" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup</span></code> folder contains the main machinery of the <em>AnyMoCap</em>
 framework. It is controlled by a number of settings both <code class="docutils literal notranslate"><span class="pre">#define</span></code>/<code class="docutils literal notranslate"><span class="pre">#path</span></code> switches
 and variables which can be set directly. For example:</p>
@@ -1165,7 +1153,7 @@ and variables which can be set directly. For example:</p>
 </div>
 <p>The following two sections gives an overview of the settings available:</p>
 <div class="section" id="paths-settings-and-switches">
-<h3>Paths settings and switches<a class="headerlink" href="#paths-settings-and-switches" title="Permalink to this headline">#</a></h3>
+<h3>Paths settings and switches<a class="headerlink" href="#paths-settings-and-switches" title="Permalink to this heading">#</a></h3>
 <p>Path settings and switches are usually prefixed by <code class="docutils literal notranslate"><span class="pre">MOCAP_</span></code> to indicate that
 they are specific to the AnyMoCap framework.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
@@ -1315,7 +1303,7 @@ from Marker tracking.</p></td>
 </div>
 </details></div>
 <div class="section" id="configurable-variables">
-<h3>Configurable variables<a class="headerlink" href="#configurable-variables" title="Permalink to this headline">#</a></h3>
+<h3>Configurable variables<a class="headerlink" href="#configurable-variables" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup</span></code> folder contains all the machinery of the AnyMoCap
 framework. It has three important subfolder (<code class="docutils literal notranslate"><span class="pre">TrialSpecificData</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SubjectSpecificData</span></code> and <code class="docutils literal notranslate"><span class="pre">LabSpecificData</span></code>).</p>
@@ -1433,7 +1421,7 @@ double of this value.</p></td>
 </details></div>
 </div>
 <div class="section" id="more-resources">
-<h2>More resources<a class="headerlink" href="#more-resources" title="Permalink to this headline">#</a></h2>
+<h2>More resources<a class="headerlink" href="#more-resources" title="Permalink to this heading">#</a></h2>
 <p>This section contains further documentation on the AnyMoCap framework.</p>
 <div class="toctree-wrapper compound">
 <ul>
