@@ -5,15 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-<meta property="og:title" content="Twente Lower Extremity Model v.1.2" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://anyscript.org/body/leg_tlem_model.html" />
-<meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="The AnyBody implementation of a the Twente lower extremity model (TLEM) consists of 159 muscles, and 6 joint degrees. The model has been validated against ‘state of the art’ literature with respect..." />
-<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
-<meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="The AnyBody implementation of a the Twente lower extremity model (TLEM) consists of 159 muscles, and 6 joint degrees. The model has been validated against ‘state of the art’ literature with respect..." />
 
+<meta property="og:title" content="Twente Lower Extremity Model v.1.2" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/body/leg_tlem_model.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="The AnyBody implementation of a the Twente lower extremity model (TLEM) consists of 159 muscles, and 6 joint degrees. The model has been validated against ‘state of the art’ literature with respect..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
     <title>Twente Lower Extremity Model v.1.2 &#8212; AMMR v2.4.1-beta Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -28,8 +34,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -38,21 +44,20 @@
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -108,7 +113,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
+        <p class="caption">
  <span class="caption-text">
   Examples and applications
  </span>
@@ -451,7 +456,7 @@
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Body Models
  </span>
@@ -592,7 +597,7 @@
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Guides
  </span>
@@ -648,7 +653,7 @@
   </ul>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   ━━━━━━━━
  </span>
@@ -813,7 +818,7 @@ title="Fullscreen mode"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="twente-lower-extremity-model-v-1-2">
-<span id="tlem1"></span><h1>Twente Lower Extremity Model v.1.2<a class="headerlink" href="#twente-lower-extremity-model-v-1-2" title="Permalink to this heading">#</a></h1>
+<span id="tlem1"></span><h1>Twente Lower Extremity Model v.1.2<a class="headerlink" href="#twente-lower-extremity-model-v-1-2" title="Permalink to this headline">#</a></h1>
 <p>The AnyBody implementation of a the Twente lower extremity model (TLEM) consists
 of <strong>159 muscles</strong>, and <strong>6 joint degrees</strong>.</p>
 <video width="45%" style="display:block; margin: 0 auto;" controls autoplay loop>
@@ -834,7 +839,7 @@ maintained in collaboration with The AnyBody Research Group at Aalborg
 University (DK) (www.anybody.aau.dk) and University of Twente (NL) under
 the TLEMsafe project (<a class="reference external" href="https://tlemsafe.eu/">www.tlemsafe.eu</a>).</p>
 <div class="section" id="example-configuration">
-<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this heading">#</a></h2>
+<h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">#</a></h2>
 <p>Short example of how to configure the model with the TLEM model, Hill type
 muscle model and only one leg:</p>
 <div class="margin admonition seealso">
@@ -850,7 +855,7 @@ full list of configuration parmaeters.</p>
 </div>
 </div>
 <div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <p>More details can be found online:</p>
 <ol class="arabic simple">
 <li><p>Dendorfer and Toerholm 2008: Report containing moment arm validation for <a class="reference external" href="https://paperpile.com/shared/WHZjrt">ESA:
@@ -894,7 +899,7 @@ Musculoskeletal Modelling of the Lower Extremity,” Clin. Biomech. , 22(2), pp.
   
     By AnyBody Technology<br/>
   
-      &copy; Copyright 2022, AnyBody Technology.<br/>
+      &copy; Copyright 2023, AnyBody Technology.<br/>
 </p>
         </footer>
     </div>

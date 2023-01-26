@@ -6,18 +6,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta property="og:title" content="Knee Simulator Model" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Knee Simulator Model" />
+  
 <meta property="og:type" content="website" />
+  
 <meta property="og:url" content="https://anyscript.org/auto_examples/Orthopedics_and_rehab/plot_KneeSimulator.html" />
+  
 <meta property="og:site_name" content="AMMR Documentation" />
+  
 <meta property="og:description" content="Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK). For an indepth description of the mathematics and mechanics behind FDK please see[AZDN17]. Main file: Appl..." />
+  
 <meta property="og:image" content="https://anyscript.org/_images/KneeSimulator_Full.jpg" />
+  
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK). For an indepth description of the mathematics and mechanics behind FDK please see[AZDN17]. Main file: Appl..." />
-
+  
     <title>Knee Simulator Model &#8212; AMMR v2.4.2 Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -25,12 +31,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
 
     
     
@@ -88,7 +92,7 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-example-title section" id="knee-simulator-model">
-<span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"></span><h1>Knee Simulator Model<a class="headerlink" href="#knee-simulator-model" title="Permalink to this heading">¶</a></h1>
+<span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-kneesimulator-py"></span><h1>Knee Simulator Model<a class="headerlink" href="#knee-simulator-model" title="Permalink to this headline">¶</a></h1>
 <p>Model of a Knee Simulator using a knee implant model and force-dependent kinematics (FDK).
 For an indepth description of the mathematics and mechanics behind FDK please see <a class="reference internal" href="#azdn17" id="id1"><span>[AZDN17]</span></a>.</p>
 <p><strong>Main file:</strong> <code class="docutils literal notranslate"><span class="pre">Application/Examples/KneeSimulator/AnyKneeSimulator.Main.any</span></code></p>
@@ -100,14 +104,14 @@ For an indepth description of the mathematics and mechanics behind FDK please se
 The model is contructed as a stand-alone model and doesn’t use any elements and body parts from the model repository (AMMR).
 Data for the total knee replacement (TKR) implant comes from the <a class="reference external" href="https://simtk.org/projects/kneeloads">6th Grand Challenge Competition to Predict In Vivo Knee Loads</a>.</p>
 <div class="section" id="segments">
-<h2>Segments<a class="headerlink" href="#segments" title="Permalink to this heading">¶</a></h2>
+<h2>Segments<a class="headerlink" href="#segments" title="Permalink to this headline">¶</a></h2>
 <p>The model is constructed of five main segments (femur, patella, tibia, ankle-fixture, and hip-fixture).
 In practice more segments are included. The mass of the femur/tibia is implemented as separate segments
 for easier specification of the moments of inertia. Likewise, the trans-spherical mechanism between ankle
 and ground segments is implmented using three segments connected with revolute and slider joints.</p>
 </div>
 <div class="section" id="ligaments">
-<h2>Ligaments<a class="headerlink" href="#ligaments" title="Permalink to this heading">¶</a></h2>
+<h2>Ligaments<a class="headerlink" href="#ligaments" title="Permalink to this headline">¶</a></h2>
 <p>The ligaments are modeled using one-dimensional nonlinear elastic spring elements. In order to prevent
 ligaments from penetrating the bone/implant surfaces, they were wrapped around various geometrical shapes (cylinder, ellipsoid,…).
 Ligament properties (stiffness and reference strains) were adopted from the literature <a class="reference internal" href="#bkhg91" id="id3"><span>[BKHG91]</span></a> &amp; <a class="reference internal" href="#mvfk15" id="id4"><span>[MVFK15]</span></a>.</p>
@@ -117,7 +121,7 @@ Ligament properties (stiffness and reference strains) were adopted from the lite
 </div>
 </div>
 <div class="section" id="contacts">
-<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this heading">¶</a></h2>
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h2>
 <p>Three STL-based rigid-rigid contact models were defined: between the patella and femoral component,  the femoral component and tibia insert (lateral side),
 and the femoral component and tibia insert (medial side).</p>
 <div class="figure align-center" id="id8">
@@ -126,7 +130,7 @@ and the femoral component and tibia insert (medial side).</p>
 </div>
 </div>
 <div class="section" id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">¶</a></h2>
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Model settings can be added and removed here: <code class="docutils literal notranslate"><span class="pre">UserDefinedSettings.Main.any</span></code> to use FDK define:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">USE_FDK</span> <span class="mi">1</span>
 </pre></div>
@@ -147,7 +151,7 @@ and the femoral component and tibia insert (medial side).</p>
 <p>Please note that this simulation is only a demo example.</p>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="citation">
 <dt class="label" id="azdn17"><span class="brackets"><a class="fn-backref" href="#id1">AZDN17</a></span></dt>
 <dd><p>Andersen, M. S., de Zee, M., Damsgaard, M., Nolte, D., &amp; Rasmussen, J. Introduction to Force-Dependent Kinematics: Theory and Application
@@ -189,12 +193,12 @@ during normal gait. J. Orthop. Res. 24, 1983–1990 (2006). doi:<a class="refere
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -264,8 +268,8 @@ during normal gait. J. Orthop. Res. 24, 1983–1990 (2006). doi:<a class="refere
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

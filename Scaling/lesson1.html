@@ -6,18 +6,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta property="og:title" content="Lesson 1: Joint to Joint Scaling Methods" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="Lesson 1: Joint to Joint Scaling Methods" />
+  
 <meta property="og:type" content="website" />
+  
 <meta property="og:url" content="https://anyscript.org/Scaling/lesson1.html" />
+  
 <meta property="og:site_name" content="AMMR Documentation" />
+  
 <meta property="og:description" content="This lesson covers five of the scaling laws available in AnyBody: ScalingStandard (scale to a standard size), ScalingNone (do not scale), ScalingUniform (scale equally in all directions; input is j..." />
+  
 <meta property="og:image" content="https://anyscript.org/_images/ScalingDisplayHelp.png" />
+  
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="This lesson covers five of the scaling laws available in AnyBody: ScalingStandard (scale to a standard size), ScalingNone (do not scale), ScalingUniform (scale equally in all directions; input is j..." />
-
+  
     <title>Lesson 1: Joint to Joint Scaling Methods &#8212; AMMR v2.4.2 Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/cloud.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -25,12 +31,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
 
     
     
@@ -88,7 +92,7 @@
           <div class="body" role="main">
             
   <div class="tex2jax_ignore mathjax_ignore section" id="lesson-1-joint-to-joint-scaling-methods">
-<h1>Lesson 1: Joint to Joint Scaling Methods<a class="headerlink" href="#lesson-1-joint-to-joint-scaling-methods" title="Permalink to this heading">¶</a></h1>
+<h1>Lesson 1: Joint to Joint Scaling Methods<a class="headerlink" href="#lesson-1-joint-to-joint-scaling-methods" title="Permalink to this headline">¶</a></h1>
 <p>This lesson covers five of the scaling laws available in AnyBody:</p>
 <ul class="simple">
 <li><p>ScalingStandard (scale to a standard size)</p></li>
@@ -101,7 +105,7 @@ joint distances and mass)</p></li>
 is joint to joint distances)</p></li>
 </ul>
 <div class="section" id="scalingstandard">
-<h2>ScalingStandard<a class="headerlink" href="#scalingstandard" title="Permalink to this heading">¶</a></h2>
+<h2>ScalingStandard<a class="headerlink" href="#scalingstandard" title="Permalink to this headline">¶</a></h2>
 <p>This scaling law produces a model with the default parameters for mass and
 size (corresponding roughly to the 50th percentile European male). It is
 used by default for non-specific models, or when there is no data
@@ -152,7 +156,7 @@ standing model with the standard size.</p>
 <a class="reference internal image-reference" href="../_images/ScalingStandardBack.jpg"><img alt="../_images/ScalingStandardBack.jpg" src="../_images/ScalingStandardBack.jpg" style="width: 49%;" /></a>
 </div>
 <div class="section" id="scalingnone">
-<h2>ScalingNone<a class="headerlink" href="#scalingnone" title="Permalink to this heading">¶</a></h2>
+<h2>ScalingNone<a class="headerlink" href="#scalingnone" title="Permalink to this headline">¶</a></h2>
 <p>This particular scaling law can be used for the studies, which require the unscaled cadaveric
 datasets, which were used for the construction of the body parts. Please enable _SCALING_NONE_
 option in order to switch to this scaling law.</p>
@@ -185,7 +189,7 @@ option in order to switch to this scaling law.</p>
 can be observed when looking at the actual locations of the muscle attachment sites and so on.</p>
 </div>
 <div class="section" id="working-with-known-body-part-dimensions">
-<h2>Working with known body part dimensions<a class="headerlink" href="#working-with-known-body-part-dimensions" title="Permalink to this heading">¶</a></h2>
+<h2>Working with known body part dimensions<a class="headerlink" href="#working-with-known-body-part-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>When modelling a specific person with known anthropometric factors, e.g. weight,
 height, body part lengths, etc., these details need to be incorporated into the model.
 In this case _SCALING_STANDARD_ and _SCALING_NONE_ are not applicable, since they
@@ -293,7 +297,7 @@ and select a variable that needs to be defined:</p>
 overview of the entire personalization scheme in one place.</p>
 </div>
 <div class="section" id="scalinguniform">
-<h2>ScalingUniform<a class="headerlink" href="#scalinguniform" title="Permalink to this heading">¶</a></h2>
+<h2>ScalingUniform<a class="headerlink" href="#scalinguniform" title="Permalink to this headline">¶</a></h2>
 <p>This law allows you to define the total weight of the model and the
 individual sizes of the bones. The length of each bone is defined as a
 joint to joint distance and the bone is then scaled in three dimensions
@@ -422,7 +426,7 @@ scaling down. The mass is also scaled, but as we said previously this is
 not visible graphically with this scaling law.</p>
 </div>
 <div class="section" id="scaling-based-on-length-and-mass">
-<h2>Scaling based on length and mass<a class="headerlink" href="#scaling-based-on-length-and-mass" title="Permalink to this heading">¶</a></h2>
+<h2>Scaling based on length and mass<a class="headerlink" href="#scaling-based-on-length-and-mass" title="Permalink to this headline">¶</a></h2>
 <p>This law scales the size of the body according not only to the segment
 lengths but also to the segments masses, so unlike the ScalingUniform
 law it provides the opportunity to define tall and skinny people or
@@ -565,7 +569,7 @@ on each hand and displays it in the model view:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyFolder</span> <span class="n">Environment</span> <span class="o">=</span> <span class="p">{</span>
   <span class="kt">AnyFixedRefFrame</span> <span class="n">GlobalRef</span> <span class="o">=</span> <span class="p">{</span><span class="n">Origin</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">};};</span>
 <span class="p">};</span>
- <span class="gr"></span>
+ 
 <span class="gr">AnyForce3D RightHandLoad = {</span>
 <span class="gr">    F = {0, -50, 0};</span>
 <span class="gr"> AnyRefFrame &amp;Hand = Main.HumanModel.BodyModel.Right.ShoulderArm.Seg.Glove;</span>
@@ -641,7 +645,7 @@ activity of 42.1 %, whereas the short model reaches 56.5 % of muscle
 activity. So our small model is definitely weaker than the tall one.</p>
 </div>
 <div class="section" id="scalinglengthmassfat">
-<h2>ScalingLengthMassFat<a class="headerlink" href="#scalinglengthmassfat" title="Permalink to this heading">¶</a></h2>
+<h2>ScalingLengthMassFat<a class="headerlink" href="#scalinglengthmassfat" title="Permalink to this headline">¶</a></h2>
 <p>Most scaled models used for practical investigations use the
 ScalingLengthMassFat law. It works exactly like the ScalingLengthMass
 but with an additional parameter: It takes the fat percentage of the
@@ -731,12 +735,12 @@ AnyManUniform file.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -803,8 +807,8 @@ AnyManUniform file.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>

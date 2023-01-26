@@ -7,18 +7,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-<meta property="og:title" content="Total Hip Arthroplasty (THA) Model" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://anyscript.org/auto_examples/Orthopedics_and_rehab/plot_THA-KneeBendDemo.html" />
-<meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="Model of a total hip replacement using a contact implant model and force-dependent kinematics (FDK). Main file: Application/Examples/THA-KneeBendDemo/THA-KneeBendDemo.main.any This is a demo model ..." />
-<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_THA-KneeBendDemo_001.png" />
-<meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="Model of a total hip replacement using a contact implant model and force-dependent kinematics (FDK). Main file: Application/Examples/THA-KneeBendDemo/THA-KneeBendDemo.main.any This is a demo model ..." />
 
-    <title>Total Hip Arthroplasty (THA) Model &#8212; AMMR v2.4.2-beta Documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
+<meta property="og:title" content="Total Hip Arthroplasty (THA) Model" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/auto_examples/Orthopedics_and_rehab/plot_THA-KneeBendDemo.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Model of a total hip replacement using a contact implant model and force-dependent kinematics (FDK). Main file: Application/Examples/THA-KneeBendDemo/THA-KneeBendDemo.main.any This is a demo model ..." />
+  
+<meta property="og:image" content="https://anyscript.org/_images/sphx_glr_plot_THA-KneeBendDemo_001.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>Total Hip Arthroplasty (THA) Model &#8212; AMMR v2.4.3-beta Documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -26,12 +32,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
 
     
     
@@ -53,8 +57,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Wheel Chair model" href="plot_WheelChairRancho.html" />
-    <link rel="prev" title="Knee forces example" href="plot_KneeForcesExample.html" /> 
+    <link rel="next" title="Knee forces example" href="plot_KneeForcesExample.html" />
+    <link rel="prev" title="Facet Joint Model" href="plot_FacetJointModel.html" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
   </head><body>
     <div class="relbar-top">
@@ -69,12 +73,12 @@
           <a href="../../contents.html" title="Table Of Contents"
              accesskey="C">toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_WheelChairRancho.html" title="Wheel Chair model"
+          <a href="plot_KneeForcesExample.html" title="Knee forces example"
              accesskey="N">next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_KneeForcesExample.html" title="Knee forces example"
+          <a href="plot_FacetJointModel.html" title="Facet Joint Model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">AMMR v2.4.2-beta Documentation</a> &#187;</li>
+    <li><a href="../../index.html">AMMR v2.4.3-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Application Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Total Hip Arthroplasty (THA) Model</a></li> 
@@ -89,7 +93,7 @@
           <div class="body" role="main">
             
   <div class="sphx-glr-example-title section" id="total-hip-arthroplasty-tha-model">
-<span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-tha-kneebenddemo-py"></span><h1>Total Hip Arthroplasty (THA) Model<a class="headerlink" href="#total-hip-arthroplasty-tha-model" title="Permalink to this heading">¶</a></h1>
+<span id="sphx-glr-auto-examples-orthopedics-and-rehab-plot-tha-kneebenddemo-py"></span><h1>Total Hip Arthroplasty (THA) Model<a class="headerlink" href="#total-hip-arthroplasty-tha-model" title="Permalink to this headline">¶</a></h1>
 <p>Model of a total hip replacement using a contact implant model and
 force-dependent kinematics (FDK).</p>
 <p><strong>Main file:</strong> <code class="docutils literal notranslate"><span class="pre">Application/Examples/THA-KneeBendDemo/THA-KneeBendDemo.main.any</span></code></p>
@@ -133,12 +137,12 @@ Edmundo Fuentes via GrabCAD.com <a class="reference external" href="http://edmun
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 <div class="sphinx-toc sphinxglobaltoc">
 <h3><a href="../../contents.html">Table of Contents</a></h3>
 <ul class="current">
@@ -194,12 +198,12 @@ Edmundo Fuentes via GrabCAD.com <a class="reference external" href="http://edmun
           <a href="../../contents.html" title="Table Of Contents"
              >toc</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_WheelChairRancho.html" title="Wheel Chair model"
+          <a href="plot_KneeForcesExample.html" title="Knee forces example"
              >next</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="plot_KneeForcesExample.html" title="Knee forces example"
+          <a href="plot_FacetJointModel.html" title="Facet Joint Model"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../../index.html">AMMR v2.4.2-beta Documentation</a> &#187;</li>
+    <li><a href="../../index.html">AMMR v2.4.3-beta Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../index.html" >Application Examples</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Total Hip Arthroplasty (THA) Model</a></li> 
@@ -208,8 +212,8 @@ Edmundo Fuentes via GrabCAD.com <a class="reference external" href="http://edmun
     </div>
 
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
     <!-- cloud_sptheme 1.4 -->
   </body>
