@@ -15,13 +15,13 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="The thoracic spine model consists of the thoracic vertebral column and the ribcage, including individual ribs and sternum. It can be used as a single segment or as a collection of several segments ..." />
+<meta property="og:description" content="The thoracic spine model consists of the thoracic vertebral column and the ribcage, including individual ribs and a two part sternum. The many segments interconnected by joints replicates the physi..." />
   
-<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+<meta property="og:image" content="https://anyscript.org/_images/Detailed-thorax.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Thoracic spine model &#8212; AMMR v2.4.2 Documentation</title>
+    <title>Thoracic spine model &#8212; AMMR v2.4.3 Documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
@@ -77,7 +77,7 @@
         <li class="right" >
           <a href="cervical_spine_model.html" title="The Cervical Spine Model"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.2 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.3 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Thoracic spine model</a></li> 
@@ -99,31 +99,39 @@
 The model is used in various research projects and access to the model can be given on request. Please
 <a class="reference external" href="mailto:sales&#37;&#52;&#48;anybodytech&#46;com">contact us</a> if you are interested in this work.</p>
 </div>
+<img alt="../_images/Detailed-thorax.png" src="../_images/Detailed-thorax.png" />
 <p>The thoracic spine model consists of the thoracic vertebral column and the
-ribcage, including individual ribs and sternum. It can be used as a single
-segment or as a collection of several segments interconnected by joints
-replicating physiological connection and load transfer mechanisms.</p>
-<video width="70%" style="display:block; margin: 0 auto;" controls autoplay loop>
-    <source src="../_static/thoracic1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video><p>The thoracic vertebral column contains 12 vertebrae with 3 DoF spherical joints
+ribcage, including individual ribs and a two part sternum. The many segments interconnected by joints
+replicates the physiological connection and load transfer mechanisms.</p>
+<div class="section" id="kinematics-and-spine-rhythms">
+<h2>Kinematics and spine rhythms<a class="headerlink" href="#kinematics-and-spine-rhythms" title="Permalink to this headline">¶</a></h2>
+<p>The thoracic vertebral column contains 12 vertebrae with 3 DoF spherical joints
 in between each 2 vertebrae, connecting to the cervical spine through a
 spherical joint at T1C7 levels, and a spherical joint to the lumbar spine at
 T12L1 levels. Costovertebral and sternocostal joint are also represented through
-kinematic joints. The majority of the muscle fascicles are defined for the
-thoracic column and ribcage region.</p>
-<div class="without-title admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Complex model:</strong> The Thoracic model is a high complexity model and not recommended for
-beginners in musculoskeletal modeling and AnyBody.</p>
+kinematic joints. All vertebra are linked with rhythm drivers to allow easy use.</p>
+<video width="100%" style="display:block; margin: 0 auto;" controls autoplay loop>
+    <source src="../_static/rhythms.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></div>
+<div class="section" id="muscles-configurations">
+<h2>Muscles configurations<a class="headerlink" href="#muscles-configurations" title="Permalink to this headline">¶</a></h2>
+<p>The majority of the muscle fascicles are defined for the thoracic column, ribcage region
+as well as a diaphragm muscles to simulatate breathing and abdominal volume pressure.</p>
+<img alt="../_images/Detailed-thorax2.png" src="../_images/Detailed-thorax2.png" />
 </div>
 <div class="section" id="example-configuration">
 <h2>Example Configuration<a class="headerlink" href="#example-configuration" title="Permalink to this headline">¶</a></h2>
-<p>The thoracic column and ribcage model comes with several different configurations:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">BM_TRUNK_RIGCAGE_MODE</span> <span class="n">_RIBCAGE_RIGID_</span>
-<span class="cp">#define</span> <span class="n">BM_TRUNK_RIGCAGE_MODE</span> <span class="n">_RIBCAGE_SEMI_RIGID_</span>
-<span class="hll"><span class="cp">#define</span> <span class="n">BM_TRUNK_RIGCAGE_MODE</span> <span class="n">_RIBCAGE_POTENTIAL_ENERGY_</span>
+<p>The detailed thoracic model can be controlled using the <code class="docutils literal notranslate"><span class="pre">BM_*</span></code> statements like the rest of the body models.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span>  <span class="cp">#define</span> <span class="n">BM_TRUNK_THORACIC_MODEL</span> <span class="n">_THORACIC_MODEL_FLEXIBLE_</span>   <span class="c1">//Enables the detailed thoracic model</span>
+
+<span class="hll">  <span class="cp">#define</span> <span class="n">BM_TRUNK_CAVITY_MODEL</span> <span class="n">_CAVITY_MODEL_VOLUME_</span>  <span class="c1">//Enables the new abdominal volume model</span>
 </span></pre></div>
+</div>
+<div class="without-title admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Planned for AMMR 3.0:</strong> The model is scheduled to be released together with AMMR 3.0. But a beta release will be available on GitHub when AMMR 2.5 comes out.
+Otherwise, for early access please <a class="reference external" href="mailto:sales&#37;&#52;&#48;anybodytech&#46;com">contact us</a>.</p>
 </div>
 </div>
 <div class="section" id="references">
@@ -132,6 +140,8 @@ beginners in musculoskeletal modeling and AnyBody.</p>
 <li><p>Ignasiak, D., Dendorfer, S., Fergusson, S.J. (2016), “Thoracolumbar spine model with
 articulated ribcage for the prediction of dynamic spinal loading”,
 Journal of Biomechanics, vol. 49 (6), pp. 959-966.</p></li>
+<li><p>Shayestehpour, H., Toerholm, S.,  Lund, M.E., Rasmussen, J. (To be submitted), “A generic detailed multibody thoracic spine and ribcage model.”
+Journal of Multibody system dynamics.</p></li>
 </ul>
 </div>
 </div>
@@ -222,7 +232,7 @@ Journal of Biomechanics, vol. 49 (6), pp. 959-966.</p></li>
         <li class="right" >
           <a href="cervical_spine_model.html" title="The Cervical Spine Model"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.2 Documentation</a> &#187;</li>
+    <li><a href="../index.html">AMMR v2.4.3 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Thoracic spine model</a></li> 
