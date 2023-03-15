@@ -16,7 +16,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.3 (2023-01-27): Zenodo link AnyBody link Added: Added a few utility helper class templates- Template_OperationSaveValues, Template_OperationLoadValues, Template_OperationUpdateValues. to m..." />
+<meta property="og:description" content="AMMR 2.x.x: Added: Changed: Fixed: The LoadParameters operation was missing in the LoadAndReplay operation in MoCap examples. This has been fixed.. AMMR 2.4.3 (2023-01-27): Zenodo link AnyBody link..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -96,6 +96,16 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-2-x-x">
+<h2>AMMR 2.x.x<a class="headerlink" href="#ammr-2-x-x" title="Permalink to this headline">¶</a></h2>
+<p><strong>Added:</strong></p>
+<p><strong>Changed:</strong></p>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">LoadParameters</span></code> operation was missing in the <code class="docutils literal notranslate"><span class="pre">LoadAndReplay</span></code> operation in
+MoCap examples. This has been fixed.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-4-3-2023-01-27">
 <span id="ammr-2-4-changelog"></span><h2>AMMR 2.4.3 (2023-01-27)<a class="headerlink" href="#ammr-2-4-3-2023-01-27" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.7572879"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7572879.svg" /></a>  <a class="reference external" href="https://www.anybodytech.com/download/anybodysetup-7-4-3-8899_x64/"><img alt="AnyBody link" src="https://img.shields.io/badge/Included_with_AnyBody-7.4.3-yellowgreen" /></a></p>
@@ -461,7 +471,7 @@ in the class template.</p></li>
 <li><p>All models now run with the new wrapping solver by default, which makes all models with wrapping
 muscles run much faster. Hence the <code class="docutils literal notranslate"><span class="pre">AnyBody73_ExperimentalShortestPathSolver</span></code> setting is
 deprecated and no effect. The old wrapping algorithm can be enabled (not recommended) by setting:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">ShortestPathSolverVersion</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 4 is default (new wrapping)</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kp">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">ShortestPathSolverVersion</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 4 is default (new wrapping)</span>
 </pre></div>
 </div>
 </li>
@@ -554,7 +564,7 @@ These measures (<code class="docutils literal notranslate"><span class="pre">Int
 meaning but are useful when exporting and importing joint angles.</p></li>
 <li><p>Added a new <a class="reference internal" href="bm_config/bm_statements.html#bm-calibration-type" title="BM_CALIBRATION_TYPE"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">option</span> <span class="pre">for</span> <span class="pre">setting</span> <span class="pre">custom</span> <span class="pre">muscle</span> <span class="pre">calibration</span></code></a>.
 I.e. an option which disables calibration so the user can add their own code.</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_CALIBRATION_TYPE</span> <span class="n">_CALIBRATION_TYPE_CUSTOM_</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_CALIBRATION_TYPE</span> <span class="x x-Options">_CALIBRATION_TYPE_CUSTOM_</span>
 
 <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_BODY&gt;\HumanModel.any&quot;</span>
 
@@ -579,7 +589,7 @@ I.e. an option which disables calibration so the user can add their own code.</p
 in the AnyBody Modeling System 7.3.0. A notice is shown in the output window to
 remind the users that the algorithm is enabled. The experimental wrapping algorithm
 can be used in all models by setting:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">AnyBody73_ExperimentalShortestPathSolver</span> <span class="o">=</span> <span class="kp">On</span><span class="p">;</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kp">System</span><span class="p">.</span><span class="n">Compatibility</span><span class="p">.</span><span class="n">AnyBody73_ExperimentalShortestPathSolver</span> <span class="o">=</span> <span class="kp">On</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -669,7 +679,7 @@ to the wrong side of the humerus.</p></li>
 <ul>
 <li><p>Add new option to set the type of wrapping surface used in the deltoid wrapping implementation.
 The following will force the use of cylinders (which is faster) instead of ellipsoids.</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">BM_ARM_DELTOID_WRAPPING</span> <span class="n">_DELTOID_WRAPPING_CYLINDERS_</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_DELTOID_WRAPPING</span> <span class="x x-Options">_DELTOID_WRAPPING_CYLINDERS_</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="bm_config/bm_statements.html#bm-arm-deltoid-wrapping" title="BM_ARM_DELTOID_WRAPPING"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_DELTOID_WRAPPING</span></code></a> for possible options.</p>
@@ -879,7 +889,7 @@ Operations placed in the <code class="docutils literal notranslate"><span class=
 The new scapula sliding implementation uses multiple points on the ribs and a norm measures to surfaces on the scapula. This work is
 preparation of a new thoracic model where ribs are individual segments. Note that this implementation is still a work-in-progress. The new
 thorax-scapula contact can be enabled with the <a class="reference internal" href="bm_config/bm_statements.html#bm-arm-thorax-scapula-contact" title="BM_ARM_THORAX_SCAPULA_CONTACT"><code class="xref ammr ammr-bm_statement docutils literal notranslate"><span class="pre">BM_ARM_THORAX_SCAPULA_CONTACT</span></code></a> switch:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">BM_ARM_THORAX_SCAPULA_CONTACT</span> <span class="n">_MULTIPLE_POINT_CONTACT_</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_THORAX_SCAPULA_CONTACT</span> <span class="x x-Options">_MULTIPLE_POINT_CONTACT_</span>
 </pre></div>
 </div>
 </li>
@@ -915,7 +925,7 @@ Medius and Gluteus Minimus has a moment arm for internal rotation of the hip.</p
 <li><p>Kinematic rhythms for the shoulder, lumber-spine and cervical-spine can now be specified as soft contraints.
 The setting is controlled by setting the BM control statement <code class="docutils literal notranslate"><span class="pre">BM_XXX</span> <span class="pre">RHYTHM</span></code> to <a class="reference internal" href="bm_config/bm_constants.html#rhythm-soft" title="_RHYTHM_SOFT_"><code class="xref ammr ammr-bm_constant docutils literal notranslate"><span class="pre">_RHYTHM_SOFT_</span></code></a>.
 For example:</p>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_SHOULDER_RHYTHM</span> <span class="n">_RHYTHM_SOFT_</span>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="x x-Statements">BM_ARM_SHOULDER_RHYTHM</span> <span class="x x-Options">_RHYTHM_SOFT_</span>
 </pre></div>
 </div>
 </li>
