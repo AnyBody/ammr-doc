@@ -16,7 +16,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.4: Zenodo link Fixed: Thank you for sharing these entries with me. Here are some revised versions: Fixed an issue with wrist joint segment’s load time position (start guess). This greatly ..." />
+<meta property="og:description" content="AMMR 2.4.4: Zenodo link This version of AMMR adds a number fixes and tweaks to the body models which improves robustness of various kinematic and recruitment solvers. Added: Kinematic joint angle l..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -99,6 +99,16 @@
 <div class="section" id="ammr-2-4-4">
 <h2>AMMR 2.4.4<a class="headerlink" href="#ammr-2-4-4" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.7764841"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7764841.svg" /></a></p>
+<p>This version of AMMR adds a number fixes and tweaks to the body models which
+improves robustness of various kinematic and recruitment solvers.</p>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Kinematic joint angle limits in MoCap models were added to prevent the
+kinematic solver finding postures which physiologically improsible. E.g. like
+bending the elbow backwards. The limits are active for the elbow and wrist
+joint where marker tracking solver would occasional find a local minima with
+unphysiological posture.</p></li>
+</ul>
 <p><strong>Fixed:</strong>
 Thank you for sharing these entries with me. Here are some revised versions:</p>
 <ul class="simple">
