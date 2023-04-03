@@ -15,13 +15,13 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.3 (2023-01-27): Zenodo link AnyBody link Added: Added a few utility helper class templates- Template_OperationSaveValues, Template_OperationLoadValues, Template_OperationUpdateValues. to m..." />
+<meta property="og:description" content="AMMR 2.4.4: Zenodo link This version of AMMR adds a number fixes and tweaks to the body models which improves robustness of various kinematic and recruitment solvers. Added: Added kinematic joint a..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
 <meta property="og:image:alt" content="AMMR Documentation" />
   
-    <title>Changelog &#8212; AMMR v2.4.3 Documentation</title>
+    <title>Changelog &#8212; AMMR v2.4.4 Documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/cloud.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
@@ -79,7 +79,7 @@
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.4.3 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" accesskey="U">About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
@@ -95,6 +95,26 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-2-4-4">
+<h2>AMMR 2.4.4<a class="headerlink" href="#ammr-2-4-4" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://doi.org/10.5281/zenodo.7764841"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7764841.svg" /></a></p>
+<p>This version of AMMR adds a number fixes and tweaks to the body models which
+improves robustness of various kinematic and recruitment solvers.</p>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Added kinematic joint angle limits in MoCap models for elbow and wrist joints to prevent the kinematic solver from finding postures that are physiologically impossible, such as bending the elbow backwards. These limits are active where marker tracking solver would occasionally find a local minima with unphysiological posture.</p></li>
+<li><p>Tables with body model configuration parameter in the AMMR documentation now contain links showing their options. For example, see the page on <a class="reference internal" href="bm_config/leg.html"><span class="doc">Leg model parameter</span></a>.</p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Fixed an issue with wrist joint segment’s load time position (start guess). This greatly improves kinematic robustness of all models with arms as it creates a ‘universal-joint’ mechanism for wrist movement.</p></li>
+<li><p>Further fixes made to pectoralis wrapping segment’s robustness by optimizing initial load time positions to ensure model kinematics can more easily solve.</p></li>
+<li><p>Fixed missing <code class="docutils literal notranslate"><span class="pre">LoadParameters</span></code> operation in <code class="docutils literal notranslate"><span class="pre">LoadAndReplay</span></code> operation in MoCap examples.</p></li>
+<li><p>Fixed a problem with oblique muscles introduced in AMMR 2.4. A weak residual force was added to Y rotation of buckle to eliminate this problem.</p></li>
+<li><p>Corrected wrong order of nonlinear intervertebral disc stiffness polynomial coefficients (affects only those who used polynomial disc stiffness).</p></li>
+<li><p>Corrected small asymmetry in function for nonlinear intervertebral disc stiffness in coronal plane (affects only those who used polynomial disc stiffness).</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-4-3-2023-01-27">
 <span id="ammr-2-4-changelog"></span><h2>AMMR 2.4.3 (2023-01-27)<a class="headerlink" href="#ammr-2-4-3-2023-01-27" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.7572879"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7572879.svg" /></a>  <a class="reference external" href="https://www.anybodytech.com/download/anybodysetup-7-4-3-8899_x64/"><img alt="AnyBody link" src="https://img.shields.io/badge/Included_with_AnyBody-7.4.3-yellowgreen" /></a></p>
@@ -1563,7 +1583,7 @@ interested in this work.</p></li>
         <li class="right" >
           <a href="about.html" title="About the AMMR"
              >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="index.html">AMMR v2.4.3 Documentation</a> &#187;</li>
+    <li><a href="index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="about.html" >About the AMMR</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Changelog</a></li> 
