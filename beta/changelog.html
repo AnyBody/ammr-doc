@@ -16,7 +16,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="AMMR 2.4.4: Zenodo link This version of AMMR adds a number fixes and tweaks to the body models which improves robustness of various kinematic and recruitment solvers. Added: Added kinematic joint a..." />
+<meta property="og:description" content="AMMR Beta: Fixed: The kinematic start guess for left patalla joint has been adjusted to improve robustness of the kinematic solver. This does not changed the result of models.. Changed: The Inverse..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -96,6 +96,26 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="changelog">
 <span id="whats-new"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ammr-beta">
+<h2>AMMR Beta<a class="headerlink" href="#ammr-beta" title="Permalink to this headline">¶</a></h2>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>The kinematic start guess for left patalla joint has been adjusted to improve
+robustness of the kinematic solver. This does not changed the result of
+models.</p></li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>The InverseDynamics analysis in MoCap models now use the first step of Marker
+tracking as a start guess (initial conditions)<br />
+for the kinematic solver. This improves robustness in certain cases.</p></li>
+</ul>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Add an option to override the default kinematic joint limits in the MoCap
+framework.</p></li>
+</ul>
+</div>
 <div class="section" id="ammr-2-4-4">
 <h2>AMMR 2.4.4<a class="headerlink" href="#ammr-2-4-4" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://doi.org/10.5281/zenodo.7764841"><img alt="Zenodo link" src="https://zenodo.org/badge/DOI/10.5281/zenodo.7764841.svg" /></a></p>
