@@ -1,99 +1,385 @@
 
 
-
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<meta content="noindex" name="robots" />
 <meta property="og:title" content="The Aalborg mandible" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/body/aalborg_mandible.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="This is a mandible model based on a CT scan of a 40 year old male. The model was developed for two purposes: Demonstration of how to apply force-dependent kinematics (FDK) for modeling of the tempo..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/AalborgMandible.jpg" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
+<meta name="description" content="This is a mandible model based on a CT scan of a 40 year old male. The model was developed for two purposes: Demonstration of how to apply force-dependent kinematics (FDK) for modeling of the tempo..." />
+
+    <title>The Aalborg mandible &#8212; AMMR v2.5.0-beta Documentation</title>
   
-    <title>The Aalborg mandible &#8212; AMMR v2.4.4-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_override.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
-
-    
-    
-     
-        <script src="../_static/jquery.cookie.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.base.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.js"></script>
-    
-
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'body/aalborg_mandible';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Application Examples" href="../auto_examples/index.html" />
-    <link rel="prev" title="The Symmetric Mandible" href="symmetric_mandible_model.html" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head><body>
-    <div class="relbar-top">
-        
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../contents.html" title="Table Of Contents"
-             accesskey="C">toc</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../auto_examples/index.html" title="Application Examples"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="symmetric_mandible_model.html" title="The Symmetric Mandible"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.4-beta Documentation</a> &#187;</li>
+    <link rel="next" title="Configuring the Body Model" href="../bm_config/index.html" />
+    <link rel="prev" title="The Symmetric Mandible" href="symmetric_mandible_model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-          <li class="nav-item nav-item-1"><a href="models.html" accesskey="U">The Body Models</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">The Aalborg mandible</a></li> 
-      </ul>
-    </div>
-    </div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
   
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/AMMR.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/AMMR.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples and applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ammr_installation.html">Installing Latest AMMR Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Applications/index.html">Gallery of examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/index.html">Ergonomics and ADLs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/AirlinePassenger.html">Airline passenger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/FreePosture.html">Free posture Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PedalDemo.html">Pedel demo simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PedalDemoConditional.html">Pedel demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PosturePredictionModel.html">Posture Prediction Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/SeatedHuman.html">Seated Human</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/Squat.html">Squat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/StandingLift.html">Lifting Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/StandingModel.html">Standing Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/WheelTurn.html">Hand crank model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Mocap/index.html">MoCap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/ADL_Gait.html">ADL Gait (beta)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/AnyMocapFeatures.html">AnyMoCap Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH.html">Inertial MoCap example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH_BoxLift.html">BVH driven box lift example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH_OptimizeOrigin.html">Optimize BVH Origin example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_MultiTrial_StandingRef.html">Multi trial MoCap model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_FullBody.html">Simple Full body model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html">Simple GRF prediction model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_LowerExtremity.html">Simple Lower extremity model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/index.html">Orthopedics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/FacetJointModel.html">Facet Joint Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/FemoralTorsionTool.html">Femoral Torsion tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/KneeForcesExample.html">Knee forces example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/KneeSimulator.html">Knee Simulator Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/SpineFixationWithForceDependentKinematics.html">Spine Fixation Model using Force Dependent Kinematics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/THA-KneeBendDemo.html">Total Hip Arthroplasty (THA) Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/WheelChairRancho.html">Wheel Chair model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Sports/index.html">Sports</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/ArmCurl.html">Arm curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BenchPress.html">Bench Press</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BikeModel.html">Bike Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BikeModel2D.html">Bike Model 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/CrossTrainer.html">Cross Trainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/LegPressMachine.html">Leg Press Machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/PushUp.html">Push Up</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Other/index.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/ExoConceptTrunk_BoxLift.html">Trunk exoskeleton concept model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/ExoConcept_BoxLift.html">Exoskeleton concept model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/IndexFingerModel.html">Index finger model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/JumpingJack.html">Jumping Jack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/StandingModelScalingDisplay.html">Standing Model Scaling Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/StatisticalScalingPlugin.html">Statistical Scaling Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/UlmRatHindLimbModel.html">Rat Hindlimb model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Validation/index.html">Validation</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/AalborgMandible.html">The Aalborg Mandible model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/BergmannGH.html">Bergmann GH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateJointStrength.html">Evaluate joint strength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateMaxLoading.html">Evaluate max external loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateMomentArms.html">Evaluate moment arms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/GaitVaughan.html">Gait Vaughan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/MandibleModel.html">Symmetric Mandible example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/WilkeSpinePressure.html">Wilke Spine Disc Pressure Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration.html">Migrating models to AMMR 2.5</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Body Models</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="models.html">Overview</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thoracic_model.html">Thoracic spine model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shoulder_arm_model.html">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regensburg_ulm_hand_model.html">Regensburg-Ulm hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem_model.html">TLEM 1 (deprecated)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">TLEM 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glasgow_maastricht_foot_model.html">GM Foot model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/leg.html">Leg Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/arm.html">Arm Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/trunk.html">Trunk Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/mannequin.html">Mannequin Driver Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/scaling.html">Scaling Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/joint_type.html">Joint Type Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/other.html">Other Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_plugin.html">Body Model Plugin (BM-Plugin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_statements.html">All BodyModel parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_constants.html">All BodyModel constants</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson1.html">Lesson 1: Joint to Joint Scaling Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson2.html">Lesson 2: Scaling based on External Body Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson3.html">Lesson 3: Scaling using segmental scaling vectors</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anymocap/grf-prediction.html">Ground Reaction force prediction</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Contribute or cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legal.html">Legal, Trademarks and Copyrights</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Aalborg mandible</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-aalborg-mandible">
-<h1>The Aalborg mandible<a class="headerlink" href="#the-aalborg-mandible" title="Permalink to this headline">¶</a></h1>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-aalborg-mandible">
+<h1>The Aalborg mandible<a class="headerlink" href="#the-aalborg-mandible" title="Permalink to this heading">#</a></h1>
 <p>This is a mandible model based on a CT scan of a 40 year old male.</p>
 <img alt="../_images/AalborgMandible.jpg" src="../_images/AalborgMandible.jpg" />
 <p>The model was developed for two purposes:</p>
@@ -103,123 +389,112 @@ the temporomandibular joint (TMJ)</p></li>
 <li><p>Validation of the predicted mandible kinematics with the FDK TMJ model and
 comparison to a simpler point-on-plane (POP) model.</p></li>
 </ol>
-<p>You can read more about this model and the validation in <a class="footnote-reference brackets" href="#cite-azdn17" id="id1">1</a></p>
+<p>You can read more about this model and the validation in <a class="footnote-reference brackets" href="#cite-azdn17" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
 <p>The work was supported by the Sapere Aude program of the Danish Council for
 Independent Research under grant number: DFF‐4184‐00018.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="../auto_examples/Validation/plot_AalborgMandible.html#sphx-glr-auto-examples-validation-plot-aalborgmandible-py"><span class="std std-ref">The Aalborg Mandible model</span></a> for an
+<p><a class="reference internal" href="../Applications/Validation/AalborgMandible.html#example-aalborgmandible"><span class="std std-ref">The Aalborg Mandible model</span></a> for an
 example of how the model is used.</p>
 </div>
 <p class="rubric">References</p>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="cite-azdn17"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Andersen MS, de Zee M, Damsgaard M, Nolte D, Rasmussen J. 2017.
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="cite-azdn17" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Andersen MS, de Zee M, Damsgaard M, Nolte D, Rasmussen J. 2017.
 Introduction to Force-dependent Kinematics: Theory and Application to Mandible Modeling.
 Journal of Biomechanical Engineering, 139(9), 091001. DOI: 10.1115/1.4037100.</p>
-</dd>
-</dl>
-</div>
+</aside>
+</aside>
+</section>
 
 
-            <div class="clearer"></div>
-          </div>
-        </div>
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="symmetric_mandible_model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Symmetric Mandible</p>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-        <p class="logo"><a href="../index.html" title="index">
-          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
-        </a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-<div class="sphinx-toc sphinxglobaltoc">
-<h3><a href="../contents.html">Table of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="models.html">The Body Models</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="lumbar_spine_model.html">The Lumbar Spine Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cervical_spine_model.html">The Cervical Spine Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thoracic_model.html">Thoracic spine model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shoulder_arm_model.html">The Shoulder Arm Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="detailed_hand_model.html">Detailed hand model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regensburg_ulm_hand_model.html">Regensburg-Ulm hand model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leg_model.html">The “Leg” Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leg_tlem_model.html">Twente Lower Extremity Model v.1.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="leg_tlem2_model.html">Twente Lower Extremity Model v.2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glasgow_maastricht_foot_model.html">GM Foot model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symmetric_mandible_model.html">The Symmetric Mandible</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Aalborg mandible</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../anymocap/index.html">The AnyMoCap Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
-</ul>
-</div>
-        </div>
+    </a>
+    <a class="right-next"
+       href="../bm_config/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configuring the Body Model</p>
       </div>
-    
-    
-        <div class="sidebar-toggle-group no-js">
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
             
-            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
-                 «
-                <span class="show-for-small">hide menu</span>
-                
-            </button>
-            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
-                
-                <span class="show-for-small">menu</span>
-                <span class="hide-for-small">sidebar</span>
-                 »
-            </button>
-        </div>
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
-      <div class="clearer"></div>
-    </div>
-    <div class="relbar-bottom">
+<p class="component-author">
+By AnyBody Technology
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, AnyBody Technology.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
         
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../contents.html" title="Table Of Contents"
-             >toc</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../auto_examples/index.html" title="Application Examples"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="symmetric_mandible_model.html" title="The Symmetric Mandible"
-             >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.4-beta Documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="models.html" >The Body Models</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">The Aalborg mandible</a></li> 
-      </ul>
+      </main>
     </div>
-    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-    </div>
-    <!-- cloud_sptheme 1.4 -->
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

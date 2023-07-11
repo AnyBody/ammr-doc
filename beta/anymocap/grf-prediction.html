@@ -1,101 +1,409 @@
 
 
-
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="noindex" name="robots" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<meta content="noindex" name="robots" />
 <meta property="og:title" content="Ground Reaction force prediction" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://anyscript.org/anymocap/grf-prediction.html" />
-  
 <meta property="og:site_name" content="AMMR Documentation" />
-  
 <meta property="og:description" content="Background: Motion capture data is often recorded without force plates. In traditional inverse dynamics, this would make it impossible to perform a dynamic analysis. However, AnyBody has the possib..." />
-  
 <meta property="og:image" content="https://anyscript.org/_images/grf_output.png" />
-  
 <meta property="og:image:alt" content="AMMR Documentation" />
+<meta name="description" content="Background: Motion capture data is often recorded without force plates. In traditional inverse dynamics, this would make it impossible to perform a dynamic analysis. However, AnyBody has the possib..." />
+
+    <title>Ground Reaction force prediction &#8212; AMMR v2.5.0-beta Documentation</title>
   
-    <title>Ground Reaction force prediction &#8212; AMMR v2.4.4-beta Documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_override.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
-    
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
-
-    
-    
-     
-        <script src="../_static/jquery.cookie.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.base.js"></script>
-    
-
-    
-     
-        <script src="../_static/cloud.js"></script>
-    
-
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'anymocap/grf-prediction';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="About the AMMR" href="../about.html" />
-    <link rel="prev" title="The AnyMoCap Framework" href="index.html" /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head><body>
-    <div class="relbar-top">
-        
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../contents.html" title="Table Of Contents"
-             accesskey="C">toc</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../about.html" title="About the AMMR"
-             accesskey="N">next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="index.html" title="The AnyMoCap Framework"
-             accesskey="P">previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.4-beta Documentation</a> &#187;</li>
+    <link rel="next" title="Changelog" href="../changelog.html" />
+    <link rel="prev" title="The AnyMoCap Framework" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">The AnyMoCap Framework</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Ground Reaction force prediction</a></li> 
-      </ul>
-    </div>
-    </div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
   
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/AMMR.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/AMMR.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples and applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../getting_started.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ammr_installation.html">Installing Latest AMMR Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Applications/index.html">Gallery of examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/index.html">Ergonomics and ADLs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/AirlinePassenger.html">Airline passenger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/FreePosture.html">Free posture Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PedalDemo.html">Pedel demo simple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PedalDemoConditional.html">Pedel demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/PosturePredictionModel.html">Posture Prediction Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/SeatedHuman.html">Seated Human</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/Squat.html">Squat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/StandingLift.html">Lifting Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/StandingModel.html">Standing Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Daily-activities-and-ergonomics/WheelTurn.html">Hand crank model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Mocap/index.html">MoCap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/ADL_Gait.html">ADL Gait (beta)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/AnyMocapFeatures.html">AnyMoCap Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH.html">Inertial MoCap example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH_BoxLift.html">BVH driven box lift example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/BVH_OptimizeOrigin.html">Optimize BVH Origin example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_MultiTrial_StandingRef.html">Multi trial MoCap model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_FullBody.html">Simple Full body model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html">Simple GRF prediction model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_LowerExtremity.html">Simple Lower extremity model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/index.html">Orthopedics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/FacetJointModel.html">Facet Joint Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/FemoralTorsionTool.html">Femoral Torsion tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/KneeForcesExample.html">Knee forces example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/KneeSimulator.html">Knee Simulator Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/SpineFixationWithForceDependentKinematics.html">Spine Fixation Model using Force Dependent Kinematics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/THA-KneeBendDemo.html">Total Hip Arthroplasty (THA) Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Orthopedics_and_rehab/WheelChairRancho.html">Wheel Chair model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Sports/index.html">Sports</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/ArmCurl.html">Arm curl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BenchPress.html">Bench Press</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BikeModel.html">Bike Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/BikeModel2D.html">Bike Model 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/CrossTrainer.html">Cross Trainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/LegPressMachine.html">Leg Press Machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Sports/PushUp.html">Push Up</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Other/index.html">Other</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/ExoConceptTrunk_BoxLift.html">Trunk exoskeleton concept model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/ExoConcept_BoxLift.html">Exoskeleton concept model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/IndexFingerModel.html">Index finger model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/JumpingJack.html">Jumping Jack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/StandingModelScalingDisplay.html">Standing Model Scaling Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/StatisticalScalingPlugin.html">Statistical Scaling Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Other/UlmRatHindLimbModel.html">Rat Hindlimb model</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Applications/Validation/index.html">Validation</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/AalborgMandible.html">The Aalborg Mandible model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/BergmannGH.html">Bergmann GH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateJointStrength.html">Evaluate joint strength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateMaxLoading.html">Evaluate max external loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/EvaluateMomentArms.html">Evaluate moment arms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/GaitVaughan.html">Gait Vaughan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/MandibleModel.html">Symmetric Mandible example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Applications/Validation/WilkeSpinePressure.html">Wilke Spine Disc Pressure Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../migration.html">Migrating models to AMMR 2.5</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Body Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../body/models.html">Overview</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../body/lumbar_spine_model.html">The Lumbar Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/cervical_spine_model.html">The Cervical Spine Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/thoracic_model.html">Thoracic spine model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/shoulder_arm_model.html">The Shoulder Arm Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/detailed_hand_model.html">Detailed hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/regensburg_ulm_hand_model.html">Regensburg-Ulm hand model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/leg_model.html">The “Leg” Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/leg_tlem_model.html">TLEM 1 (deprecated)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/leg_tlem2_model.html">TLEM 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/glasgow_maastricht_foot_model.html">GM Foot model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/symmetric_mandible_model.html">The Symmetric Mandible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../body/aalborg_mandible.html">The Aalborg mandible</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/leg.html">Leg Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/arm.html">Arm Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/trunk.html">Trunk Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/mannequin.html">Mannequin Driver Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/scaling.html">Scaling Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/joint_type.html">Joint Type Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/other.html">Other Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_plugin.html">Body Model Plugin (BM-Plugin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_statements.html">All BodyModel parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../bm_config/bm_constants.html">All BodyModel constants</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson1.html">Lesson 1: Joint to Joint Scaling Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson2.html">Lesson 2: Scaling based on External Body Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Scaling/lesson3.html">Lesson 3: Scaling using segmental scaling vectors</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">The AnyMoCap Framework</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ground Reaction force prediction</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Contribute or cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../legal.html">Legal, Trademarks and Copyrights</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ground Reaction force prediction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="ground-reaction-force-prediction">
-<h1>Ground Reaction force prediction<a class="headerlink" href="#ground-reaction-force-prediction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-ground-force-prediction-to-a-model">Adding ground force prediction to a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-the-class-templates">Including the class templates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-grf-prediction-classes">Adding the GRF prediction classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-new-residuals-hand-of-god">Setting up new residuals (Hand of God)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-model">Running the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grf-prediction-trouble-shooting">GRF prediction trouble shooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-the-grf-template">A closer look at the GRF template</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-templates-footplateconditionalcontact">Class templates: FootPlateConditionalContact</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ground-reaction-force-prediction">
+<h1>Ground Reaction force prediction<a class="headerlink" href="#ground-reaction-force-prediction" title="Permalink to this heading">#</a></h1>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p>Motion capture data is often recorded without force plates. In traditional
 inverse dynamics, this would make it impossible to perform a dynamic analysis.
 However, AnyBody has the possibility to predict ground reaction forces (GRF), so
@@ -113,24 +421,24 @@ class template will generate all the necessary AnyScript code. Thus, adding GRF
 prediction is similar to adding force plates to a model.</p>
 <p>This new functionality is now part of the AnyBody Managed Model Repository
 (AMMR).</p>
-</div>
-<div class="section" id="adding-ground-force-prediction-to-a-model">
-<h2>Adding ground force prediction to a model<a class="headerlink" href="#adding-ground-force-prediction-to-a-model" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../auto_examples/Mocap/plot_Plug-in-gait_Simple_FullBody_GRFPrediction.html#sphx-glr-auto-examples-mocap-plot-plug-in-gait-simple-fullbody-grfprediction-py"><span class="std std-ref">GRF example model</span></a>
+</section>
+<section id="adding-ground-force-prediction-to-a-model">
+<h2>Adding ground force prediction to a model<a class="headerlink" href="#adding-ground-force-prediction-to-a-model" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="../Applications/Mocap/Plug-in-gait_Simple_FullBody_GRFPrediction.html#example-mocap-grf-prediction"><span class="std std-ref">GRF example model</span></a>
 is already preconfigured to use the GRF prediction. But
 if you need to add GRF prediction to new model the following outlines the
 procedure.</p>
-<div class="section" id="including-the-class-templates">
-<h3>Including the class templates<a class="headerlink" href="#including-the-class-templates" title="Permalink to this headline">¶</a></h3>
+<section id="including-the-class-templates">
+<h3>Including the class templates<a class="headerlink" href="#including-the-class-templates" title="Permalink to this heading">#</a></h3>
 <p>The class template is already included in the AnyMoCap framework, so this step
 can be skipped. However, when using GRF prediction in other models it is
 necessary to include the following line at the beginning of the model:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_AMMR&gt;/Tools/GRFPrediction/FootPlateConditionalContact.any&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-the-grf-prediction-classes">
-<h3>Adding the GRF prediction classes<a class="headerlink" href="#adding-the-grf-prediction-classes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adding-the-grf-prediction-classes">
+<h3>Adding the GRF prediction classes<a class="headerlink" href="#adding-the-grf-prediction-classes" title="Permalink to this heading">#</a></h3>
 <p>In the AnyMoCap models GRF prediction is enabled by setting the following
 setting:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#define</span> <span class="n">MOCAP_USE_GRF_PREDICTION</span> <span class="x x-Options">ON</span>
@@ -162,9 +470,9 @@ model.</p>
 </pre></div>
 </div>
 <p>See below for more information on the GRF prediction classes.</p>
-</div>
-<div class="section" id="setting-up-new-residuals-hand-of-god">
-<h3>Setting up new residuals (Hand of God)<a class="headerlink" href="#setting-up-new-residuals-hand-of-god" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-up-new-residuals-hand-of-god">
+<h3>Setting up new residuals (Hand of God)<a class="headerlink" href="#setting-up-new-residuals-hand-of-god" title="Permalink to this heading">#</a></h3>
 <p>Adding conditional contacts to the feet is not enough. The AnyMoCap model comes
 reactions forces applied to the pelvis. These are the reactions that carry any
 inconsistencies between the model and force plate data, and they must be removed
@@ -187,21 +495,21 @@ following file in your model:</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">WeakResiduals.any</span></code> does the job of removing the ‘Hand of God’ and adding
 the new, weak residuals. Again this is handled automatically in the AnyMoCap
 based models.</p>
-</div>
-</div>
-<div class="section" id="running-the-model">
-<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this heading">#</a></h2>
 <p>The model is run in the same way as other models. The only difference is that it
 now uses GRF prediction instead of force plates data.</p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../_images/grf_output.png" src="../_images/grf_output.png" />
-</div>
+</figure>
 <p>It may be necessary to adjust the parameters of the GRF prediction class to
 obtain a good prediction of the ground reactions. This is especially important
 around heel strike and toe-off, where the model can have problems.</p>
-</div>
-<div class="section" id="grf-prediction-trouble-shooting">
-<h2>GRF prediction trouble shooting<a class="headerlink" href="#grf-prediction-trouble-shooting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="grf-prediction-trouble-shooting">
+<h2>GRF prediction trouble shooting<a class="headerlink" href="#grf-prediction-trouble-shooting" title="Permalink to this heading">#</a></h2>
 <p>Here are some things to check if a GRF prediction model fails running inverse
 dynamic:</p>
 <ul class="simple">
@@ -220,9 +528,9 @@ in the model if the feet contact are not enough, this is defined in  the file
 of the artificial muscles, but this will lead to higher residuals so be
 careful.</p></li>
 </ul>
-</div>
-<div class="section" id="a-closer-look-at-the-grf-template">
-<h2>A closer look at the GRF template<a class="headerlink" href="#a-closer-look-at-the-grf-template" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-closer-look-at-the-grf-template">
+<h2>A closer look at the GRF template<a class="headerlink" href="#a-closer-look-at-the-grf-template" title="Permalink to this heading">#</a></h2>
 <p>Finally, we can take a closer look at the <code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span></code> template.</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">FootPlateConditionalContact</span> <span class="n">GRF_Prediction_Right</span><span class="p">(</span>
     <span class="n">NORMAL_DIRECTION</span> <span class="o">=</span> <span class="s">&quot;Y&quot;</span><span class="p">,</span>
@@ -250,8 +558,8 @@ specific to the model implementation. One could also imagine class-templates
 that produce a higher number of nodes or nodes in positions that corresponds to
 particular shoes or on other body parts.</p>
 <p>Of course, there are also many options that can be tweaked and adjusted.</p>
-<div class="section" id="class-templates-footplateconditionalcontact">
-<h3>Class templates: FootPlateConditionalContact<a class="headerlink" href="#class-templates-footplateconditionalcontact" title="Permalink to this headline">¶</a></h3>
+<section id="class-templates-footplateconditionalcontact">
+<h3>Class templates: FootPlateConditionalContact<a class="headerlink" href="#class-templates-footplateconditionalcontact" title="Permalink to this heading">#</a></h3>
 <p>Obligatory members are marked with <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code> and optional values are marked with
 <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>. Default values are <strong>bold</strong>:</p>
 <p><strong>Usage:</strong></p>
@@ -310,102 +618,122 @@ friction force which can be recruited.</p>
 <dt><code class="docutils literal notranslate"><span class="pre">Settings.ForceVectorDrawScaleFactor</span></code>:</dt><dd><p>Scale factor for the drawing of the GRF force vector</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-            <div class="clearer"></div>
-          </div>
-        </div>
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The AnyMoCap Framework</p>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-        <p class="logo"><a href="../index.html" title="index">
-          <img class="logo" src="../_static/AMMR_Logo.png" alt="Logo"/>
-        </a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+    </a>
+    <a class="right-next"
+       href="../changelog.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Changelog</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
 </div>
-<script>$('#searchbox').show(0);</script>
-<div class="sphinx-toc sphinxglobaltoc">
-<h3><a href="../contents.html">Table of Contents</a></h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the AMMR documentation!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started with AMMR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bm_config/index.html">Configuring the Body Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../body/models.html">The Body Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Application Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Scaling/intro.html">Introduction to Scaling</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The AnyMoCap Framework</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#features">Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#over-determinate-kinematic-analysis">Over determinate kinematic analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#anymocap-examples">AnyMoCap examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#get-started">Get started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#options-and-settings">Options and settings</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#more-resources">More resources</a></li>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-ground-force-prediction-to-a-model">Adding ground force prediction to a model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#including-the-class-templates">Including the class templates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-grf-prediction-classes">Adding the GRF prediction classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-new-residuals-hand-of-god">Setting up new residuals (Hand of God)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About the AMMR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-model">Running the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grf-prediction-trouble-shooting">GRF prediction trouble shooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-closer-look-at-the-grf-template">A closer look at the GRF template</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-templates-footplateconditionalcontact">Class templates: FootPlateConditionalContact</a></li>
 </ul>
-</div>
-        </div>
-      </div>
-    
-    
-        <div class="sidebar-toggle-group no-js">
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
             
-            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
-                 «
-                <span class="show-for-small">hide menu</span>
-                
-            </button>
-            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
-                
-                <span class="show-for-small">menu</span>
-                <span class="hide-for-small">sidebar</span>
-                 »
-            </button>
-        </div>
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
-      <div class="clearer"></div>
-    </div>
-    <div class="relbar-bottom">
+<p class="component-author">
+By AnyBody Technology
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, AnyBody Technology.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
         
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../contents.html" title="Table Of Contents"
-             >toc</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="../about.html" title="About the AMMR"
-             >next</a> &nbsp; &nbsp;</li>
-        <li class="right" >
-          <a href="index.html" title="The AnyMoCap Framework"
-             >previous</a> &nbsp; &nbsp;</li>
-    <li><a href="../index.html">AMMR v2.4.4-beta Documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="index.html" >The AnyMoCap Framework</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Ground Reaction force prediction</a></li> 
-      </ul>
+      </main>
     </div>
-    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, AnyBody Technology.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
-    </div>
-    <!-- cloud_sptheme 1.4 -->
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
