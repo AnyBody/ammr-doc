@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="VideoLookAtCamera" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/tools/class-templates/Video tools.Video.VideoLookAtCamera.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Creates a video object for saving mp4 videos from model simulations. Include this file this file to use, Validate docs section#VideoLookAtCamera: Class creating a video camera for video recording o..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>VideoLookAtCamera &#8212; AMMR v2.4.4 Documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">VideoLookAtCamera</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="videolookatcamera">
+<span id="video-tools-video-videolookatcamera-any"></span><h1>VideoLookAtCamera<a class="headerlink" href="#videolookatcamera" title="Permalink to this headline">¶</a></h1>
+<p>Creates a video object for saving mp4 videos from model simulations.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Include this file this file to use</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;AMMR_TOOLS&gt;\ModelUtilities/Video/VideoLookAtCamera.any&quot;</span>`
+</pre></div>
+</div>
+</div>
+<!--  <p><span class="xref myst">Validate docs section</span></p>
+--><div class="section" id="id1">
+<h2>#VideoLookAtCamera<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Class creating a video camera for video recording of AnyBody simulations.</p>
+<p class="rubric">Usage</p>
+<p>Once the model is loaded run <code class="docutils literal notranslate"><span class="pre">Create_Video</span></code> operation to create the
+Video. The video will be saved in the same folder as the main file.</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span>  <span class="cp">#include</span> <span class="s">&quot;&lt;ANYBODY_PATH_MODELUTILS&gt;/Video/VideoLookAtCamera.any&quot;</span>
+
+  <span class="c1">// This is a simple example of using the camera class to create videos.</span>
+  <span class="n">VideoLookAtCamera</span> <span class="n">MyCam</span> <span class="p">(</span><span class="n">UP_DIRECTION</span> <span class="o">=</span> <span class="kp">y</span><span class="p">)</span> <span class="o">=</span> 
+  <span class="p">{</span>
+       <span class="c1">// The point the camera focus on  </span>
+       <span class="n">CameraLookAtPoint</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">MyModel</span><span class="p">.</span><span class="n">Femur</span><span class="p">.</span><span class="n">Knee</span><span class="p">.</span><span class="n">r</span><span class="p">;</span>  
+
+       <span class="c1">// The vertical field of view in meters at the LookAtPoint</span>
+       <span class="n">CameraFieldOfView</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+       <span class="c1">// The direction which the camera is placed</span>
+       <span class="c1">// (In global coordinates with respect to the LookAtPoint)</span>
+       <span class="n">CameraDirection</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+
+       <span class="c1">// The operations which should be included in the video.</span>
+       <span class="n">Analysis</span> <span class="o">=</span> <span class="p">{</span>
+           <span class="kt">AnyOperation</span> <span class="o">&amp;</span><span class="n">ref</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">MyStudy</span><span class="p">.</span><span class="n">InverseDynamics</span><span class="p">;</span>
+       <span class="p">};</span>
+   <span class="p">};</span>
+</pre></div>
+</div>
+<p class="rubric" id="video-tools-video-videolookatcamera-videolookatcamera-docsvalidationtarget">Full signature</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">VideoLookAtCamera</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="n">UP_DIRECTION</span><span class="o">=</span><span class="kp">y</span><span class="p">,</span>
+  <span class="n">CREATE_GIF</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+  <span class="n">ENABLE_OVERLAY</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<p>:__CLASS__: <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code>{l=AnyScriptDoc}</p>
+<p>:UP_DIRECTION:
+The direction of the up vector of the camera.  (Default: y)</p>
+<p>:CREATE_GIF:
+If set to 1, a gif will be created in addition to the video.  (Default: 0)</p>
+<p>:ENABLE_OVERLAY:
+If set to 1, the settings used to create the video will be saved in a file.  (Default: 1)</p>
+<p class="rubric">Optional initialization members</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">VideoLookAtCamera</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

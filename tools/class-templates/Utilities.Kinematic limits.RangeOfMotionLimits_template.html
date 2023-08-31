@@ -1,0 +1,327 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="RangeOfMotionLimits_template" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/tools/class-templates/Utilities.Kinematic limits.RangeOfMotionLimits_template.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Create joint limits as soft kinematic constraints given some range of motion. Include this file this file to use, Validate docs section#RangeOfMotionLimits: The class creates a set of limits (soft ..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>RangeOfMotionLimits_template &#8212; AMMR v2.4.4 Documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">RangeOfMotionLimits_template</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="rangeofmotionlimits-template">
+<span id="utilities-kinematic-limits-rangeofmotionlimits-template-any"></span><h1>RangeOfMotionLimits_template<a class="headerlink" href="#rangeofmotionlimits-template" title="Permalink to this headline">¶</a></h1>
+<p>Create joint limits as soft kinematic constraints
+given some range of motion.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Include this file this file to use</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;AMMR_TOOLS&gt;\ModelUtilities/KinematicLimits/RangeOfMotionLimits_template.any&quot;</span>`
+</pre></div>
+</div>
+</div>
+<!--  <p><span class="xref myst">Validate docs section</span></p>
+--><div class="section" id="rangeofmotionlimits">
+<h2>#RangeOfMotionLimits<a class="headerlink" href="#rangeofmotionlimits" title="Permalink to this headline">¶</a></h2>
+<p>The class creates a set of limits (soft kinematic constraints)
+for the human model given some range of motion.</p>
+<p>The class template should be used after the human model is included in the model.
+This ensures that all the <code class="docutils literal notranslate"><span class="pre">BM_*</span></code> statements are defined.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure the Limit drivers are included in your study.
+Otherwise they will have no effect.</p>
+</div>
+<p class="rubric">Example</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">RangeOfMotionLimits</span> <span class="n">RoMLimits</span><span class="p">(</span>
+   <span class="n">ARM_RIGHT</span> <span class="o">=</span> <span class="x x-Statements">BM_ARM_RIGHT</span><span class="p">,</span>
+   <span class="n">ARM_LEFT</span> <span class="o">=</span> <span class="x x-Statements">BM_ARM_LEFT</span><span class="p">,</span>
+   <span class="n">LEG_RIGHT</span> <span class="o">=</span> <span class="x x-Statements">BM_LEG_RIGHT</span><span class="p">,</span>
+   <span class="n">LEG_LEFT</span> <span class="o">=</span> <span class="x x-Statements">BM_LEG_LEFT</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="c1">// Example of changing af few of the limits:</span>
+   <span class="n">Limits</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisThoraxExtension</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">};</span>
+   <span class="n">Limits</span><span class="p">.</span><span class="n">Right</span><span class="p">.</span><span class="n">ElbowPronation</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">};</span>
+<span class="p">};</span> 
+</pre></div>
+</div>
+<p>If some joint should not have a range of motion limits, the class accepts
+arguments for disabling individual joint limits:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span>  <span class="n">RangeOfMotionLimits</span> <span class="n">RoMLimits</span><span class="p">(</span>
+    <span class="n">PELVIS_THORAX_LATERAL_BENDING</span> <span class="o">=</span> <span class="s">&quot;Off&quot;</span>
+    <span class="p">...</span> 
+</pre></div>
+</div>
+<p class="rubric" id="utilities-kinematic-limits-rangeofmotionlimits-template-rangeofmotionlimits-docsvalidationtarget">Full signature</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">RangeOfMotionLimits</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="n">ARM_RIGHT</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">ARM_LEFT</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">LEG_RIGHT</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">LEG_LEFT</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">PELVIS_THORAX_EXTENSION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">PELVIS_THORAX_LATERAL_BENDING</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">PELVIS_THORAX_ROTATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">SKULL_THORAX_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">SKULL_THORAX_LATERALBENDING</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">SKULL_THORAX_ROTATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">STERNO_CLAVICULAR_PROTRACTION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">STERNO_CLAVICULAR_ELEVATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">STERNO_CLAVICULAR_AXIALROTATION</span><span class="o">=</span><span class="s">&quot;Off&quot;</span><span class="p">,</span>
+  <span class="n">GLENOHUMERAL_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">GLENOHUMERAL_EXTERNAL_ROTATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">GLENOHUMERAL_ABDUCTION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">ELBOW_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">ELBOW_PRONATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">WRIST_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">WRIST_ABDUCTION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">HIP_ABDUCTION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">HIP_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">HIP_EXTERNAL_ROTATION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">KNEE_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">ANKLE_PLANTAR_FLEXION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">SUBTALAR_EVERSION</span><span class="o">=</span><span class="s">&quot;On&quot;</span><span class="p">,</span>
+  <span class="n">HUMAN_MODEL</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">HumanModel</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">Limits</span><span class="p">.</span><span class="n">Trunk</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="kt">AnyFolder</span> <span class="n">Right</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="c1">//RangeOfMotionLimits.Limits.Right</span>
+         <span class="c1">/// The limits for SternoClavicularProtraction</span>
+         <span class="cp">#var</span> <span class="kt">AnyVector</span> <span class="n">SternoClavicularProtraction</span>    <span class="o">=</span> <span class="nb">DesignVar</span><span class="p">({</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span>  <span class="o">-</span><span class="mi">23</span><span class="o">+</span><span class="mi">20</span><span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="n">Limits</span><span class="p">.</span><span class="n">Right</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="kt">AnyFolder</span> <span class="n">Left</span> <span class="o">=</span> <span class="p">{</span>
+         <span class="c1">//RangeOfMotionLimits.Limits.Left</span>
+         <span class="c1">/// The limits for SternoClavicularProtraction</span>
+         <span class="cp">#var</span> <span class="kt">AnyVector</span> <span class="n">SternoClavicularProtraction</span>    <span class="o">=</span> <span class="nb">DesignVar</span><span class="p">({</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span>  <span class="o">-</span><span class="mi">23</span><span class="o">+</span><span class="mi">20</span><span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="n">Limits</span><span class="p">.</span><span class="n">Left</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="kt">AnyFolder</span> <span class="n">Trunk</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="cp">#if</span> <span class="n">PELVIS_THORAX_EXTENSION</span> <span class="o">==</span> <span class="s">&quot;On&quot;</span> 
+       <span class="kt">AnyFolder</span> <span class="n">PelvisThoraxExtension</span> <span class="o">=</span> 
+       <span class="p">{</span>
+          <span class="n">KinLimitsDriver</span> <span class="n">Driver</span><span class="p">(</span>
+             <span class="n">KinMeasure</span><span class="o">=</span> <span class="p">...</span><span class="n">InterfaceRef</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisThoraxExtension</span>
+          <span class="p">)</span> <span class="o">=</span>  <span class="p">{</span> <span class="n">LowerLimit</span> <span class="o">=</span><span class="p">...</span><span class="n">Limits</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisThoraxExtension</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="n">HighLimit</span> <span class="o">=</span> <span class="p">...</span><span class="n">Limits</span><span class="p">.</span><span class="n">Trunk</span><span class="p">.</span><span class="n">PelvisThoraxExtension</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="n">MeasureConversion</span><span class="o">=</span><span class="mi">180</span><span class="o">/</span><span class="kp">pi</span><span class="p">;</span> <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<p>:__CLASS__: <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code>{l=AnyScriptDoc}</p>
+<p>:ARM_RIGHT:
+Indicate if the right arm should be included in the limits.
+Set this to BM_ARM_RIGHT to make it follow the body config  (Required)</p>
+<p>:ARM_LEFT:
+Indicate if the left arm should be included in the limits.
+Set this to BM_ARM_LEFT to make it follow the body config  (Required)</p>
+<p>:LEG_RIGHT:
+Indicate if the right leg should be included in the limits.
+Set this to BM_LEG_RIGHT to make it follow the body config  (Required)</p>
+<p>:LEG_LEFT:
+Indicate if the left leg should be included in the limits.
+Set this to BM_LEG_LEFT to make it follow the body config  (Required)</p>
+<p>:PELVIS_THORAX_EXTENSION:
+Enables/disables limits for the pelvis thorax extension  (Default: “On”)</p>
+<p>:PELVIS_THORAX_LATERAL_BENDING:
+Enables/disables limits for the pelvis thorax lateral bending  (Default: “On”)</p>
+<p>:PELVIS_THORAX_ROTATION:
+Enables/disables limits for the pelvis thorax rotation  (Default: “On”)</p>
+<p>:SKULL_THORAX_FLEXION:
+Enables/disables limits for the skull thorax flexion  (Default: “On”)</p>
+<p>:SKULL_THORAX_LATERALBENDING:
+Enables/disables limits for the skull thorax lateral bending  (Default: “On”)</p>
+<p>:SKULL_THORAX_ROTATION:
+Enables/disables limits for the skull thorax rotation  (Default: “On”)</p>
+<p>:STERNO_CLAVICULAR_PROTRACTION:
+Enables/disables limits for the sterno clavicular protraction  (Default: “On”)</p>
+<p>:STERNO_CLAVICULAR_ELEVATION:
+Enables/disables limits for the sterno clavicular elevation  (Default: “On”)</p>
+<p>:STERNO_CLAVICULAR_AXIALROTATION:
+Enables/disables limits for the sterno clavicular axial rotation  (Default: “Off”)</p>
+<p>:GLENOHUMERAL_FLEXION:
+Enables/disables limits for the glenohumeral flexion  (Default: “On”)</p>
+<p>:GLENOHUMERAL_EXTERNAL_ROTATION:
+Enables/disables limits for the glenohumeral external rotation  (Default: “On”)</p>
+<p>:GLENOHUMERAL_ABDUCTION:
+Enables/disables limits for the glenohumeral abduction  (Default: “On”)</p>
+<p>:ELBOW_FLEXION:
+Enables/disables limits for the elbow flexion  (Default: “On”)</p>
+<p>:ELBOW_PRONATION:
+Enables/disables limits for the elbow pronation  (Default: “On”)</p>
+<p>:WRIST_FLEXION:
+Enables/disables limits for the wrist flexion  (Default: “On”)</p>
+<p>:WRIST_ABDUCTION:
+Enables/disables limits for the wrist abduction  (Default: “On”)</p>
+<p>:HIP_ABDUCTION:
+Enables/disables limits for the hip abduction  (Default: “On”)</p>
+<p>:HIP_FLEXION:
+Enables/disables limits for the hip flexion  (Default: “On”)</p>
+<p>:HIP_EXTERNAL_ROTATION:
+Enables/disables limits for the hip external rotation  (Default: “On”)</p>
+<p>:KNEE_FLEXION:
+Enables/disables limits for the knee flexion  (Default: “On”)</p>
+<p>:ANKLE_PLANTAR_FLEXION:
+Enables/disables limits for the ankle plantar flexion  (Default: “On”)</p>
+<p>:SUBTALAR_EVERSION:
+Enables/disables limits for the subtalar eversion  (Default: “On”)</p>
+<p>:HUMAN_MODEL:
+The human model to which the limits should be applied.  (Default: Main.HumanModel)</p>
+<p class="rubric">Expected members</p>
+<p class="rubric">Optional initialization members</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">RangeOfMotionLimits_template</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

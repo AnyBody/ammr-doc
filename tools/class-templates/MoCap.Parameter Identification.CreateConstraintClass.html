@@ -1,0 +1,303 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="CreateConstraintClass" />
+  
+<meta property="og:type" content="website" />
+  
+<meta property="og:url" content="https://anyscript.org/tools/class-templates/MoCap.Parameter Identification.CreateConstraintClass.html" />
+  
+<meta property="og:site_name" content="AMMR Documentation" />
+  
+<meta property="og:description" content="Collection of class templates for adding constraints between design variables in Parameter optimization studies. Include this file this file to use, Validate docs section#LinkDesignVars: Add a cons..." />
+  
+<meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
+  
+<meta property="og:image:alt" content="AMMR Documentation" />
+  
+    <title>CreateConstraintClass &#8212; AMMR v2.4.4 Documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             accesskey="C">toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">CreateConstraintClass</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="createconstraintclass">
+<span id="mocap-parameter-identification-createconstraintclass-any"></span><h1>CreateConstraintClass<a class="headerlink" href="#createconstraintclass" title="Permalink to this headline">¶</a></h1>
+<p>Collection of class templates for adding constraints between
+design variables in Parameter optimization studies.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Include this file this file to use</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="s">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/CreateConstraintClass.any&quot;</span>`
+</pre></div>
+</div>
+</div>
+<!--  <p><span class="xref myst">Validate docs section</span></p>
+--><div class="section" id="linkdesignvars">
+<h2>#LinkDesignVars<a class="headerlink" href="#linkdesignvars" title="Permalink to this headline">¶</a></h2>
+<p>Add a constraint to AnyMoCap models between two design variables
+in the parameter identification study.
+By default the Design variables are linked to be equal by adding a constraint
+<code class="docutils literal notranslate"><span class="pre">Coef1*DesVar1</span> <span class="pre">-</span> <span class="pre">Coef2*DesVar2</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
+<p>It is also possible change the link by setting <code class="docutils literal notranslate"><span class="pre">Coef1</span></code> and <code class="docutils literal notranslate"><span class="pre">Coef2</span></code>, and the
+<code class="docutils literal notranslate"><span class="pre">Constraint_Type</span></code> argument.</p>
+<p class="rubric">Example:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span> <span class="n">LinkDesignVars</span> <span class="n">EqualThighLength</span> <span class="p">(</span>
+   <span class="n">Desvar1</span><span class="o">=</span><span class="n">RightThighLength</span><span class="p">,</span>
+   <span class="n">Desvar2</span><span class="o">=</span><span class="n">LeftThighLength</span><span class="p">,</span>
+ <span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</div>
+<p>The constraint can be changed by changing the <code class="docutils literal notranslate"><span class="pre">Constraint_Type</span></code> argument.</p>
+<p class="rubric" id="mocap-parameter-identification-createconstraintclass-linkdesignvars-docsvalidationtarget">Full signature</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">LinkDesignVars</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="n">DesVar1</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">DesVar2</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">Constraint_Type</span><span class="o">=</span><span class="kp">EqualToZero</span><span class="p">,</span>
+  <span class="n">Coef1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">Coef2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">PARAMETER_OPT_STUDY</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">Studies</span><span class="p">.</span><span class="n">ParameterIdentification</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<p>:__CLASS__: <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code>{l=AnyScriptDoc}</p>
+<p>:DesVar1:
+The first design variable to link.  (Required)</p>
+<p>:DesVar2:
+The second design variable to link.  (Required)</p>
+<p>:Constraint_Type:
+The type of constraint to add between the design variables.
+Possible values are: EqualToZero, LessThanZero, GreaterThanZero  (Default: EqualToZero)</p>
+<p>:Coef1:
+The coefficient of the first design variable in the constraint equation.  (Default: 1)</p>
+<p>:Coef2:
+The coefficient of the second design variable in the constraint equation.  (Default: 1)</p>
+<p>:PARAMETER_OPT_STUDY:
+The parameter optimization study to add the constraint to.  (Default: Main.Studies.ParameterIdentification)</p>
+<!--  <p><span class="xref myst">Validate docs section</span></p>
+--></div>
+<div class="section" id="createconstraint">
+<h2>#CreateConstraint<a class="headerlink" href="#createconstraint" title="Permalink to this headline">¶</a></h2>
+<p>Small convenience class to quickly add an <code class="docutils literal notranslate"><span class="pre">AnyDesMeasure</span></code> constraint to
+the <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.ParameterIdentification</span></code> folder and link it
+to the parameter optimization study.</p>
+<p class="rubric">Example:</p>
+<p>Here is an example of adding a constraints which forces the pelvis width
+to follow the overall body scale.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following assumes the pelvis width is a design variable, and a model which
+uses the <code class="docutils literal notranslate"><span class="pre">ScaleXYZ</span></code> scaling law.</p>
+</div>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">CreateConstraint</span> <span class="n">ScaleHeadWithBody</span><span class="p">(</span>
+  <span class="n">Constraint_Type</span> <span class="o">=</span> <span class="kp">EqualToZero</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> 
+<span class="p">{</span>
+  <span class="n">Value</span> <span class="o">=</span> <span class="n">Main</span><span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">Anthropometrics</span><span class="p">.</span><span class="n">SegmentScaleFactors</span><span class="p">.</span><span class="n">BodyScale</span> 
+         <span class="o">-</span> <span class="n">Main</span><span class="p">.</span><span class="n">HumanModel</span><span class="p">.</span><span class="n">Anthropometrics</span><span class="p">.</span><span class="n">SegmentScaleFactors</span><span class="p">.</span><span class="n">Pelvis</span><span class="p">.</span><span class="n">WidthScale</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="rubric" id="mocap-parameter-identification-createconstraintclass-createconstraint-docsvalidationtarget">Full signature</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">CreateConstraint</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="n">Constraint_Type</span><span class="o">=</span><span class="kp">EqualToZero</span><span class="p">,</span>
+  <span class="n">PARAMETER_OPT_STUDY</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">Studies</span><span class="p">.</span><span class="n">ParameterIdentification</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">Value</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">Required</span><span class="o">&gt;</span><span class="p">;</span> 
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<p>:__CLASS__: <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code>{l=AnyScriptDoc}</p>
+<p>:Constraint_Type:
+The type of constraint to add between the design variables.
+Possible values are: EqualToZero, LessThanZero, GreaterThanZero  (Default: EqualToZero)</p>
+<p>:PARAMETER_OPT_STUDY:
+The parameter optimization study to add the constraint to.  (Default: Main.Studies.ParameterIdentification)</p>
+<p class="rubric">Required initialization members</p>
+<!--  <p><span class="xref myst">Validate docs section</span></p>
+--></div>
+<div class="section" id="create4clusterrectangleconstraint">
+<h2>#Create4clusterRectangleConstraint<a class="headerlink" href="#create4clusterrectangleconstraint" title="Permalink to this headline">¶</a></h2>
+<p>Convenience class to quickly add an constraints to markers in a cluster.
+The constraints ensures the markers remain in a rectangular shape.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding such a constraint is often not be necessary and may
+make it more difficult for the optimizer.</p>
+</div>
+<p class="rubric">Example:</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Create4clusterRectangleConstraint</span> <span class="n">ThighClusterConstraint</span><span class="p">(</span>
+  <span class="n">marker1</span> <span class="o">=</span> <span class="n">RThigh1</span><span class="p">,</span>
+  <span class="n">marker2</span> <span class="o">=</span> <span class="n">RThigh2</span><span class="p">,</span>
+  <span class="n">marker3</span> <span class="o">=</span> <span class="n">RThigh3</span><span class="p">,</span>
+  <span class="n">marker4</span> <span class="o">=</span> <span class="n">RThigh4</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</div>
+<p class="rubric" id="mocap-parameter-identification-createconstraintclass-create4clusterrectangleconstraint-docsvalidationtarget">Full signature</p>
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">Create4clusterRectangleConstraint</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="n">marker1</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">marker2</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">marker3</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">marker4</span><span class="o">=&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">PARAMETER_OPT_STUDY</span><span class="o">=</span><span class="n">Main</span><span class="p">.</span><span class="n">Studies</span><span class="p">.</span><span class="n">ParameterIdentification</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</div>
+<p class="rubric">Arguments</p>
+<p>:__CLASS__: <code class="docutils literal notranslate"><span class="pre">AnyFolder</span></code>{l=AnyScriptDoc}</p>
+<p>:marker1:
+The first marker in the cluster.  (Required)</p>
+<p>:marker2:
+The second marker in the cluster.  (Required)</p>
+<p>:marker3:
+The third marker in the cluster.  (Required)</p>
+<p>:marker4:
+The fourth marker in the cluster.  (Required)</p>
+<p>:PARAMETER_OPT_STUDY:
+The parameter optimization study to add the constraint to.  (Default: Main.Studies.ParameterIdentification)</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AMMR_Logo.png" alt="Logo"/>
+        </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../contents.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Welcome to the AMMR documentation!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started with AMMR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bm_config/index.html">Configuring the Body Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../body/models.html">The Body Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">Application Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../creating_model_from_scratch.html">Creating a Human model from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scaling/intro.html">Introduction to Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../anymocap/index.html">The AnyMoCap Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the AMMR</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../contents.html" title="Table Of Contents"
+             >toc</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AMMR v2.4.4 Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">CreateConstraintClass</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, AnyBody Technology.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
