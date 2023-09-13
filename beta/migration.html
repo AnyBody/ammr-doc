@@ -13,10 +13,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://anyscript.org/migration.html" />
 <meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This documents shows some of the most commo..." />
+<meta property="og:description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This document shows some of the most common..." />
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This documents shows some of the most commo..." />
+<meta name="description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This document shows some of the most common..." />
 
     <title>Migrating models to AMMR 2.5 &#8212; AMMR v2.5.0-beta Documentation</title>
   
@@ -442,10 +442,15 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR.</p>
-<p>This documents shows some of the most common errors which may be encountered when migrating models and how to fix them.</p>
+<p>This document shows some of the most common errors which may be encountered when migrating models and how to fix them.</p>
 </section>
 <section id="migratin-from-ammr-2-4-to-2-5">
 <h2>Migratin from AMMR 2.4 to 2.5<a class="headerlink" href="#migratin-from-ammr-2-4-to-2-5" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The updated trunk model in AMMR 2.5 changes the posture which considered the neutral position. This changes was done in preparation for new full detailed thoracic model in AMMR 3.0. The changes invloves minor pelvic tilt, and a change to the neutral orientation of the throacic segment.</p>
+<p>This change affects many different applications. Epecially models which trunk joint angles are driven directly and models where the pelvis segmental reference frame is positioned directly (i.e. has a driver directly on the pelvis referna driver directly on pelvis).</p>
+</div>
 <section id="model-changes">
 <h3>Model changes<a class="headerlink" href="#model-changes" title="Permalink to this heading">#</a></h3>
 </section>
