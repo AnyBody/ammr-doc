@@ -9,16 +9,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <meta content="noindex" name="robots" />
-<meta property="og:title" content="Migrating models to AMMR 2.5" />
+<meta property="og:title" content="Update models to AMMR 2.5" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://anyscript.org/migration.html" />
 <meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This document shows some of the most common..." />
+<meta property="og:description" content="Models created earlier versions of AnyBody may need to be updated to work with AnyBody 7.5 and the new model repository (AMMR 2.5). This document outlines important changes which may break older mo..." />
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="Introduction: Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR. This document shows some of the most common..." />
+<meta name="description" content="Models created earlier versions of AnyBody may need to be updated to work with AnyBody 7.5 and the new model repository (AMMR 2.5). This document outlines important changes which may break older mo..." />
 
-    <title>Migrating models to AMMR 2.5 &#8212; AMMR v2.5.0-beta Documentation</title>
+    <title>Update models to AMMR 2.5 &#8212; AMMR v2.5.0-beta Documentation</title>
   
   
   
@@ -28,12 +28,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -47,8 +47,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
@@ -79,6 +80,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -226,7 +236,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Migrating models to AMMR 2.5</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Update models to AMMR 2.5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Body Models</span></p>
 <ul class="nav bd-sidenav">
@@ -275,9 +285,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tools/Utilities-toc.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Angles.RotationAxisAngles.html">RotationAxisAngles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Kinematic%20limits.RangeOfMotionLimits_template.html">RangeOfMotionLimits_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Angles.RotationAxisAngles.html">RotationAxisAngles</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tools/Video%20tools-toc.html">Video tools</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -366,10 +376,10 @@
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -377,7 +387,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -394,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Migrating models to AMMR 2.5</h1>
+    <h1>Update models to AMMR 2.5</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,28 +414,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migratin-from-ammr-2-4-to-2-5">Migratin from AMMR 2.4 to 2.5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-changes">Model changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-changes">Model changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trunk-and-pelvis-neutral-posture">Trunk and pelvis neutral posture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocap-models">MoCap models</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pelvic-markers">Pelvic markers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#foot-markers">Foot markers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-time-errors">Load time errors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-scale-leg-pelvis">Unresolved <code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-muspar-folder">Unresolved <code class="docutils literal notranslate"><span class="pre">MusPar</span></code> folder</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-pcsafactor-variable">Unresolved <code class="docutils literal notranslate"><span class="pre">PCSAfactor</span></code> variable</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stringmesh-error-in-expression"><code class="docutils literal notranslate"><span class="pre">StringMesh</span></code>  :  Error in expression</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-warnings">Deprecation warnings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-anymuscle-class-names">Deprecated AnyMuscle class names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-use-of-anysurf-fit-classes">Deprecated use of AnySurf*Fit classes</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-time-errors">Load time errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-warnings">Deprecation warnings</a></li>
 </ul>
             </nav>
         </div>
@@ -437,96 +436,153 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="migrating-models-to-ammr-2-5">
-<h1>Migrating models to AMMR 2.5<a class="headerlink" href="#migrating-models-to-ammr-2-5" title="Permalink to this heading">#</a></h1>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Advanced models or applications which modify the body models may need updates in order to work with the newest version of AnyBody and AMMR.</p>
-<p>This document shows some of the most common errors which may be encountered when migrating models and how to fix them.</p>
-</section>
-<section id="migratin-from-ammr-2-4-to-2-5">
-<h2>Migratin from AMMR 2.4 to 2.5<a class="headerlink" href="#migratin-from-ammr-2-4-to-2-5" title="Permalink to this heading">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The updated trunk model in AMMR 2.5 changes the posture which considered the neutral position. This changes was done in preparation for new full detailed thoracic model in AMMR 3.0. The changes invloves minor pelvic tilt, and a change to the neutral orientation of the throacic segment.</p>
-<p>This change affects many different applications. Epecially models which trunk joint angles are driven directly and models where the pelvis segmental reference frame is positioned directly (i.e. has a driver directly on the pelvis referna driver directly on pelvis).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="update-models-to-ammr-2-5">
+<h1>Update models to AMMR 2.5<a class="headerlink" href="#update-models-to-ammr-2-5" title="Permalink to this heading">#</a></h1>
+<p>Models created earlier versions of AnyBody may need to be updated to work with
+AnyBody 7.5 and the new model repository (AMMR 2.5).</p>
+<p>This document outlines important changes which may break
+older models or change results.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the last part of this document for a list of concrete errors and deprecation
+warnings and how to fix them.</p>
 </div>
 <section id="model-changes">
-<h3>Model changes<a class="headerlink" href="#model-changes" title="Permalink to this heading">#</a></h3>
+<h2>Model changes<a class="headerlink" href="#model-changes" title="Permalink to this heading">#</a></h2>
+<section id="trunk-and-pelvis-neutral-posture">
+<h3>Trunk and pelvis neutral posture<a class="headerlink" href="#trunk-and-pelvis-neutral-posture" title="Permalink to this heading">#</a></h3>
+<p>The trunk model in AMMR 2.5 changes which posture is considered
+neutral. This was done in preparation for a new <a class="reference internal" href="body/thoracic_model.html#thoracic-model"><span class="std std-ref">detailed thoracic
+model</span></a> which will be available in <a class="reference external" href="https://github.com/anybody/ammr">AMMR
+3.0</a>. Pelvic tilt for the model has been updated as well as the the neutral orientation of the thoracic segment.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These postural changes will affect older applications. Especially, in models
+where trunk joint angles are driven directly and in models where a driver is applied directly on the pelvis segmental reference frame.</p>
+</div>
 </section>
 <section id="mocap-models">
 <h3>MoCap models<a class="headerlink" href="#mocap-models" title="Permalink to this heading">#</a></h3>
 <section id="pelvic-markers">
 <h4>Pelvic markers<a class="headerlink" href="#pelvic-markers" title="Permalink to this heading">#</a></h4>
-<p>Changes to the pelvic tilt means that pelvic markers located relative to the pelvis Anatomical frame will have moved slightly. This is most noticeable for
-markers on the posterior part of the pelvis, like the PSIS markers. The Y component
-may need to be adjusted to achieve same marker position and joint angle output.</p>
+<p>Changes to the pelvic tilt means that pelvic markers located relative to the
+pelvis Anatomical frame will appear to have moved slightly. This is most
+noticeable for markers on the posterior part of the pelvis, like the PSIS
+markers. The Y component of the marker position may need to be adjusted to achieve same marker position and joint angle output.</p>
 <p>If markers are placed relative to bony landmarks (using the <code class="docutils literal notranslate"><span class="pre">PlaceMarkerAt=</span></code>
-argument) this problem will not occur.</p>
+argument) this problem will often not occur.</p>
 </section>
 <section id="foot-markers">
 <h4>Foot markers<a class="headerlink" href="#foot-markers" title="Permalink to this heading">#</a></h4>
-<p>Changes to the antomical frame of the foot and talus segment may cause markers
-to have moved slightly. The Y component may need to be adjusted to achieve the same marker position and joint angle output.</p>
+<p>Changes to the anatomical frame of the foot and talus segment may cause markers
+to have moved slightly. The Y component may need to be adjusted to achieve the
+same marker position and joint angle output.</p>
+</section>
 </section>
 </section>
 <section id="load-time-errors">
-<h3>Load time errors<a class="headerlink" href="#load-time-errors" title="Permalink to this heading">#</a></h3>
-<section id="unresolved-scale-leg-pelvis">
-<h4>Unresolved <code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span></code><a class="headerlink" href="#unresolved-scale-leg-pelvis" title="Permalink to this heading">#</a></h4>
+<h2>Load time errors<a class="headerlink" href="#load-time-errors" title="Permalink to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Unresolved</span> <span class="pre">object</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">(</span><span class="n">SCR</span><span class="p">.</span><span class="n">PRS9</span><span class="p">)</span> :   <span class="n">some</span><span class="o">-</span><span class="n">file</span><span class="p">.</span><span class="n">any</span><span class="p">(</span>##<span class="p">)</span>  :   <span class="o">&#39;</span><span class="n">Scale_Leg_Pelvis</span><span class="o">&#39;</span>  :  <span class="n">Unresolved</span> <span class="n">object</span>
 </pre></div>
 </div>
-<p>The functions <code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span></code> and <code class="docutils literal notranslate"><span class="pre">Scale_Trunk_Pelvis</span></code> on the pelvis segment have been moved inside the <code class="docutils literal notranslate"><span class="pre">AnatomicalFrame</span></code> folder.
+<p class="sd-card-text">The functions <code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span></code> and <code class="docutils literal notranslate"><span class="pre">Scale_Trunk_Pelvis</span></code> on the pelvis segment have been moved inside the <code class="docutils literal notranslate"><span class="pre">AnatomicalFrame</span></code> folder.
 Update your code to <code class="docutils literal notranslate"><span class="pre">AnatomicalFrame.Scale_Leg_Pelvis</span></code>.</p>
-</section>
-<section id="unresolved-muspar-folder">
-<h4>Unresolved <code class="docutils literal notranslate"><span class="pre">MusPar</span></code> folder<a class="headerlink" href="#unresolved-muspar-folder" title="Permalink to this heading">#</a></h4>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">MusPar</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Unresolved</span> <span class="pre">object</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">(</span><span class="n">SCR</span><span class="p">.</span><span class="n">PRS9</span><span class="p">)</span> :   <span class="n">some</span><span class="o">-</span><span class="n">file</span><span class="p">.</span><span class="n">any</span><span class="p">(</span>##<span class="p">)</span>  :   <span class="o">&#39;</span><span class="n">MusPar</span><span class="o">&#39;</span>  :  <span class="n">Unresolved</span> <span class="n">object</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">MusPar</span></code> folder have been renamed to <code class="docutils literal notranslate"><span class="pre">MuscleModels</span></code>.</p>
-</section>
-<section id="unresolved-pcsafactor-variable">
-<h4>Unresolved <code class="docutils literal notranslate"><span class="pre">PCSAfactor</span></code> variable<a class="headerlink" href="#unresolved-pcsafactor-variable" title="Permalink to this heading">#</a></h4>
-<blockquote>
-<div><p>ERROR(SCR.PRS9) :   xxx.any(##)  :   ‘PCSAfactor’  :  Unresolved object</p>
-</div></blockquote>
-<p>This could be cause by the fact that the <code class="docutils literal notranslate"><span class="pre">MuscleParameters.Muscles.PCSAfactor</span></code> is  now located at <code class="docutils literal notranslate"><span class="pre">MuscleModels.DefaultMusPar.PCSAfactor</span></code></p>
-</section>
-<section id="stringmesh-error-in-expression">
-<h4><code class="docutils literal notranslate"><span class="pre">StringMesh</span></code>  :  Error in expression<a class="headerlink" href="#stringmesh-error-in-expression" title="Permalink to this heading">#</a></h4>
-<blockquote>
-<div><p>ERROR(SCR.EXP0) :   Ligaments.any(18)  :     Defined at :   Class_CreateLigament.any(47)  :   StringMesh  :  Error in expression. Please refer to the following error messages for details …
-ERROR(SCR.EXP1) :   Ligaments.any(18)  :     Defined at :   Class_CreateLigament.any(47)  :   Operator ‘=’  :  Illegal operation for given argument types  :  ‘AnyInt[Undefined]’ ‘=’ ‘AnyFloatVar’</p>
-</div></blockquote>
-<p>The <code class="docutils literal notranslate"><span class="pre">StringMesh</span></code> variable have changed type from <code class="docutils literal notranslate"><span class="pre">AnyVar</span></code> to <code class="docutils literal notranslate"><span class="pre">AnyInt</span></code>. So if <code class="docutils literal notranslate"><span class="pre">StringMesh</span></code> is assigned from an other variable, make sure that it has the type <code class="docutils literal notranslate"><span class="pre">AnyInt</span></code>.</p>
-</section>
-</section>
-<section id="deprecation-warnings">
-<h3>Deprecation warnings<a class="headerlink" href="#deprecation-warnings" title="Permalink to this heading">#</a></h3>
-<section id="deprecated-anymuscle-class-names">
-<h4>Deprecated AnyMuscle class names<a class="headerlink" href="#deprecated-anymuscle-class-names" title="Permalink to this heading">#</a></h4>
-<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">(</span><span class="n">SYS3</span><span class="p">)</span> :  <span class="p">...</span> :  <span class="n">Deprecated</span> <span class="n">class</span>  :  <span class="n">Class</span> <span class="o">&#39;</span><span class="kt">AnyViaPointMuscle</span><span class="o">&#39;</span> <span class="n">was</span> <span class="n">renamed</span> <span class="n">to</span> <span class="o">&#39;</span><span class="kt">AnyMuscleViaPoint</span><span class="o">&#39;</span>
-<span class="n">WARNING</span><span class="p">(</span><span class="n">SYS3</span><span class="p">)</span> :   <span class="p">...</span>  :  <span class="kt">AnyShortestPathMuscle</span>  :  <span class="n">Deprecated</span> <span class="n">class</span>  :  <span class="n">Class</span> <span class="o">&#39;</span><span class="kt">AnyShortestPathMuscle</span><span class="o">&#39;</span> <span class="n">was</span> <span class="n">renamed</span> <span class="n">to</span> <span class="o">&#39;</span><span class="kt">AnyMuscleShortestPath</span><span class="o">&#39;</span>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">MusPar</span></code> folder have been renamed to <code class="docutils literal notranslate"><span class="pre">MuscleModels</span></code>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">PCSAfactor</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Unresolved</span> <span class="pre">object</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">(</span><span class="n">SCR</span><span class="p">.</span><span class="n">PRS9</span><span class="p">)</span> :   <span class="n">xxx</span><span class="p">.</span><span class="n">any</span><span class="p">(</span>##<span class="p">)</span>  :   <span class="o">&#39;</span><span class="n">PCSAfactor</span><span class="o">&#39;</span>  :  <span class="n">Unresolved</span> <span class="n">object</span>
 </pre></div>
 </div>
-<p>Some class names for <code class="docutils literal notranslate"><span class="pre">AnyMuscle</span></code> have been deprecaed. Just rename them.</p>
+<p class="sd-card-text">This could be cause by the fact that the <code class="docutils literal notranslate"><span class="pre">MuscleParameters.Muscles.PCSAfactor</span></code> is  now located at <code class="docutils literal notranslate"><span class="pre">MuscleModels.DefaultMusPar.PCSAfactor</span></code></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">StringMesh</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Error</span> <span class="pre">in</span> <span class="pre">expression</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">(</span><span class="n">SCR</span><span class="p">.</span><span class="n">EXP0</span><span class="p">)</span> :   <span class="n">Ligaments</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>  :     <span class="n">Defined</span> <span class="n">at</span> :   <span class="n">Class_CreateLigament</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span>  :   <span class="n">StringMesh</span>  :  <span class="n">Error</span> <span class="n">in</span> <span class="n">expression</span><span class="p">.</span> <span class="n">Please</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">following</span> <span class="n">error</span> <span class="n">messages</span> <span class="n">for</span> <span class="n">details</span> <span class="p">...</span>
+<span class="n">ERROR</span><span class="p">(</span><span class="n">SCR</span><span class="p">.</span><span class="n">EXP1</span><span class="p">)</span> :   <span class="n">Ligaments</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>  :     <span class="n">Defined</span> <span class="n">at</span> :   <span class="n">Class_CreateLigament</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span>  :   <span class="n">Operator</span> <span class="o">&#39;=&#39;</span>  :  <span class="n">Illegal</span> <span class="n">operation</span> <span class="n">for</span> <span class="n">given</span> <span class="n">argument</span> <span class="n">types</span>  :  <span class="o">&#39;</span><span class="kt">AnyInt</span><span class="p">[</span><span class="n">Undefined</span><span class="p">]</span><span class="o">&#39;</span> <span class="o">&#39;=&#39;</span> <span class="o">&#39;</span><span class="kt">AnyFloatVar</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">StringMesh</span></code> variable have changed type from <code class="docutils literal notranslate"><span class="pre">AnyVar</span></code> to <code class="docutils literal notranslate"><span class="pre">AnyInt</span></code>. So if <code class="docutils literal notranslate"><span class="pre">StringMesh</span></code> is assigned from an other variable, make sure that it has the type <code class="docutils literal notranslate"><span class="pre">AnyInt</span></code>.</p>
+</div>
+</details></section>
+<section id="deprecation-warnings">
+<h2>Deprecation warnings<a class="headerlink" href="#deprecation-warnings" title="Permalink to this heading">#</a></h2>
+<p>Below is a set of possible errors you may encounter if old models are used with AMMR 2.5.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Deprecated</span> <span class="pre">class</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">(</span><span class="n">SYS3</span><span class="p">)</span> :  <span class="p">...</span> :  <span class="kt">AnyViaPointMuscle</span> : <span class="n">Deprecated</span> <span class="n">class</span>  :  <span class="n">Class</span> <span class="o">&#39;</span><span class="kt">AnyViaPointMuscle</span><span class="o">&#39;</span> <span class="n">was</span> <span class="n">renamed</span> <span class="n">to</span> <span class="o">&#39;</span><span class="kt">AnyMuscleViaPoint</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Some class names for <code class="docutils literal notranslate"><span class="pre">AnyMuscle</span></code> have been deprecated. Just rename them.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleViaPoint</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleShortestPath</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleViaPoint</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleShortestPath</span></code></p></li>
 </ul>
-</section>
-<section id="deprecated-use-of-anysurf-fit-classes">
-<h4>Deprecated use of AnySurf*Fit classes<a class="headerlink" href="#deprecated-use-of-anysurf-fit-classes" title="Permalink to this heading">#</a></h4>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span>&#160; <span class="pre">:</span>&#160; <span class="pre">Deprecated</span> <span class="pre">class</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="p">(</span><span class="n">SYS3</span><span class="p">)</span> :   <span class="p">...</span>  :  <span class="kt">AnyShortestPathMuscle</span>  :  <span class="n">Deprecated</span> <span class="n">class</span>  :  <span class="n">Class</span> <span class="o">&#39;</span><span class="kt">AnyShortestPathMuscle</span><span class="o">&#39;</span> <span class="n">was</span> <span class="n">renamed</span> <span class="n">to</span> <span class="o">&#39;</span><span class="kt">AnyMuscleShortestPath</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Some class names for <code class="docutils literal notranslate"><span class="pre">AnyMuscle</span></code> have been deprecated. Just rename them.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AnyViaPointMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleViaPoint</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AnyShortestPathMuscle</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">AnyMuscleShortestPath</span></code></p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<code class="docutils literal notranslate"><span class="pre">Deprecated</span> <span class="pre">use</span> <span class="pre">of</span> <span class="pre">AnySurf*Fit</span> <span class="pre">classes</span></code><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">(</span><span class="n">OBJ</span><span class="p">.</span><span class="n">MCH</span><span class="p">.</span><span class="n">SURF4</span><span class="p">)</span> :   <span class="n">Custom_Seg_Shank</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="mi">114</span><span class="p">)</span>  :   <span class="n">Surf</span>  :  <span class="n">Deprecated</span> <span class="n">use</span> <span class="n">of</span> <span class="n">AnySurf</span><span class="o">*</span><span class="n">Fit</span> <span class="n">classes</span> <span class="n">identified</span><span class="p">.</span> <span class="n">Compatibility</span> <span class="n">mode</span> <span class="n">entered</span><span class="p">.</span> 
 <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">Use</span> <span class="n">new</span> <span class="n">concept</span> <span class="n">by</span> <span class="n">remove</span> <span class="n">initializations</span> <span class="n">of</span> <span class="n">sRel</span> <span class="n">and</span> <span class="n">ARel</span> <span class="p">(</span><span class="n">Recommended</span><span class="p">).</span> 
 <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="n">Read</span> <span class="n">the</span> <span class="n">long</span> <span class="n">error</span> <span class="n">description</span> <span class="n">to</span> <span class="n">see</span> <span class="n">how</span> <span class="n">to</span> <span class="n">maintain</span> <span class="n">backwards</span> <span class="n">compatibility</span> <span class="n">of</span> <span class="n">your</span> <span class="n">model</span><span class="p">.</span> 
 </pre></div>
 </div>
-<p>The class <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> now inherits directly from <code class="docutils literal notranslate"><span class="pre">AnyRefNode</span></code> and can create a reference frame directly.
+<p class="sd-card-text">The class <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> now inherits directly from <code class="docutils literal notranslate"><span class="pre">AnyRefNode</span></code> and creates a reference frame directly.
 So they should no longer be nested inside existing reference frames to calculate the position and orientation.</p>
-<p>Imagine the following code:</p>
+<p class="sd-card-text">Imagine the following code:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnyRefNode</span> <span class="n">Outer</span> <span class="o">=</span> 
 <span class="p">{</span>
     <span class="n">sRel</span> <span class="o">=</span> <span class="n">SurfFit</span><span class="p">.</span><span class="n">sRel</span><span class="p">;</span>
@@ -540,7 +596,7 @@ So they should no longer be nested inside existing reference frames to calculate
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">Outer</span></code> class gets the positon and orientation from the inner <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> class.
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">Outer</span></code> class gets the position and orientation from the inner <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> class.
 This should be changed to:</p>
 <div class="highlight-AnyScriptDoc notranslate"><div class="highlight"><pre><span></span><span class="kt">AnySurfCylinderFit</span> <span class="n">Outer</span> <span class="o">=</span> 
 <span class="p">{</span>
@@ -549,11 +605,10 @@ This should be changed to:</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>In fact, the original would no longer give the correct result given the new properties of <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> as reference frame.
+<p class="sd-card-text">In fact, the original would no longer give the correct result given the new properties of <code class="docutils literal notranslate"><span class="pre">AnySurfCylinderFit</span></code> as reference frame.
 So AnyBody detects the old usage pattern and reverts to a ‘Compatibility’ mode.</p>
-</section>
-</section>
-</section>
+</div>
+</details></section>
 </section>
 
 
@@ -562,11 +617,10 @@ So AnyBody detects the old usage pattern and reverts to a ‘Compatibility’ mo
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Applications/Validation/WilkeSpinePressure.html"
@@ -586,10 +640,7 @@ So AnyBody detects the old usage pattern and reverts to a ‘Compatibility’ mo
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -604,28 +655,17 @@ So AnyBody detects the old usage pattern and reverts to a ‘Compatibility’ mo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migratin-from-ammr-2-4-to-2-5">Migratin from AMMR 2.4 to 2.5</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-changes">Model changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-changes">Model changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trunk-and-pelvis-neutral-posture">Trunk and pelvis neutral posture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mocap-models">MoCap models</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pelvic-markers">Pelvic markers</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#foot-markers">Foot markers</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-time-errors">Load time errors</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-scale-leg-pelvis">Unresolved <code class="docutils literal notranslate"><span class="pre">Scale_Leg_Pelvis</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-muspar-folder">Unresolved <code class="docutils literal notranslate"><span class="pre">MusPar</span></code> folder</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unresolved-pcsafactor-variable">Unresolved <code class="docutils literal notranslate"><span class="pre">PCSAfactor</span></code> variable</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#stringmesh-error-in-expression"><code class="docutils literal notranslate"><span class="pre">StringMesh</span></code>  :  Error in expression</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-warnings">Deprecation warnings</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-anymuscle-class-names">Deprecated AnyMuscle class names</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecated-use-of-anysurf-fit-classes">Deprecated use of AnySurf*Fit classes</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-time-errors">Load time errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deprecation-warnings">Deprecation warnings</a></li>
 </ul>
   </nav></div>
 
@@ -673,8 +713,8 @@ By AnyBody Technology
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

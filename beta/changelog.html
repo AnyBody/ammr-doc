@@ -28,12 +28,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -47,8 +47,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
@@ -81,6 +82,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -228,7 +238,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="migration.html">Migrating models to AMMR 2.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Update models to AMMR 2.5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Body Models</span></p>
 <ul class="nav bd-sidenav">
@@ -277,9 +287,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tools/Utilities-toc.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Angles.RotationAxisAngles.html">RotationAxisAngles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Kinematic%20limits.RangeOfMotionLimits_template.html">RangeOfMotionLimits_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/class-templates/Utilities.Angles.RotationAxisAngles.html">RotationAxisAngles</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="tools/Video%20tools-toc.html">Video tools</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -368,10 +378,10 @@
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -379,7 +389,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -468,7 +478,7 @@ document.write(`
 <p class="admonition-title">Warning</p>
 <p>Care must be taken when porting existing MoCap models to the
 new AMMR. Changes to the pelvic tilt, and changes to the foot anatomical
-frame can casuse MoCap markers on Pelvis and feet to have moved slightly.</p>
+frame can cause MoCap markers on Pelvis and feet to have moved slightly.</p>
 <p>If migrating models from AMMR 2.4, be sure to check markers on
 pelvis and the foot segments.  The Y component may need to be adjusted to
 achieve same marker position and joint angle output.</p>
@@ -516,17 +526,26 @@ C3D file.</p></li>
 <section id="changed">
 <h3>Changed:<a class="headerlink" href="#changed" title="Permalink to this heading">#</a></h3>
 <ul>
-<li><p>The Pelvis ground driver in <a class="reference internal" href="Applications/Sports/BenchPress.html#example-benchpress"><span class="std std-ref">Bench Press example</span></a> has
-been updated to use the AnatomicalFrameTrunk to account for the pelvis tilt.
-The Pelvis-Thorax Extension value has been also been updated slightly.</p></li>
+<li><p>Adjustments to pelvic tilt have changed position of MoCap markers on the
+pelvis segment. This mostly affect markers with hardcoded positions.
+Particularly PSIS markers furthest posterior from the origin between ASIS.
+When migrating from AMMR 2.4 models without adjusting marker positions, PSIS
+markers may move 2 cm lower.</p>
+<ul class="simple">
+<li><p>Most <a class="reference internal" href="Applications/index.html#example-gallery"><span class="std std-ref">non-MoCap model examples</span></a>
+has been updated to account for the new pelvic tilt value. Either by using the
+<code class="docutils literal notranslate"><span class="pre">AnatomicalFrameTrunk</span></code> reference frame  in the pelvic driver or by adjusting the
+Pelvis-Thorax Extension slightly.</p></li>
+</ul>
+</li>
 <li><p>The Twente Lower Extremity Model (TLEM) 2 leg model has several updates and is
 now designated as <a class="reference internal" href="body/leg_tlem2_model.html#tlem2-v2-2"><span class="std std-ref">TLEM 2.2</span></a>.</p>
 <ul class="simple">
 <li><p>Wrapping surfaces have been added to the Achilles tendon around the ankle in
-the TLEM 2.2 leg model. This ensures an even ratio of moment arms between
+the TLEM 2.2 leg model. Giving a more even ratio of moment arms between
 the soleus and gastrocnemius muscles. Hence, gastrocnemius is recruited
 less, especially during downhill walking and stair descent, solving the
-tendency of the model to overpredict the knee contact forces at toe off.
+tendency of the model to over-predict the knee contact forces at toe off.
 This is the first of a number of improvements to the leg model by Dr. Enrico
 De Pieri, who is working on a publication on improvements and validation of
 the TLEM 2 leg model.</p></li>
@@ -552,20 +571,15 @@ foot segment. For backwards compatibility, a pointer to the talus segment
 still exists outside the foot segment.</p></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><p>The implementation of the TLEM model has been split into two separates folders
 <code class="docutils literal notranslate"><span class="pre">LegTLEM/</span></code> and <code class="docutils literal notranslate"><span class="pre">LegTLEM1/</span></code>. All references to TLEM 1 code have been removed in
 the code implementing the TLEM 2 model.</p></li>
 <li><p>The TLEM 1 model now triggers a deprecation warning suggesting to use TLEM 2.</p></li>
-<li><p>Adjustments to pelvic tilt have changed position of MoCap markers on the
-pelvis segment. This mostly affect markers with hardcoded positions.
-Particularly PSIS markers furthest posterior from the origin between ASIS.
-When migrating from AMMR 2.4 models without adjusting marker positions, PSIS
-markers may move 2 cm lower.</p></li>
+</ul>
+</li>
 <li><p>Scaling laws defined by <code class="docutils literal notranslate"><span class="pre">BM_SCALING</span></code> setting have been updated to calculate
 offsets between different scaling regions and apply them at load time. Scaling
-remains same but users can now create scaling functions that account for
+remains the same but users can now create scaling functions that account for
 offsets between regions with different scaling.</p></li>
 <li><p>Glenoid reaction forces are now expressed in the coordinate system of glenoid
 cup instead of general scapula coordinate system. Variables
@@ -2269,11 +2283,10 @@ are interested in this work.</p></li>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="anymocap/grf-prediction.html"
@@ -2293,10 +2306,7 @@ are interested in this work.</p></li>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2401,8 +2411,8 @@ By AnyBody Technology
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
