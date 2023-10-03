@@ -13,10 +13,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://anyscript.org/tools/MoCap-toc.html" />
 <meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="This is list of documented class templates in related to MoCap in the model repository Parameter Identification: CreateConstraintClass Collection of class templates for adding constraints between d..." />
+<meta property="og:description" content="This is list of documented class templates in related to MoCap in the model repository Parameter Identification: OptimizeAnthropometricsOnOff Class template for making design variables and optimizi..." />
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="This is list of documented class templates in related to MoCap in the model repository Parameter Identification: CreateConstraintClass Collection of class templates for adding constraints between d..." />
+<meta name="description" content="This is list of documented class templates in related to MoCap in the model repository Parameter Identification: OptimizeAnthropometricsOnOff Class template for making design variables and optimizi..." />
 
     <title>MoCap &#8212; AMMR v2.5.0-beta Documentation</title>
   
@@ -68,7 +68,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CreateConstraintClass" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html" />
+    <link rel="next" title="OptimizeAnthropometricsOnOff" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html" />
     <link rel="prev" title="Class templates" href="class-templates.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -273,8 +273,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="class-templates.html">Class templates</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">MoCap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html">CreateConstraintClass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html">OptimizeAnthropometricsOnOff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html">CreateConstraintClass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Markers.CreateMarkerDriverClass.html">CreateMarkerDriverClass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Force%20plates.ForcePlateAutoDetection.html">ForcePlateAutoDetection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-templates/MoCap.Force%20plates.FootPlateConditionalContact.html">FootPlateConditionalContact</a></li>
@@ -285,9 +285,9 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Utilities-toc.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="class-templates/Utilities.Kinematic%20limits.RangeOfMotionLimits_template.html">RangeOfMotionLimits_template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-templates/Utilities.Angles.RotationAxisAngles.html">RotationAxisAngles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class-templates/Utilities.Class%20tools.MultipleSubTemplates.html">MultipleSubTemplates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class-templates/Utilities.Kinematic%20limits.RangeOfMotionLimits_template.html">RangeOfMotionLimits_template</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="Video%20tools-toc.html">Video tools</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -433,6 +433,14 @@ document.write(`
 <p>This is list of documented class templates in related to MoCap in the model repository</p>
 <section id="parameter-identification">
 <h2>Parameter Identification<a class="headerlink" href="#parameter-identification" title="Permalink to this heading">#</a></h2>
+<p class="rubric"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-any"><span class="std std-ref">OptimizeAnthropometricsOnOff</span></a></p>
+<p>Class template for making design variables and optimizing the anthropometric
+of the model. I.e. adding different segment length to the parameter identification
+study.</p>
+<p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-any"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="cp">#include</span> <span class="s">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/OptimizeAnthropometricsOnOff.any&quot;</span></code></span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-optimizeanthropometricsonoff"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="n">OptimizeAnthropometricsOnOff</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">()</span><span class="o">=</span><span class="p">{};</span></code></span></a></p></li>
+</ul>
 <p class="rubric"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html#mocap-parameter-identification-createconstraintclass-any"><span class="std std-ref">CreateConstraintClass</span></a></p>
 <p>Collection of class templates for adding constraints between
 design variables in Parameter optimization studies.</p>
@@ -441,14 +449,6 @@ design variables in Parameter optimization studies.</p>
 <li><p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html#mocap-parameter-identification-createconstraintclass-linkdesignvars"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="n">LinkDesignVars</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">()</span><span class="o">=</span><span class="p">{};</span></code></span></a></p></li>
 <li><p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html#mocap-parameter-identification-createconstraintclass-createconstraint"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="n">CreateConstraint</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">()</span><span class="o">=</span><span class="p">{};</span></code></span></a></p></li>
 <li><p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html#mocap-parameter-identification-createconstraintclass-create4clusterrectangleconstraint"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="n">Create4clusterRectangleConstraint</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">()</span><span class="o">=</span><span class="p">{};</span></code></span></a></p></li>
-</ul>
-<p class="rubric"><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-any"><span class="std std-ref">OptimizeAnthropometricsOnOff</span></a></p>
-<p>Class template for making design variables and optimizing the anthropometric
-of the model. I.e. adding different segment length to the parameter identification
-study.</p>
-<p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-any"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="cp">#include</span> <span class="s">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/OptimizeAnthropometricsOnOff.any&quot;</span></code></span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html#mocap-parameter-identification-optimizeanthropometricsonoff-optimizeanthropometricsonoff"><span class="std std-ref"><code class="code docutils literal highlight highlight-AnyScriptDoc"><span class="n">OptimizeAnthropometricsOnOff</span> <span class="o">&lt;</span><span class="n">ObjectName</span><span class="o">&gt;</span><span class="p">()</span><span class="o">=</span><span class="p">{};</span></code></span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -504,11 +504,11 @@ study.</p>
       </div>
     </a>
     <a class="right-next"
-       href="class-templates/MoCap.Parameter%20Identification.CreateConstraintClass.html"
+       href="class-templates/MoCap.Parameter%20Identification.OptimizeAnthropometricsOnOff.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CreateConstraintClass</p>
+        <p class="prev-next-title">OptimizeAnthropometricsOnOff</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
