@@ -500,6 +500,8 @@ thoracic and cervical) to account for pelvis segment morphing into leg pelvis
 coordinate system using <code class="docutils literal notranslate"><span class="pre">BM_LEG_TRUNK_INTERFACE</span></code> setting.</p></li>
 <li><p>Fixed a bug in the <code class="docutils literal notranslate"><span class="pre">AnatomicalFrame</span></code> of TLEM 2.2 foot and talus that caused the
 ARel to be constructed from unscaled landmarks.</p></li>
+<li><p>Fixed small inaccuracy in the mass scaling of the shank. It did not account for the
+mass of the patella segment which uses the same scaling coefficient as the shank.</p></li>
 </ul>
 </section>
 <section id="added">
