@@ -13,10 +13,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://anyscript.org/changelog.html" />
 <meta property="og:site_name" content="AMMR Documentation" />
-<meta property="og:description" content="AMMR beta: Fixed:: The Main.ModelSetup.CreateVideo operation was missing in some of the MoCap examples. This has been fixed. If you have this problem update the CreateVideo.any file in your applica..." />
+<meta property="og:description" content="AMMR beta: Fixed:: Fixed a couple of bugs in the Seated Human model:- Reactions for subtalar joint driver are switched off., GHDriverLeft was using velocity value from GHExternalRotation instead of..." />
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
 <meta property="og:image:alt" content="AMMR Documentation" />
-<meta name="description" content="AMMR beta: Fixed:: The Main.ModelSetup.CreateVideo operation was missing in some of the MoCap examples. This has been fixed. If you have this problem update the CreateVideo.any file in your applica..." />
+<meta name="description" content="AMMR beta: Fixed:: Fixed a couple of bugs in the Seated Human model:- Reactions for subtalar joint driver are switched off., GHDriverLeft was using velocity value from GHExternalRotation instead of..." />
 
     <title>Changelog &#8212; AMMR v2.5.0-beta Documentation</title>
   
@@ -486,6 +486,13 @@ achieve same marker position and joint angle output.</p>
 <section id="fixed">
 <h3>Fixed:<a class="headerlink" href="#fixed" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
+<li><p>Fixed a couple of bugs in the <a class="reference internal" href="Applications/Daily-activities-and-ergonomics/SeatedHuman.html#example-seatedhuman"><span class="std std-ref">Seated Human model</span></a>:</p>
+<ul>
+<li><p>Reactions for subtalar joint driver are switched off.</p></li>
+<li><p>GHDriverLeft was using velocity value from GHExternalRotation instead of GHAbduction.
+This is now fixed.</p></li>
+</ul>
+</li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">Main.ModelSetup.CreateVideo</span></code> operation was missing in some of the MoCap
 examples. This has been fixed. If you have this problem update the
 <code class="docutils literal notranslate"><span class="pre">CreateVideo.any</span></code> file in your application.</p></li>
