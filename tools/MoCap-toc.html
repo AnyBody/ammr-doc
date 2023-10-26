@@ -15,7 +15,7 @@
   
 <meta property="og:site_name" content="AMMR Documentation" />
   
-<meta property="og:description" content="This is list of documented class templates in related to MoCap in the model repository Parameter Identification: OptimizeAnthropometricsOnOff Class template for making design variables and optimizi..." />
+<meta property="og:description" content="This is list of documented class templates in related to MoCap in the model repository Force plates: FootPlateConditionalContact Creates a GRF prediction force plate#include &quot;<AMMR_TOOLS>\GRFPredic..." />
   
 <meta property="og:image" content="https://anyscript.org/ammr-doc/_static/AMMR_Logo.png" />
   
@@ -85,6 +85,34 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="mocap">
 <h1>MoCap<a class="headerlink" href="#mocap" title="Permalink to this headline">¶</a></h1>
 <p>This is list of documented class templates in related to MoCap in the model repository</p>
+<div class="section" id="force-plates">
+<h2>Force plates<a class="headerlink" href="#force-plates" title="Permalink to this headline">¶</a></h2>
+<p class="rubric"><span class="xref myst">FootPlateConditionalContact</span></p>
+<p>Creates a GRF prediction force plate</p>
+<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\GRFPrediction/FootPlateConditionalContact.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
+<ul class="simple">
+<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
+</ul>
+<p class="rubric"><span class="xref myst">ForcePlateAutoDetection</span></p>
+<p>Create Force plates based on data in C3D file.</p>
+<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/ForcePlates/ForcePlateAutoDetection.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
+<ul class="simple">
+<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ForcePlateAutoDetection</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="markers">
+<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
+<p class="rubric"><span class="xref myst">CreateMarkerDriverClass</span></p>
+<p>Creates MoCap markers and links them to the C3D file data.</p>
+<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/CreateMarkerDriverClass.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
+<ul class="simple">
+<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">CreateMarkerDriver</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
 <div class="section" id="parameter-identification">
 <h2>Parameter Identification<a class="headerlink" href="#parameter-identification" title="Permalink to this headline">¶</a></h2>
 <p class="rubric"><span class="xref myst">OptimizeAnthropometricsOnOff</span></p>
@@ -103,34 +131,6 @@ design variables in Parameter optimization studies.</p>
 <li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">LinkDesignVars</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
 <li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">CreateConstraint</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
 <li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">Create4clusterRectangleConstraint</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="markers">
-<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
-<p class="rubric"><span class="xref myst">CreateMarkerDriverClass</span></p>
-<p>Creates MoCap markers and links them to the C3D file data.</p>
-<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/CreateMarkerDriverClass.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
-<ul class="simple">
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">CreateMarkerDriver</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="force-plates">
-<h2>Force plates<a class="headerlink" href="#force-plates" title="Permalink to this headline">¶</a></h2>
-<p class="rubric"><span class="xref myst">ForcePlateAutoDetection</span></p>
-<p>Create Force plates based on data in C3D file.</p>
-<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\AnyMocap/ForcePlates/ForcePlateAutoDetection.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
-<ul class="simple">
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">ForcePlateAutoDetection</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
-</ul>
-<p class="rubric"><span class="xref myst">FootPlateConditionalContact</span></p>
-<p>Creates a GRF prediction force plate</p>
-<p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;&lt;AMMR_TOOLS&gt;\GRFPrediction/FootPlateConditionalContact.any&quot;</span></code>{l=AnyScriptDoc}</span></p>
-<ul class="simple">
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">FootPlateConditionalContact</span> <span class="pre">&lt;ObjectName&gt;()={};</span></code>{l=AnyScriptDoc}</span></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
