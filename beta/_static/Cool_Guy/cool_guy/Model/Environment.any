@@ -1,7 +1,0 @@
-AnyFolder Environment = {
-  AnyFixedRefFrame GlobalRef = 
-  {
-    Origin = {0.0,0.0,0.0};
-    AnyDrawRefFrame drw={};
-  };
-};
